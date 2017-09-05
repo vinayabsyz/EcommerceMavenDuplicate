@@ -1,0 +1,13 @@
+    <web-app>  
+      
+    <servlet>  
+    <servlet-name>EcommerceServlet</servlet-name>  
+    <servlet-class>com.absyz.core.EcommerceServlet</servlet-class>  
+    </servlet>  
+      
+    <servlet-mapping>  
+    <servlet-name>EcommerceServlet</servlet-name>  
+    <url-pattern>/Ecommerce</url-pattern>  
+    </servlet-mapping>  
+      
+    </web-app>  
