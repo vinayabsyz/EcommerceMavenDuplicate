@@ -16,6 +16,59 @@ import main.java.com.absyz.core.DbConnection;
 
 public class Products {
 	
+	public static String add_products_withimage(String strPname,String strBname, String strFilename,int intCount,int intPrice)
+	{
+		Connection conn =null;
+		PreparedStatement psInsert = null;
+		ResultSet rsProducts = null;
+		ResultSet rsProductsMaxId = null;
+		Statement stSelectQuery = null;
+		Statement stSelectMaxId = null;
+		String strQuery = "Select * from products where productname = '"+strPname+"'";
+		System.out.println(strQuery);
+		String strOutput="";
+		int intProductId = 0;
+		try {
+			conn = DbConnection.getConnection();
+			stSelectQuery = conn.createStatement();
+			rsProducts = stSelectQuery.executeQuery(strQuery);
+//			if(rsProducts.next())
+//			{
+				strQuery = "Select max(productid) productid from products";
+				stSelectMaxId = conn.createStatement();
+				rsProductsMaxId = stSelectMaxId.executeQuery(strQuery);
+				if(rsProductsMaxId.next())
+				{
+					intProductId = rsProductsMaxId.getInt("productid")+1;
+				}
+				else
+				{
+					intProductId = 100;
+				}
+				psInsert = conn.prepareStatement("Insert into products(productid,productname,stock,brandname,price,filename)values(?,?,?,?,?,?)");
+				psInsert.setInt(1, intProductId);
+				psInsert.setString(2, strPname);
+				psInsert.setInt(3, intCount);
+				psInsert.setString(4, strBname);
+				psInsert.setDouble(5, intPrice);
+				psInsert.setString(6, strFilename);
+				psInsert.executeUpdate();
+				strOutput = "success";
+				
+//			}
+//			else
+//			{
+//				strOutput = "User Already Exists";
+//			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			strOutput = "failure";
+			e.printStackTrace();
+		}
+		System.out.println(strOutput);
+		return strOutput;
+	}
+	
 	public static String add_products(HttpServletRequest request)
 	{
 		Connection conn =null;
@@ -129,6 +182,38 @@ public class Products {
 		}
 		System.out.println(obj);
 		return json.toString();
+	}
+	
+	public static String update_product(int intProductId,int intQuantity)
+	{
+		Connection conn=null;
+		ResultSet rsGetPrdQty = null;
+		Statement stGetPrdQty = null;
+		PreparedStatement psUpdatePrdQty = null;
+		String strGetQuery = "";
+		int intProdQuantity = 0;
+		int intUpdatePrdQty = 0;
+		strGetQuery = "Select stock from products where productid = "+intProductId;
+		try {
+			conn = DbConnection.getConnection();
+			stGetPrdQty = conn.createStatement();
+			rsGetPrdQty = stGetPrdQty.executeQuery(strGetQuery);
+			if(rsGetPrdQty.next())
+			{
+				intProdQuantity = rsGetPrdQty.getInt("stock");
+				intUpdatePrdQty = intProdQuantity - intQuantity;
+			}
+			psUpdatePrdQty = conn.prepareStatement("Update products set stock = ? where productid = ?");
+			psUpdatePrdQty.setInt(1, intUpdatePrdQty);
+			psUpdatePrdQty.setInt(2, intProductId);
+			psUpdatePrdQty.executeUpdate();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
+		return "Mani";
 	}
 
 }

@@ -3,13 +3,48 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>E-Commerce Portal</title>
-  <script src="http://code.jquery.com/jquery-1.10.2.js" type="text/javascript"></script>
-<script type="text/javascript" src="Jscript.js"></script>
+<script src="http://code.jquery.com/jquery-1.10.2.js" type="text/javascript"></script>
+<script src="jquery.ajaxfileupload.js" type="text/javascript"></script>
+<script lang="Javascript">
+$(document).ready(function() {
+	$('input[type="file"]').ajaxfileupload({
+		'action' : 'UploadFile',
+		'onComplete' : function(response) {
+			$('#upload').hide();
+			$('#message').show();
+			
+			var statusVal = JSON.stringify(response.status);
+
+			if(statusVal == "false")
+			{
+				$("#message").html("<font color='red'>"+ JSON.stringify(response.message) +" </font>");
+			}	
+			if(statusVal == "true")
+			{
+				$("#message").html("<font color='green'>"+ JSON.stringify(response.message) +" </font>");
+			}			
+		},
+		'onStart' : function() {
+			$('#upload').show();
+			$('#message').hide();
+		}
+	});
+});
+$(document).on("click","#admindivlogout",function(){
+	//alert("hai");
+	$('#hidid').val("");
+	window.location.href = "http://localhost:8080/Ecommerce/adminlogin.html";
+})
+</script>
   
       <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-<div class="reg">
+<div id="admindivlogout" style="align:right;cursor: pointer;" align="right">Logout</div>
+<form action = "UploadServlet" method = "post" enctype = "multipart/form-data">
+<div class="login">
+
+	
 <table class="login-screen">
 	<tr>
 		<td colspan='2'> <h2>Add a Product </h2></td>
@@ -27,10 +62,20 @@
 		<td>Product Price</td><td><input type="text" name="txtPrice" id="txtPrice" /></td>
 	</tr>
 	<tr>
-		<td><input class ="btn" type="button" value="Add Product" id="addproduct" /></td><td><input class ="btn" type="button" value="Cancel" /></td>
+		<td colspan ="2">
+			Select a file to upload: <br /><input type = "file" name = "file" size = "50" /><br />
+			<input type = "submit" value = "Add Product" /><input type="hidden" id="hidid" value="" />
+		</td>
 	</tr>
 </table>
 	
+
+
+      
+         
+         
+         
+      </form>
 </div>
 </body>
 </html>

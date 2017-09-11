@@ -16,6 +16,59 @@ import main.java.com.absyz.core.DbConnection;
 
 public class LoginService {
 	
+	public static String adminLogin(HttpServletRequest request) throws JSONException
+	{
+		String strOutput="";
+		Connection conn =null;
+		ResultSet rsLogin = null;
+		ResultSet rsLogData = null;
+		Statement stSelectQuery = null;
+		String strEmail = request.getParameter("email");
+		String strPassword = request.getParameter("password");
+		String strQuery = "Select userid from adminusers where email = '"+strEmail+"' and password = '"+strPassword+"'";
+		System.out.println(strQuery);
+		JSONArray json = new JSONArray();
+		JSONObject obj=null;
+		try {
+			conn = DbConnection.getConnection();
+			stSelectQuery = conn.createStatement();
+			rsLogin = stSelectQuery.executeQuery(strQuery);
+			//strOutput = Orders.convertResultSetToJson(rsLogin);
+			if(rsLogin.next())
+			{
+				rsLogData = stSelectQuery.executeQuery(strQuery);
+				//strOutput = Orders.convertResultSetToJson(rsLogData);
+				System.out.println(strOutput);
+				obj = new JSONObject();      //extends HashMap
+			    obj.put("success",JsonObjects.json_objects("success","user data available"));
+			    obj.put("data",JsonObjects.convertResultSetToJson(rsLogData));
+			    json.put(obj);
+				//strOutput = "[{+"'""+"success:"+JsonObjects.json_objects("success","user data available")+"}]"+",[{data:"+strOutput+"}]";
+				
+			}
+			else
+			{
+				obj = new JSONObject();      //extends HashMap
+			    obj.put("success",JsonObjects.json_objects("failure","user data not available"));
+			    json.put(obj);
+			}
+		}
+			 catch (SQLException e) {
+					// TODO Auto-generated catch block
+				 	obj = new JSONObject();      //extends HashMap
+				    obj.put("success",JsonObjects.json_objects("failure","Data Connection Lost. Please Try again after sometime"));
+				    json.put(obj);
+					strOutput = "Data Connection Lost. Please Try again after sometime";
+					e.printStackTrace();
+				} catch (JSONException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+				System.out.println(json);
+			
+		return json.toString();
+	}
+	
 	public static String userLogin(HttpServletRequest request) throws JSONException
 	{
 		String strOutput="";

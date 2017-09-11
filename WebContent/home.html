@@ -9,16 +9,16 @@
 </head>
 <body>
 <div class="reg" >
-	<div id="username"style="align:right;cursor: pointer;"></div><div id="divlogout" style="cursor: pointer;">Logout</div></br>
-<table class="reg">
+<!-- 	<div><img alt="logo" src="images/absyz_logo.png" width="250px" height="150px"></div> -->
+	<div id="username"style="align:right;cursor: pointer;"></div><div id="td_mycarts" style="cursor: pointer;">My Carts</div><div id="divlogout" style="cursor: pointer;">Logout</div></br>
+<table class="reg" >
 	<tr>
 		<td>
 			<div class="loginh" id="divcontent">
-			<table >
+			<table width="100%" border="1">
 				<tr>
 					<td class='tblheader' id="td_home">Home</td>
 					<td class='tblheader' id="td_products">Products</td>
-					<td class='tblheader' id="td_mycarts">Carts</td>
 					<td class='tblheader'id="td_myorders">My Orders</td>
 				</tr>
 				<tr id="products">
@@ -38,16 +38,18 @@
 							</table>
 						</div>
 						<div id="product_list">All Products</div>
-						<div id="my_carts">Cart Items</div>
 						<div id="my_orders">My Orders</div>
 					</td>
 				</tr><input type="hidden" id="hidid" value="" />
 			</table>
 			</div>
 			<div class="loginh" id="userdiv"></div>
+			<div class="loginh" id="mycartdata"></div>
 			<div class="loginh" id="changepwd">
+			<div id="my_carts">Cart Items</div>
+			
 			<table class="login-screen">
-				<tr>
+				<tr class='tbl_header'>
 					<td colspan='2'> <h2>Change Password</h2> </td>
 				</tr>
 				<tr>
@@ -61,12 +63,13 @@
 				</tr>
 			</table>
 			</div>
-		</td>
-		<td>
-			<div class="prdn" float="right">
+			<div class="loginh" id="prdndesc">
 				<table>
+					<tr class='tbl_header'>
+						<td colspan="3">Product Information</td>
+					</tr>
 					<tr>
-						<td>Product Name</td><td id="showPrdName"></td>
+						<td>Product Name</td><td id="showPrdName"></td><td rowspan="5" id="imgid"></td>
 					</tr>
 					<tr>
 						<td>Brand</td><td id="showBrand"></td>
@@ -81,12 +84,13 @@
 						<td>Quantity</td><td><input type="text" id="txtgetQty" /></td>
 					</tr>
 					<tr>
-						<td><input type="button" id="btn_addtocart" value="Add to Cart" /><input type="hidden" id="hidPrdId" value="" /></td>
+						<td><input type="button" id="btn_backpd" value="Back" /> <input type="button" id="btn_addtocart" value="Add to Cart" /><input type="hidden" id="hidPrdId" value="" /></td>
 						
 					</tr>
 				</table>
 			</div>
 		</td>
+		
 	</tr>
 </table>
 </div>

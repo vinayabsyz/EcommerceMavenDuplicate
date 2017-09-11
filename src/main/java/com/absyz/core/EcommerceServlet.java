@@ -134,6 +134,14 @@ public class EcommerceServlet extends HttpServlet {
 			      response.setHeader("Cache-Control", "no-cache");
 			      response.getOutputStream().write(new String(strOutput.getBytes("UTF-8")).getBytes());
 		   }
+		   if (request.getParameter("serviceId").equals("adminlogin"))
+		   {
+			   String strOutput = LoginService.adminLogin(request);
+			   	      
+			      response.setContentType("text/html");
+			      response.setHeader("Cache-Control", "no-cache");
+			      response.getOutputStream().write(new String(strOutput.getBytes("UTF-8")).getBytes());
+		   }
 		   if (request.getParameter("serviceId").equals("showuser"))
 		   {
 			   String strOutput = LoginService.show_user(request);
@@ -152,6 +160,14 @@ public class EcommerceServlet extends HttpServlet {
 		   if (request.getParameter("serviceId").equals("addtocart"))
 		   {
 			   String strOutput =Carts.add_to_cart(request);
+			   response.setContentType("text/html");
+				response.setHeader("Cache-Control", "no-cache");
+				response.getOutputStream().write(new String(strOutput.getBytes("UTF-8")).getBytes());
+		   }
+		   if (request.getParameter("serviceId").equals("deletecart"))
+		   {
+			   System.out.println("Inside delete block");
+			   String strOutput =Carts.remove_cart(request);
 			   response.setContentType("text/html");
 				response.setHeader("Cache-Control", "no-cache");
 				response.getOutputStream().write(new String(strOutput.getBytes("UTF-8")).getBytes());

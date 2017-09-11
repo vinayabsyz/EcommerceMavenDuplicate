@@ -12,11 +12,11 @@ padding: 50px;
 }
 .login {
 margin: 20px auto;
-width: 300px;
+width: 40%;
 }
 .loginh {
 margin: 20px auto;
-width: 800px;
+width: 80%;
 background-color: #FFF;
 padding: 20px;
 border-radius: 5px
@@ -39,7 +39,7 @@ position:absolute;
 
 }
 .reg {
-width: 1000px;
+width: 100%;
 text-align: right;
 
 }
@@ -118,4 +118,20 @@ box-shadow: none;
 }
 .tblheader{
 	background: #3498DB;
+}
+
+.tbl_odd_row{
+	background: #ffffff;
+	height:100px;
+	text-align: left;
+}
+.tbl_even_row{
+	background: #A9E2F3;
+	height:100px;
+	text-align: left;
+}
+.tbl_header{
+	background: #5882FA;
+	height:30px;
+	text-align: center;
 }

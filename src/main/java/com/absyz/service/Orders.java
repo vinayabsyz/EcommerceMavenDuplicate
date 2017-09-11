@@ -18,7 +18,7 @@ import main.java.com.absyz.core.DbConnection;
 
 public class Orders {
 	
-	public static String new_order(HttpServletRequest request)
+	public static String new_order(HttpServletRequest request) throws JSONException
 	{
 		Connection conn =null;
 		PreparedStatement psInsert = null;
@@ -28,24 +28,31 @@ public class Orders {
 		String strQuery="";
 		int intOrderId = 0;
 		try {
-			Timestamp timestamp = new Timestamp(System.currentTimeMillis());
-			conn = DbConnection.getConnection();
-			strQuery = "Select max(orderid) orderid from orders";
-			int intUserId = Integer.parseInt(request.getParameter("userid"));
-			int intProductId = Integer.parseInt(request.getParameter("productid"));
-			int intQuantity = Integer.parseInt(request.getParameter("quantity"));
-			double dblAmount = Double.parseDouble(request.getParameter("totalamount"));
-			int intShippingId = Integer.parseInt(request.getParameter("shippingid"));
-			stSelectMaxId = conn.createStatement();
-			rsOrderMaxId = stSelectMaxId.executeQuery(strQuery);
-			if(rsOrderMaxId.next())
-			{
-				intOrderId = rsOrderMaxId.getInt("orderid")+1;
-			}
-			else
-			{
-				intOrderId = 100;
-			}
+		String strJson = request.getParameter("data");
+		JSONArray jsonarray = new JSONArray(strJson);
+		conn = DbConnection.getConnection();
+		strQuery = "Select max(orderid) orderid from orders";
+		stSelectMaxId = conn.createStatement();
+		rsOrderMaxId = stSelectMaxId.executeQuery(strQuery);
+		if(rsOrderMaxId.next())
+		{
+			intOrderId = rsOrderMaxId.getInt("orderid")+1;
+		}
+		else
+		{
+			intOrderId = 100;
+		}
+		for (int i = 0; i < jsonarray.length(); i++) {
+		    JSONObject jsonobject = jsonarray.getJSONObject(i);
+		    int intCartId = Integer.parseInt(jsonobject.getString("cartid"));
+		    Timestamp timestamp = new Timestamp(System.currentTimeMillis());
+			
+			int intUserId = Integer.parseInt(jsonobject.getString("userid"));
+			int intProductId = Integer.parseInt(jsonobject.getString("productid"));
+			int intQuantity = Integer.parseInt(jsonobject.getString("quantity"));
+			double dblAmount = Double.parseDouble(jsonobject.getString("totalamount"));
+			int intShippingId = Integer.parseInt(jsonobject.getString("shippingid"));
+			
 			psInsert = conn.prepareStatement("Insert into orders(orderid,userid,productid,shippingid,productquantity,totalamount,orderdate)values(?,?,?,?,?,?,?)");
 			psInsert.setInt(1, intOrderId);
 			psInsert.setInt(2, intUserId);
@@ -54,8 +61,10 @@ public class Orders {
 			psInsert.setInt(5, intQuantity);
 			psInsert.setDouble(6, dblAmount);
 			psInsert.setTimestamp(7, timestamp);
-			
 			psInsert.executeUpdate();
+			String strDeleteCart = Carts.remove_cart_data(intCartId);
+			Products.update_product(intProductId, intQuantity);
+		}
 			strOutput = "success";
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -77,8 +86,8 @@ public class Orders {
 		JSONObject obj=null;
 		try {
 			//String strQuery = "Select * from orders where userid = "+intUserId;
-			String strQuery = "Select o.orderid,o.userid,o.productid,o.orderdate,o.productquantity,o.totalamount,p.productname from orders o "
-					+ "join products p on o.productid = p.productid where o.userid = "+intUserId;
+			String strQuery = "Select o.orderid,o.userid,o.productid,o.orderdate,o.productquantity,o.totalamount,p.productname,p.price from orders o "
+					+ "join products p on o.productid = p.productid where o.userid = "+intUserId+" order by o.orderid asc";
 			conn = DbConnection.getConnection();
 			stSelectOrders = conn.createStatement();
 			rsSelectOrders = stSelectOrders.executeQuery(strQuery);
