@@ -7,6 +7,7 @@ import java.sql.ResultSetMetaData;
 import javax.servlet.*;
 import javax.servlet.http.*;
 
+import org.apache.catalina.Server;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;

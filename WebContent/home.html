@@ -1,98 +1,162 @@
 <!DOCTYPE html>
-<html>
+<html >
 <head>
-<meta charset="ISO-8859-1">
-<title>E-Commerce Portal</title>
-<script src="http://code.jquery.com/jquery-1.10.2.js" type="text/javascript"></script>
-<script type="text/javascript" src="Jscript.js"></script>
-<link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8">
+  <title>Cart with tabs</title>
+  
+  
+  
+      <link rel="stylesheet" href="css/style.css">
+
+  
 </head>
+
 <body>
-<div class="reg" >
-<!-- 	<div><img alt="logo" src="images/absyz_logo.png" width="250px" height="150px"></div> -->
-	<div id="username"style="align:right;cursor: pointer;"></div><div id="td_mycarts" style="cursor: pointer;">My Carts</div><div id="divlogout" style="cursor: pointer;">Logout</div></br>
-<table class="reg" >
-	<tr>
-		<td>
-			<div class="loginh" id="divcontent">
-			<table width="100%" border="1">
-				<tr>
-					<td class='tblheader' id="td_home">Home</td>
-					<td class='tblheader' id="td_products">Products</td>
-					<td class='tblheader'id="td_myorders">My Orders</td>
-				</tr>
-				<tr id="products">
-					<td colspan="3">
-						<div id="divhome" align="left">
-							<table>
-								<tr>
-									<td><p>ABSYZ Inc. is a dynamically growing firm in the salesforce 
-										ecosystem. Our strength lies in the fact that we are amongst the few partners that cater solely 
-										to salesforce services. The broad gamut of services that we offer include consulting, 
-										implementation, audit, support, staff augmentation and training services. For those of you 
-										wondering about the origination of our name ABSYZ, it is simply derived from the Sanskrit 
-										word AB that stands for the state of being in the Now or Present, and fused with the 
-										word SYZ to overlay it with futuristic tones.</p>
-									</td>
-								</tr>
-							</table>
-						</div>
-						<div id="product_list">All Products</div>
-						<div id="my_orders">My Orders</div>
-					</td>
-				</tr><input type="hidden" id="hidid" value="" />
-			</table>
-			</div>
-			<div class="loginh" id="userdiv"></div>
-			<div class="loginh" id="mycartdata"></div>
-			<div class="loginh" id="changepwd">
-			<div id="my_carts">Cart Items</div>
-			
-			<table class="login-screen">
-				<tr class='tbl_header'>
-					<td colspan='2'> <h2>Change Password</h2> </td>
-				</tr>
-				<tr>
-					<td>Password</td><td><input type="text" name="txtPwd" id="txtPwd" /></td>
-				</tr>
-				<tr>
-					<td>Confirm Password</td><td><input type="password" name="txtCfrmPwd" id="txtCfrmPwd" /></td>
-				</tr>
-				<tr>
-					<td><input type="button" id="btnSave" value="Save" /><input type="button" id="btnUser" value="Back" /></td>
-				</tr>
-			</table>
-			</div>
-			<div class="loginh" id="prdndesc">
-				<table>
-					<tr class='tbl_header'>
-						<td colspan="3">Product Information</td>
-					</tr>
-					<tr>
-						<td>Product Name</td><td id="showPrdName"></td><td rowspan="5" id="imgid"></td>
-					</tr>
-					<tr>
-						<td>Brand</td><td id="showBrand"></td>
-					</tr>
-					<tr>
-						<td>Description</td><td id="showPrdDesc"></td>
-					</tr>
-					<tr>
-						<td>Price</td><td id="showPrdPrice"></td>
-					</tr>
-					<tr>
-						<td>Quantity</td><td><input type="text" id="txtgetQty" /></td>
-					</tr>
-					<tr>
-						<td><input type="button" id="btn_backpd" value="Back" /> <input type="button" id="btn_addtocart" value="Add to Cart" /><input type="hidden" id="hidPrdId" value="" /></td>
-						
-					</tr>
-				</table>
-			</div>
-		</td>
-		
-	</tr>
-</table>
+  <div id="particle"></div>
+<div id="overlay">
+  <div class="container">
+  
+  <ul class="nav nav-tabs">
+    <li class="active"><a href="#home"><b><u>Home</u></b></a></li>
+    <li><a href="#menu1"><b><u onclick="loadProducts()">Products</u></b></a></li>
+    <li><a href="#menu2"><b><u id="td_myorders">My Orders</u></b></a></li>
+    
+    <li><a href="#menu3"><b><u id="td_mycarts">My Cart</u></b></a></li>
+<!--     <li><a href="#menu4"><b><u>All Products</u></b></a></li> -->
+    <li><a href="#menu5"><b><u onclick="showuserinfo()">User Info</u></b></a></li>
+    <li><a href="#menu6"><b><u id="divlogout">Logout</u></b></a></li><input type="hidden" id="hidid" value="" /><input type="hidden" id="hidPrdId" value="" />
+  </ul>
+<br/>
+    <br/>
+    <br/>
+    
+  <div class="tab-content">
+  
+    <div id="home" class="tab-pane fade in active">
+      <div class="container">
+       <div class="panel-group">
+         <div class="panel panel-info">
+      <div class="panel-heading">ABSYZ</div>
+      <div class="panel-body">ABSYZ Inc. is a dynamically growing firm in the salesforce ecosystem. Our strength lies in the fact that we are amongst the few partners that cater solely to salesforce services. The broad gamut of services that we offer include consulting, implementation, audit, support, staff augmentation and training services. For those of you wondering about the origination of our name ABSYZ, it is simply derived from the Sanskrit word AB that stands for the state of being in the Now or Present, and fused with the word SYZ to overlay it with futuristic tones.</div>
+	  
+         </div></div></div></div>
+    
+     <div id="menu1" class="tab-pane fade">
+      <div class="container" id="product_list">
+<!--   <h2>Implement Table here and click for description on each item</h2> -->
+  
+  <div class="panel-group">
+    <div class="panel panel-primary">
+      
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a data-toggle="collapse" href="#collapse1">Click for description</a>
+        </h4>
+        </div>
+        <div id="collapse1" class="panel-collapse collapse">
+        <div class="panel-body"><div class="panel panel-primary">
+      <div class="panel-body">
+        <label>Product Name: </label><br/>
+        <label>Brand: </label><br/>
+        <label>Description:</label></br/>
+        <form>
+          <div class="form-group">
+  <label for="usr">Count:</label>
+  <input type="text" class="form-control" id="usr">
 </div>
+  </form>
+</div>
+</div></div>
+        
+        </div></div></div></div></div>
+   
+   
+      
+      
+      
+      
+ 
+    
+    
+    <div id="menu2" class="tab-pane fade">
+      <div class="container" id="my_orders">
+<!--   <h2>Implement  order Table here and click for description on each item</h2> -->
+  
+  <div class="panel-group">
+    <div class="panel panel-primary">
+      
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a data-toggle="collapse" href="#collapse1">Click for description</a>
+        </h4>
+        </div>
+        <div id="collapse1" class="panel-collapse collapse">
+        <div class="panel-body"><div class="panel panel-primary">
+      <div class="panel-body">
+        <label>Product Name: </label><br/>
+        <label>Brand: </label><br/>
+        <label>Description:</label></br/>
+        <form>
+          <div class="form-group">
+  <label for="usr">Count:</label>
+  <input type="text" class="form-control" id="usr">
+</div>
+  </form>
+</div>
+</div></div>
+        
+        </div></div></div></div></div>
+   
+   
+    
+    
+    
+    <div id="menu3" class="tab-pane fade">
+<!--       <h3>Display cart table here</h3> -->
+<!--       <p>cart table</p> -->
+    </div>
+    
+<!-- <div id="menu4" class="tab-pane fade"> -->
+<!--       <h3>Display Products table here</h3> -->
+<!--       <p>product table</p> -->
+<!--     </div> -->
+    
+<div id="menu5" class="tab-pane fade">
+<!--       <h3>Display user info table here</h3> -->
+<!--       <p>user info table</p> -->
+    </div>
+    
+<div id="menu6" class="tab-pane fade">
+<!--       <h3>Logout button to logout</h3> -->
+     
+    </div>
+    
+    
+  </div>
+</div>
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  
+    <script  src="js/index.js"></script>
+<script type="text/javascript" src="js/Jscript.js"></script>
 </body>
 </html>

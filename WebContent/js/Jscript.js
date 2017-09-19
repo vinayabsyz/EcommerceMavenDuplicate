@@ -394,8 +394,8 @@ function showuserinfo()
 				usertable = usertable + "<tr><td class='tbl_header'>Country</td><td>"+obj[0].data[0].country+"</td><td class='tbl_header'>Zipcode</td><td>"+obj[0].data[0].zipcode+"</td></tr>";
 								
 				usertable = usertable + "<tr><td colspan='4' align='center'><input type='button' id='btnBack' value='Back' /><input type='button' id='btnChngPwd' value='Change Password' /></td></tr></table>";
-				$('#userdiv').empty();
-				$('#userdiv').append(usertable);
+				$('#menu5').empty();
+				$('#menu5').append(usertable);
 				$('#hidid').val(userid);
 			}
 			else{
@@ -407,14 +407,6 @@ function showuserinfo()
 	}
 
 $(document).on("click", "#td_mycarts", function() {
-	$('#divcontent').hide();
-	$('#divhome').hide();
-	$('#product_list').hide();
-	$('#my_orders').hide();
-	$('#prdndesc').hide();
-	$('#userdiv').hide();
-	$('#mycartdata').show();
-	
 	
 	var userid=$('#hidid').val();
 	$.ajax({
@@ -454,8 +446,8 @@ $(document).on("click", "#td_mycarts", function() {
 					
 					}
 				cartTable = cartTable + "<tr class='tbl_even_row'><td colspan='2'>Total Amount</td><td colspan='3'><input type='text' id='txtTotal' value ='0' disabled height='40'/></td><tr><td colspan='5' align='center'><input type='button' id='placeorder' value='Place Order' ><input type='button' id='btn_backcart' value='Back' ></td></tr></table>";
-				$('#mycartdata').empty();
-				$('#mycartdata').append(cartTable);
+				$('#menu3').empty();
+				$('#menu3').append(cartTable);
 				
 			}
 			else
@@ -516,8 +508,8 @@ function delete_cartitem(cartid)
 				
 				}
 			cartTable = cartTable + "<tr class='tbl_even_row'><td colspan='2'>Total Amount</td><td colspan='3'><input type='text' id='txtTotal' value ='0' disabled height='40'/></td><tr><td colspan='5' align='center'><input type='button' id='placeorder' value='Place Order' ><input type='button' id='btn_backcart' value='Back' ></td></tr></table>";
-			$('#mycartdata').empty();
-			$('#mycartdata').append(cartTable);
+			$('#menu3').empty();
+			$('#menu3').append(cartTable);
 			
 		}
 		else
