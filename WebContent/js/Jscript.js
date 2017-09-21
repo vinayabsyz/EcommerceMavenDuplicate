@@ -10,7 +10,7 @@ $(document).ready(function (){
 //		}
 //	else
 //	{
-//		window.location.href = "http://localhost:8080/Ecommerce/userlogin.html";
+//		window.location.href = "https://localhost:8080/Ecommerce/userlogin.html";
 //		}
 //	
 });
@@ -41,7 +41,7 @@ $(document).on("click", "#userreg",function userReg(){
 	if(pwd == cfrmpwd)
 	{
 		$.ajax({
-			url : 'http://localhost:8080/Ecommerce/Ecommerce?serviceId=userreg',
+			url : 'https://absyz.herokuapp.com?serviceId=userreg',
 			type: 'POST',
 			data : {
 				fname:fname,lname:lname,email:email,password:pwd,mobile:mobile,address1:address1,
@@ -51,7 +51,7 @@ $(document).on("click", "#userreg",function userReg(){
 			success : function(responseText) {
 				var obj = jQuery.parseJSON(responseText);
 				console.log(obj);
-				if(obj[0].success == "success"){window.location.href = "http://localhost:8080/Ecommerce/userlogin.html";}
+				if(obj[0].success == "success"){window.location.href = "https://absyz.herokuapp.com/userlogin.html";}
 				
 					else{alert(obj.message);}
 						
@@ -71,7 +71,7 @@ $(document).on("click", "#addproduct",function userReg(){
 	var bname=$('#txtBname').val();
 	var price=$('#txtPrice').val();
 		$.ajax({
-		url : 'http://localhost:8080/Ecommerce/Ecommerce?serviceId=addproduct',
+		url : 'https://absyz.herokuapp.com?serviceId=addproduct',
 		type: 'POST',
 		data : {
 			productname:pname,stock:pcount,brand:bname,price:price
@@ -97,7 +97,7 @@ $(document).on("click", "#btn_addtocart", function() {
 	var amount = quantity * price;
 	var userid = $('#hidid').val();//alert(productid);
 	$.ajax({
-		url : 'http://localhost:8080/Ecommerce/Ecommerce?serviceId=addtocart',
+		url : 'https://absyz.herokuapp.com?serviceId=addtocart',
 		type: 'POST',
 		data : {
 			userid :userid,productid:productid,quantity:quantity,amount:amount,
@@ -152,7 +152,7 @@ $(document).on("click", "#placeorder", function() {
 		
 	
 	$.ajax({
-		url : 'http://localhost:8080/Ecommerce/Ecommerce?serviceId=orders',
+		url : 'https://absyz.herokuapp.com?serviceId=orders',
 		type: 'POST',
 		data : {
 			data:jsonString
@@ -175,7 +175,7 @@ $(document).on("click", "#td_myorders", function() {
 	$('#my_orders').show();
 	var userid = $('#hidid').val(); 
 	$.ajax({
-		url : 'http://localhost:8080/Ecommerce/Ecommerce?serviceId=myorders',
+		url : 'https://absyz.herokuapp.com?serviceId=myorders',
 		type: 'POST',
 		data : {
 			userid:userid
@@ -214,7 +214,7 @@ $(document).on("click", "#btnSave", function() {
 	var cfrmpwd = $('#txtCfrmPwd').val();
 	var userid = $('#hidid').val();
 	$.ajax({
-		url : 'http://localhost:8080/Ecommerce/Ecommerce?serviceId=changepwd',
+		url : 'https://absyz.herokuapp.comserviceId=changepwd',
 		type: 'POST',
 		data : {
 			userid : userid,pwd:pwd
@@ -272,7 +272,7 @@ $(document).on("click","#td_home",function(){
 $(document).on("click","#divlogout",function(){
 	
 	$('#hidid').val("");
-	window.location.href = "http://localhost:8080/Ecommerce/userlogin.html";
+	window.location.href = "https://absyz.herokuapp.com/userlogin.html";
 })
 
 $(document).on("click","#btn_backpd",function(){
@@ -300,7 +300,7 @@ function loadProducts()
 	$('#prdndesc').hide();
 	$('#mycartdata').hide();
 	$.ajax({
-		url : 'http://localhost:8080/Ecommerce/Ecommerce?serviceId=show_products',
+		url : 'https://absyz.herokuapp.com?serviceId=show_products',
 		type: 'POST',
 		data : {
 			
@@ -344,7 +344,7 @@ function showproduct(prdid)
 	$('#changepwd').hide();
 	$('#prdndesc').show();
 	$.ajax({
-		url : 'http://localhost:8080/Ecommerce/Ecommerce?serviceId=show_productinfo',
+		url : 'https://absyz.herokuapp.com?serviceId=show_productinfo',
 		type: 'POST',
 		data : {
 			prodid:prdid,
@@ -373,7 +373,7 @@ function showuserinfo()
 	$('#changepwd').hide();
 	$('#prdndesc').hide();
 	$.ajax({
-		url : 'http://localhost:8080/Ecommerce/Ecommerce?serviceId=showuser',
+		url : 'https://absyz.herokuapp.com?serviceId=showuser',
 		type: 'POST',
 		data : {
 			userid:userid,
@@ -410,7 +410,7 @@ $(document).on("click", "#td_mycarts", function() {
 	
 	var userid=$('#hidid').val();
 	$.ajax({
-		url : 'http://localhost:8080/Ecommerce/Ecommerce?serviceId=mycarts',
+		url : 'https://absyz.herokuapp.com?serviceId=mycarts',
 		type: 'POST',
 		data : {
 			userid:userid,
@@ -473,7 +473,7 @@ function delete_cartitem(cartid)
 	//alert(cartid);alert(cart_id[1]);
 	var userid=$('#hidid').val();
 	$.ajax({
-		url : 'http://localhost:8080/Ecommerce/Ecommerce?serviceId=deletecart',
+		url : 'https://absyz.herokuapp.com?serviceId=deletecart',
 		type: 'POST',
 		data : {
 			userid:userid,cartid:cart_id[1]
