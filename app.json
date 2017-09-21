@@ -1,0 +1,8 @@
+  {
+  "name": "Absyz ecommerce app",
+  "description": "A simple Java app from the Salesforce Elevate workhshop",
+  "repository": "https://github.com/saivinayabsyz/EcommerceMaven",
+  "logo": "http://jr0cket.co.uk/play-heroku-workshop/images/java-duke-wave.png",
+  "keywords": ["java", "maven"],
+  "success_url": "/home.html"
+}
