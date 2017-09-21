@@ -3,13 +3,12 @@ $(document).on("click", "#userlogin", function() {
 	var pwd = $('#txtPwd').val();
 	//alert(email+","+pwd);
 	$.ajax({
-		url : 'http://localhost:8080/Ecommerce/Ecommerce?serviceId=login',
+		url : 'https://absyz.herokuapp.com?serviceId=login',
 		type: 'POST',
 		data : {
 			email : email,password:pwd
 		},
 		success : function(responseText) {
-			console.log(responseText);
 			var obj = jQuery.parseJSON(responseText);
 			console.log(obj);
 			//alert(obj[0].data[0].success);
@@ -19,7 +18,7 @@ $(document).on("click", "#userlogin", function() {
 			if(obj[0].success[0].success == "success")
 			{
 				//$('#hidid').val(userid);
-				window.location.href = "http://localhost:8080/Ecommerce/home.html?userid="+userid;
+				window.location.href = "https://absyz.herokuapp.com/home.html?userid="+userid;
 				}
 				
 				else{
@@ -33,12 +32,13 @@ $(document).on("click", "#adminlogin", function() {
 	var email = $('#txtEmail').val();
 	var pwd = $('#txtPwd').val();
 	$.ajax({
-		url : 'http://localhost:8080/Ecommerce/Ecommerce?serviceId=adminlogin',
+		url : 'https://absyz.herokuapp.com?serviceId=adminlogin',
 		type: 'POST',
 		data : {
 			email : email,password:pwd
 		},
 		success : function(responseText) {
+			console.log(responseText);
 			var obj = jQuery.parseJSON(responseText);
 			console.log(obj);
 			//alert(obj[0].data[0].success);
@@ -47,7 +47,7 @@ $(document).on("click", "#adminlogin", function() {
 			if(obj[0].success[0].success == "success")
 			{
 				//$('#hidid').val(userid);
-				window.location.href = "http://localhost:8080/Ecommerce/addproduct.html";
+				window.location.href = "https://absyz.herokuapp.com/addproduct.html";
 				}
 				
 				else{alert(obj[0].success[0].message);$('#txtEmail').val("");$('#txtPwd').val("");}
