@@ -1,6 +1,7 @@
 package main.java.com.absyz.core;
 
 import java.sql.*;
+import java.net.*;
 
 public class DbConnection {
 	
@@ -8,10 +9,14 @@ public class DbConnection {
 	{
 		Connection conn = null;
 		try {
-	         Class.forName("org.postgresql.Driver");
-	         conn = DriverManager
-	            .getConnection("jdbc:postgresql://localhost:5432/ecommerce",
-	            "ecommerce", "ecommerce");
+	        URI dbUri = new URI(System.getenv("DATABASE_URL"));
+
+    String username = dbUri.getUserInfo().split(":")[0];
+    String password = dbUri.getUserInfo().split(":")[1];
+    String dbUrl = "jdbc:postgresql://" + dbUri.getHost() + ':' + dbUri.getPort() + dbUri.getPath();
+
+   
+	         conn = DriverManager.getConnection(dbUrl, username, password);
 	      } catch (Exception e) {
 	         e.printStackTrace();
 	         System.err.println(e.getClass().getName()+": "+e.getMessage());
