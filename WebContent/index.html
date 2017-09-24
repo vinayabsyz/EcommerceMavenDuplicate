@@ -1,42 +1,65 @@
 <!DOCTYPE html>
-<html>
+<html >
 <head>
-<meta charset="ISO-8859-1">
-<title>Insert title here</title>
-<script src="https://code.jquery.com/jquery-1.10.2.js" type="text/javascript"></script>
-<script type="text/javascript" src="Jscript-1.js"></script>
-<link rel="stylesheet" href="css/style-1.css">
+  <meta charset="UTF-8">
+  <title>Ecommerce Login Page</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
-<button class="tablink" onclick="openCity('London', this, 'red')" id="defaultOpen">London</button>
-<button class="tablink" onclick="openCity('Paris', this, 'green')">Paris</button>
-<button class="tablink" onclick="openCity('Tokyo', this, 'blue')">Tokyo</button>
-<button class="tablink" onclick="openCity('Oslo', this, 'orange')">Oslo</button>
-<button class="tablink" onclick="openCity('Mani', this, 'grey')">Mani</button>
-	 <div id="London" class="tabcontent">
-  <h3>London</h3>
-  <p>London is the capital city of England.</p>
+<div id="particle"></div>
+<div id="overlay"></div>
+<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/login.js"></script>
+<div class="row">
+  <div class="col-sm-3">
 </div>
+  <div class="col-sm-6">
+</div>
+  <div class="col-sm-3">
+</div>
+</div><br/><br/>
+<div class="row">
+<div class="col-sm-3">
+</div>
+<div class="col-sm-6 ">
+      
+	  <div class="panel panel-primary panel-transparent">
+			<div class="panel-body">
+         <h5 align="middle"><b>Login</h5>
+           
+           <form>
+    <div class="form-group">
+      <label for="usr">User Name:</label>
+      <input type="text" class="form-control" id="txtEmail">
+    </div>
+             
+             <div class="form-group">
+      <label for="usr">Password:</label>
+      <input type="password" class="form-control" id="txtPwd">
+    </div>
+    
+             
+             <button type="button" class="btn btn-primary btn-md" id="userlogin">Login </button><br>
+             <a href="userregistration.html">Register</a>
+  
+        
+        
+        
+			</div>
+  
+</div>
+	  
+   </div>
+<div class="col-sm-3 ">
+      
+   </div>
+  </div>
+  
+    <script  src="js/index.js"></script>
 
-<div id="Paris" class="tabcontent">
-  <h3>Paris</h3>
-  <p>Paris is the capital of France.</p>
-</div>
-
-<div id="Tokyo" class="tabcontent">
-  <h3>Tokyo</h3>
-  <p>Tokyo is the capital of Japan.</p>
-</div>
-
-<div id="Oslo" class="tabcontent">
-  <h3>Oslo</h3>
-  <p>Oslo is the capital of Norway.</p>
-</div>
-<div id="Mani" class="tabcontent">
-  <h3>Mani</h3>
-  <p>Mani is the capital of G.</p>
-</div>
-
- 
 </body>
 </html>
