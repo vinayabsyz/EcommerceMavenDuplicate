@@ -9,20 +9,21 @@ $(document).on("click", "#userlogin", function() {
 			email : email,password:pwd
 		},
 		success : function(responseText) {
-			//var obj = jQuery.parseJSON(responseText);
-			//console.log(obj);
+			var obj = jQuery.parseJSON(responseText);
+			console.log(obj);
 			//alert(obj[0].data[0].success);
-			//var userid = obj[0].data[0].userid;
+			var userid = obj[0].data[0].userid;
 			//alert(obj[0].success[0].success);
 			//alert(userid);
-			//if(obj[0].success[0].success == "success")
-			//{
+			if(obj[0].success[0].success == "success")
+			{
 				//$('#hidid').val(userid);
 				window.location.href = "https://absyz.herokuapp.com/home.html?userid="+userid;
-				//}
+				}
 				
-				//else{
-					//alert(obj[0].success[0].message);$('#txtEmail').val("");$('#txtPwd').val("");}
+				
+				else{
+					alert(obj[0].success[0].message);$('#txtEmail').val("");$('#txtPwd').val("");}
 					
 		}
 	});
