@@ -4,5 +4,5 @@
   "repository": "https://github.com/saivinayabsyz/EcommerceMaven",
   "logo": "http://jr0cket.co.uk/play-heroku-workshop/images/java-duke-wave.png",
   "keywords": ["java", "maven"],
-  "success_url": "/userlogin.html"
+  "success_url":"/userlogin.html"
 }
