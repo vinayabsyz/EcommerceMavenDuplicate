@@ -71,7 +71,7 @@ $(document).on("click", "#addproduct",function userReg(){
 	var bname=$('#txtBname').val();
 	var price=$('#txtPrice').val();
 		$.ajax({
-		url : 'https://absyz.herokuapp.com?serviceId=addproduct',
+		url : 'https://absyz.herokuapp.com/home.html?serviceId=addproduct',
 		type: 'POST',
 		data : {
 			productname:pname,stock:pcount,brand:bname,price:price
@@ -97,7 +97,7 @@ $(document).on("click", "#btn_addtocart", function() {
 	var amount = quantity * price;
 	var userid = $('#hidid').val();//alert(productid);
 	$.ajax({
-		url : 'https://absyz.herokuapp.com?serviceId=addtocart',
+		url : 'https://absyz.herokuapp.com/home.html?serviceId=addtocart',
 		type: 'POST',
 		data : {
 			userid :userid,productid:productid,quantity:quantity,amount:amount,
@@ -152,7 +152,7 @@ $(document).on("click", "#placeorder", function() {
 		
 	
 	$.ajax({
-		url : 'https://absyz.herokuapp.com?serviceId=orders',
+		url : 'https://absyz.herokuapp.com/home.html?serviceId=orders',
 		type: 'POST',
 		data : {
 			data:jsonString
@@ -175,7 +175,7 @@ $(document).on("click", "#td_myorders", function() {
 	$('#my_orders').show();
 	var userid = $('#hidid').val(); 
 	$.ajax({
-		url : 'https://absyz.herokuapp.com?serviceId=myorders',
+		url : 'https://absyz.herokuapp.com/home.html?serviceId=myorders',
 		type: 'POST',
 		data : {
 			userid:userid
@@ -214,7 +214,7 @@ $(document).on("click", "#btnSave", function() {
 	var cfrmpwd = $('#txtCfrmPwd').val();
 	var userid = $('#hidid').val();
 	$.ajax({
-		url : 'https://absyz.herokuapp.comserviceId=changepwd',
+		url : 'https://absyz.herokuapp.com/home.html?serviceId=changepwd',
 		type: 'POST',
 		data : {
 			userid : userid,pwd:pwd
@@ -344,7 +344,7 @@ function showproduct(prdid)
 	$('#changepwd').hide();
 	$('#prdndesc').show();
 	$.ajax({
-		url : 'https://absyz.herokuapp.com?serviceId=show_productinfo',
+		url : 'https://absyz.herokuapp.com/home.html?serviceId=show_productinfo',
 		type: 'POST',
 		data : {
 			prodid:prdid,
@@ -373,7 +373,7 @@ function showuserinfo()
 	$('#changepwd').hide();
 	$('#prdndesc').hide();
 	$.ajax({
-		url : 'https://absyz.herokuapp.com?serviceId=showuser',
+		url : 'https://absyz.herokuapp.com/homr.html?serviceId=showuser',
 		type: 'POST',
 		data : {
 			userid:userid,
@@ -410,7 +410,7 @@ $(document).on("click", "#td_mycarts", function() {
 	
 	var userid=$('#hidid').val();
 	$.ajax({
-		url : 'https://absyz.herokuapp.com?serviceId=mycarts',
+		url : 'https://absyz.herokuapp.com/home.html?serviceId=mycarts',
 		type: 'POST',
 		data : {
 			userid:userid,
@@ -473,7 +473,7 @@ function delete_cartitem(cartid)
 	//alert(cartid);alert(cart_id[1]);
 	var userid=$('#hidid').val();
 	$.ajax({
-		url : 'https://absyz.herokuapp.com?serviceId=deletecart',
+		url : 'https://absyz.herokuapp.com/home.html?serviceId=deletecart',
 		type: 'POST',
 		data : {
 			userid:userid,cartid:cart_id[1]
