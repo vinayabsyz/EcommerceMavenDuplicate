@@ -41,7 +41,7 @@ $(document).on("click", "#userreg",function userReg(){
 	if(pwd == cfrmpwd)
 	{
 		$.ajax({
-			url : 'https://absyz.herokuapp.com?serviceId=userreg',
+			url : 'https://absyz.herokuapp.com/userregistration.html?serviceId=userreg',
 			type: 'POST',
 			data : {
 				fname:fname,lname:lname,email:email,password:pwd,mobile:mobile,address1:address1,
