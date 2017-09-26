@@ -300,7 +300,7 @@ function loadProducts()
 	$('#prdndesc').hide();
 	$('#mycartdata').hide();
 	$.ajax({
-		url : 'https://absyz.herokuapp.com?serviceId=show_products',
+		url : 'https://absyz.herokuapp.com/home.html?serviceId=show_products',
 		type: 'POST',
 		data : {
 			
@@ -373,7 +373,7 @@ function showuserinfo()
 	$('#changepwd').hide();
 	$('#prdndesc').hide();
 	$.ajax({
-		url : 'https://absyz.herokuapp.com/homr.html?serviceId=showuser',
+		url : 'https://absyz.herokuapp.com/home.html?serviceId=showuser',
 		type: 'POST',
 		data : {
 			userid:userid,
