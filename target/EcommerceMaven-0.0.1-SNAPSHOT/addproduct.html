@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>E-Commerce Add Product</title>
+  
+  
+  
+      <link rel="stylesheet" href="css/style.css">
+
+  
+</head>
+
+<body>
+  <div id="particle"></div>
+<div id="overlay"></div>
+<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="js/jquery.ajaxfileupload.js" type="text/javascript"></script>
+<script lang="Javascript">
+$(document).ready(function() {
+	$('input[type="file"]').ajaxfileupload({
+		'action' : 'UploadFile',
+		'onComplete' : function(response) {
+			$('#upload').hide();
+			$('#message').show();
+			
+			var statusVal = JSON.stringify(response.status);
+
+			if(statusVal == "false")
+			{
+				$("#message").html("<font color='red'>"+ JSON.stringify(response.message) +" </font>");
+			}	
+			if(statusVal == "true")
+			{
+				$("#message").html("<font color='green'>"+ JSON.stringify(response.message) +" </font>");
+			}			
+		},
+		'onStart' : function() {
+			$('#upload').show();
+			$('#message').hide();
+		}
+	});
+});
+$(document).on("click","#admindivlogout",function(){
+	//alert("hai");
+	$('#hidid').val("");
+	window.location.href = "http://localhost:8080/Ecommerce/adminlogin.html";
+})
+</script>
+<div class="row">
+  <div class="col-sm-3">
+</div>
+  <div class="col-sm-6">
+</div>
+  <div class="col-sm-3">
+</div>
+</div><br/><br/>
+<div class="row">
+<div class="col-sm-3">
+</div>
+<div class="col-sm-6 ">
+      
+	  <div class="panel panel-primary panel-transparent">
+			<div class="panel-body">
+         <h5 align="middle"><b>Add Product</h5>
+           
+           <form action = "UploadServlet" method = "post" enctype = "multipart/form-data">
+    <div class="form-group">
+      <label for="usr">Product Name:</label>
+      <input type="text" class="form-control" name="txtPname" id="txtPname">
+    </div>
+             
+             <div class="form-group">
+      <label for="usr">Brand Name:</label>
+      <input type="text" class="form-control" name="txtBname" id="txtBname" >
+    </div>
+    <div class="form-group">
+      <label for="pwd">Count:</label>
+      <input type="text" class="form-control" name="txtPcount" id="txtPcount" >
+    </div>
+             <div class="form-group">
+      <label for="usr">Product Price:</label>
+      <input type="text" class="form-control" name="txtPrice" id="txtPrice">
+    </div>
+    <div class="form-group">
+      <label for="usr">Select a file to upload:</label>
+      <input type = "file" name = "file" size = "50" /><br />
+			<input type="hidden" id="hidid" value="" />
+    </div>
+             <button type="submit" class="btn btn-primary btn-md">Add Product </button>
+  <button type="button" class="btn btn-default btn-md">Cancel</button>
+  </form>
+        
+        
+        
+			</div>
+  
+</div>
+	  
+   </div>
+<div class="col-sm-3 ">
+      
+   </div>
+  
+    <script  src="js/index.js"></script>
+
+</body>
+</html>
