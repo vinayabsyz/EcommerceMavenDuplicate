@@ -9,7 +9,7 @@ $(document).on("click", "#userlogin", function() {
 			email : email,password:pwd
 		},
 		success : function(responseText) {
-			console.log(responceText);
+			console.log(responseText);
 			var obj = jQuery.parseJSON(responseText);
 			console.log(obj);
 			//alert(obj[0].data[0].success);
