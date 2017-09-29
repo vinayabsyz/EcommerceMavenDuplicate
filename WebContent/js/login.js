@@ -3,7 +3,7 @@ $(document).on("click", "#userlogin", function() {
 	var pwd = $('#txtPwd').val();
 	//alert(email+","+pwd);
 	$.ajax({
-		url : 'https://absyz.herokuapp.com/userlogin.html?serviceId=login',
+		url : '/userlogin.html?serviceId=login',
 		type: 'POST',
 		data : {
 			email : email,password:pwd
