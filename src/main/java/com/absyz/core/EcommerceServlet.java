@@ -7,7 +7,7 @@ import java.sql.ResultSetMetaData;
 import javax.servlet.*;
 import javax.servlet.http.*;
 
-//import org.apache.catalina.Server;
+import org.apache.catalina.Server;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -17,10 +17,7 @@ import main.java.com.absyz.service.LoginService;
 import main.java.com.absyz.service.Orders;
 import main.java.com.absyz.service.Products;
 import main.java.com.absyz.service.UserRegistration;
-@WebServlet(
-        name = "MyServlet", 
-        urlPatterns = {"/login"}
-    )
+
 // Extend HttpServlet class
 public class EcommerceServlet extends HttpServlet {
  
