@@ -380,7 +380,8 @@ function showuserinfo()
 		},
 		success : function(responseText) {
 			console.log(responseText);
-			var obj = jQuery.parseJSON(responseText);
+			console.log('Showuserinfo'+responseText);
+			//var obj = jQuery.parseJSON(responseText);
 			//alert(obj.length);
 			console.log(obj);
 			//alert(obj[0].data[0].zipcode);
