@@ -49,6 +49,7 @@ $(document).on("click", "#userreg",function userReg(){
 				gender:gender
 			},
 			success : function(responseText) {
+				console.log(responseText);
 				var obj = jQuery.parseJSON(responseText);
 				console.log(obj);
 				if(obj[0].success == "success"){window.location.href = "https://absyz.herokuapp.com/userlogin.html";}
