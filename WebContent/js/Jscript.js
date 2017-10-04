@@ -368,6 +368,7 @@ function showuserinfo()
 {
 	var searchParams = new URLSearchParams(window.location.search); //?anything=123
 	var userid = searchParams.get("userid");
+	console.log(userid);
 	$('#divcontent').show();
 	$('#userdiv').hide();
 	$('#changepwd').hide();
@@ -379,9 +380,10 @@ function showuserinfo()
 			userid:userid,
 		},
 		success : function(responseText) {
+			
 			console.log(responseText);
 			console.log('Showuserinfo'+responseText);
-			//var obj = jQuery.parseJSON(responseText);
+			var obj = jQuery.parseJSON(responseText);
 			//alert(obj.length);
 			console.log(obj);
 			//alert(obj[0].data[0].zipcode);
