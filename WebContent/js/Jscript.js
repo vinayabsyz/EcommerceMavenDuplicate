@@ -307,7 +307,7 @@ function loadProducts()
 		},
 		success : function(responseText) {
 			console.log(responseText);
-			var obj = jQuery.parseJSON(responseText);
+			//var obj = jQuery.parseJSON(responseText);
 			//alert(responseText);
 			//alert(obj[0].data.length);
 			//alert(obj[0].data[0].productname);
