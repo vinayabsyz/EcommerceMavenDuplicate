@@ -1,7 +1,7 @@
 $(document).ready(function (){
 	
-	showuserinfo();
-	loadProducts();
+	//showuserinfo();
+	//loadProducts();
 	
 //	if($('#hidid').val() != "")
 //	{
