@@ -35,8 +35,8 @@ public class EcommerceServlet extends HttpServlet {
 		   {
 			   String strOutput = UserRegistration.user_reg(request);
 			      // Set response content type
-			      response.setContentType("text/html");
-
+			      //response.setContentType("text/html");
+response.setContentType("application/json");
 			      // Actual logic goes here.
 			      PrintWriter out = response.getWriter();
 			      out.println("<h1>" + strOutput + "</h1>");
