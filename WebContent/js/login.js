@@ -1,7 +1,7 @@
 $(document).on("click", "#userlogin", function() {
 	var email = $('#txtEmail').val();
 	var pwd = $('#txtPwd').val();
-	//alert(email+","+pwd);
+	alert(email+","+pwd);
 	$.ajax({
 		url : '/userlogin.html?serviceId=login',
 		type: 'POST',
