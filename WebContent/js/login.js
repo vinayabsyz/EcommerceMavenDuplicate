@@ -27,10 +27,8 @@ $(document).on("click", "#userlogin", function() {
 				else{
 					alert(obj[0].success[0].message);$('#txtEmail').val("");$('#txtPwd').val("");}
 					
-		},
-		error: function() {
-         alert("inside error block");
-      }
+		}
+		
 	});
 	
 });
