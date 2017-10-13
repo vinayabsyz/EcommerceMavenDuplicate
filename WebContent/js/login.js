@@ -3,7 +3,7 @@ $(document).on("click", "#userlogin", function() {
 	var pwd = $('#txtPwd').val();
 	alert(email+","+pwd);
 	$.ajax({
-		url : 'https://absyz.herokuapp.com/Ecommerce?serviceId=login',
+		url : '/Ecommerce?serviceId=login',
 		type: 'POST',
 		data : {
 			email : email,password:pwd
@@ -20,7 +20,7 @@ $(document).on("click", "#userlogin", function() {
 			if(obj[0].success[0].success == "success")
 			{
 				//$('#hidid').val(userid);
-				window.location.href = "https://absyz.herokuapp.com/home.html?userid="+userid;
+				window.location.href = "/home.html?userid="+userid;
 				}
 				
 				
