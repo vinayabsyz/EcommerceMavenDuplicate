@@ -3,7 +3,7 @@ $(document).on("click", "#userlogin", function() {
 	var pwd = $('#txtPwd').val();
 	alert(email+","+pwd);
 	$.ajax({
-		url : '/Ecommerce?serviceId=login',
+		url : '/EcommerceServlet?serviceId=login',
 		type: 'POST',
 		data : {
 			email : email,password:pwd
