@@ -12,7 +12,7 @@
     
     <servlet>
 		<servlet-name>UploadFile</servlet-name>
-		<servlet-class>com.absyz.core.UploadFile</servlet-class>
+		<servlet-class>main.java.com.absyz.core.UploadFile</servlet-class>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>UploadFile</servlet-name>
@@ -21,7 +21,7 @@
      
      <servlet>
    <servlet-name>UploadServlet</servlet-name>
-   <servlet-class>com.absyz.core.UploadServlet</servlet-class>
+   <servlet-class>main.java.com.absyz.core.UploadServlet</servlet-class>
 </servlet>
 
 <servlet-mapping>
