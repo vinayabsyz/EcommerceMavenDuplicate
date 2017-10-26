@@ -52,7 +52,7 @@ $(document).on("click", "#adminlogin", function() {
 			if(obj[0].success[0].success == "success")
 			{
 				//$('#hidid').val(userid);
-				window.location.href = "https://absyz.herokuapp.com/addproduct.html";
+				window.location.href = "/addproduct.html";
 				}
 				
 				else{alert(obj[0].success[0].message);$('#txtEmail').val("");$('#txtPwd').val("");}
