@@ -2,7 +2,7 @@
       
     <servlet>  
     <servlet-name>EcommerceServlet</servlet-name>  
-    <servlet-class>main.java.com.absyz.core.EcommerceServlet</servlet-class>  
+    <servlet-class>main.java.com.absyz.core</servlet-class>  
     </servlet>  
       
     <servlet-mapping>  
