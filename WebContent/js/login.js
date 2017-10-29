@@ -37,7 +37,7 @@ $(document).on("click", "#adminlogin", function() {
 	var email = $('#txtEmail').val();
 	var pwd = $('#txtPwd').val();
 	$.ajax({
-		url : 'https://absyz.herokuapp.com?serviceId=adminlogin',
+		url : '/Ecommerce?serviceId=adminlogin',
 		type: 'POST',
 		data : {
 			email : email,password:pwd
