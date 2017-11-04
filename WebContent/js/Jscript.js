@@ -308,7 +308,7 @@ function loadProducts()
 		},
 		success : function(responseText) {
 			console.log(responseText);
-			//var obj = jQuery.parseJSON(responseText);
+			var obj = jQuery.parseJSON(responseText);
 			//alert(responseText);
 			//alert(obj[0].data.length);
 			//alert(obj[0].data[0].productname);
@@ -332,6 +332,7 @@ function loadProducts()
 				
 				}
 			productTable = productTable + "</table>";
+			//alert(productTable);
 			$('#product_list').empty();
 			$('#product_list').append(productTable);
 		}
@@ -361,7 +362,7 @@ function showproduct(prdid)
 			$('#showPrdPrice').text(obj[0].data[0].price);
 			$('#hidPrdId').val("");
 			$('#hidPrdId').val(obj[0].data[0].productid);
-			//$('#imgid').html("<img  alt='product' src='images/dell_laptop.jpg' width='250px' height='250px'>");
+			//$('#imgid').html("<img  alt='product' src='2017-10-06.jpg' width='250px' height='250px'>");
 		}
 	});
 }
@@ -518,7 +519,7 @@ function delete_cartitem(cartid)
 		}
 		else
 		{
-			alert(obj[0].success[0].message);
+			//alert(obj[0].success[0].message);
 			loadProducts();
 		}
 								
