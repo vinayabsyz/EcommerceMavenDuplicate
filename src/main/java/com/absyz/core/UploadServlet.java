@@ -29,7 +29,7 @@ public class UploadServlet extends HttpServlet {
       // Get the file location where it would be stored.
       //filePath = getServletContext().getInitParameter("file-upload"); 
 	  // filePath = "C:\\Files\\";
-	   filePath = "E:\\Absyz_Workspace\\Ecommerce\\Webcontent\\images\\";
+	  filePath = "webcontent/images/";
    }
    
    public void doPost(HttpServletRequest request, HttpServletResponse response)
@@ -45,8 +45,8 @@ public class UploadServlet extends HttpServlet {
       String strFilename = "";
       int intPrice = 0;
       int intCount = 0;
-      String relativeWebPath = "/images";
-      String absoluteDiskPath = getServletContext().getRealPath(relativeWebPath);
+      //String relativeWebPath = "/images";
+      //String absoluteDiskPath = getServletContext().getRealPath(relativeWebPath);
       
       if( !isMultipart ) {
          out.println("<html>");
@@ -66,7 +66,7 @@ public class UploadServlet extends HttpServlet {
       factory.setSizeThreshold(maxMemSize);
    
       // Location to save data that is larger than maxMemSize.
-      factory.setRepository(new File("c:\\temp\\"));
+      factory.setRepository(new File("webcontent/images"));
 
       // Create a new file upload handler
       ServletFileUpload upload = new ServletFileUpload(factory);
