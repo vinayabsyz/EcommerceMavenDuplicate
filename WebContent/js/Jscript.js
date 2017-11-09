@@ -309,14 +309,23 @@ function loadProducts()
 		success : function(responseText) {
 			console.log(responseText);
 			var obj = jQuery.parseJSON(responseText);
-			//alert(responseText);
-			//alert(obj[0].data.length);
-			//alert(obj[0].data[0].productname);
+			alert('hi');
+			alert(responseText);
+			alert(obj[0].data.length);
+			alert(obj[0].data[0].productname);
 			var productTable="<table class='prdtable' width='100%'><tr class='tbl_header' style='height:30px;'><td>Select</td><td>Brand</td><td>Product Name</td><td> Price</td></tr>";
 			for(var i=0;i<obj[0].data.length;i++)
 			{
 				var pr_id = "pr_"+obj[0].data[i].productid;
-				var filename = "images/"+obj[0].data[i].filename;
+//<<<<<<< HEAD
+				//var filename = "images/"+obj[0].data[i].filename;
+
+				//var filename = "WebContent/images/"+obj[0].data[i].filename;
+				//var filename = " https://git.heroku.com/absyzecommerceportal.git/WebContent/images/"+obj[0].data[i].filename;
+				var filename = "images/"+obj[0].data[i].filename;;
+				console.log(filename);
+				alert(filename);
+//>>>>>>> 3936b108a5b59962890db28e92fa04e5f4ac63a7
 				//alert(amt_id);
 				//productTable = productTable + "<tr style='height:100px;'><td><input name='product' type ='radio' id="+obj[0].data[i].productid+" onclick='showproduct(this.id);'/></td><td>"+obj[0].data[i].brandname+"</td><td>"+obj[0].data[i].productname+"</td><td id="+pr_id+">"+obj[0].data[i].price+"</td>" +
 				if(i%2 == 0)
@@ -332,7 +341,7 @@ function loadProducts()
 				
 				}
 			productTable = productTable + "</table>";
-			//alert(productTable);
+			alert(productTable);
 			$('#product_list').empty();
 			$('#product_list').append(productTable);
 		}
@@ -340,7 +349,9 @@ function loadProducts()
 }
 function showproduct(prdid)
 {
-	//alert(prdid);
+	alert("showproduct");
+	alert(prdid);
+	alert("hi");
 	$('#divcontent').hide();
 	$('#userdiv').hide();
 	$('#changepwd').hide();
@@ -354,9 +365,9 @@ function showproduct(prdid)
 		success : function(responseText) {
 			console.log(responseText);
 			var obj = jQuery.parseJSON(responseText);
-			//alert(responseText);
-			//alert(obj[0].data.length);
-			//alert(obj[0].data[0].productname);
+			alert(responseText);
+			alert(obj[0].data.length);
+			alert(obj[0].data[0].productname);
 			$('#showPrdName').text(obj[0].data[0].productname);
 			$('#showBrand').text(obj[0].data[0].brandname);
 			$('#showPrdPrice').text(obj[0].data[0].price);
