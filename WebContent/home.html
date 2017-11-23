@@ -18,14 +18,16 @@
   
   <ul class="nav nav-tabs">
     <li class="active"><a href="#home"><b><u>Home</u></b></a></li>
+	<li><a href="#menu5"><b><u onclick="showuserinfo()">User Info</u></b></a></li>
     <li><a href="#menu1"><b><u onclick="loadProducts()">Products</u></b></a></li>
     <li><a href="#menu2"><b><u id="td_myorders">My Orders</u></b></a></li>
     
-    <li><a href="#menu3"><b><u id="td_mycarts">My Cart</u></b></a></li>
+    <li  class="pull-right"><a href="#menu3"><b><u id="td_mycarts">My Cart</u></b></a></li>
 <!--     <li><a href="#menu4"><b><u>All Products</u></b></a></li> -->
-    <li><a href="#menu5"><b><u onclick="showuserinfo()">User Info</u></b></a></li>
+    
     <li><a href="#menu6"><b><u id="divlogout">Logout</u></b></a></li><input type="hidden" id="hidid" value="" /><input type="hidden" id="hidPrdId" value="" />
   </ul>
+  
 <br/>
     <br/>
     <br/>
@@ -56,7 +58,7 @@
         <div id="collapse1" class="panel-collapse collapse">
         <div class="panel-body"><div class="panel panel-primary">
       <div class="panel-body">
-        <label>Product Name: </label><br/>
+      <div id="showPrdName"> <label>Product Name: </label><br/></div>
         <label>Brand: </label><br/>
         <label>Description:</label></br/>
         <form>
