@@ -356,6 +356,7 @@ function showproduct(prdid)
 	$('#userdiv').hide();
 	$('#changepwd').hide();
 	$('#prdndesc').show();
+	
 	$.ajax({
 		url : '/Ecommerce?serviceId=show_productinfo',
 		type: 'POST',
@@ -368,6 +369,9 @@ function showproduct(prdid)
 			alert(responseText);
 			alert(obj[0].data.length);
 			alert(obj[0].data[0].productname);
+			//	$('#menu1').show();
+				$('#product_list').show();
+					
 			$('#showPrdName').text(obj[0].data[0].productname);
 			$('#showBrand').text(obj[0].data[0].brandname);
 			$('#showPrdPrice').text(obj[0].data[0].price);
