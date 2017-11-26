@@ -377,8 +377,9 @@ function showproduct(prdid)
 			alert(obj[0].data.length);
 			alert(obj[0].data[0].productname);
 			//	$('#menu1').show();
+			$('#menu1').show();
 				$('#product_list').show();
-				$('#menu1').show();
+				
 					
 			$('#showPrdName').text(obj[0].data[0].productname);
 			$('#showBrand').text(obj[0].data[0].brandname);
