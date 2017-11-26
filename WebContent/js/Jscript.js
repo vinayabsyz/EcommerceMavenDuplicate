@@ -67,6 +67,7 @@ $(document).on("click", "#userreg",function userReg(){
 });
 
 $(document).on("click", "#addproduct",function userReg(){
+	console.log('To add product');
 	var pname=$('#txtPname').val();
 	var pcount=$('#txtPcount').val();
 	var bname=$('#txtBname').val();
@@ -92,6 +93,7 @@ $(document).on("click", "#addproduct",function userReg(){
 
 $(document).on("click", "#btn_addtocart", function() {
 	//var productid = $('input[name=product]:checked').attr('id'); 
+	console.log('Add to cart');
 	var productid = $('#hidPrdId').val();
 	var quantity = $('#txtgetQty').val();
 	var price = $('#showPrdPrice').text();
@@ -116,6 +118,7 @@ $(document).on("click", "#btn_addtocart", function() {
 });
 
 $(document).on("click", "#placeorder", function() {
+	console.log('Place order');
 	//alert("mani");
 	var shippingid="1";
 	var userid = $('#hidid').val();
@@ -170,6 +173,7 @@ $(document).on("click", "#placeorder", function() {
 	});
 });
 $(document).on("click", "#td_myorders", function() {
+	console.log('My orders');
 	$('#divhome').hide();
 	$('#product_list').hide();
 	$('#my_carts').hide();
@@ -238,6 +242,7 @@ $(document).on("click", "#btnSave", function() {
 });
 
 $(document).on("click", "#td_products", function() {
+	console.log('Go to load products');
 	loadProducts();
 });
 $(document).on("click","#username",function(){
@@ -293,6 +298,7 @@ $(document).on("click","#btn_backcart",function(){
 
 function loadProducts()
 {
+	console.log('Load products');
 	$('#divcontent').show();
 	$('#divhome').hide();
 	$('#product_list').show();
@@ -349,6 +355,7 @@ function loadProducts()
 }
 function showproduct(prdid)
 {
+	console.log('Show products');
 	alert("showproduct");
 	alert(prdid);
 	alert("hi");
