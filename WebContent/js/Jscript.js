@@ -348,7 +348,7 @@ function loadProducts()
 				}
 			productTable = productTable + "</table>";
 			alert(productTable);
-			$('#product_list').empty();
+//$('#product_list').empty();
 			$('#product_list').append(productTable);
 		}
 	});
@@ -377,7 +377,7 @@ function showproduct(prdid)
 			alert(obj[0].data.length);
 			alert(obj[0].data[0].productname);
 			//	$('#menu1').show();
-			$('#menu1').show();
+			//$('#menu1').show();
 				$('#product_list').show();
 				
 					
