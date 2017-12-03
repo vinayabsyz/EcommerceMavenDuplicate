@@ -360,7 +360,7 @@ function showproduct(prdid)
 	$('#userdiv').hide();
 	$('#changepwd').hide();
 	$('#prdndesc').show();
-	$('#product_list').hide();
+	//$('#product_list').hide();
 	
 	$.ajax({
 		url : '/Ecommerce?serviceId=show_productinfo',
