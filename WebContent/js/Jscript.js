@@ -359,7 +359,7 @@ function showproduct(prdid)
 	$('#divcontent').hide();
 	$('#userdiv').hide();
 	$('#changepwd').hide();
-	//$('#prdndesc').show();
+	$('#prdndesc').show();
 	$('#product_list').hide();
 	
 	$.ajax({
@@ -376,7 +376,7 @@ function showproduct(prdid)
 			alert(obj[0].data[0].productname);
 			//	$('#menu1').show();
 			//$('#menu1').show();
-				$('#product_list').show();
+				//$('#product_list').show();
 				
 					
 			$('#showPrdName').text(obj[0].data[0].productname);
