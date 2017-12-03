@@ -96,7 +96,7 @@ public class Carts {
 	{
 		String strOutput="";
 		int intUserId = Integer.parseInt(request.getParameter("userid"));
-		System.Console.log(intUserId);
+		System.out.println(intUserId);
 		Connection conn = null;
 		Statement stSelectCarts = null;
 		ResultSet rsSelectCarts = null;
