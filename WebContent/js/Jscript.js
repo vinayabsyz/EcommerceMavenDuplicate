@@ -100,7 +100,7 @@ $(document).on("click", "#btn_addtocart", function() {
 	var amount = quantity * price;
 	var userid = $('#hidid').val();//alert(productid);
 	$.ajax({
-		url : '/Ecommerce?serviceId=addtocart',
+		url : '/Ecommerce?serviceId=add_to_cart',
 		type: 'POST',
 		data : {
 			userid :userid,productid:productid,quantity:quantity,amount:amount,
