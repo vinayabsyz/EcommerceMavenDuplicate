@@ -107,8 +107,8 @@ $(document).on("click", "#btn_addtocart", function() {
 		},
 		success : function(responseText) {
 			console.log(responseText);
-			var obj = jQuery.parseJSON(responseText);
-			alert(obj[0].success[0].message);
+			//var obj = jQuery.parseJSON(responseText);
+			//alert(obj[0].success[0].message);
 			$('#divcontent').show();
 			$('#userdiv').hide();
 			$('#changepwd').hide();
