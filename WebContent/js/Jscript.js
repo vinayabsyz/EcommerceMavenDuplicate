@@ -438,7 +438,7 @@ $(document).on("click", "#td_mycarts", function() {
 	
 	var userid=$('#hidid').val();
 	$.ajax({
-		url : '/Ecommerce?serviceId=mycarts',
+		url : '/Ecommerce?serviceId=my_cart_list',
 		type: 'POST',
 		data : {
 			userid:userid,
