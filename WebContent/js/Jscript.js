@@ -106,6 +106,7 @@ $(document).on("click", "#btn_addtocart", function() {
 			userid :userid,productid:productid,quantity:quantity,amount:amount,
 		},
 		success : function(responseText) {
+			console.log(responseText);
 			var obj = jQuery.parseJSON(responseText);
 			alert(obj[0].success[0].message);
 			$('#divcontent').show();
