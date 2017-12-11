@@ -105,7 +105,7 @@ public class Carts {
 		try {
 			//String strQuery = "Select * from carts where userid = "+intUserId;
 			String strQuery = "Select c.cartid,c.userid,c.productid,c.quantity,c.amount,p.productname,p.price from carts c "
-					+ "join products p on c.productid = p.productid where c.userid = "+intUserId;
+					+ "join products p on c.productid = p.productid";
 			conn = DbConnection.getConnection();
 			stSelectCarts = conn.createStatement();
 			rsSelectCarts = stSelectCarts.executeQuery(strQuery);
