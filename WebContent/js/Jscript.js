@@ -278,9 +278,17 @@ $(document).on("click","#td_home",function(){
 })
 $(document).on("click","#divlogout",function(){
 	
-	$('#hidid').val("");
-	window.location.href = "/userlogin.html";
+window.addEventListener('storage', storageChange, false)
+	//$('#hidid').val("");
+	//window.location.href = "/userlogin.html";
+	
+	
 })
+function storageChange (event) {
+    if(event.key === 'logged_in') {
+        alert('Logged in: ' + event.newValue)
+    }
+}
 
 $(document).on("click","#btn_backpd",function(){
 	$('#divcontent').show();
