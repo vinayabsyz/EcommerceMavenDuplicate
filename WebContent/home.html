@@ -20,13 +20,14 @@
     <li class="active"><a href="#home"><b><u>Home</u></b></a></li>
 	<li><a href="#menu5"><b><u onclick="showuserinfo()">User Info</u></b></a></li>
     <li><a href="#menu1"><b><u onclick="loadProducts()">Products</u></b></a></li>
+
     <li><a href="#menu2"><b><u id="td_myorders">My Orders</u></b></a></li>
     
   
 <!--     <li><a href="#menu4"><b><u>All Products</u></b></a></li> -->
     
    
-	  <li class="pull-right"><a href="#menu6"><b><u id="divlogout">Logout</u></b></a></li><input type="hidden" id="hidid" value="" /><input type="hidden" id="hidPrdId" value="" />
+	  <li class="pull-right"><a href="#menu6"><b><u id="divlogout" onclick="storageChange()">Logout</u></b></a></li><input type="hidden" id="hidid" value="" /><input type="hidden" id="hidPrdId" value="" />
  <li class="pull-right"><a href="#menu3"><b><u id="td_mycarts">My Cart</u></b></a></li>
 	  </ul>
   
@@ -157,6 +158,14 @@
 
 
 </div>
+<script>
+function storageChange (event) {
+    if(event.key === 'logged_in') {
+        alert('Logged in: ' + event.newValue)
+    }
+}
+window.addEventListener('storage', storageChange, false)
+</script>
 <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
