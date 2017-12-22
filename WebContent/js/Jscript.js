@@ -287,7 +287,7 @@ $(document).on("click","#td_home",function(){
 	
 }) */
 function storageChange (event) {
-    if(event.key === 'logged_in') {
+    if(event.key === 'loggedout') {
         alert('Logged in: ' + event.newValue)
     }
 }
