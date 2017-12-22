@@ -290,8 +290,8 @@ $(document).on("click","#td_home",function(){
     if(event.key === 'loggedout') {
         alert('Logged in: ' + event.newValue)
     }
-} */
-window.addEventListener('storage', storageChange, false);
+} 
+window.addEventListener('storage', storageChange, false); */
 $(document).on("click","#btn_backpd",function(){
 	$('#divcontent').show();
 	$('#userdiv').hide();
