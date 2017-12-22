@@ -278,7 +278,9 @@ $(document).on("click","#td_home",function(){
 })
 $(document).on("click","#divlogout",function(){
 	
+	
 window.addEventListener('storage', storageChange, false)
+	alert('a');
 	//$('#hidid').val("");
 	//window.location.href = "/userlogin.html";
 	
