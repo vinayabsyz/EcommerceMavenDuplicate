@@ -276,21 +276,21 @@ $(document).on("click","#td_home",function(){
 	$('#product_list').hide();
 	$('#my_orders').hide();
 })
-/*$(document).on("click","#divlogout",function(){
+//$(document).on("click","#divlogout",function(){
 	
 	
 
-	alert('a');
+	//alert('a');
 	//$('#hidid').val("");
 	//window.location.href = "/userlogin.html";
 	
 	
 }) */
-function storageChange (event) {
+/*function storageChange (event) {
     if(event.key === 'loggedout') {
         alert('Logged in: ' + event.newValue)
     }
-}
+} */
 window.addEventListener('storage', storageChange, false);
 $(document).on("click","#btn_backpd",function(){
 	$('#divcontent').show();
