@@ -2,6 +2,8 @@ $(document).on("click", "#userlogin", function() {
 	var email = $('#txtEmail').val();
 	var pwd = $('#txtPwd').val();
 	alert(email+","+pwd);
+	localStorage.setItem("loggedin", "loginval");
+	alert('loggedin');
 	$.ajax({
 		url : '/Ecommerce?serviceId=login',
 		type: 'POST',
