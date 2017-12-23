@@ -2,10 +2,11 @@ import java.io.*;
 import java.sql.*;
 import javax.servlet.*;
 import javax.servlet.http.*;
-
+import main.java.com.absyz.core.DbConnection;
 public class UploadServlet1 extends HttpServlet {
    public void doPost(HttpServletRequest request,  HttpServletResponse response)throws IOException, ServletException{
-   response.setContentType("text/html");
+  Connection conn =null;
+      response.setContentType("text/html");
    PrintWriter out = response.getWriter();
 String saveFile="";
 String contentType = request.getContentType();
@@ -41,9 +42,9 @@ fileOut.close();
 out.println("You have successfully upload the file by the name of: "+saveFile);
 try {
 Class.forName("com.mysql.jdbc.Driver").newInstance();
-Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/test", "root", "root");
+conn = DbConnection.getConnection();
 File f = new File(saveFile);
-PreparedStatement psmnt = connection.prepareStatement("insert into image(image) values(?)");
+PreparedStatement psmnt = conn.prepareStatement("insert into image(image) values(?)");
 FileInputStream fis = new FileInputStream(f);
 psmnt.setBinaryStream(1, (InputStream)fis, (int)(f.length()));
 int s = psmnt.executeUpdate();
