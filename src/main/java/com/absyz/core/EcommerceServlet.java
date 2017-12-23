@@ -44,7 +44,8 @@ response.setContentType("application/json");
 		   }
 		   if (request.getParameter("serviceId").equals("profilepic"))
 		   {
-			   String strOutput = UploadServlet2.doPost(request,response);
+			  UploadServlet2 u=new UploadServlet2();
+			   String strOutput = u.doPost(request,response);
 			      // Set response content type
 			      //response.setContentType("text/html");
 response.setContentType("application/json");
