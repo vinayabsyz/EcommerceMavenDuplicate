@@ -17,6 +17,7 @@ import main.java.com.absyz.service.LoginService;
 import main.java.com.absyz.service.Orders;
 import main.java.com.absyz.service.Products;
 import main.java.com.absyz.service.UserRegistration;
+import main.java.com.absyz.service.UploadServlet2;
 
 // Extend HttpServlet class
 public class EcommerceServlet extends HttpServlet {
@@ -34,6 +35,16 @@ public class EcommerceServlet extends HttpServlet {
 		if (request.getParameter("serviceId").equals("userreg"))
 		   {
 			   String strOutput = UserRegistration.user_reg(request);
+			      // Set response content type
+			      //response.setContentType("text/html");
+response.setContentType("application/json");
+			      // Actual logic goes here.
+			      PrintWriter out = response.getWriter();
+			      out.println("<h1>" + strOutput + "</h1>");
+		   }
+		   if (request.getParameter("serviceId").equals("profilepic"))
+		   {
+			   String strOutput = UploadServlet2.doPost(request);
 			      // Set response content type
 			      //response.setContentType("text/html");
 response.setContentType("application/json");
