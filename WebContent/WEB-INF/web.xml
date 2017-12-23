@@ -23,7 +23,10 @@
    <servlet-name>UploadServlet</servlet-name>
    <servlet-class>main.java.com.absyz.core.UploadServlet</servlet-class>
 </servlet>
-
+ <servlet>
+   <servlet-name>UploadServlet1</servlet-name>
+   <servlet-class>main.java.com.absyz.core.UploadServlet1</servlet-class>
+</servlet>
 <servlet-mapping>
    <servlet-name>UploadServlet</servlet-name>
    <url-pattern>/UploadServlet</url-pattern>
