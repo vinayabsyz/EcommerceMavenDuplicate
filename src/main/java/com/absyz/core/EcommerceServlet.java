@@ -45,13 +45,12 @@ response.setContentType("application/json");
 		   if (request.getParameter("serviceId").equals("profilepic"))
 		   {
 			  UploadServlet2 u=new UploadServlet2();
-			   String strOutput = u.doPost(request,response);
+			    u.doPost(request,response);
 			      // Set response content type
 			      //response.setContentType("text/html");
 response.setContentType("application/json");
 			      // Actual logic goes here.
-			      PrintWriter out = response.getWriter();
-			      out.println("<h1>" + strOutput + "</h1>");
+			     
 		   }
 		   if (request.getParameter("serviceId").equals("login"))
 		   {
