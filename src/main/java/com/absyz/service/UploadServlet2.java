@@ -5,7 +5,7 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import main.java.com.absyz.core.DbConnection;
 public class UploadServlet2 extends HttpServlet {
-   public static void doPost(HttpServletRequest request,  HttpServletResponse response)throws IOException, ServletException{
+   public  void doPost(HttpServletRequest request,  HttpServletResponse response)throws IOException, ServletException{
   Connection conn =null;
       response.setContentType("text/html");
    PrintWriter out = response.getWriter();
