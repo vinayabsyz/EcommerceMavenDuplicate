@@ -57,3 +57,31 @@ System.out.println("unsucessfull to upload file.");
 }
 catch(Exception e){e.printStackTrace();
 }
+   out.println("<table align='center' border=1 width='200px'>");
+ out.println("<tr><td colspan=2 align='center'><b>Download Images</b></td></tr><tr><td colspan=2> </td></tr>");
+   String connectionURL = "jdbc:mysql://localhost:3306/test";
+  Connection con=null;
+  try{      
+    Class.forName("com.mysql.jdbc.Driver").newInstance();
+    con=DbConnection.getConnection();
+    Statement stmt=con.createStatement();
+    String strQuery = "select image_id from image";
+    ResultSet rs = stmt.executeQuery(strQuery);
+    int sno=0;
+    while(rs.next())
+    {
+      sno++;
+      out.println("<tr style=background-color:#efefef><td><b>"+sno+"</b></td><td align='center'><a href=DownloadFileServlet?id="+rs.getInt(1)+"><img src=DownloadFileServlet?id="+rs.getInt(1)+" width=50 height=50></a></td></tr>");
+    }
+      out.println("</table>");
+    rs.close();
+    con.close();
+    stmt.close();
+  }
+  catch(Exception e)
+  {
+    e.getMessage();
+  }
+}
+  }
+}
