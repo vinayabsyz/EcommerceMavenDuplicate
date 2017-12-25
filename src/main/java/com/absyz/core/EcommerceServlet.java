@@ -47,8 +47,8 @@ response.setContentType("application/json");
 			  UploadServlet2 u=new UploadServlet2();
 			    u.doPost(request,response);
 			      // Set response content type
-			      //response.setContentType("text/html");
-response.setContentType("application/json");
+			      response.setContentType("text/html");
+//response.setContentType("application/json");
 			      // Actual logic goes here.
 			     
 		   }
