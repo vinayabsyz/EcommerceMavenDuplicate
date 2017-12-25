@@ -119,7 +119,7 @@ FileInputStream fis = new FileInputStream(file);
 				
 			}
 					
-   	} catch (FileNotFoundException | IOException | sqlException e) {
+   	} catch (FileNotFoundException | IOException | SQLException e) {
 			// TODO Auto-generated catch block
 			try {
 				obj.put("success","failure");
