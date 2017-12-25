@@ -408,6 +408,7 @@ function showuserinfo()
 			if(obj[0].success[0].success == "success"){
 				$('#username').text('Welcome '+obj[0].data[0].firstname);
 				var usertable="<table border='1' width='100%'><tr class='tbl_header'><td colspan='4'>User Info</td></tr>";
+				usertable = usertable + "<tr><td class='tbl_header'>profilepic</td><td><img src="WebContent/images/dell_laptop.jpg" alt="Girl in a jacket" width="500" height="600"></td>";
 				usertable = usertable + "<tr><td class='tbl_header'>Firstname</td><td>"+obj[0].data[0].firstname+"</td><td class='tbl_header'>Lastname</td><td>"+obj[0].data[0].lastname+"</td></tr>";
 				usertable = usertable + "<tr><td class='tbl_header'>Email</td><td>"+obj[0].data[0].email+"</td><td class='tbl_header'>Mobile</td><td>"+obj[0].data[0].mobile+"</td></tr>";		
 				usertable = usertable + "<tr><td class='tbl_header'>Address1</td><td>"+obj[0].data[0].address1+"</td><td class='tbl_header'>Address2</td><td>"+obj[0].data[0].address2+"</td></tr>";
@@ -415,7 +416,7 @@ function showuserinfo()
 				usertable = usertable + "<tr><td class='tbl_header'>Country</td><td>"+obj[0].data[0].country+"</td><td class='tbl_header'>Zipcode</td><td>"+obj[0].data[0].zipcode+"</td></tr>";
 								
 				usertable = usertable + "<tr><td colspan='4' align='center'><input type='button' id='btnBack' value='Back' /><input type='button' id='btnChngPwd' value='Change Password' /></td></tr></table>";
-				<img src="img_girl.jpg" alt="Girl in a jacket" width="500" height="600">
+				
 				$('#menu5').empty();
 				$('#menu5').append(usertable);
 				$('#hidid').val(userid);
