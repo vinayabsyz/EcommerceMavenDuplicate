@@ -78,7 +78,7 @@ public class UserRegistration {
 				//String strDob = request.getParameter("dob");
 				String strGender = request.getParameter("gender");
 				
-				File file = new File(request.getParameter("photo"));
+				File file = new File(request.getParameter("image"));
 FileInputStream fis = new FileInputStream(file);
 
 				
