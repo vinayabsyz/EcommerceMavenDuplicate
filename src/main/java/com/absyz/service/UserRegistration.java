@@ -78,8 +78,8 @@ public class UserRegistration {
 				//String strDob = request.getParameter("dob");
 				String strGender = request.getParameter("gender");
 				
-				//File file = new File("C:/Users/Nagasai/Pictures/maxresdefault.jpg");
-//FileInputStream fis = new FileInputStream(file);
+				File file = new File("C:/Users/Nagasai/Pictures/maxresdefault.jpg");
+FileInputStream fis = new FileInputStream(file);
 
 				
 				
