@@ -66,7 +66,32 @@ $(document).on("click", "#userreg",function userReg(){
 	 }
 	
 });
-
+$(document).on("click", "#userreg1",function userReg(){
+	alert("hi");
+	
+	var imge = $('#file').val();
+	
+	
+		$.ajax({
+			url : '/Ecommerce?serviceId=profilepic',
+			type: 'POST',
+			data : {
+				image:imge
+			},
+			success : function(responseText) {
+				console.log(responseText);
+				var obj = jQuery.parseJSON(responseText);
+				console.log(obj);
+				if(obj[0].success == "success"){window.location.href = "/userlogin.html";}
+				
+					else{alert(obj.message);}
+						
+			}
+		});
+	
+	
+	
+});
 $(document).on("click", "#addproduct",function userReg(){
 	console.log('To add product');
 	var pname=$('#txtPname').val();
