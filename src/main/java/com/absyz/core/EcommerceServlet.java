@@ -46,7 +46,7 @@ response.setContentType("application/json");
 		   {
 			  UploadServlet2 u=new UploadServlet2();
 			    u.doPost(request,response);
-			   alert("hi");
+			  
 			   JOptionPane.showMessageDialog(null, "Java is fun!");
 			      // Set response content type
 			      response.setContentType("text/html");
