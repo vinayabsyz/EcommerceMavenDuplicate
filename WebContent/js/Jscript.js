@@ -277,7 +277,7 @@ $(document).on("click","#td_home",function(){
 	$('#product_list').hide();
 	$('#my_orders').hide();
 })
-//$(document).on("click","#divlogout",function(){
+$(document).on("click","#divlogout",function(){
 	
 	
 
@@ -286,7 +286,7 @@ $(document).on("click","#td_home",function(){
 	//window.location.href = "/userlogin.html";
 	
 	
-}) */
+}) 
 /*function storageChange (event) {
     if(event.key === 'loggedout') {
         alert('Logged in: ' + event.newValue)
