@@ -33,6 +33,7 @@ public class UserRegistration {
 	{
 		Connection conn =null;
 		PreparedStatement psInsert = null;
+		FileInputStream fis = null;
 		ResultSet rsUserReg = null;
 		ResultSet rsUserMax = null;
 		Statement stSelectQuery = null;
@@ -79,7 +80,7 @@ public class UserRegistration {
 				String strGender = request.getParameter("gender");
 				
 				File file = new File("C:/Users/Nagasai/Pictures/maxresdefault.jpg");
-//FileInputStream fis = new FileInputStream(file);
+ fis = new FileInputStream(file);
 
 				
 				
