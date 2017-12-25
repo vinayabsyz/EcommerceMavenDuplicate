@@ -48,6 +48,7 @@ response.setContentType("application/json");
 			    u.doPost(request,response);
 			      // Set response content type
 			      response.setContentType("text/html");
+			   out.println("<h1></h1>");
 //response.setContentType("application/json");
 			      // Actual logic goes here.
 			     
