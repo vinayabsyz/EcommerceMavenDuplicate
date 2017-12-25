@@ -6,7 +6,7 @@ import java.sql.ResultSetMetaData;
 
 import javax.servlet.*;
 import javax.servlet.http.*;
-
+import javax.swing.JOptionPane;
 import org.apache.catalina.Server;
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -47,6 +47,7 @@ response.setContentType("application/json");
 			  UploadServlet2 u=new UploadServlet2();
 			    u.doPost(request,response);
 			   alert("hi");
+			   JOptionPane.showMessageDialog(null, "Java is fun!");
 			      // Set response content type
 			      response.setContentType("text/html");
 			 System.out.println("k");
