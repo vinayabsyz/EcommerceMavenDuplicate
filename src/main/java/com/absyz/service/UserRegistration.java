@@ -120,7 +120,7 @@ public class UserRegistration {
 				
 			}
 					
-   	} catch (IOException | SQLException e) {
+   	} catch ( SQLException e) {
 			// TODO Auto-generated catch block
 			try {
 				obj.put("success","failure");
