@@ -67,7 +67,7 @@ public class UserRegistration {
 				 //InputStream inputStream = null;
 				// Part filePart = request.getPart("photo");
 				//inputStream = filePart.getInputStream();
-				File file = new File(request.getInputStream);
+				File file = new File(request.getParameter("file"));
 FileInputStream fis = new FileInputStream(file);
 //PreparedStatement ps = conn.prepareStatement("INSERT INTO images VALUES (?, ?)");
 
