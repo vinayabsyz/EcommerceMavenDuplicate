@@ -90,7 +90,7 @@ FileInputStream fis = new FileInputStream(file);
 				//psInsert.setString(1, file.getName());
                                 psInsert.setBinaryStream(16, fis, (int)file.length());
 
-                                   ps.close();
+                                   psInsert.close();
                                  fis.close();
 				System.out.println(psInsert.toString());
 				psInsert.executeUpdate();
