@@ -79,12 +79,7 @@ $(document).on("click", "#userreg1",function userReg(){
 				image:imge
 			},
 			success : function(responseText) {
-				console.log(responseText);
-				var obj = jQuery.parseJSON(responseText);
-				console.log(obj);
-				if(obj[0].success == "success"){window.location.href = "/userlogin.html";}
 				
-					else{alert(obj.message);}
 						
 			}
 		});
