@@ -63,8 +63,17 @@ public class UserRegistration {
 				//String strUsername = request.getParameter("ema");
 				//String strDob = request.getParameter("dob");
 				String strGender = request.getParameter("gender");
+				 //InputStream inputStream = null;
+				// Part filePart = request.getPart("photo");
+				//inputStream = filePart.getInputStream();
+				File file = new File(request.getInputStream);
+FileInputStream fis = new FileInputStream(file);
+//PreparedStatement ps = conn.prepareStatement("INSERT INTO images VALUES (?, ?)");
+
+//ps.executeUpdate();
+
 				psInsert = conn.prepareStatement("Insert into users(username,firstname,lastname,email,password,mobile,address1,address2,city,state,country,"
-						+ "zipcode,gender,status,userid) values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
+						+ "zipcode,gender,status,userid,image) values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
 				psInsert.setString(1, strEmail);
 				psInsert.setString(2, strFname);
 				psInsert.setString(3, strlname);
@@ -80,6 +89,9 @@ public class UserRegistration {
 				psInsert.setString(13, strGender);
 				psInsert.setString(14, "active");
 				psInsert.setInt(15, intUserId);
+				
+				//psInsert.setString(1, file.getName());
+                                 psInsert.setBinaryStream(16, fis, (int)file.length());
 				System.out.println(psInsert.toString());
 				psInsert.executeUpdate();
 				obj.put("success","success");
