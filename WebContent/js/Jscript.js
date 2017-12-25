@@ -16,7 +16,6 @@ $(document).ready(function (){
 });
 
 $(document).on("click", "#userreg",function userReg(){
-	alert("hi");
 	var fname=$('#txtFname').val();
 	var lname=$('#txtlname').val();
 	var email=$('#txtEmail').val();
@@ -31,7 +30,6 @@ $(document).on("click", "#userreg",function userReg(){
 	var landmark=$('#txtLadmark').val();
 	var pwd = $('#txtPwd').val();
 	var cfrmpwd = $('#txtCfrmPwd').val();
-	var image = $('#photo').val();
 	if($('#rdMale').is(':checked'))
 	 {
 	 	var gender = "Male";
@@ -48,7 +46,7 @@ $(document).on("click", "#userreg",function userReg(){
 			data : {
 				fname:fname,lname:lname,email:email,password:pwd,mobile:mobile,address1:address1,
 				address2:address2,city:city,state:state,country:country,zipcode:zipcode,landmark:landmark,
-				gender:gender,image:image
+				gender:gender
 			},
 			success : function(responseText) {
 				console.log(responseText);
@@ -67,29 +65,8 @@ $(document).on("click", "#userreg",function userReg(){
 	 }
 	
 });
-$(document).on("click", "#userreg1",function userReg(){
-	alert("hi");
-	
-	var imge = $('#file').val();
-	
-	
-		$.ajax({
-			url : '/Ecommerce?serviceId=profilepic',
-			type: 'POST',
-			data : {
-				image:imge
-			},
-			success : function(responseText) {
-				
-						
-			}
-		});
-	
-	
-	
-});
+
 $(document).on("click", "#addproduct",function userReg(){
-	console.log('To add product');
 	var pname=$('#txtPname').val();
 	var pcount=$('#txtPcount').val();
 	var bname=$('#txtBname').val();
@@ -115,22 +92,20 @@ $(document).on("click", "#addproduct",function userReg(){
 
 $(document).on("click", "#btn_addtocart", function() {
 	//var productid = $('input[name=product]:checked').attr('id'); 
-	console.log('Add to cart');
 	var productid = $('#hidPrdId').val();
 	var quantity = $('#txtgetQty').val();
 	var price = $('#showPrdPrice').text();
 	var amount = quantity * price;
 	var userid = $('#hidid').val();//alert(productid);
 	$.ajax({
-		url : '/Ecommerce?serviceId=add_to_cart',
+		url : '/Ecommerce?serviceId=addtocart',
 		type: 'POST',
 		data : {
 			userid :userid,productid:productid,quantity:quantity,amount:amount,
 		},
 		success : function(responseText) {
-			console.log(responseText);
-			//var obj = jQuery.parseJSON(responseText);
-			//alert(obj[0].success[0].message);
+			var obj = jQuery.parseJSON(responseText);
+			alert(obj[0].success[0].message);
 			$('#divcontent').show();
 			$('#userdiv').hide();
 			$('#changepwd').hide();
@@ -141,7 +116,6 @@ $(document).on("click", "#btn_addtocart", function() {
 });
 
 $(document).on("click", "#placeorder", function() {
-	console.log('Place order');
 	//alert("mani");
 	var shippingid="1";
 	var userid = $('#hidid').val();
@@ -196,7 +170,6 @@ $(document).on("click", "#placeorder", function() {
 	});
 });
 $(document).on("click", "#td_myorders", function() {
-	console.log('My orders');
 	$('#divhome').hide();
 	$('#product_list').hide();
 	$('#my_carts').hide();
@@ -265,7 +238,6 @@ $(document).on("click", "#btnSave", function() {
 });
 
 $(document).on("click", "#td_products", function() {
-	console.log('Go to load products');
 	loadProducts();
 });
 $(document).on("click","#username",function(){
@@ -300,20 +272,10 @@ $(document).on("click","#td_home",function(){
 })
 $(document).on("click","#divlogout",function(){
 	
-	
+	$('#hidid').val("");
+	window.location.href = "/userlogin.html";
+})
 
-	//alert('a');
-	//$('#hidid').val("");
-	//window.location.href = "/userlogin.html";
-	
-	
-}) 
-/*function storageChange (event) {
-    if(event.key === 'loggedout') {
-        alert('Logged in: ' + event.newValue)
-    }
-} 
-window.addEventListener('storage', storageChange, false); */
 $(document).on("click","#btn_backpd",function(){
 	$('#divcontent').show();
 	$('#userdiv').hide();
@@ -331,7 +293,6 @@ $(document).on("click","#btn_backcart",function(){
 
 function loadProducts()
 {
-	console.log('Load products');
 	$('#divcontent').show();
 	$('#divhome').hide();
 	$('#product_list').show();
@@ -348,7 +309,10 @@ function loadProducts()
 		success : function(responseText) {
 			console.log(responseText);
 			var obj = jQuery.parseJSON(responseText);
-			
+			alert('hi');
+			alert(responseText);
+			alert(obj[0].data.length);
+			alert(obj[0].data[0].productname);
 			var productTable="<table class='prdtable' width='100%'><tr class='tbl_header' style='height:30px;'><td>Select</td><td>Brand</td><td>Product Name</td><td> Price</td></tr>";
 			for(var i=0;i<obj[0].data.length;i++)
 			{
@@ -360,7 +324,7 @@ function loadProducts()
 				//var filename = " https://git.heroku.com/absyzecommerceportal.git/WebContent/images/"+obj[0].data[i].filename;
 				var filename = "images/"+obj[0].data[i].filename;;
 				console.log(filename);
-				
+				alert(filename);
 //>>>>>>> 3936b108a5b59962890db28e92fa04e5f4ac63a7
 				//alert(amt_id);
 				//productTable = productTable + "<tr style='height:100px;'><td><input name='product' type ='radio' id="+obj[0].data[i].productid+" onclick='showproduct(this.id);'/></td><td>"+obj[0].data[i].brandname+"</td><td>"+obj[0].data[i].productname+"</td><td id="+pr_id+">"+obj[0].data[i].price+"</td>" +
@@ -377,15 +341,14 @@ function loadProducts()
 				
 				}
 			productTable = productTable + "</table>";
-			
-//$('#product_list').empty();
+			alert(productTable);
+			$('#product_list').empty();
 			$('#product_list').append(productTable);
 		}
 	});
 }
 function showproduct(prdid)
 {
-	console.log('Show products');
 	alert("showproduct");
 	alert(prdid);
 	alert("hi");
@@ -393,7 +356,6 @@ function showproduct(prdid)
 	$('#userdiv').hide();
 	$('#changepwd').hide();
 	$('#prdndesc').show();
-	//$('#product_list').hide();
 	
 	$.ajax({
 		url : '/Ecommerce?serviceId=show_productinfo',
@@ -408,9 +370,7 @@ function showproduct(prdid)
 			alert(obj[0].data.length);
 			alert(obj[0].data[0].productname);
 			//	$('#menu1').show();
-			$('#menu1').show();
-				//$('#product_list').show();
-				
+				$('#product_list').show();
 					
 			$('#showPrdName').text(obj[0].data[0].productname);
 			$('#showBrand').text(obj[0].data[0].brandname);
@@ -470,7 +430,7 @@ $(document).on("click", "#td_mycarts", function() {
 	
 	var userid=$('#hidid').val();
 	$.ajax({
-		url : '/Ecommerce?serviceId=my_cart_list',
+		url : '/Ecommerce?serviceId=mycarts',
 		type: 'POST',
 		data : {
 			userid:userid,
