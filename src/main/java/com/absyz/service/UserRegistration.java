@@ -65,7 +65,7 @@ public class UserRegistration {
 				}
 				System.out.println("Inside");
 				String strFname = request.getParameter("fname");
-				//String strlname = request.getParameter("lname");
+				String strlname = request.getParameter("lname");
 				String strAddress1 = request.getParameter("address1");
 				String strAddress2 = request.getParameter("address2");
 				String strCity = request.getParameter("city");
@@ -88,12 +88,12 @@ FileInputStream fis = new FileInputStream(file);
 						+ "zipcode,gender,status,userid,image) values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
 				psInsert.setString(1, strEmail);
 				psInsert.setString(2, strFname);
-				//psInsert.setString(3, strlname);
+				psInsert.setString(3, strlname);
 				psInsert.setString(4, strEmail);
 				psInsert.setString(5, strPassword);
 				psInsert.setString(6, strMobile);
 				psInsert.setString(7, strAddress1);
-				//psInsert.setString(8, strAddress2);
+				psInsert.setString(8, strAddress2);
 				psInsert.setString(9, strCity);
 				psInsert.setString(10, strState);
 				psInsert.setString(11, strCountry);
