@@ -81,11 +81,8 @@ public class UserRegistration {
 				File file = new File(request.getParameter("photo"));
 FileInputStream fis = new FileInputStream(file);
 
-				}
-				catch (FileNotFoundException ex)  
-    {
-        // insert code to run when exception occurs
-    }
+				
+				
 
 				psInsert = conn.prepareStatement("Insert into users(username,firstname,lastname,email,password,mobile,address1,address2,city,state,country,"
 						+ "zipcode,gender,status,userid,image) values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
@@ -121,6 +118,11 @@ FileInputStream fis = new FileInputStream(file);
 				obj.put("message", "User Already Available");
 				
 			}
+		}
+			catch (FileNotFoundException ex)  
+    {
+        // insert code to run when exception occurs
+    }
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			try {
