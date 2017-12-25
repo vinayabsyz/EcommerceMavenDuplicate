@@ -31,7 +31,7 @@ $(document).on("click", "#userreg",function userReg(){
 	var landmark=$('#txtLadmark').val();
 	var pwd = $('#txtPwd').val();
 	var cfrmpwd = $('#txtCfrmPwd').val();
-	var imge = $('#photo').val();
+	var image = $('#photo').val();
 	if($('#rdMale').is(':checked'))
 	 {
 	 	var gender = "Male";
@@ -48,7 +48,7 @@ $(document).on("click", "#userreg",function userReg(){
 			data : {
 				fname:fname,lname:lname,email:email,password:pwd,mobile:mobile,address1:address1,
 				address2:address2,city:city,state:state,country:country,zipcode:zipcode,landmark:landmark,
-				gender:gender,image:imge
+				gender:gender,image:image
 			},
 			success : function(responseText) {
 				console.log(responseText);
