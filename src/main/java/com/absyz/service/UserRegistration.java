@@ -27,7 +27,7 @@ import org.json.JSONObject;
 import main.java.com.absyz.core.DbConnection;
 
 import java.sql.*;
-
+@MultipartConfig(maxFileSize = 16177215)
 public class UserRegistration {
 	public static String user_reg(HttpServletRequest request)
 	{
