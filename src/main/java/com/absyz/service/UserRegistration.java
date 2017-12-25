@@ -78,14 +78,14 @@ public class UserRegistration {
 				//String strDob = request.getParameter("dob");
 				String strGender = request.getParameter("gender");
 				
-				//File file = new File(request.getParameter("image"));
-//FileInputStream fis = new FileInputStream(file);
+				File file = new File(request.getParameter("image"));
+FileInputStream fis = new FileInputStream(file);
 
 				
 				
 
 				psInsert = conn.prepareStatement("Insert into users(username,firstname,lastname,email,password,mobile,address1,address2,city,state,country,"
-						+ "zipcode,gender,status,userid) values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
+						+ "zipcode,gender,status,userid,image) values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
 				psInsert.setString(1, strEmail);
 				psInsert.setString(2, strFname);
 				psInsert.setString(3, strlname);
@@ -103,7 +103,7 @@ public class UserRegistration {
 				psInsert.setInt(15, intUserId);
 				
 				//psInsert.setString(1, file.getName());
-                                //psInsert.setBinaryStream(16, fis, (int)file.length());
+                                psInsert.setBinaryStream(16, fis, (int)file.length());
 
                                    //psInsert.close();
                                 // fis.close();
@@ -119,7 +119,7 @@ public class UserRegistration {
 				
 			}
 					
-   	} catch ( SQLException e) {
+   	} catch (IOException | SQLException e) {
 			// TODO Auto-generated catch block
 			try {
 				obj.put("success","failure");
