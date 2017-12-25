@@ -86,7 +86,7 @@ FileInputStream fis = new FileInputStream(file);
 						+ "zipcode,gender,status,userid,image) values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
 				psInsert.setString(1, strEmail);
 				psInsert.setString(2, strFname);
-				psInsert.setString(3, strlname);
+				//psInsert.setString(3, strlname);
 				psInsert.setString(4, strEmail);
 				psInsert.setString(5, strPassword);
 				psInsert.setString(6, strMobile);
