@@ -80,7 +80,7 @@ public class UserRegistration {
 				String strGender = request.getParameter("gender");
 				 //Part filePart = request.getPart("image");
 				File file = new File("WebContent/images/dell_laptop.jpg");
- fis =  file.getInputStream();
+ fis =  new FileInputStream(file);
 
 				
 				
