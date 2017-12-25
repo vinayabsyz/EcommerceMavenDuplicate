@@ -191,7 +191,7 @@ public class UserRegistration {
 		return strOutput;
 	}
 	
-	public  static void doPost(HttpServletRequest request,  HttpServletResponse response)throws IOException, ServletException{
+	public   void doPost(HttpServletRequest request,  HttpServletResponse response)throws IOException, ServletException{
  System.out.println('k');
       Connection conn =null;
       response.setContentType("text/html");
