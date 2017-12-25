@@ -17,7 +17,8 @@ import javax.servlet.http.Part;
 @WebServlet("/uploadServlet")
 @MultipartConfig(maxFileSize = 16177215)    // upload file's size up to 16MB
 public class FileUploadDBServlet extends HttpServlet {
-     
+      protected void doPost(HttpServletRequest request,
+            HttpServletResponse response) throws ServletException, IOException {
     response.setContentType("text/html");
    PrintWriter out = response.getWriter();
 String saveFile="";
