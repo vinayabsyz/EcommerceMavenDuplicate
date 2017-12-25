@@ -79,7 +79,7 @@ public class UserRegistration {
 				String strGender = request.getParameter("gender");
 				
 				File file = new File("C:/Users/Nagasai/Pictures/maxresdefault.jpg");
-FileInputStream fis = new FileInputStream(file);
+//FileInputStream fis = new FileInputStream(file);
 
 				
 				
