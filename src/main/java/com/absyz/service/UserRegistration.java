@@ -80,7 +80,7 @@ public class UserRegistration {
 				String strGender = request.getParameter("gender");
 				
 				File file = new File("WebContent/images/dell_laptop.jpg");
- fis = new FileInputStream(file);
+ //fis = new FileInputStream(file);
 
 				
 				
@@ -120,7 +120,7 @@ public class UserRegistration {
 				
 			}
 					
-   	} catch (IOException | SQLException e) {
+   	} catch ( SQLException e) {
 			// TODO Auto-generated catch block
 			try {
 				obj.put("success","failure");
