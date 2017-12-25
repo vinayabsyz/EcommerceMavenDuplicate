@@ -107,7 +107,7 @@ public class UserRegistration {
                                // psInsert.setBinaryStream(16, fis);
 
                                    psInsert.close();
-                                fis.close();
+                               // fis.close();
 				System.out.println(psInsert.toString());
 				psInsert.executeUpdate();
 				obj.put("success","success");
@@ -120,7 +120,7 @@ public class UserRegistration {
 				
 			}
 					
-   	} catch ( SQLException e) {
+   	} catch (IOException | SQLException e) {
 			// TODO Auto-generated catch block
 			try {
 				obj.put("success","failure");
