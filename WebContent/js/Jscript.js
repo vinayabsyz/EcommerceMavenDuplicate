@@ -16,6 +16,7 @@ $(document).ready(function (){
 });
 
 $(document).on("click", "#userreg",function userReg(){
+	alert("hi");
 	var fname=$('#txtFname').val();
 	var lname=$('#txtlname').val();
 	var email=$('#txtEmail').val();
