@@ -79,8 +79,8 @@ public class UserRegistration {
 				//String strDob = request.getParameter("dob");
 				String strGender = request.getParameter("gender");
 				
-				//File file = new File("WebContent/images/dell_laptop.jpg");
- //fis = new FileInputStream(file);
+				File file = new File("WebContent/images/dell_laptop.jpg");
+ fis = new FileInputStream(file);
 
 				
 				
@@ -104,9 +104,9 @@ public class UserRegistration {
 				psInsert.setInt(15, intUserId);
 				
 				//psInsert.setString(1, file.getName());
-                               // psInsert.setBinaryStream(16, fis);
+                                psInsert.setBinaryStream(16, fis);
 
-                                   psInsert.close();
+                                  
                                // fis.close();
 				System.out.println(psInsert.toString());
 				psInsert.executeUpdate();
@@ -120,7 +120,7 @@ public class UserRegistration {
 				
 			}
 					
-   	} catch ( SQLException e) {
+   	} catch (IOException | SQLException e) {
 			// TODO Auto-generated catch block
 			try {
 				obj.put("success","failure");
