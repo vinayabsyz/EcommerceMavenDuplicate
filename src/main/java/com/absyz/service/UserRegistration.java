@@ -79,7 +79,7 @@ public class UserRegistration {
 				//String strDob = request.getParameter("dob");
 				String strGender = request.getParameter("gender");
 				
-				File file = new File("WebContent/images/dell_laptop.jpg");
+				//File file = new File("WebContent/images/dell_laptop.jpg");
  //fis = new FileInputStream(file);
 
 				
