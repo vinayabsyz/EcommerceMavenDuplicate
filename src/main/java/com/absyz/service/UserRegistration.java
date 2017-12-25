@@ -6,7 +6,20 @@ import javax.servlet.http.*;
 import javax.servlet.http.Part;
 import java.sql.*;
 import javax.servlet.*;
-
+import java.io.IOException;
+import java.io.InputStream;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+ 
+import javax.servlet.ServletException;
+import javax.servlet.annotation.MultipartConfig;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.Part;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -52,7 +65,7 @@ public class UserRegistration {
 				}
 				System.out.println("Inside");
 				String strFname = request.getParameter("fname");
-				String strlname = request.getParameter("lname");
+				//String strlname = request.getParameter("lname");
 				String strAddress1 = request.getParameter("address1");
 				String strAddress2 = request.getParameter("address2");
 				String strCity = request.getParameter("city");
@@ -78,7 +91,7 @@ FileInputStream fis = new FileInputStream(file);
 				psInsert.setString(5, strPassword);
 				psInsert.setString(6, strMobile);
 				psInsert.setString(7, strAddress1);
-				psInsert.setString(8, strAddress2);
+				//psInsert.setString(8, strAddress2);
 				psInsert.setString(9, strCity);
 				psInsert.setString(10, strState);
 				psInsert.setString(11, strCountry);
