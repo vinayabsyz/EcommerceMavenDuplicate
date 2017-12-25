@@ -77,7 +77,7 @@ public class UserRegistration {
 				//String strUsername = request.getParameter("ema");
 				//String strDob = request.getParameter("dob");
 				String strGender = request.getParameter("gender");
-				try{
+				
 				File file = new File(request.getParameter("photo"));
 FileInputStream fis = new FileInputStream(file);
 
@@ -118,12 +118,8 @@ FileInputStream fis = new FileInputStream(file);
 				obj.put("message", "User Already Available");
 				
 			}
-		}
-			catch (FileNotFoundException ex)  
-    {
-        // insert code to run when exception occurs
-    }
-		} catch (SQLException e) {
+					
+   	} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
 			try {
 				obj.put("success","failure");
