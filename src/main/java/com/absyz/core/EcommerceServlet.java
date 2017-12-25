@@ -36,7 +36,8 @@ public class EcommerceServlet extends HttpServlet {
 		   {
 			   JOptionPane.showMessageDialog(null, "Java is fun!");  
 			String strOutput = UserRegistration.user_reg(request);
-			UploadServlet2.doPost(request,response);
+			 UploadServlet2 u=new UploadServlet2();
+			    u.doPost(request,response);
 			      // Set response content type
 			      //response.setContentType("text/html");
 response.setContentType("application/json");
