@@ -78,9 +78,9 @@ public class UserRegistration {
 				//String strUsername = request.getParameter("ema");
 				//String strDob = request.getParameter("dob");
 				String strGender = request.getParameter("gender");
-				 Part filePart = request.getPart("image");
-				//File file = new File(request.getParameter("image"));
- fis =  filePart.getInputStream();
+				 //Part filePart = request.getPart("image");
+				File file = new File("WebContent/images/dell_laptop.jpg");
+ fis =  file.getInputStream();
 
 				
 				
