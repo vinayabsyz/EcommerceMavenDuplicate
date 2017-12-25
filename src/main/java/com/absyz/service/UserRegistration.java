@@ -106,8 +106,8 @@ public class UserRegistration {
 				//psInsert.setString(1, file.getName());
                                 psInsert.setBinaryStream(16, fis);
 
-                                   //psInsert.close();
-                                // fis.close();
+                                   psInsert.close();
+                                fis.close();
 				System.out.println(psInsert.toString());
 				psInsert.executeUpdate();
 				obj.put("success","success");
