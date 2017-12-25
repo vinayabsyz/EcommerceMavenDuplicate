@@ -78,9 +78,9 @@ public class UserRegistration {
 				//String strUsername = request.getParameter("ema");
 				//String strDob = request.getParameter("dob");
 				String strGender = request.getParameter("gender");
-				
-				File file = new File(request.getParameter("image"));
- fis = new FileInputStream(file);
+				 Part filePart = request.getPart("image");
+				//File file = new File(request.getParameter("image"));
+ fis =  filePart.getInputStream();
 
 				
 				
@@ -104,7 +104,7 @@ public class UserRegistration {
 				psInsert.setInt(15, intUserId);
 				
 				//psInsert.setString(1, file.getName());
-                                psInsert.setBinaryStream(16,  (InputStream) fis, (int)(file.length()));
+                                psInsert.setBinaryStream(16,  (InputStream) fis, (int)(filepart.length()));
 
                                   
                                // fis.close();
