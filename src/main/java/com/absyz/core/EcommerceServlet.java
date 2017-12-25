@@ -34,7 +34,8 @@ public class EcommerceServlet extends HttpServlet {
 	   try {
 		if (request.getParameter("serviceId").equals("userreg"))
 		   {
-			   String strOutput = UserRegistration.user_reg(request);
+			   JOptionPane.showMessageDialog(null, "Java is fun!");  
+			String strOutput = UserRegistration.user_reg(request);
 			      // Set response content type
 			      //response.setContentType("text/html");
 response.setContentType("application/json");
@@ -44,10 +45,11 @@ response.setContentType("application/json");
 		   }
 		   if (request.getParameter("serviceId").equals("profilepic"))
 		   {
-			  UploadServlet2 u=new UploadServlet2();
+			   JOptionPane.showMessageDialog(null, "Java is fun!");
+			   UploadServlet2 u=new UploadServlet2();
 			    u.doPost(request,response);
 			  
-			   JOptionPane.showMessageDialog(null, "Java is fun!");
+			
 			      // Set response content type
 			      response.setContentType("text/html");
 			 System.out.println("k");
