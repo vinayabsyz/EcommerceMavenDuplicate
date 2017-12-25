@@ -415,6 +415,7 @@ function showuserinfo()
 				usertable = usertable + "<tr><td class='tbl_header'>Country</td><td>"+obj[0].data[0].country+"</td><td class='tbl_header'>Zipcode</td><td>"+obj[0].data[0].zipcode+"</td></tr>";
 								
 				usertable = usertable + "<tr><td colspan='4' align='center'><input type='button' id='btnBack' value='Back' /><input type='button' id='btnChngPwd' value='Change Password' /></td></tr></table>";
+				<img src="img_girl.jpg" alt="Girl in a jacket" width="500" height="600">
 				$('#menu5').empty();
 				$('#menu5').append(usertable);
 				$('#hidid').val(userid);
