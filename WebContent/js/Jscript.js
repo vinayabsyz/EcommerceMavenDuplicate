@@ -47,7 +47,7 @@ $(document).on("click", "#userreg",function userReg(){
 			data : {
 				fname:fname,lname:lname,email:email,password:pwd,mobile:mobile,address1:address1,
 				address2:address2,city:city,state:state,country:country,zipcode:zipcode,landmark:landmark,
-				gender:gender,image:image
+				gender:gender
 			},
 			success : function(responseText) {
 				console.log(responseText);
