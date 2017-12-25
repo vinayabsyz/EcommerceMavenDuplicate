@@ -30,7 +30,7 @@ $(document).on("click", "#userreg",function userReg(){
 	var landmark=$('#txtLadmark').val();
 	var pwd = $('#txtPwd').val();
 	var cfrmpwd = $('#txtCfrmPwd').val();
-	var image = $('#photo').val();
+	//var image = $('#photo').val();
 	if($('#rdMale').is(':checked'))
 	 {
 	 	var gender = "Male";
