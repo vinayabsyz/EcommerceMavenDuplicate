@@ -381,6 +381,7 @@ function showproduct(prdid)
 		}
 	});
 }
+
 function showuserinfo()
 {
 	var searchParams = new URLSearchParams(window.location.search); //?anything=123
