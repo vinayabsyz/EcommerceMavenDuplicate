@@ -164,8 +164,8 @@
 <script>
 function logout(){
  alert("Hi, " + localStorage.getItem("loggedin"));
-	//localStorage.removeItem("loggedin");
-	localStorage.clear();
+	localStorage.removeItem("loggedin");
+	//localStorage.clear();
 	alert("Cl, " + localStorage.getItem("loggedin"));
 	window.location.href = "/userlogin.html";
 	
