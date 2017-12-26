@@ -406,7 +406,7 @@ function showuserinfo()
 				
 				//$('#menu5').empty();
 				
-				$('#menu5').append(usertable);
+				//$('#menu5').append(usertable);
 				$('#hidid').val(userid);
 			}
 			else{
