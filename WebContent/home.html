@@ -165,6 +165,8 @@
 function logout(){
  alert("Hi, " + localStorage.getItem("loggedin"));
 	localStorage.removeItem("loggedin");
+	window.location.href = "/userlogin.html";
+	
 
 }
 
