@@ -40,6 +40,6 @@
 	    <context-param> 
     <description>Location to store uploaded file</description> 
     <param-name>file-path</param-name> 
-    <param-value>images</param-value> 
+    <param-value>WebContent/images</param-value> 
 </context-param>
     </web-app>  
