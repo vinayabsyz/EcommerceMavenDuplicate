@@ -365,7 +365,10 @@ function showproduct(prdid)
 		}
 	});
 }
-
+function showuserinfo()
+{
+	
+	}
 
 $(document).on("click", "#td_mycarts", function() {
 	
