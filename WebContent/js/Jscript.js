@@ -254,11 +254,11 @@ $(document).on("click","#td_home",function(){
 	$('#product_list').hide();
 	$('#my_orders').hide();
 })
-/*$(document).on("click","#divlogout",function(){
+$(document).on("click","#divlogout",function(){
 	
 	$('#hidid').val("");
 	window.location.href = "/userlogin.html";
-}) */
+}) 
 
 $(document).on("click","#btn_backpd",function(){
 	$('#divcontent').show();
