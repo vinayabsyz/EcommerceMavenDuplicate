@@ -17,19 +17,16 @@
   <div class="container">
   
   <ul class="nav nav-tabs">
-    <li class="active"><a href="#home" onclick="logout1()"><b><u>Home</u></b></a></li>
-	<li><a href="#menu5"><b><u onclick="logout1(),showuserinfo()">User Info</u></b></a></li>
-    <li><a href="#menu1"><b><u onclick="logout1(),loadProducts() ">Products</u></b></a></li>
-
-    <li><a href="#menu2"><b><u id="td_myorders" onclick="logout1()">My Orders</u></b></a></li>
+    <li class="active"><a href="#home"><b><u>Home</u></b></a></li>
+	<li><a href="#menu5"><b><u onclick="showuserinfo()">User Info</u></b></a></li>
+    <li><a href="#menu1"><b><u onclick="loadProducts()">Products</u></b></a></li>
+    <li><a href="#menu2"><b><u id="td_myorders">My Orders</u></b></a></li>
     
-  
+    <li  class="pull-right"><a href="#menu3"><b><u id="td_mycarts">My Cart</u></b></a></li>
 <!--     <li><a href="#menu4"><b><u>All Products</u></b></a></li> -->
     
-   
-	  <li class="pull-right"><a href="#menu6"><b><u id="divlogout" onclick="logout()">Logout</u></b></a></li><input type="hidden" id="hidid" value="" /><input type="hidden" id="hidPrdId" value="" />
- <li class="pull-right"><a href="#menu3"><b><u id="td_mycarts">My Cart</u></b></a></li>
-	  </ul>
+    <li><a href="#menu6"><b><u id="divlogout">Logout</u></b></a></li><input type="hidden" id="hidid" value="" /><input type="hidden" id="hidPrdId" value="" />
+  </ul>
   
 <br/>
     <br/>
@@ -62,14 +59,12 @@
         <div class="panel-body"><div class="panel panel-primary">
       <div class="panel-body">
       <div id="showPrdName"> <label>Product Name: </label><br/></div>
-	      <div id="showBrand">    <label>Brand: </label><br/></div>
-	      <div id="showPrdPrice">  <label>Description:</label></br/></div>
+        <label>Brand: </label><br/>
+        <label>Description:</label></br/>
         <form>
           <div class="form-group">
   <label for="usr">Count:</label>
   <input type="text" class="form-control" id="usr">
-		  <input type="button" id="btn_backpd" value="Back"/> <input type="button" id="btn_addtocart" value="Add to Cart"/><input type="hidden" id="hidPrdId" value=""/></td>						
-		
 </div>
   </form>
 </div>
@@ -129,9 +124,6 @@
 <!--     </div> -->
     
 <div id="menu5" class="tab-pane fade">
-	
-
-
 <!--       <h3>Display user info table here</h3> -->
 <!--       <p>user info table</p> -->
     </div>
@@ -161,30 +153,6 @@
 
 
 </div>
-<script>
-	function logout1(){
-	var cl1= localStorage.getItem("loggedin");
-		if(cl1==null){
-		window.location.href="/userlogin.html";
-		}
-	}
-	
-	
-	
-function logout(){
- alert("Hi, " + localStorage.getItem("loggedin"));
-	localStorage.removeItem("loggedin");
-	//localStorage.clear();
-	var Cl=localStorage.getItem("loggedin")
-	alert("Cl, " + Cl);
-	
-	if(Cl==null){
-	window.location.href = "/userlogin.html";}
-	
-
-}
-
-</script>
 <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
