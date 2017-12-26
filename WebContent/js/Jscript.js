@@ -293,10 +293,7 @@ function loadProducts()
 		success : function(responseText) {
 			console.log(responseText);
 			var obj = jQuery.parseJSON(responseText);
-			alert('hi');
-			alert(responseText);
-			alert(obj[0].data.length);
-			alert(obj[0].data[0].productname);
+			
 			var productTable="<table class='prdtable' width='100%'><tr class='tbl_header' style='height:30px;'><td>Select</td><td>Brand</td><td>Product Name</td><td> Price</td></tr>";
 			for(var i=0;i<obj[0].data.length;i++)
 			{
@@ -308,7 +305,7 @@ function loadProducts()
 				//var filename = " https://git.heroku.com/absyzecommerceportal.git/WebContent/images/"+obj[0].data[i].filename;
 				var filename = "images/"+obj[0].data[i].filename;;
 				console.log(filename);
-				alert(filename);
+				
 //>>>>>>> 3936b108a5b59962890db28e92fa04e5f4ac63a7
 				//alert(amt_id);
 				//productTable = productTable + "<tr style='height:100px;'><td><input name='product' type ='radio' id="+obj[0].data[i].productid+" onclick='showproduct(this.id);'/></td><td>"+obj[0].data[i].brandname+"</td><td>"+obj[0].data[i].productname+"</td><td id="+pr_id+">"+obj[0].data[i].price+"</td>" +
@@ -333,9 +330,7 @@ function loadProducts()
 }
 function showproduct(prdid)
 {
-	alert("showproduct");
-	alert(prdid);
-	alert("hi");
+	
 	$('#divcontent').hide();
 	$('#userdiv').hide();
 	$('#changepwd').hide();
@@ -367,7 +362,47 @@ function showproduct(prdid)
 }
 function showuserinfo()
 {
-	
+	var searchParams = new URLSearchParams(window.location.search); //?anything=123
+	var userid = searchParams.get("userid");
+	console.log(userid);
+	$('#divcontent').show();
+	$('#userdiv').hide();
+	$('#changepwd').hide();
+	$('#prdndesc').hide();
+	$.ajax({
+		url : '/Ecommerce?serviceId=showuser',
+		type: 'POST',
+		data : {
+			userid:userid,
+		},
+		success : function(responseText) {
+			
+			console.log(responseText);
+			console.log('Showuserinfo'+responseText);
+			var obj = jQuery.parseJSON(responseText);
+			//alert(obj.length);
+			console.log(obj);
+			//alert(obj[0].data[0].zipcode);
+			if(obj[0].success[0].success == "success"){
+				$('#username').text('Welcome '+obj[0].data[0].firstname);
+				var usertable="<table border='1' width='100%'><tr class='tbl_header'><td colspan='4'>User Info</td></tr>";
+				usertable = usertable + "<tr><td class='tbl_header'>Firstname</td><td>"+obj[0].data[0].firstname+"</td><td class='tbl_header'>Lastname</td><td>"+obj[0].data[0].lastname+"</td></tr>";
+				usertable = usertable + "<tr><td class='tbl_header'>Email</td><td>"+obj[0].data[0].email+"</td><td class='tbl_header'>Mobile</td><td>"+obj[0].data[0].mobile+"</td></tr>";		
+				usertable = usertable + "<tr><td class='tbl_header'>Address1</td><td>"+obj[0].data[0].address1+"</td><td class='tbl_header'>Address2</td><td>"+obj[0].data[0].address2+"</td></tr>";
+				usertable = usertable + "<tr><td class='tbl_header'>City</td><td>"+obj[0].data[0].city+"</td><td class='tbl_header'>State</td><td>"+obj[0].data[0].state+"</td></tr>";
+				usertable = usertable + "<tr><td class='tbl_header'>Country</td><td>"+obj[0].data[0].country+"</td><td class='tbl_header'>Zipcode</td><td>"+obj[0].data[0].zipcode+"</td></tr>";
+								
+				usertable = usertable + "<tr><td colspan='4' align='center'><input type='button' id='btnBack' value='Back' /><input type='button' id='btnChngPwd' value='Change Password' /></td></tr></table>";
+				$('#menu5').empty();
+				$('#menu5').append(usertable);
+				$('#hidid').val(userid);
+			}
+			else{
+				alert("Wrong Login Credientials");$('#txtEmail').val("");$('#txtPwd').val("");
+			}
+			
+		}
+	});
 	}
 
 $(document).on("click", "#td_mycarts", function() {
