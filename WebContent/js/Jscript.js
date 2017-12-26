@@ -16,6 +16,11 @@ $(document).ready(function (){
 });
 function showuserinfo()
 {
+	var Cl=localStorage.getItem("loggedin")
+	alert("Cl, " + Cl);
+	
+	if(Cl==null){
+	window.location.href = "/userlogin.html";}
 	var searchParams = new URLSearchParams(window.location.search); //?anything=123
 	var userid = searchParams.get("userid");
 	console.log(userid);
