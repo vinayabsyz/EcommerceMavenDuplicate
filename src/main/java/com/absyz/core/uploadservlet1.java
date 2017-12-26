@@ -30,7 +30,8 @@ public class uploadservlet1 extends HttpServlet {
 
 	   public void init( ){
 	      // Get the file location where it would be stored.
-	       filePath = getServletContext().getInitParameter("file-path"); 
+	       //filePath = getServletContext().getInitParameter("file-path"); 
+		 filePath = "WebContent\\images\\"; 
 	   }
 	   public void doPost(HttpServletRequest request,    HttpServletResponse response)   throws ServletException, java.io.IOException {
 		   
