@@ -1,20 +1,3 @@
-$(document).ready(function (){
-	
-	//showuserinfo();
-	//loadProducts();
-	
-//	if($('#hidid').val() != "")
-//	{
-//		showuserinfo();
-//		loadProducts();
-//		}
-//	else
-//	{
-//		window.location.href = "https://localhost:8080/Ecommerce/userlogin.html";
-//		}
-//	
-});
-
 $(document).on("click", "#userreg",function userReg(){
 	var fname=$('#txtFname').val();
 	var lname=$('#txtlname').val();
@@ -30,6 +13,7 @@ $(document).on("click", "#userreg",function userReg(){
 	var landmark=$('#txtLadmark').val();
 	var pwd = $('#txtPwd').val();
 	var cfrmpwd = $('#txtCfrmPwd').val();
+	var image = $('#photo').val();
 	if($('#rdMale').is(':checked'))
 	 {
 	 	var gender = "Male";
@@ -46,7 +30,7 @@ $(document).on("click", "#userreg",function userReg(){
 			data : {
 				fname:fname,lname:lname,email:email,password:pwd,mobile:mobile,address1:address1,
 				address2:address2,city:city,state:state,country:country,zipcode:zipcode,landmark:landmark,
-				gender:gender
+				gender:gender,image:image
 			},
 			success : function(responseText) {
 				console.log(responseText);
@@ -270,11 +254,11 @@ $(document).on("click","#td_home",function(){
 	$('#product_list').hide();
 	$('#my_orders').hide();
 })
-$(document).on("click","#divlogout",function(){
+/*$(document).on("click","#divlogout",function(){
 	
 	$('#hidid').val("");
 	window.location.href = "/userlogin.html";
-})
+}) */
 
 $(document).on("click","#btn_backpd",function(){
 	$('#divcontent').show();
@@ -382,10 +366,6 @@ function showproduct(prdid)
 	});
 }
 
-function showuserinfo()
-{
-	
-	}
 
 $(document).on("click", "#td_mycarts", function() {
 	
@@ -530,5 +510,3 @@ function add_totalamount(id)
 	$('#txtTotal').val("");
 	$('#txtTotal').val(total_amount);
 }
-
-
