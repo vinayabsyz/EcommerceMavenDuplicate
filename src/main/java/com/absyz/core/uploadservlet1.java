@@ -19,7 +19,7 @@ import javax.servlet.http.Part;
 /**
  * Servlet implementation class UploadServlet
  */
-public class UploadServlet1 extends HttpServlet {
+public class uploadservlet1 extends HttpServlet {
     private static final long serialVersionUID = 1L;
        
 	private boolean isMultipart;
