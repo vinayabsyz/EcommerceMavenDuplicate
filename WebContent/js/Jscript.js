@@ -402,22 +402,8 @@ function showuserinfo()
 				usertable = usertable + "<tr><td colspan='4' align='center'><input type='button' id='btnBack' value='Back' /><input type='button' id='btnChngPwd' value='Change Password' /></td></tr></table>";
 				//usertable = usertable + "<tr><td colspan='4' align='center'><img  alt='product' src='images/download.jpg' width='250px' height='250px'/></td></tr>
 			
-				$('#menu5').html("<img  alt='product' src='images/download.jpg' width='250px' height='250px'>");
-				$('#menu5').html("<form action="/uploadservlet1" method="Post"  enctype="multipart/form-data">
-
-<table style='width:500px;  margin:auto'>
-<tr>
-<td> Select Photo  </td>
-<td><input type="file" name="file" size="50" /></td>
-</tr>
-
-<tr>
-<td colspan="2" align="center">
-<input type="submit" value="Upload File" />
-</td>
-</tr>
-</table>
-</form>");
+				$('#menu5').html("<img  alt='product' src='images/owbPy.jpg' width='250px' height='250px'>");
+				
 				//$('#menu5').empty();
 				
 				$('#menu5').append(usertable);
