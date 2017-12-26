@@ -17,11 +17,11 @@
   <div class="container">
   
   <ul class="nav nav-tabs">
-    <li class="active"><a href="#home" onclick="logout()"><b><u>Home</u></b></a></li>
-	<li><a href="#menu5"><b><u onclick="showuserinfo(),logout()">User Info</u></b></a></li>
-    <li><a href="#menu1"><b><u onclick="loadProducts(),logout()">Products</u></b></a></li>
+    <li class="active"><a href="#home" onclick="logout1()"><b><u>Home</u></b></a></li>
+	<li><a href="#menu5"><b><u onclick="showuserinfo()">User Info</u></b></a></li>
+    <li><a href="#menu1"><b><u onclick="loadProducts()">Products</u></b></a></li>
 
-    <li><a href="#menu2"><b><u id="td_myorders" onclick="logout()">My Orders</u></b></a></li>
+    <li><a href="#menu2"><b><u id="td_myorders" onclick="logout1()">My Orders</u></b></a></li>
     
   
 <!--     <li><a href="#menu4"><b><u>All Products</u></b></a></li> -->
@@ -162,6 +162,15 @@
 
 </div>
 <script>
+	function logout1(){
+	var cl1= localStorage.getItem("loggedin");
+		if(cl1==null){
+		window.location.href="/userlogin.html";
+		}
+	}
+	
+	
+	
 function logout(){
  alert("Hi, " + localStorage.getItem("loggedin"));
 	localStorage.removeItem("loggedin");
