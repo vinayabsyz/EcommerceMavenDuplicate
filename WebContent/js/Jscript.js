@@ -547,7 +547,7 @@ function showrow()
 }
 function add_totalamount(id)
 {
-	//alert(id);
+	alert(id);
 	//alert($("#"+id).is(':checked'));
 	var product_ids = id.split("_");
 	var product_id = product_ids[0];
