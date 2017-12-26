@@ -17,7 +17,7 @@ import main.java.com.absyz.service.LoginService;
 import main.java.com.absyz.service.Orders;
 import main.java.com.absyz.service.Products;
 import main.java.com.absyz.service.UserRegistration;
-import main.java.com.absyz.service.UploadServlet2;
+
 
 // Extend HttpServlet class
 public class EcommerceServlet extends HttpServlet {
@@ -45,8 +45,8 @@ response.setContentType("application/json");
 		   if (request.getParameter("serviceId").equals("profilepic"))
 		   {
 			   JOptionPane.showMessageDialog(null, "Java is fun!");
-			   UploadServlet2 u=new UploadServlet2();
-			    u.doPost(request,response);
+			 
+			 
 			  
 			
 			      // Set response content type
