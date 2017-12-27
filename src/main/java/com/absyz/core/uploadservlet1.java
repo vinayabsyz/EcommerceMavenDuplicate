@@ -14,7 +14,7 @@ import org.apache.commons.fileupload.FileItem;
 import org.apache.commons.fileupload.FileUploadException;
 import org.apache.commons.fileupload.disk.DiskFileItemFactory;
 import org.apache.commons.fileupload.servlet.ServletFileUpload;
-
+import java.net.URLEncoder;
 import javax.servlet.http.Part;
 /**
  * Servlet implementation class UploadServlet
