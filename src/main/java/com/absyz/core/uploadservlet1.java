@@ -35,7 +35,7 @@ public class uploadservlet1 extends HttpServlet {
 	       //filePath = getServletContext().getInitParameter("file-path"); 
 		
 		   //uploadservlet1 u=new uploadservlet1();
-		   filePath ="WebContent\\images"; 
+		   filePath ="https://absyzecommerceportal.herokuapp.com/images"; 
 		
 		  
 		   
