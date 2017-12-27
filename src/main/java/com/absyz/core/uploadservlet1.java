@@ -14,6 +14,8 @@ import org.apache.commons.fileupload.FileItem;
 import org.apache.commons.fileupload.FileUploadException;
 import org.apache.commons.fileupload.disk.DiskFileItemFactory;
 import org.apache.commons.fileupload.servlet.ServletFileUpload;
+import java.io.UnsupportedEncodingException;
+
 import java.net.URLDecoder;
 import javax.servlet.http.Part;
 /**
@@ -31,7 +33,8 @@ public class uploadservlet1 extends HttpServlet {
 	   public void init( ){
 	      // Get the file location where it would be stored.
 	       //filePath = getServletContext().getInitParameter("file-path"); 
-		 filePath = getPath(); 
+		uploadservlet1 u=new uploadservlet1();
+		   filePath = u.getPath(); 
 	   }
 	   public void doPost(HttpServletRequest request,    HttpServletResponse response)   throws ServletException, java.io.IOException {
 		   
@@ -109,7 +112,7 @@ public class uploadservlet1 extends HttpServlet {
 	   public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException { doPost(request, response); }
 	   	    
 	
-public static String getPath() throws UnsupportedEncodingException {
+public String getPath() throws UnsupportedEncodingException {
 String path = this.getClass().getClassLoader().getResource("").getPath();
 String fullPath = URLDecoder.decode(path, "UTF-8");
 String pathArr[] = fullPath.split("/WEB-INF/classes/");
