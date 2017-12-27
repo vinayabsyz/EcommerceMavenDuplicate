@@ -33,12 +33,12 @@ public class uploadservlet1 extends HttpServlet {
 	   public void init( ){
 	      // Get the file location where it would be stored.
 	       //filePath = getServletContext().getInitParameter("file-path"); 
-		try {
-		   uploadservlet1 u=new uploadservlet1();
-		   filePath = u.getPath(); 
-		}
-		   catch (UnsupportedEncodingException e) {
-		   }
+		
+		   //uploadservlet1 u=new uploadservlet1();
+		   filePath ="WebContent\\images\\"; 
+		
+		  
+		   
 	   }
 	   public void doPost(HttpServletRequest request,    HttpServletResponse response)   throws ServletException, java.io.IOException {
 		   
@@ -61,7 +61,7 @@ public class uploadservlet1 extends HttpServlet {
 	      factory.setSizeThreshold(maxMemSize);
      
 	      // Location to save data that is larger than maxMemSize.
-	      factory.setRepository(new File("WebContent/images"));
+	      factory.setRepository(new File("WebContent\\temp"));
 
 	      // Create a new file upload handler
 	      ServletFileUpload up = new ServletFileUpload(factory);
