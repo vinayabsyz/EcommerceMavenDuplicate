@@ -126,7 +126,7 @@ System.out.println(pathArr[0]);
 fullPath = pathArr[0];
 String reponsePath = "";
 // to read a file from webcontent
-reponsePath = new File(fullPath).getPath() + File.separatorChar + "newfile.txt";
+reponsePath = new File(fullPath).getPath() + File.separatorChar;
 return reponsePath;
 }
 
