@@ -35,7 +35,7 @@ public class uploadservlet1 extends HttpServlet {
 	       //filePath = getServletContext().getInitParameter("file-path"); 
 		
 		   //uploadservlet1 u=new uploadservlet1();
-		   filePath ="images\\"; 
+		   filePath ="EcommerceMaven\\WebContent\\images\\"; 
 		
 		  
 		   
@@ -61,7 +61,7 @@ public class uploadservlet1 extends HttpServlet {
 	      factory.setSizeThreshold(maxMemSize);
      
 	      // Location to save data that is larger than maxMemSize.
-	      factory.setRepository(new File("WebContent"));
+	      factory.setRepository(new File("EcommerceMaven"));
 
 	      // Create a new file upload handler
 	      ServletFileUpload up = new ServletFileUpload(factory);
