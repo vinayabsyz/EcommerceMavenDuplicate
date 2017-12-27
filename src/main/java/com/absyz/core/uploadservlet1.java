@@ -126,7 +126,7 @@ reponsePath = new File(fullPath).getPath() + File.separatorChar + "newfile.txt";
 return reponsePath;
 }
 
-	Catch(UnsupportedEncodingException){
+	Catch(UnsupportedEncodingException e){
 	return null;
 	}
 }
