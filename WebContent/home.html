@@ -129,24 +129,25 @@
 <!--     </div> -->
     
 <div id="menu5" class="tab-pane fade">
-	<img src="images/owbPy.jpg" alt="Mountain View">
-<div>	
-<form action="/uploadservlet1" method="Post"  enctype="multipart/form-data">
+	<head>
+    <title>File Upload with Java, Play 2, and S3</title>
+    <link rel="shortcut icon" type="image/png" href="@routes.Assets.at("images/favicon.png")">
+</head>
+<body>
+    <h1>Upload a file:</h1>
+    @helper.form(action = routes.Application.upload, 'enctype -> "multipart/form-data") {
+        <input type="file" name="upload">
+        <input type="submit">
+    }
 
-<table style='width:500px;  margin:auto'>
-<tr>
-<td> Select Photo  </td>
-<td><input type="file" name="file" size="50" /></td>
-</tr>
+    <h1>Uploads:</h1>
+    <ul>
+    @for(upload <- uploads) {
+        <li><a href="@upload.getUrl()">@upload.name</a></li>
+    }
+    </ul>
 
-<tr>
-<td colspan="2" align="center">
-<input type="submit" value="Upload File" />
-</td>
-</tr>
-</table>
-</form>
-	</div>
+</body>
 <!--       <h3>Display user info table here</h3> -->
 <!--       <p>user info table</p> -->
     </div>
