@@ -113,7 +113,7 @@ public class uploadservlet1 extends HttpServlet {
 	   	    
 	
 public String getPath() throws UnsupportedEncodingException {
-	try{
+	try {
 String path = this.getClass().getClassLoader().getResource("").getPath();
 String fullPath = URLDecoder.decode(path, "UTF-8");
 String pathArr[] = fullPath.split("/WEB-INF/classes/");
@@ -127,7 +127,8 @@ return reponsePath;
 }
 
 	catch (UnsupportedEncodingException e) {
-	return null;
+	e.printStackTrace();
+		return null;
 	}
 }
 }
