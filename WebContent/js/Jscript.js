@@ -293,38 +293,65 @@ function loadProducts()
 		success : function(responseText) {
 			console.log(responseText);
 			var obj = jQuery.parseJSON(responseText);
+			alert(responseText);
+			alert(obj);
 			
-			var productTable="<table class='prdtable' width='100%'><tr class='tbl_header' style='height:30px;'><td>Select</td><td>Brand</td><td>Product Name</td><td> Price</td></tr>";
+  
+			//alert(obj[0].data.length);
+			//alert(obj[0].data[0].productname);
+			var productTable="<table class='table table-bordered' width='100%'><tr class='tbl_header' style='height:30px;'><td>Select</td><td>Brand</td><td>Product Name</td><td> Price</td><td>quantity</td></tr>";
 			for(var i=0;i<obj[0].data.length;i++)
 			{
 				var pr_id = "pr_"+obj[0].data[i].productid;
-//<<<<<<< HEAD
-				//var filename = "images/"+obj[0].data[i].filename;
-
-				//var filename = "WebContent/images/"+obj[0].data[i].filename;
-				//var filename = " https://git.heroku.com/absyzecommerceportal.git/WebContent/images/"+obj[0].data[i].filename;
-				var filename = "images/"+obj[0].data[i].filename;;
-				console.log(filename);
-				
-//>>>>>>> 3936b108a5b59962890db28e92fa04e5f4ac63a7
+				var filename = "images/"+obj[0].data[i].filename;
+				var pid=obj[0].data[i].productid;
+				var pquantity="2";
+				//var quant;
+				var pprice=obj[0].data[i].price;
 				//alert(amt_id);
 				//productTable = productTable + "<tr style='height:100px;'><td><input name='product' type ='radio' id="+obj[0].data[i].productid+" onclick='showproduct(this.id);'/></td><td>"+obj[0].data[i].brandname+"</td><td>"+obj[0].data[i].productname+"</td><td id="+pr_id+">"+obj[0].data[i].price+"</td>" +
 				if(i%2 == 0)
 				{
-					productTable = productTable + "<tr class='tbl_even_row' style='height:100px;'><td><img id="+obj[0].data[i].productid+" src="+filename+" height='100' width='100' onclick='showproduct(this.id);'/></td><td>"+obj[0].data[i].brandname+"</td><td>"+obj[0].data[i].productname+"</td><td id="+pr_id+">"+obj[0].data[i].price+"</td>" +
+					productTable = productTable + "<tr class='tbl_even_row' style='height:100px;'><td><img id="+obj[0].data[i].productid+" src="+filename+" height='100' width='100' onclick='Addtocart("+pid+","+pquantity+","+pprice+");'/></td><td>"+obj[0].data[i].brandname+"</td><td>"+obj[0].data[i].productname+"</td><td id="+pr_id+">"+obj[0].data[i].price+"</td><td><input type='number' name='quantity'></td>" +
 					"</tr>";
 					}
 				else
 				{
-					productTable = productTable + "<tr class='tbl_odd_row' style='height:100px;'><td><img id="+obj[0].data[i].productid+" src="+filename+" height='100' width='100' onclick='showproduct(this.id);'/></td><td>"+obj[0].data[i].brandname+"</td><td>"+obj[0].data[i].productname+"</td><td id="+pr_id+">"+obj[0].data[i].price+"</td>" +
+					productTable = productTable + "<tr class='tbl_odd_row' style='height:100px;'><td><img id="+obj[0].data[i].productid+" src="+filename+" height='100' width='100' onclick='Addtocart("+pid+","+pquantity+","+pprice+");'/></td><td>"+obj[0].data[i].brandname+"</td><td>"+obj[0].data[i].productname+"</td><td id="+pr_id+">"+obj[0].data[i].price+"</td><td><input type='number' name='quantity'></td>" +
 					"</tr>";
 					}
-				
+				//alert(document.getElementById("quantity").value);
 				}
+				
 			productTable = productTable + "</table>";
-			alert(productTable);
 			$('#product_list').empty();
 			$('#product_list').append(productTable);
+		}
+	});
+}
+function Addtocart(productid,i,price)
+{
+	alert(productid);
+    var quantity = i;
+	alert(i);
+	alert(price);
+var amount = i * price;
+	var userid = $('#hidid').val();//alert(productid);
+	$.ajax({
+		url : '/Ecommerce?serviceId=addtocart',
+		type: 'POST',
+		data : {
+			userid :userid,productid:productid,quantity:quantity,amount:amount,
+		},
+		success : function(responseText) {
+			var obj = jQuery.parseJSON(responseText);
+			alert("added to cart");
+			alert(obj[0].success[0].message);
+			$('#divcontent').show();
+			$('#userdiv').hide();
+			$('#changepwd').hide();
+			$('#prdndesc').hide();
+					
 		}
 	});
 }
