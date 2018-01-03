@@ -404,9 +404,9 @@ function showuserinfo()
 			
 				//$('#menu5').html("<img  alt='product' src='WebContent/images/download.jpg' width='250px' height='250px'>");
 				
-				//$('#menu5').empty();
+				$('#menu5').empty();
 				
-				//$('#menu5').append(usertable);
+				$('#menu5').append(usertable);
 				$('#hidid').val(userid);
 			}
 			else{
