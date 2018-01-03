@@ -299,7 +299,7 @@ function loadProducts()
   
 			//alert(obj[0].data.length);
 			//alert(obj[0].data[0].productname);
-			var productTable="<table class='table table-bordered' width='100%'><tr class='tbl_header' style='height:30px;'><td>Select</td><td>Brand</td><td>Product Name</td><td> Price</td><td>quantity</td></tr>";
+			var productTable="<table class='table table-bordered' width='100%'><tr class='tbl_header' style='height:30px;'><td>Select</td><td>Brand</td><td>Product Name</td><td> Price</td></tr>";
 			for(var i=0;i<obj[0].data.length;i++)
 			{
 				var pr_id = "pr_"+obj[0].data[i].productid;
@@ -312,12 +312,12 @@ function loadProducts()
 				//productTable = productTable + "<tr style='height:100px;'><td><input name='product' type ='radio' id="+obj[0].data[i].productid+" onclick='showproduct(this.id);'/></td><td>"+obj[0].data[i].brandname+"</td><td>"+obj[0].data[i].productname+"</td><td id="+pr_id+">"+obj[0].data[i].price+"</td>" +
 				if(i%2 == 0)
 				{
-					productTable = productTable + "<tr class='tbl_even_row' style='height:100px;'><td><img id="+obj[0].data[i].productid+" src="+filename+" height='100' width='100' onclick='Addtocart("+pid+","+pquantity+","+pprice+");'/></td><td>"+obj[0].data[i].brandname+"</td><td>"+obj[0].data[i].productname+"</td><td id="+pr_id+">"+obj[0].data[i].price+"</td><td><input type='number' name='quantity'></td>" +
+					productTable = productTable + "<tr class='tbl_even_row' style='height:100px;'><td><img id="+obj[0].data[i].productid+" src="+filename+" height='100' width='100' onclick='Addtocart("+pid+","+pquantity+","+pprice+");'/></td><td>"+obj[0].data[i].brandname+"</td><td>"+obj[0].data[i].productname+"</td><td id="+pr_id+">"+obj[0].data[i].price+"</td>" +
 					"</tr>";
 					}
 				else
 				{
-					productTable = productTable + "<tr class='tbl_odd_row' style='height:100px;'><td><img id="+obj[0].data[i].productid+" src="+filename+" height='100' width='100' onclick='Addtocart("+pid+","+pquantity+","+pprice+");'/></td><td>"+obj[0].data[i].brandname+"</td><td>"+obj[0].data[i].productname+"</td><td id="+pr_id+">"+obj[0].data[i].price+"</td><td><input type='number' name='quantity'></td>" +
+					productTable = productTable + "<tr class='tbl_odd_row' style='height:100px;'><td><img id="+obj[0].data[i].productid+" src="+filename+" height='100' width='100' onclick='Addtocart("+pid+","+pquantity+","+pprice+");'/></td><td>"+obj[0].data[i].brandname+"</td><td>"+obj[0].data[i].productname+"</td><td id="+pr_id+">"+obj[0].data[i].price+"</td>" +
 					"</tr>";
 					}
 				//alert(document.getElementById("quantity").value);
