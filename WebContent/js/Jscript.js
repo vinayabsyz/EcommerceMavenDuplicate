@@ -299,7 +299,9 @@ function loadProducts()
   
 			//alert(obj[0].data.length);
 			//alert(obj[0].data[0].productname);
-			var productTable="<table class='table table-bordered' width='100%'><tr class='tbl_header' style='height:30px;'><td>Select</td><td>Brand</td><td>Product Name</td><td> Price</td><td>Cart</td></tr>";
+			//var productTable="<table class='table table-bordered' width='100%'><tr class='tbl_header' style='height:30px;'><td>Select</td><td>Brand</td><td>Product Name</td><td> Price</td><td>Cart</td></tr>";
+			var productTable=" <div class="tile tile-grid-item tile-column-3">
+    <div class="tile-inner-padded tile-grid-item-inner">";
 			for(var i=0;i<obj[0].data.length;i++)
 			{
 				var pr_id = "pr_"+obj[0].data[i].productid;
@@ -312,18 +314,24 @@ function loadProducts()
 				//productTable = productTable + "<tr style='height:100px;'><td><input name='product' type ='radio' id="+obj[0].data[i].productid+" onclick='showproduct(this.id);'/></td><td>"+obj[0].data[i].brandname+"</td><td>"+obj[0].data[i].productname+"</td><td id="+pr_id+">"+obj[0].data[i].price+"</td>" +
 				if(i%2 == 0)
 				{
-					productTable = productTable + "<tr class='tbl_even_row' style='height:100px;'><td><img id="+obj[0].data[i].productid+" src="+filename+" height='100' width='100'/></td><td>"+obj[0].data[i].brandname+"</td><td>"+obj[0].data[i].productname+"</td><td id="+pr_id+">"+obj[0].data[i].price+"</td><td><button type='button' onclick='Addtocart("+pid+","+pprice+")'>Add to Cart</button></td>" +
-					"</tr>";
+					//productTable = productTable + "<tr class='tbl_even_row' style='height:100px;'><td><img id="+obj[0].data[i].productid+" src="+filename+" height='100' width='100'/></td><td>"+obj[0].data[i].brandname+"</td><td>"+obj[0].data[i].productname+"</td><td id="+pr_id+">"+obj[0].data[i].price+"</td><td><button type='button' onclick='Addtocart("+pid+","+pprice+")'>Add to Cart</button></td>" +
+					//"</tr>";
+					productTable = productTable + "<img id="+obj[0].data[i].productid+" src="+filename+" height='100' width='100'/>"+obj[0].data[i].brandname+obj[0].data[i].productname+obj[0].data[i].price+"<button type='button' onclick='Addtocart("+pid+","+pprice+")'>Add to Cart</button>" +
+				
 					}
 				else
 				{
-					productTable = productTable + "<tr class='tbl_odd_row' style='height:100px;'><td><img id="+obj[0].data[i].productid+" src="+filename+" height='100' width='100'/></td><td>"+obj[0].data[i].brandname+"</td><td>"+obj[0].data[i].productname+"</td><td id="+pr_id+">"+obj[0].data[i].price+"</td><td><button type='button' onclick='Addtocart("+pid+","+pprice+")'>Add to Cart</button></td>" +
-					"</tr>";
+					//productTable = productTable + "<tr class='tbl_odd_row' style='height:100px;'><td><img id="+obj[0].data[i].productid+" src="+filename+" height='100' width='100'/></td><td>"+obj[0].data[i].brandname+"</td><td>"+obj[0].data[i].productname+"</td><td id="+pr_id+">"+obj[0].data[i].price+"</td><td><button type='button' onclick='Addtocart("+pid+","+pprice+")'>Add to Cart</button></td>" +
+					//"</tr>";
+					productTable = productTable + "<img id="+obj[0].data[i].productid+" src="+filename+" height='100' width='100'/>"+obj[0].data[i].brandname+obj[0].data[i].productname+obj[0].data[i].price+"<button type='button' onclick='Addtocart("+pid+","+pprice+")'>Add to Cart</button>" +
+				
+				
 					}
 				//alert(document.getElementById("quantity").value);
 				}
 				
-			productTable = productTable + "</table>";
+			//productTable = productTable + "</table>";
+			productTable = productTable + "</div>"+"</div>";
 			$('#product_list').empty();
 			$('#product_list').append(productTable);
 		}
