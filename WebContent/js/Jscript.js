@@ -305,19 +305,19 @@ function loadProducts()
 				var pr_id = "pr_"+obj[0].data[i].productid;
 				var filename = "images/"+obj[0].data[i].filename;
 				var pid=obj[0].data[i].productid;
-				var pquantity="2";
+				//var pquantity="2";
 				//var quant;
 				var pprice=obj[0].data[i].price;
 				//alert(amt_id);
 				//productTable = productTable + "<tr style='height:100px;'><td><input name='product' type ='radio' id="+obj[0].data[i].productid+" onclick='showproduct(this.id);'/></td><td>"+obj[0].data[i].brandname+"</td><td>"+obj[0].data[i].productname+"</td><td id="+pr_id+">"+obj[0].data[i].price+"</td>" +
 				if(i%2 == 0)
 				{
-					productTable = productTable + "<tr class='tbl_even_row' style='height:100px;'><td><img id="+obj[0].data[i].productid+" src="+filename+" height='100' width='100' onclick='Addtocart("+pid+","+pquantity+","+pprice+");'/></td><td>"+obj[0].data[i].brandname+"</td><td>"+obj[0].data[i].productname+"</td><td id="+pr_id+">"+obj[0].data[i].price+"</td>" +
+					productTable = productTable + "<tr class='tbl_even_row' style='height:100px;'><td><img id="+obj[0].data[i].productid+" src="+filename+" height='100' width='100'/></td><td>"+obj[0].data[i].brandname+"</td><td>"+obj[0].data[i].productname+"</td><td id="+pr_id+">"+obj[0].data[i].price+"</td><td><button type='button' onclick='Addtocart("+pid+","+pprice+")'>Add to Cart</button></td>" +
 					"</tr>";
 					}
 				else
 				{
-					productTable = productTable + "<tr class='tbl_odd_row' style='height:100px;'><td><img id="+obj[0].data[i].productid+" src="+filename+" height='100' width='100' onclick='Addtocart("+pid+","+pquantity+","+pprice+");'/></td><td>"+obj[0].data[i].brandname+"</td><td>"+obj[0].data[i].productname+"</td><td id="+pr_id+">"+obj[0].data[i].price+"</td>" +
+					productTable = productTable + "<tr class='tbl_odd_row' style='height:100px;'><td><img id="+obj[0].data[i].productid+" src="+filename+" height='100' width='100'/></td><td>"+obj[0].data[i].brandname+"</td><td>"+obj[0].data[i].productname+"</td><td id="+pr_id+">"+obj[0].data[i].price+"</td><td><button type='button' onclick='Addtocart("+pid+","+pprice+")'>Add to Cart</button></td>" +
 					"</tr>";
 					}
 				//alert(document.getElementById("quantity").value);
@@ -329,13 +329,13 @@ function loadProducts()
 		}
 	});
 }
-function Addtocart(productid,i,price)
+function Addtocart(productid,price)
 {
 	alert(productid);
-    var quantity = i;
-	alert(i);
+    //var quantity = i;
+	//alert(i);
 	alert(price);
-var amount = i * price;
+var amount = 1 * price;
 	var userid = $('#hidid').val();//alert(productid);
 	$.ajax({
 		url : '/Ecommerce?serviceId=addtocart',
