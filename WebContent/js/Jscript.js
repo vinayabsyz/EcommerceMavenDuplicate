@@ -277,7 +277,7 @@ $(document).on("click","#btn_backcart",function(){
 
 function loadProducts()
 {
-	$('#divcontent').show();
+	/*$('#divcontent').show();
 	$('#divhome').hide();
 	$('#product_list').show();
 	$('#my_carts').hide();
@@ -335,7 +335,7 @@ function loadProducts()
 			$('#product_list').empty();
 			$('#product_list').append(productTable);
 		}
-	});
+	});*/
 }
 function Addtocart(productid,price)
 {
