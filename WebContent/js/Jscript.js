@@ -397,7 +397,7 @@ function showproduct(prdid)
 }
 function showuserinfo()
 {
-	var Cl=localStorage.getItem("loggedin")
+	/*var Cl=localStorage.getItem("loggedin")
 	alert("Cl, " + Cl);
 	
 	if(Cl==null){
@@ -449,7 +449,7 @@ function showuserinfo()
 			}
 			
 		}
-	});
+	});*/
 	}
 
 $(document).on("click", "#td_mycarts", function() {
