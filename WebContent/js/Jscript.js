@@ -421,7 +421,7 @@ function showuserinfo()
 			console.log('Showuserinfo'+responseText);
 			var obj = jQuery.parseJSON(responseText);
 			//alert(obj.length);
-			console.log(obj);
+			//console.log(obj);
 			//alert(obj[0].data[0].zipcode);
 			if(obj[0].success[0].success == "success"){
 				$('#username').text('Welcome '+obj[0].data[0].firstname);
