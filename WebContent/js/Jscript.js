@@ -277,6 +277,57 @@ $(document).on("click","#btn_backcart",function(){
 
 function loadProducts()
 {
+	$('#divcontent').show();
+	$('#divhome').hide();
+	$('#product_list').show();
+	$('#my_carts').hide();
+	$('#my_orders').hide();
+	$('#prdndesc').hide();
+	$('#mycartdata').hide();
+	$.ajax({
+		url : '/Ecommerce?serviceId=show_products',
+		type: 'POST',
+		data : {
+			
+		},
+		success : function(responseText) {
+			console.log(responseText);
+			var obj = jQuery.parseJSON(responseText);
+			alert(responseText);
+			alert(obj);
+			
+  
+			//alert(obj[0].data.length);
+			//alert(obj[0].data[0].productname);
+			var productTable="<table class='table table-bordered' width='100%'><tr class='tbl_header' style='height:30px;'><td>Select</td><td>Brand</td><td>Product Name</td><td> Price</td><td>select</td></tr>";
+			for(var i=0;i<obj[0].data.length;i++)
+			{
+				var pr_id = "pr_"+obj[0].data[i].productid;
+				var filename = "images/"+obj[0].data[i].filename;
+				var pid=obj[0].data[i].productid;
+				var pquantity="2";
+				//var quant;
+				var pprice=obj[0].data[i].price;
+				//alert(amt_id);
+				//productTable = productTable + "<tr style='height:100px;'><td><input name='product' type ='radio' id="+obj[0].data[i].productid+" onclick='showproduct(this.id);'/></td><td>"+obj[0].data[i].brandname+"</td><td>"+obj[0].data[i].productname+"</td><td id="+pr_id+">"+obj[0].data[i].price+"</td>" +
+				if(i%2 == 0)
+				{
+					productTable = productTable + "<tr class='tbl_even_row' style='height:100px;'><td><img id="+obj[0].data[i].productid+" src="+filename+" height='100' width='100' onclick='Addtocart("+pid+","+pquantity+","+pprice+");'/></td><td>"+obj[0].data[i].brandname+"</td><td>"+obj[0].data[i].productname+"</td><td id="+pr_id+">"+obj[0].data[i].price+"</td><td><button type='button' onclick='Addtocart("+pid+","+pquantity+","+pprice+")'>Click Me!</button></td>" +
+					"</tr>";
+					}
+				else
+				{
+					productTable = productTable + "<tr class='tbl_odd_row' style='height:100px;'><td><img id="+obj[0].data[i].productid+" src="+filename+" height='100' width='100' onclick='Addtocart("+pid+","+pquantity+","+pprice+");'/></td><td>"+obj[0].data[i].brandname+"</td><td>"+obj[0].data[i].productname+"</td><td id="+pr_id+">"+obj[0].data[i].price+"</td><td><button type='button' onclick='Addtocart("+pid+","+pquantity+","+pprice+")'>Click Me!</button></td>" +
+					"</tr>";
+					}
+				//alert(document.getElementById("quantity").value);
+				}
+				
+			productTable = productTable + "</table>";
+			$('#product_list').empty();
+			$('#product_list').append(productTable);
+		}
+	});
 	/*$('#divcontent').show();
 	$('#divhome').hide();
 	$('#product_list').show();
