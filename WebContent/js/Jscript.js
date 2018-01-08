@@ -312,12 +312,12 @@ function loadProducts()
 				//productTable = productTable + "<tr style='height:100px;'><td><input name='product' type ='radio' id="+obj[0].data[i].productid+" onclick='showproduct(this.id);'/></td><td>"+obj[0].data[i].brandname+"</td><td>"+obj[0].data[i].productname+"</td><td id="+pr_id+">"+obj[0].data[i].price+"</td>" +
 				if(i%2 == 0)
 				{
-					productTable = productTable + "<tr class='tile' style='height:100px;'><td><img id="+obj[0].data[i].productid+" src="+filename+"/></td><td>"+obj[0].data[i].brandname+"</td><td>"+obj[0].data[i].productname+"</td><td id="+pr_id+">"+obj[0].data[i].price+"</td><td><button type='button' onclick='Addtocart("+pid+","+pquantity+","+pprice+")'>Add to Cart</button></td>" +
+					productTable = productTable + "<tr class='tile' style='height:100px;'><td><img id="+obj[0].data[i].productid+" src="+filename"/></td><td>"+obj[0].data[i].brandname+"</td><td>"+obj[0].data[i].productname+"</td><td id="+pr_id+">"+obj[0].data[i].price+"</td><td><button type='button' onclick='Addtocart("+pid+","+pquantity+","+pprice+")'>Add to Cart</button></td>" +
 					"</tr>";
 					}
 				else
 				{
-					productTable = productTable + "<tr class='tile' style='height:100px;'><td><img id="+obj[0].data[i].productid+" src="+filename+"/></td><td>"+obj[0].data[i].brandname+"</td><td>"+obj[0].data[i].productname+"</td><td id="+pr_id+">"+obj[0].data[i].price+"</td><td><button type='button' onclick='Addtocart("+pid+","+pquantity+","+pprice+")'>Add to Cart</button></td>" +
+					productTable = productTable + "<tr class='tile' style='height:100px;'><td><img id="+obj[0].data[i].productid+" src="+filename"/></td><td>"+obj[0].data[i].brandname+"</td><td>"+obj[0].data[i].productname+"</td><td id="+pr_id+">"+obj[0].data[i].price+"</td><td><button type='button' onclick='Addtocart("+pid+","+pquantity+","+pprice+")'>Add to Cart</button></td>" +
 					"</tr>";
 					}
 				//alert(document.getElementById("quantity").value);
