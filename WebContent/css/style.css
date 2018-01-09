@@ -615,7 +615,7 @@ a.remove:hover {
 }
 
 .tile {
-  background-color: #f1f1f1;
+  background-color: #ffffff;
   -webkit-background-clip: padding;
   -moz-background-clip: padding;
   background-clip: padding-box;
