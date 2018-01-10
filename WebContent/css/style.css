@@ -200,6 +200,13 @@ td1{
     font-weight: bold;
   vertical-align: middle;
 }
+td2{
+ text-align: left;
+  font-size: 2em;
+   
+    font-weight: bold;
+  vertical-align: middle;
+}
 q, blockquote {
   quotes: none;
 }
