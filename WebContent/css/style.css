@@ -190,7 +190,9 @@ table {
 
 caption, th, td {
   text-align: left;
-  font-weight: normal;
+  font-size: 2em;
+   
+    font-weight: bold;
   vertical-align: middle;
 }
 
