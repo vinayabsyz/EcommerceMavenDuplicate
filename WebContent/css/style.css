@@ -195,7 +195,13 @@ caption, th, td {
     font-weight: bold;
   vertical-align: middle;
 }
-
+td1{
+ text-align: left;
+  font-size: 2em;
+   
+    font-weight: bold;
+  vertical-align: middle;
+}
 q, blockquote {
   quotes: none;
 }
