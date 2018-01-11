@@ -636,9 +636,9 @@ a.remove:hover {
   -webkit-background-clip: padding;
   -moz-background-clip: padding;
   background-clip: padding-box;
-  border-color: #133a90 ;
+  border-color: #337ab7 ;
   border-style: solid;
-  border-width: 0 4px 4px 0;
+  border-width: 0 0px 2px 0;
 }
 
 .tile-column-3 {
