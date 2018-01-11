@@ -196,17 +196,10 @@ caption, th, td {
 td1{
  text-align: left;
   font-size: 2em;
-    padding-top: 50px;
     font-weight: bold;
   vertical-align: middle;
 }
-td2{
- text-align: left;
-  font-size: 2em;
-   
-    font-weight: bold;
-  vertical-align: middle;
-}
+
 q, blockquote {
   quotes: none;
 }
