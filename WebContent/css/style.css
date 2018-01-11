@@ -636,7 +636,7 @@ a.remove:hover {
   -webkit-background-clip: padding;
   -moz-background-clip: padding;
   background-clip: padding-box;
-  border-color: blue;
+  border-color: #133a90 ;
   border-style: solid;
   border-width: 0 4px 4px 0;
 }
