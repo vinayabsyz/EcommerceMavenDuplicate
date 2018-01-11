@@ -199,6 +199,12 @@ td1{
     font-weight: bold;
   vertical-align: middle;
 }
+td3{
+ text-align: left;
+  font-size: 2em;
+    font-weight: bold;
+  vertical-align: middle;
+}
 td2{
  
   font-size: 2em;
