@@ -504,7 +504,7 @@ function showuserinfo()
 	}
 
 $(document).on("click", "#td_mycarts", function() {
-	
+	alert("carts");
 	var userid=$('#hidid').val();
 	$.ajax({
 		url : '/Ecommerce?serviceId=mycarts',
@@ -513,6 +513,7 @@ $(document).on("click", "#td_mycarts", function() {
 			userid:userid,
 		},
 		success : function(responseText) {
+			alert("carts");
 			console.log(responseText);
 			var obj = jQuery.parseJSON(responseText);
 			if(obj[0].success[0].success == "success")
