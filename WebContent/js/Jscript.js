@@ -119,7 +119,7 @@ $(document).on("click", "#placeorder", function() {
 		alert(product_cart_id);
 		var split_ids = product_cart_id.split("_");
 		alert(split_ids);
-		var product_id = split_ids[1];
+		var product_id = split_ids[0];
 		alert(product_id);
 		var cart_id = split_ids[1];
 		alert(cart_id);
