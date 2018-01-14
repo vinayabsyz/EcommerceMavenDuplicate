@@ -514,9 +514,9 @@ function showuserinfo()
 		}
 	});
 	}
-
+var proarray = [];
+var cartarray = [];
 $(document).on("click", "#td_mycarts", function() {
-	alert("carts");
 	var userid=$('#hidid').val();
 	$.ajax({
 		url : '/Ecommerce?serviceId=mycarts',
@@ -525,8 +525,7 @@ $(document).on("click", "#td_mycarts", function() {
 			userid:userid,
 		},
 		success : function(responseText) {
-			alert("carts");
-			console.log(responseText);
+			//console.log(responseText);
 			var obj = jQuery.parseJSON(responseText);
 			if(obj[0].success[0].success == "success")
 			{
@@ -536,8 +535,10 @@ $(document).on("click", "#td_mycarts", function() {
 				//alert(obj[0].data[0].productname);
 				var cartTable="<table width='100%' border='1' class='table table-bordered' id='tbl_cart'><tr class='tbl_header'><td colspan='5'>My Carts Info</td></tr><tr class='tbl_header'><td>Select</td><td>Product Name</td><td>Quantity</td><td>Amount</td><td>Remove Item</td></tr>";
 				var chkVal = 2;
+				var chk_idarray=[];
 				for(var i=0;i<obj[0].data.length;i++)
-				{var qty_id = "qty_"+ obj[0].data[i].cartid;
+				{
+					var qty_id = "qty_"+ obj[0].data[i].cartid;
 					var amt_id = "amt_"+ chkVal;
 					var rm_id = "rm_"+ obj[0].data[i].cartid;
 					var chk_id = obj[0].data[i].productid + "_" + obj[0].data[i].cartid;
@@ -559,6 +560,7 @@ $(document).on("click", "#td_mycarts", function() {
 						"</tr>";
 						}
 					
+					}
 				cartTable = cartTable + "<tr class='tbl_even_row'><td colspan='2'>Total Amount</td><td colspan='3'><input type='text' id='txtTotal' value ='0' disabled height='40'/></td><tr><td colspan='5' align='center'><input type='button' id='placeorder' value='Place Order' ></td></tr></table>";
 				$('#menu3').empty();
 				$('#menu3').append(cartTable);
