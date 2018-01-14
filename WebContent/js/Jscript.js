@@ -106,7 +106,7 @@ $(document).on("click", "#placeorder", function() {
 	var data="";
 	jsonObj=[];
 	var selected = [];
-	$('#mycartdata input:checked').each(function() {
+	$('#tbl_cart input:checked').each(function() {
 		selected.push($(this).attr('id'));
 	});
 	$.each(selected, function (index, value) {
@@ -114,7 +114,7 @@ $(document).on("click", "#placeorder", function() {
 		var product_cart_id = value;
 		//alert(product_cart_id);
 		var split_ids = product_cart_id.split("_");
-		var product_id = split_ids[0];
+		var product_id = split_ids[1];
 		var cart_id = split_ids[1];
 		var qty_id = "#qty_"+product_id;
 		var amt_id = "#amt_"+product_id;
@@ -133,6 +133,7 @@ $(document).on("click", "#placeorder", function() {
 	});
 		var jsonString = JSON.stringify(jsonObj);
 		console.log(jsonString);
+	alert(jsonString);
 		console.log(selected);
 		
 	
@@ -522,28 +523,31 @@ $(document).on("click", "#td_mycarts", function() {
 				//alert(obj.length);
 				//alert(obj[0].data.length);
 				//alert(obj[0].data[0].productname);
-				var cartTable="<table width='100%' border='1'><tr class='tbl_header'><td colspan='5'>My Carts Info</td></tr><tr class='tbl_header'><td>Select</td><td>Product Name</td><td>Quantity</td><td>Amount</td><td>Remove Item</td></tr>";
+				var cartTable="<table width='100%' border='1' class='table table-bordered' id='tbl_cart'><tr class='tbl_header'><td colspan='5'>My Carts Info</td></tr><tr class='tbl_header'><td>Select</td><td>Product Name</td><td>Quantity</td><td>Amount</td><td>Remove Item</td></tr>";
+				var chkVal = 2;
 				for(var i=0;i<obj[0].data.length;i++)
 				{
-					var qty_id = "qty_"+ obj[0].data[i].productid;
-					var amt_id = "amt_"+ obj[0].data[i].productid;
+					var qty_id = "qty_"+ chkVal;
+					var amt_id = "amt_"+ chkVal;
 					var rm_id = "rm_"+ obj[0].data[i].cartid;
-					var chk_id = obj[0].data[i].productid + "_" + obj[0].data[i].cartid;
+					//var chk_id = obj[0].data[i].productid + "_" + obj[0].data[i].cartid;
+					var chk_id = "chk_"+chkVal;
+					chkVal = parseInt(chkVal)+1;
 					if(i%2 == 0)
 					{
-						cartTable = cartTable + "<tr class='tbl_even_row'><td><input name='cart' type ='checkbox' id="+chk_id+" onclick='add_totalamount(this.id)' /></td><td>"+obj[0].data[i].productname+"</td>" +
-						"<td id="+qty_id+">"+obj[0].data[i].quantity+"</td><td id="+amt_id+">"+obj[0].data[i].amount+"</td><td id="+rm_id+" onclick='delete_cartitem(this.id)'>Remove</td>" +
+						cartTable = cartTable + "<tr class='tbl_even_row'><td><input name='cart' type ='checkbox' id="+chk_id+" onclick='add_totalamount()' /></td><td>"+obj[0].data[i].productname+"</td>" +
+						"<td ><input id="+qty_id+" type='number' name='inputcell'/></td><td id="+amt_id+">"+obj[0].data[i].amount+"</td><td id="+rm_id+" onclick='delete_cartitem(this.id)'>Remove</td>" +
 						"</tr>";
 						}
 					else
 					{
-						cartTable = cartTable + "<tr class='tbl_odd_row'><td><input name='cart' type ='checkbox' id="+chk_id+" onclick='add_totalamount(this.id)' /></td><td>"+obj[0].data[i].productname+"</td>" +
-						"<td id="+qty_id+">"+obj[0].data[i].quantity+"</td><td id="+amt_id+">"+obj[0].data[i].amount+"</td><td id="+rm_id+" onclick='delete_cartitem(this.id)'>Remove</td>" +
+						cartTable = cartTable + "<tr class='tbl_odd_row'><td><input name='cart' type ='checkbox' id="+chk_id+" onclick='add_totalamount()' /></td><td>"+obj[0].data[i].productname+"</td>" +
+						"<td ><input type='number' id="+qty_id+" name='inputcell'/></td><td id="+amt_id+">"+obj[0].data[i].amount+"</td><td id="+rm_id+" onclick='delete_cartitem(this.id)'>Remove</td>" +
 						"</tr>";
 						}
 					
 					}
-				cartTable = cartTable + "<tr class='tbl_even_row'><td colspan='2'>Total Amount</td><td colspan='3'><input type='text' id='txtTotal' value ='0' disabled height='40'/></td><tr><td colspan='5' align='center'><input type='button' id='placeorder' value='Place Order' ><input type='button' id='btn_backcart' value='Back' ></td></tr></table>";
+				cartTable = cartTable + "<tr class='tbl_even_row'><td colspan='2'>Total Amount</td><td colspan='3'><input type='text' id='txtTotal' value ='0' disabled height='40'/></td><tr><td colspan='5' align='center'><input type='button' id='placeorder' value='Place Order' ></td></tr></table>";
 				$('#menu3').empty();
 				$('#menu3').append(cartTable);
 				
@@ -625,25 +629,27 @@ function showrow()
 }
 function add_totalamount(id)
 {
-	//alert(id);
-	//alert($("#"+id).is(':checked'));
-	var product_ids = id.split("_");
-	var product_id = product_ids[0];
-	var amt_id = "#amt_"+product_id;
-	var qty_id = "#qty_"+product_id;
 	var total_amount=0;
 	var prod_amount = 0;
-	if($("#"+id).is(':checked')){
-		
-		prod_amount = parseInt($(amt_id).html());
-		total_amount = parseInt($('#txtTotal').val()) + prod_amount;
-	}
-	else
-		{
-			prod_amount = parseInt($(amt_id).html()) * parseInt($(qty_id).html());
-			total_amount = parseInt($('#txtTotal').val()) - prod_amount;
-		}
 	
+	var rowCount = $('#tbl_cart tr').length;
+	var MyRows = $('table#tbl_cart').find('tbody').find('tr');
+		for(var id=2;id<rowCount-2;id++){
+		  if($("#chk_"+id).is(':checked')){
+			prod_amount = 0;
+			//var customerId = $(this).find("td").eq(3).html(); 
+			//prod_amount = $(this).find("td").eq(3).html()parseInt($('#amt_'+rowCount).html())*parseInt($('#qty_'+rowCount).val());	
+			var amt =  $(MyRows[id]).find('td:eq(3)').html();
+			var qty =  $('#qty_'+id).val();
+			
+			prod_amount = $(MyRows[id]).find('td:eq(3)').html()*parseInt(qty);	
+			total_amount = total_amount + prod_amount;
+		}	
+		else
+			{
+				
+			}		
+	}	
 	$('#txtTotal').val("");
 	$('#txtTotal').val(total_amount);
 }
