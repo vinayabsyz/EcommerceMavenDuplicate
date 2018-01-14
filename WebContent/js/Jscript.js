@@ -497,7 +497,7 @@ function showuserinfo()
 				usertable = usertable + "<tr><td class='tbl_header'>City</td><td>"+obj[0].data[0].city+"</td><td class='tbl_header'>State</td><td>"+obj[0].data[0].state+"</td></tr>";
 				usertable = usertable + "<tr><td class='tbl_header'>Country</td><td>"+obj[0].data[0].country+"</td><td class='tbl_header'>Zipcode</td><td>"+obj[0].data[0].zipcode+"</td></tr>";
 								
-				usertable = usertable + "<tr><td colspan='4' align='center'><input type='button' id='btnBack' value='Back' /><input type='button' id='btnChngPwd' value='Change Password' /></td></tr></table>";
+				usertable = usertable + "<tr><td colspan='4' align='center'><input type='button' id='btnChngPwd' value='Change Password' /></td></tr></table>";
 				//usertable = usertable + "<tr><td colspan='4' align='center'><img  alt='product' src='images/download.jpg' width='250px' height='250px'/></td></tr>
 			
 				//$('#menu5').html("<img  alt='product' src='WebContent/images/download.jpg' width='250px' height='250px'>");
