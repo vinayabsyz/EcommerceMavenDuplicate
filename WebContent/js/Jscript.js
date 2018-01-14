@@ -183,17 +183,17 @@ $(document).on("click", "#td_myorders", function() {
 			//alert(obj.length);
 			//alert(obj[0].data.length);
 			//alert(obj[0].data[0].productname);
-			var orderTable="<table width='100%'><tr class='tbl_header'><td>Order No</td><td>Product Name</td><td>Price</td><td>Date</td><td>Quantity</td><td>Amount</td>";
+			var orderTable="<table width='100%'><tr class='tile'><td>Order No</td><td>Product Name</td><td>Price</td><td>Date</td><td>Quantity</td><td>Amount</td>";
 			for(var i=0;i<obj[0].data.length;i++)
 			{
 				if(i%2 == 0)
 				{
-					orderTable = orderTable + "<tr class='tbl_even_row'><td>"+obj[0].data[i].orderid+"</td><td>"+obj[0].data[i].productname+"</td>" +
+					orderTable = orderTable + "<tr class='tile'><td>"+obj[0].data[i].orderid+"</td><td>"+obj[0].data[i].productname+"</td>" +
 					"<td>"+obj[0].data[i].price+"</td><td>"+obj[0].data[i].orderdate+"</td><td>"+obj[0].data[i].productquantity+"</td><td>"+obj[0].data[i].totalamount+"</td></tr>";
 					}
 				else
 				{
-					orderTable = orderTable + "<tr class='tbl_odd_row'><td>"+obj[0].data[i].orderid+"</td><td>"+obj[0].data[i].productname+"</td>" +
+					orderTable = orderTable + "<tr class='tile'><td>"+obj[0].data[i].orderid+"</td><td>"+obj[0].data[i].productname+"</td>" +
 					"<td>"+obj[0].data[i].price+"</td><td>"+obj[0].data[i].orderdate+"</td><td>"+obj[0].data[i].productquantity+"</td><td>"+obj[0].data[i].totalamount+"</td></tr>";
 					}
 				
@@ -491,13 +491,13 @@ function showuserinfo()
 				var usertable="<table border='1' width='100%'><tr class='tbl_header'><td colspan='4'>User Info</td></tr>";
 				//usertable = usertable + "<tr><td class='tbl_header'>profilepic</td><td><img src="WebContent/images/dell_laptop.jpg" alt="Girl in a jacket" width="500" height="600"></td>";
 			
-				usertable = usertable + "<tr><td class='tbl_header'>Firstname</td><td>"+obj[0].data[0].firstname+"</td><td class='tbl_header'>Lastname</td><td>"+obj[0].data[0].lastname+"</td></tr>";
-				usertable = usertable + "<tr><td class='tbl_header'>Email</td><td>"+obj[0].data[0].email+"</td><td class='tbl_header'>Mobile</td><td>"+obj[0].data[0].mobile+"</td></tr>";		
-				usertable = usertable + "<tr><td class='tbl_header'>Address1</td><td>"+obj[0].data[0].address1+"</td><td class='tbl_header'>Address2</td><td>"+obj[0].data[0].address2+"</td></tr>";
-				usertable = usertable + "<tr><td class='tbl_header'>City</td><td>"+obj[0].data[0].city+"</td><td class='tbl_header'>State</td><td>"+obj[0].data[0].state+"</td></tr>";
-				usertable = usertable + "<tr><td class='tbl_header'>Country</td><td>"+obj[0].data[0].country+"</td><td class='tbl_header'>Zipcode</td><td>"+obj[0].data[0].zipcode+"</td></tr>";
+				usertable = usertable + "<tr class='tile'><td class='tbl_header'>Firstname</td><td>"+obj[0].data[0].firstname+"</td><td class='tbl_header'>Lastname</td><td>"+obj[0].data[0].lastname+"</td></tr>";
+				usertable = usertable + "<tr class='tile'><td class='tbl_header'>Email</td><td>"+obj[0].data[0].email+"</td><td class='tbl_header'>Mobile</td><td>"+obj[0].data[0].mobile+"</td></tr>";		
+				usertable = usertable + "<tr class='tile'><td class='tbl_header'>Address1</td><td>"+obj[0].data[0].address1+"</td><td class='tbl_header'>Address2</td><td>"+obj[0].data[0].address2+"</td></tr>";
+				usertable = usertable + "<tr class='tile'><td class='tbl_header'>City</td><td>"+obj[0].data[0].city+"</td><td class='tbl_header'>State</td><td>"+obj[0].data[0].state+"</td></tr>";
+				usertable = usertable + "<tr class='tile'><td class='tbl_header'>Country</td><td>"+obj[0].data[0].country+"</td><td class='tbl_header'>Zipcode</td><td>"+obj[0].data[0].zipcode+"</td></tr>";
 								
-				usertable = usertable + "<tr><td colspan='4' align='center'><input type='button' id='btnChngPwd' value='Change Password' /></td></tr></table>";
+				usertable = usertable + "<tr class='tile'><td colspan='4' align='center'><input type='button' id='btnChngPwd' value='Change Password' /></td></tr></table>";
 				//usertable = usertable + "<tr><td colspan='4' align='center'><img  alt='product' src='images/download.jpg' width='250px' height='250px'/></td></tr>
 			
 				//$('#menu5').html("<img  alt='product' src='WebContent/images/download.jpg' width='250px' height='250px'>");
@@ -533,7 +533,7 @@ $(document).on("click", "#td_mycarts", function() {
 				//alert(obj.length);
 				//alert(obj[0].data.length);
 				//alert(obj[0].data[0].productname);
-				var cartTable="<table width='100%' border='1' class='table table-bordered' id='tbl_cart'><tr class='tbl_header'><td colspan='5'>My Carts Info</td></tr><tr class='tbl_header'><td>Select</td><td>Product Name</td><td>Quantity</td><td>Amount</td><td>Remove Item</td></tr>";
+				var cartTable="<table width='100%' border='1' class='tile' id='tbl_cart'><tr class='tbl_header'><td colspan='5'>My Carts Info</td></tr><tr class='tbl_header'><td>Select</td><td>Product Name</td><td>Quantity</td><td>Amount</td><td>Remove Item</td></tr>";
 				var chkVal = 2;
 				var chk_idarray=[];
 				for(var i=0;i<obj[0].data.length;i++)
@@ -549,19 +549,19 @@ $(document).on("click", "#td_mycarts", function() {
 					chkVal = parseInt(chkVal)+1;
 					if(i%2 == 0)
 					{
-						cartTable = cartTable + "<tr class='tbl_even_row'><td><input name='cart' type ='checkbox' id="+chk_id+" onclick='add_totalamount(this.id)' /></td><td>"+obj[0].data[i].productname+"</td>" +
+						cartTable = cartTable + "<tr class='tile'><td><input name='cart' type ='checkbox' id="+chk_id+" onclick='add_totalamount(this.id)' /></td><td>"+obj[0].data[i].productname+"</td>" +
 						"<td ><input id="+qty_id+" type='number' name='inputcell'/></td><td id="+amt_id+">"+obj[0].data[i].amount+"</td><td><button type='button' id="+rm_id+" onclick='delete_cartitem(this.id)'>remove</button></td>" +
 						"</tr>";
 						}
 					else
 					{
-						cartTable = cartTable + "<tr class='tbl_odd_row'><td><input name='cart' type ='checkbox' id="+chk_id+" onclick='add_totalamount(this.id)' /></td><td>"+obj[0].data[i].productname+"</td>" +
+						cartTable = cartTable + "<tr class='tile'><td><input name='cart' type ='checkbox' id="+chk_id+" onclick='add_totalamount(this.id)' /></td><td>"+obj[0].data[i].productname+"</td>" +
 						"<td ><input type='number' id="+qty_id+" name='inputcell'/></td><td id="+amt_id+">"+obj[0].data[i].amount+"</td><td><button type='button' id="+rm_id+" onclick='delete_cartitem(this.id)'>remove</button></td>" +
 						"</tr>";
 						}
 					
 					}
-				cartTable = cartTable + "<tr class='tbl_even_row'><td colspan='2'>Total Amount</td><td colspan='3'><input type='text' id='txtTotal' value ='0' disabled height='40'/></td><tr><td colspan='5' align='center'><input type='button' id='placeorder' value='Place Order' ></td></tr></table>";
+				cartTable = cartTable + "<tr class='tile'><td colspan='2'>Total Amount</td><td colspan='3'><input type='text' id='txtTotal' value ='0' disabled height='40'/></td><tr><td colspan='5' align='center'><input type='button' id='placeorder' value='Place Order' ></td></tr></table>";
 				$('#menu3').empty();
 				$('#menu3').append(cartTable);
 				
