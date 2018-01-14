@@ -119,7 +119,7 @@ $(document).on("click", "#placeorder", function() {
 		var qty_id = "#qty_"+product_id;
 		var amt_id = "#amt_"+product_id;
 		var price =$(amt_id).text();
-		var quantity = $(qty_id).text();
+		var quantity = $(qty_id).val();
 		var totalamount =  $('#txtTotal').val();
 		data={};
 		data["productid"]= product_id;
