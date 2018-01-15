@@ -177,6 +177,7 @@ $(document).on("click", "#td_myorders", function() {
 	$('#product_list').hide();
 	$('#my_carts').hide();
 	$('#my_orders').show();
+	$('#changepwd').hide();
 	var userid = $('#hidid').val(); 
 	$.ajax({
 		url : '/Ecommerce?serviceId=myorders',
@@ -241,6 +242,7 @@ $(document).on("click", "#btnSave", function() {
 });
 
 $(document).on("click", "#td_products", function() {
+	$('#changepwd').hide();
 	loadProducts();
 });
 $(document).on("click","#username",function(){
@@ -272,6 +274,7 @@ $(document).on("click","#td_home",function(){
 	$('#divhome').show();
 	$('#product_list').hide();
 	$('#my_orders').hide();
+	$('#changepwd').hide();
 })
 $(document).on("click","#divlogout",function(){
 	
@@ -303,6 +306,7 @@ function loadProducts()
 	$('#my_orders').hide();
 	$('#prdndesc').hide();
 	$('#mycartdata').hide();
+	$('#changepwd').hide();
 	$.ajax({
 		url : '/Ecommerce?serviceId=show_products',
 		type: 'POST',
