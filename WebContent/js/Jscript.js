@@ -322,7 +322,7 @@ function loadProducts()
   
 			//alert(obj[0].data.length);
 			//alert(obj[0].data[0].productname);
-			var productTable="<table><tr class='tile' style='height:30px;'><td></td><td>Brand</td><td>Product Name</td></td><td> Price</td></td><td>select</td></tr>";
+			var productTable="<table><tr class='tile' style='height:30px;'><td></td><td><b>Brand</b></td><td><b>Product Name</b></td></td><td><b> Price</b></td></td><td><b>select</b></td></tr>";
 			for(var i=0;i<obj[0].data.length;i++)
 			{
 				var pr_id = "pr_"+obj[0].data[i].productid;
