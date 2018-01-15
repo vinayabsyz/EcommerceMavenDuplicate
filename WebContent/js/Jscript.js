@@ -1,3 +1,10 @@
+
+$(document).ready(function (){
+	
+	$('#changepwd').hide();
+	
+
+}
 $(document).on("click", "#userreg",function userReg(){
 	var fname=$('#txtFname').val();
 	var lname=$('#txtlname').val();
