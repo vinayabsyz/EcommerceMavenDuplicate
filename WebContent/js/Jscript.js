@@ -191,7 +191,7 @@ $(document).on("click", "#td_myorders", function() {
 			//alert(obj.length);
 			//alert(obj[0].data.length);
 			//alert(obj[0].data[0].productname);
-			var orderTable="<table width='100%'><tr class='tile'><td>Order No</td><td>Product Name</td><td>Price</td><td>Date</td><td>Quantity</td><td>Amount</td>";
+			var orderTable="<table width='100%'><tr class='tile'><td><strong>Order No</strong></td><td><strong>Product Name</strong></td><td><strong>Price</strong></td><td><strong>Date</strong></td><td><strong>Quantity</strong></td><td><strong>Amount</strong></td>";
 			for(var i=0;i<obj[0].data.length;i++)
 			{
 				if(i%2 == 0)
@@ -502,11 +502,11 @@ function showuserinfo()
 				var usertable="<table border='1' width='100%'><tr class='tbl_header'><td colspan='4' class='Bold1'>User Info</td></tr>";
 				//usertable = usertable + "<tr><td class='tbl_header'>profilepic</td><td><img src="WebContent/images/dell_laptop.jpg" alt="Girl in a jacket" width="500" height="600"></td>";
 			
-				usertable = usertable + "<tr class='tile'><td class='tbl_header'>Firstname</td><td>"+obj[0].data[0].firstname+"</td><td class='tbl_header'>Lastname</td><td>"+obj[0].data[0].lastname+"</td></tr>";
-				usertable = usertable + "<tr class='tile'><td class='tbl_header'>Email</td><td>"+obj[0].data[0].email+"</td><td class='tbl_header'>Mobile</td><td>"+obj[0].data[0].mobile+"</td></tr>";		
-				usertable = usertable + "<tr class='tile'><td class='tbl_header'>Address1</td><td>"+obj[0].data[0].address1+"</td><td class='tbl_header'>Address2</td><td>"+obj[0].data[0].address2+"</td></tr>";
-				usertable = usertable + "<tr class='tile'><td class='tbl_header'>City</td><td>"+obj[0].data[0].city+"</td><td class='tbl_header'>State</td><td>"+obj[0].data[0].state+"</td></tr>";
-				usertable = usertable + "<tr class='tile'><td class='tbl_header'>Country</td><td>"+obj[0].data[0].country+"</td><td class='tbl_header'>Zipcode</td><td>"+obj[0].data[0].zipcode+"</td></tr>";
+				usertable = usertable + "<tr class='tile'><td class='tbl_header'><strong>Firstname</strong></td><td>"+obj[0].data[0].firstname+"</td><td class='tbl_header'>Lastname</td><td>"+obj[0].data[0].lastname+"</td></tr>";
+				usertable = usertable + "<tr class='tile'><td class='tbl_header'><strong>Email</strong></td><td>"+obj[0].data[0].email+"</td><td class='tbl_header'>Mobile</td><td>"+obj[0].data[0].mobile+"</td></tr>";		
+				usertable = usertable + "<tr class='tile'><td class='tbl_header'><strong>Address1</strong></td><td>"+obj[0].data[0].address1+"</td><td class='tbl_header'>Address2</td><td>"+obj[0].data[0].address2+"</td></tr>";
+				usertable = usertable + "<tr class='tile'><td class='tbl_header'><strong>City</strong></td><td>"+obj[0].data[0].city+"</td><td class='tbl_header'>State</td><td>"+obj[0].data[0].state+"</td></tr>";
+				usertable = usertable + "<tr class='tile'><td class='tbl_header'><strong>Country</strong></td><td>"+obj[0].data[0].country+"</td><td class='tbl_header'>Zipcode</td><td>"+obj[0].data[0].zipcode+"</td></tr>";
 								
 				usertable = usertable + "<tr><td colspan='4' align='center'><input type='button' id='btnChngPwd' value='Change Password' /></td></tr></table>";
 				//usertable = usertable + "<tr><td colspan='4' align='center'><img  alt='product' src='images/download.jpg' width='250px' height='250px'/></td></tr>
