@@ -1,7 +1,8 @@
 
 $(document).ready(function (){
 	
-	$('#changepwd').hide();
+	//$('#changepwd').hide();
+	$("#changepwd").css("display","none");
 	
 
 });
