@@ -273,12 +273,14 @@ $(document).on("click","#btnUser",function(){
 
 	
 })
-$(document).on("click","#td_home",function(){
+//new code
+$(document).on("click","#homeid",function(){
+	alert("inside home");
 	$('#divhome').show();
 	$('#product_list').hide();
 	$('#my_orders').hide();
 	$('#changepwd').hide();
-	alert('hide');
+	
 })
 $(document).on("click","#divlogout",function(){
 	
