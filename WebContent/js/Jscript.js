@@ -270,10 +270,7 @@ $(document).on("click","#btnUser",function(){
 	$('#changepwd').hide();
 	$('#mycartdata').hide();
 })
-//new code
-$(document).on("click","#td_home",function(){
-	alert('in home');
-	$('#changepwd').hide();
+
 	
 })
 $(document).on("click","#td_home",function(){
@@ -281,6 +278,7 @@ $(document).on("click","#td_home",function(){
 	$('#product_list').hide();
 	$('#my_orders').hide();
 	$('#changepwd').hide();
+	alert('hide');
 })
 $(document).on("click","#divlogout",function(){
 	
