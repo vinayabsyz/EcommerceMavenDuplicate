@@ -271,7 +271,7 @@ $(document).on("click","#btnUser",function(){
 	$('#mycartdata').hide();
 })
 //new code
-$(document).on("click","#home",function(){
+$(document).on("click","#td_home",function(){
 	alert('in home');
 	$('#changepwd').hide();
 	
