@@ -270,6 +270,12 @@ $(document).on("click","#btnUser",function(){
 	$('#changepwd').hide();
 	$('#mycartdata').hide();
 })
+//new code
+$(document).on("click","#home",function(){
+	
+	$('#changepwd').hide();
+	
+})
 $(document).on("click","#td_home",function(){
 	$('#divhome').show();
 	$('#product_list').hide();
