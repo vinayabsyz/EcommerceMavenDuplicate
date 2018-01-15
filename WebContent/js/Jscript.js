@@ -272,7 +272,7 @@ $(document).on("click","#btnUser",function(){
 })
 //new code
 $(document).on("click","#home",function(){
-	alert('in home);
+	alert('in home');
 	$('#changepwd').hide();
 	
 })
