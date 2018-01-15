@@ -274,7 +274,7 @@ $(document).on("click","#btnUser",function(){
 	
 
 //new codee
-$(document).on("click","#homeid",function(){
+$(document).on("click","#td_home",function(){
 	
 	$('#divhome').show();
 	$('#product_list').hide();
