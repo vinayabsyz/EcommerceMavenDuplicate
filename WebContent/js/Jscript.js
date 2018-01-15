@@ -275,7 +275,7 @@ $(document).on("click","#btnUser",function(){
 })
 //new code
 $(document).on("click","#homeid",function(){
-	alert("inside home");
+	
 	$('#divhome').show();
 	$('#product_list').hide();
 	$('#my_orders').hide();
