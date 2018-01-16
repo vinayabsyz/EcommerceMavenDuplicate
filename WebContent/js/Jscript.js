@@ -509,11 +509,11 @@ function showuserinfo()
 				var usertable="<table border='1' width='100%'><tr class='tbl_header'><td colspan='4' class='Bold1'><strong>User Info</strong></td></tr>";
 				//usertable = usertable + "<tr><td class='tbl_header'>profilepic</td><td><img src="WebContent/images/dell_laptop.jpg" alt="Girl in a jacket" width="500" height="600"></td>";
 			
-				usertable = usertable + "<tr class='tile'><td class='tbl_header'><strong>Firstname</strong></td><td>"+obj[0].data[0].firstname+"</td><td class='tbl_header'>Lastname</td><td>"+obj[0].data[0].lastname+"</td></tr>";
-				usertable = usertable + "<tr class='tile'><td class='tbl_header'><strong>Email</strong></td><td>"+obj[0].data[0].email+"</td><td class='tbl_header'>Mobile</td><td>"+obj[0].data[0].mobile+"</td></tr>";		
-				usertable = usertable + "<tr class='tile'><td class='tbl_header'><strong>Address1</strong></td><td>"+obj[0].data[0].address1+"</td><td class='tbl_header'>Address2</td><td>"+obj[0].data[0].address2+"</td></tr>";
-				usertable = usertable + "<tr class='tile'><td class='tbl_header'><strong>City</strong></td><td>"+obj[0].data[0].city+"</td><td class='tbl_header'>State</td><td>"+obj[0].data[0].state+"</td></tr>";
-				usertable = usertable + "<tr class='tile'><td class='tbl_header'><strong>Country</strong></td><td>"+obj[0].data[0].country+"</td><td class='tbl_header'>Zipcode</td><td>"+obj[0].data[0].zipcode+"</td></tr>";
+				usertable = usertable + "<tr class='tile'><td class='tbl_header'><strong>Firstname</strong></td><td>"+obj[0].data[0].firstname+"</td><td class='tbl_header'><strong>Lastname</strong></td><td>"+obj[0].data[0].lastname+"</td></tr>";
+				usertable = usertable + "<tr class='tile'><td class='tbl_header'><strong>Email</strong></td><td>"+obj[0].data[0].email+"</td><td class='tbl_header'><strong>Mobile</strong></td><td>"+obj[0].data[0].mobile+"</td></tr>";		
+				usertable = usertable + "<tr class='tile'><td class='tbl_header'><strong>Address1</strong></td><td>"+obj[0].data[0].address1+"</td><td class='tbl_header'></strong>Address2</strong></td><td>"+obj[0].data[0].address2+"</td></tr>";
+				usertable = usertable + "<tr class='tile'><td class='tbl_header'><strong>City</strong></td><td>"+obj[0].data[0].city+"</td><td class='tbl_header'><strong>State</strong></td><td>"+obj[0].data[0].state+"</td></tr>";
+				usertable = usertable + "<tr class='tile'><td class='tbl_header'><strong>Country</strong></td><td>"+obj[0].data[0].country+"</td><td class='tbl_header'><strong>Zipcode</strong></td><td>"+obj[0].data[0].zipcode+"</td></tr>";
 								
 				usertable = usertable + "<tr><td colspan='4' align='center'><input type='button' id='btnChngPwd' value='Change Password' /></td></tr></table>";
 				//usertable = usertable + "<tr><td colspan='4' align='center'><img  alt='product' src='images/download.jpg' width='250px' height='250px'/></td></tr>
@@ -551,7 +551,7 @@ $(document).on("click", "#td_mycarts", function() {
 				//alert(obj.length);
 				//alert(obj[0].data.length);
 				//alert(obj[0].data[0].productname);
-				var cartTable="<table width='100%' border='1' class='tile' id='tbl_cart'><tr class='tbl_header'><td colspan='5'>My Carts Info</td></tr><tr class='tbl_header'><td>Select</td><td>Product Name</td><td>Quantity</td><td>Amount</td><td>Remove Item</td></tr>";
+				var cartTable="<table width='100%' border='1' class='tile' id='tbl_cart'><tr class='tbl_header'><td colspan='5'><strong>My Carts Info</strong></td></tr><tr class='tbl_header'><td>Select</td><td><strong>Product Name</strong></td><td><strong>Quantity</strong></td><td><strong>Amount</storng></td><td><strong>Remove Item</strong></td></tr>";
 				var chkVal = 2;
 				var chk_idarray=[];
 				for(var i=0;i<obj[0].data.length;i++)
@@ -579,7 +579,7 @@ $(document).on("click", "#td_mycarts", function() {
 						}
 					
 					}
-				cartTable = cartTable + "<tr class='tile'><td colspan='2'>Total Amount</td><td colspan='3'><input type='text' id='txtTotal' value ='0' disabled height='40'/></td><tr><td colspan='5' align='center'><br/><input type='button' id='placeorder' value='Place Order' ></td></tr></table>";
+				cartTable = cartTable + "<tr class='tile'><td colspan='2'><strong>Total Amount</strong></td><td colspan='3'><input type='text' id='txtTotal' value ='0' disabled height='40'/></td><tr><td colspan='5' align='center'><br/><input type='button' id='placeorder' value='Place Order' ></td></tr></table>";
 				$('#menu3').empty();
 				$('#menu3').append(cartTable);
 				
