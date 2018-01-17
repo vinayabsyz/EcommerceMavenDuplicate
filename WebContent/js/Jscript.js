@@ -109,7 +109,8 @@ $(document).on("click", "#btn_addtocart", function() {
 $(document).on("click", "#placeorder", function() {
 	//alert("mani");
 	var shippingid="1";
-	var userid = $('#hidid').val();
+	var searchParams = new URLSearchParams(window.location.search); //?anything=123
+	var userid = searchParams.get("userid");
 	var data="";
 	jsonObj=[];
 	var selected = [];
@@ -219,7 +220,8 @@ $(document).on("click", "#td_myorders", function() {
 $(document).on("click", "#btnSave", function() {
 	var pwd = $('#txtPwd').val();
 	var cfrmpwd = $('#txtCfrmPwd').val();
-	var userid = $('#hidid').val();
+	var searchParams = new URLSearchParams(window.location.search); //?anything=123
+	var userid = searchParams.get("userid");
 	$.ajax({
 		url : '/Ecommerce?serviceId=changepwd',
 		type: 'POST',
@@ -426,7 +428,8 @@ function Addtocart(productid,price)
 	//alert(i);
 	alert(price);
 var amount = 1 * price;
-	var userid = $('#hidid').val();//alert(productid);
+	var searchParams = new URLSearchParams(window.location.search); //?anything=123
+	var userid = searchParams.get("userid");
 	$.ajax({
 		url : '/Ecommerce?serviceId=addtocart',
 		type: 'POST',
