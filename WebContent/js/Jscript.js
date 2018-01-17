@@ -272,7 +272,7 @@ $(document).on("click","#btnUser",function(){
 })
 
 	
-})
+
 //new codee
 $(document).on("click","#td_home",function(){
 	
