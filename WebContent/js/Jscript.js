@@ -179,7 +179,10 @@ $(document).on("click", "#td_myorders", function() {
 	$('#my_carts').hide();
 	$('#my_orders').show();
 	$('#changepwd').hide();
-	var userid = $('#hidid').val(); 
+	window.location.href = "/userlogin.html";}
+	var searchParams = new URLSearchParams(window.location.search); //?anything=123
+	var userid = searchParams.get("userid");
+	//var userid = $('#hidid').val(); 
 	$.ajax({
 		url : '/Ecommerce?serviceId=myorders',
 		type: 'POST',
@@ -535,7 +538,10 @@ function showuserinfo()
 var proarray = [];
 var cartarray = [];
 $(document).on("click", "#td_mycarts", function() {
-	var userid=$('#hidid').val();
+	window.location.href = "/userlogin.html";}
+	var searchParams = new URLSearchParams(window.location.search); //?anything=123
+	var userid = searchParams.get("userid");
+	//var userid=$('#hidid').val();
 	$.ajax({
 		url : '/Ecommerce?serviceId=mycarts',
 		type: 'POST',
