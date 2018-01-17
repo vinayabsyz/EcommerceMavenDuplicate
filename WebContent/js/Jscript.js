@@ -179,7 +179,7 @@ $(document).on("click", "#td_myorders", function() {
 	$('#my_carts').hide();
 	$('#my_orders').show();
 	$('#changepwd').hide();
-	window.location.href = "/userlogin.html";}
+	window.location.href = "/userlogin.html";
 	var searchParams = new URLSearchParams(window.location.search); //?anything=123
 	var userid = searchParams.get("userid");
 	//var userid = $('#hidid').val(); 
@@ -485,7 +485,7 @@ function showuserinfo()
 	alert("Cl, " + Cl);
 	
 	if(Cl==null){
-	window.location.href = "/userlogin.html";}
+	window.location.href = "/userlogin.html";
 	var searchParams = new URLSearchParams(window.location.search); //?anything=123
 	var userid = searchParams.get("userid");
 	console.log(userid);
@@ -538,7 +538,7 @@ function showuserinfo()
 var proarray = [];
 var cartarray = [];
 $(document).on("click", "#td_mycarts", function() {
-	window.location.href = "/userlogin.html";}
+	window.location.href = "/userlogin.html";
 	var searchParams = new URLSearchParams(window.location.search); //?anything=123
 	var userid = searchParams.get("userid");
 	//var userid=$('#hidid').val();
