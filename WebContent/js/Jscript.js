@@ -2,7 +2,7 @@
 $(document).ready(function (){
 	
 	//$('#changepwd').hide();
-	$("#changepwd").css("display","none");
+	//$("#changepwd").css("display","none");
 	
 
 });
