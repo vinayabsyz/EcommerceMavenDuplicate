@@ -628,8 +628,8 @@ function delete_cartitem(cartid)
 			//alert(obj.length);
 			//alert(obj[0].data.length);
 			//alert(obj[0].data[0].productname);
-			var cartTable="<table width='100%' border='1'><tr class='tbl_header'><td colspan='5'>My Carts Info</td></tr><tr class='tbl_header'><td>Select</td><td>Product Name</td><td>Quantity</td><td>Amount</td><td>Remove Item</td></tr>";
-			for(var i=0;i<obj[0].data.length;i++)
+		var cartTable="<table width='100%' border='1' class='tile' id='tbl_cart'><tr class='tbl_header'><td colspan='5'><strong>My Carts Info</strong></td></tr><tr class='tbl_header'><td>Select</td><td><strong>Product Name</strong></td><td><strong>Quantity</strong></td><td><strong>Amount</storng></td><td><strong>Remove Item</strong></td></tr>";
+				for(var i=0;i<obj[0].data.length;i++)
 			{
 				var qty_id = "qty_"+ obj[0].data[i].productid;
 				var amt_id = "amt_"+ obj[0].data[i].productid;
