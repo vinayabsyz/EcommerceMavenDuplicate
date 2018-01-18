@@ -278,7 +278,18 @@ $(document).on("click","#btnUser",function(){
 	
 
 //new codee
-$(document).on("click","#home",function(){
+/*$(document).on("click","#td_home",function(){
+	
+	$('#divhome').show();
+	$('#product_list').hide();
+	$('#my_orders').hide();
+	$('#changepwd').hide();
+	
+}) */
+
+//new2
+
+$(document).on("click","#homeid",function(){
 	
 	$('#divhome').show();
 	$('#product_list').hide();
@@ -286,6 +297,7 @@ $(document).on("click","#home",function(){
 	$('#changepwd').hide();
 	
 })
+
 $(document).on("click","#divlogout",function(){
 	
 	$('#hidid').val("");
