@@ -5,6 +5,7 @@ $(document).ready(function (){
 	
 
 });
+//for user reg
 $(document).on("click", "#userreg",function userReg(){
 	var fname=$('#txtFname').val();
 	var lname=$('#txtlname').val();
@@ -56,7 +57,7 @@ $(document).on("click", "#userreg",function userReg(){
 	 }
 	
 });
-
+//product for admin
 $(document).on("click", "#addproduct",function userReg(){
 	var pname=$('#txtPname').val();
 	var pcount=$('#txtPcount').val();
@@ -80,7 +81,7 @@ $(document).on("click", "#addproduct",function userReg(){
 });
 
 
-
+//Add to cart tab
 $(document).on("click", "#btn_addtocart", function() {
 	//var productid = $('input[name=product]:checked').attr('id'); 
 	var productid = $('#hidPrdId').val();
@@ -105,7 +106,7 @@ $(document).on("click", "#btn_addtocart", function() {
 		}
 	});
 });
-
+//Place Order Button
 $(document).on("click", "#placeorder", function() {
 	//alert("mani");
 	var shippingid="1";
@@ -173,6 +174,8 @@ $(document).on("click", "#placeorder", function() {
 		}
 	});
 });
+
+//order tab
 $(document).on("click", "#td_myorders", function() {
 	$('#divhome').hide();
 	$('#product_list').hide();
@@ -217,6 +220,7 @@ $(document).on("click", "#td_myorders", function() {
 	});
 });
 
+//Save the changed password
 $(document).on("click", "#btnSave", function() {
 	var pwd = $('#txtPwd').val();
 	var cfrmpwd = $('#txtCfrmPwd').val();
@@ -244,29 +248,33 @@ $(document).on("click", "#btnSave", function() {
 		}
 	});
 });
-
+//product tab div
 $(document).on("click", "#product_list", function() {
 	$('#changepwd').hide();
 	loadProducts();
 });
+// user info tab
 $(document).on("click","#username",function(){
 	$('#divcontent').hide();
 	$('#userdiv').show();
 	$('#changepwd').hide();
 	$('#mycartdata').hide();
 })
+//Back button on change password
 $(document).on("click","#btnBack",function(){
 	$('#divcontent').show();
 	$('#userdiv').hide();
 	$('#changepwd').hide();
 	$('#mycartdata').hide();
 })
+//Button to change password
 $(document).on("click","#btnChngPwd",function(){
 	$('#divcontent').hide();
 	$('#userdiv').hide();
 	$('#changepwd').show();
 	$('#mycartdata').hide();
 })
+
 
 $(document).on("click","#btnUser",function(){
 	$('#divcontent').hide();
@@ -290,20 +298,20 @@ $(document).on("click","#btnUser",function(){
 //new2
 
 $(document).on("click","#homeid",function(){
-	
+	alert('home');
 	$('#divhome').show();
 	$('#product_list').hide();
 	$('#my_orders').hide();
 	$('#changepwd').hide();
 	
 })
-
+//logout
 $(document).on("click","#divlogout",function(){
 	
 	$('#hidid').val("");
 	window.location.href = "/userlogin.html";
 }) 
-
+//
 $(document).on("click","#btn_backpd",function(){
 	$('#divcontent').show();
 	$('#userdiv').hide();
