@@ -245,7 +245,7 @@ $(document).on("click", "#btnSave", function() {
 	});
 });
 
-$(document).on("click", "#td_products", function() {
+$(document).on("click", "#product_list", function() {
 	$('#changepwd').hide();
 	loadProducts();
 });
