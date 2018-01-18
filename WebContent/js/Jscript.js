@@ -572,13 +572,13 @@ $(document).on("click", "#td_mycarts", function() {
 					if(i%2 == 0)
 					{
 						cartTable = cartTable + "<tr class='tile'><td><input name='cart' type ='checkbox' id="+chk_id+" onclick='add_totalamount(this.id)' /></td><td>"+obj[0].data[i].productname+"</td>" +
-						"<td ><input id="+qty_id+" type='number' name='inputcell'/></td><td id="+amt_id+">"+obj[0].data[i].amount+"</td><td><button type='button' id="+rm_id+" onclick='delete_cartitem(this.id)'>remove</button></td>" +
+						"<td ><input id="+qty_id+" type='number' name='inputcell'/></td><td id="+amt_id+">"+obj[0].data[i].price+"</td><td><button type='button' id="+rm_id+" onclick='delete_cartitem(this.id)'>remove</button></td>" +
 						"</tr>";
 						}
 					else
 					{
 						cartTable = cartTable + "<tr class='tile'><td><input name='cart' type ='checkbox' id="+chk_id+" onclick='add_totalamount(this.id)' /></td><td>"+obj[0].data[i].productname+"</td>" +
-						"<td ><input type='number' id="+qty_id+" name='inputcell'/></td><td id="+amt_id+">"+obj[0].data[i].amount+"</td><td><button type='button' id="+rm_id+" onclick='delete_cartitem(this.id)'>remove</button></td>" +
+						"<td ><input type='number' id="+qty_id+" name='inputcell'/></td><td id="+amt_id+">"+obj[0].data[i].price+"</td><td><button type='button' id="+rm_id+" onclick='delete_cartitem(this.id)'>remove</button></td>" +
 						"</tr>";
 						}
 					
