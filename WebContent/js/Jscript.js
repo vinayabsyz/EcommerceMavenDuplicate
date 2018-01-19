@@ -332,6 +332,14 @@ $(document).on("click","#btn_backcart",function(){
 	$('#product_list').show();
 })
 
+
+
+function hidechangepwdH(){
+	alert('home clicked');
+$('#changepwd').hide();
+
+}
+
 function loadProducts()
 {
 	$('#divcontent').show();
