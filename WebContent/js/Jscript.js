@@ -1,5 +1,7 @@
 
-$(document).ready(function (){
+
+
+/*$(document).ready(function (){
 	function hidechangepwdH1(){
 	 alert('home onload');
 	$('#changepwd').hide();}
@@ -7,7 +9,12 @@ $(document).ready(function (){
 	
 	
 
-});
+}); */
+
+document.onload = function (){
+	alert('page loaded');
+hidechangepwdH()
+}
 //for user reg
 $(document).on("click", "#userreg",function userReg(){
 	var fname=$('#txtFname').val();
