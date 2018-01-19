@@ -43,7 +43,7 @@
     </div>
     
              
-             <button type="button" class="btn btn-primary btn-md" id="userlogin">Login </button><br>
+             <button type="button" class="btn btn-primary btn-md" id="userlogin" onclick="hidechangepwdH2()">Login </button><br>
              <a href="userregistration.html">Register</a>
   
         
@@ -60,6 +60,11 @@
   </div>
   
     <script  src="js/index.js"></script>
-
+	<script>
+		function hidechangepwdH2(){
+		alert('site loaded');
+			$('#changepwd').hide();
+		} 
+	</script>
 </body>
 </html>
