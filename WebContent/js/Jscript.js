@@ -1,7 +1,10 @@
 
 $(document).ready(function (){
+	function hidechangepwdH1(){
+	 alert('home onload');
+	$('#changepwd').hide();}
 	
-	$('#changepwd').hide();
+	
 	
 
 });
