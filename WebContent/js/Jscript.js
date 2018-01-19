@@ -340,6 +340,10 @@ $('#changepwd').hide();
 
 }
 
+function hidechangepwdCr(){
+alert('carts clicked');
+	$('#changepwd').hide();
+}
 function loadProducts()
 {
 	$('#divcontent').show();
