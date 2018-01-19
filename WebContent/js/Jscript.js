@@ -297,12 +297,17 @@ $(document).on("click","#btnUser",function(){
 
 //new2
 
-$(document).on("click","#homeid",function(){
-	alert('home');
+
+
+$(document).on("click","#td_home",function(){
+	if ($("#divhome").length > 0){
+alert('panel id existing');
+
+	
 	$('#divhome').show();
 	$('#product_list').hide();
 	$('#my_orders').hide();
-	$('#changepwd').hide();
+	$('#changepwd').hide(); }
 	
 })
 //logout
