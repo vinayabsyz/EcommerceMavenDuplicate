@@ -3,10 +3,8 @@
 
 $(document).ready(function (){
 	
-	//$('#changepwd').hide();
-	#changepwd {
-display: hidden;
-}
+	$('#changepwd').hide();
+	
 	
 	
 	
