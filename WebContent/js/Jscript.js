@@ -279,7 +279,11 @@ $(document).on("click","#btnBack",function(){
 })
 //Button to change password
 $(document).on("click","#btnChngPwd",function(){
-/*	var changePwdTable = "<table class="login-screen"><tr class='tbl_header'><td colspan='2'> <h2>Change Password</h2> </td>
+	$('#divcontent').show();
+	$('#userdiv').hide();
+	$('#changepwd').hide();
+	$('#prdndesc').hide();
+	var changePwdTable = "<table class="login-screen"><tr class='tbl_header'><td colspan='2'> <h2>Change Password</h2> </td>
 				</tr>";
 				
 				changePwdTable = changePwdTable + "<tr>
@@ -293,8 +297,9 @@ $(document).on("click","#btnChngPwd",function(){
 				changePwdTable = changePwdTable+ "<tr>
 					<td><input type="button" id="btnSave" value="Save" /><input type="button" id="btnUser" value="Back" /></td>
 				</tr>
-			</table>"; */
-	$("#changepwd").append(
+			</table>"; 
+	$('#menu5').append(usertable);
+	/*$("#changepwd").append(
         "<table><tr><td>My column 1, row 1</td>" +
         "<td>My column 2, row 2</td></tr>" +
         "<tr><td>My column 1, row 2</td>" +
@@ -303,7 +308,7 @@ $(document).on("click","#btnChngPwd",function(){
 	$('#divcontent').hide();
 	$('#userdiv').hide();
 	$('#changepwd').show();
-	$('#mycartdata').hide();
+	$('#mycartdata').hide();*/
 })
 
 
