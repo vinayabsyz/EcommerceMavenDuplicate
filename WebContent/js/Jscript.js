@@ -1,19 +1,4 @@
-<div id='divpwd2' >
-<table class="login-screen">
-				<tr class='tbl_header'>
-					<td colspan='2'> <h2>Change Password</h2> </td>
-				</tr>
-				<tr>
-					<td>Password</td><td><input type="text" name="txtPwd" id="txtPwd" /></td>
-				</tr>
-				<tr>
-					<td>Confirm Password</td><td><input type="password" name="txtCfrmPwd" id="txtCfrmPwd" /></td>
-				</tr>
-				<tr>
-					<td><input type="button" id="btnSave" value="Save" /><input type="button" id="btnUser" value="Back" /></td>
-				</tr>
-			</table>
-</div>
+
 
 $(document).ready(function (){
 	
@@ -293,7 +278,7 @@ $(document).on("click","#btnBack",function(){
 })
 //Button to change password
 $(document).on("click","#btnChngPwd",function(){
-	$('#divpwd2').show();
+	
 	/*var changePwdTable = "<table class="login-screen"><tr class='tbl_header'><td colspan='2'> <h2>Change Password</h2> </td>
 				</tr>";
 				
@@ -597,9 +582,9 @@ function showuserinfo()
 				usertable = usertable + "<tr class='tile'><td class='tbl_header'><strong>Email</strong></td><td>"+obj[0].data[0].email+"</td><td class='tbl_header'><strong>Mobile</strong></td><td>"+obj[0].data[0].mobile+"</td></tr>";		
 				usertable = usertable + "<tr class='tile'><td class='tbl_header'><strong>Address1</strong></td><td>"+obj[0].data[0].address1+"</td><td class='tbl_header'></strong>Address2</strong></td><td>"+obj[0].data[0].address2+"</td></tr>";
 				usertable = usertable + "<tr class='tile'><td class='tbl_header'><strong>City</strong></td><td>"+obj[0].data[0].city+"</td><td class='tbl_header'><strong>State</strong></td><td>"+obj[0].data[0].state+"</td></tr>";
-				usertable = usertable + "<tr class='tile'><td class='tbl_header'><strong>Country</strong></td><td>"+obj[0].data[0].country+"</td><td class='tbl_header'><strong>Zipcode</strong></td><td>"+obj[0].data[0].zipcode+"</td></tr>";
+				usertable = usertable + "<tr class='tile'><td class='tbl_header'><strong>Country</strong></td><td>"+obj[0].data[0].country+"</td><td class='tbl_header'><strong>Zipcode</strong></td><td>"+obj[0].data[0].zipcode+"</td></tr></table>";
 								
-				usertable = usertable + "<tr><td colspan='4' align='center'><input type='button' id='btnChngPwd' value='Change Password' /></td></tr></table>";
+				//usertable = usertable + "<tr><td colspan='4' align='center'><input type='button' id='btnChngPwd' value='Change Password' /></td></tr></table>";
 				//usertable = usertable + "<tr><td colspan='4' align='center'><img  alt='product' src='images/download.jpg' width='250px' height='250px'/></td></tr>
 			
 				$('#menu5').empty();
