@@ -568,7 +568,9 @@ function showuserinfo()
 								
 				usertable = usertable + "<tr><td colspan='4' align='center'><input type='button' id='btnChngPwd' value='Change Password' /></td></tr></table>";
 				//usertable = usertable + "<tr><td colspan='4' align='center'><img  alt='product' src='images/download.jpg' width='250px' height='250px'/></td></tr>
-			
+			$("btnChngPwd").click(function(){
+    alert("The button is clicked.");
+});
 				$('#menu5').empty();
 				
 				$('#menu5').append(usertable);
