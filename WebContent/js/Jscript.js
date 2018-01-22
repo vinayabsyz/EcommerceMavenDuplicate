@@ -581,27 +581,8 @@ function showuserinfo()
 		}
 	});
 	
-	$(function(){
-    $("#btnChngPwd").click(function(){
-       <div  id="changepwd">
- <table class="login-screen">
-				<tr class='tbl_header'>
-					<td colspan='2'> <h2>Change Password</h2> </td>
-				</tr>
-				<tr>
-					<td>Password</td><td><input type="text" name="txtPwd" id="txtPwd" /></td>
-				</tr>
-				<tr>
-					<td>Confirm Password</td><td><input type="password" name="txtCfrmPwd" id="txtCfrmPwd" /></td>
-				</tr>
-				<tr>
-					<td><input type="button" id="btnSave" value="Save" /><input type="button" id="btnUser" value="Back" /></td>
-				</tr>
-			</table>
-			</div>
-	    alert('clicked!');
-    });
-});
+	
+
 	
 	}
 var proarray = [];
