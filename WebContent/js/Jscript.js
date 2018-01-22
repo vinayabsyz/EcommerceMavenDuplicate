@@ -296,11 +296,7 @@ $(document).on("click","#btnChngPwd",function(){
 				</tr>
 			</table>"; 
 	$('#menu5').append(changePwdTable);*/
-	$("#changepwd").append(
-        "<table><tr><td>My column 1, row 1</td>" +
-        "<td>My column 2, row 2</td></tr>" +
-        "<tr><td>My column 1, row 2</td>" +
-        "<td>My column 2, row 2</td></tr></table>");
+	
 	alert('vv');
 	$('#divcontent').hide();
 	$('#userdiv').hide();
