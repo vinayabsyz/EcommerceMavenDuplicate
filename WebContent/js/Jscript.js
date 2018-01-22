@@ -3,9 +3,11 @@
 
 $(document).ready(function (){
 	
-	 $('#changepwd').hide();
+	// $('#changepwd').hide();
 	
-	
+	setTimeout(function() {
+    $('#changepwd').stop(true, true).hide(); 
+}, 700);
 
 	
 	
