@@ -1,4 +1,4 @@
-@(s3Files: List[models.S3File])
+(s3Files: List[models.S3File])
  < !DOCTYPE html>
 
 <html>
@@ -8,15 +8,15 @@
 </head>
 <body>
     <h1>Upload a file:</h1>
-    @helper.form(action = routes.Application.upload, 'enctype -> "multipart/form-data") {
+    helper.form(action = routes.Application.upload, 'enctype -> "multipart/form-data") {
         <input type="file" name="upload">
         <input type="submit">
     }
 
     <h1>Uploads:</h1>
     <ul>
-    @for(upload <- uploads) {
-        <li><a href="@upload.getUrl()">@upload.name</a></li>
+    for(upload <- uploads) {
+        <li><a href="upload.getUrl()">@upload.name</a></li>
     }
     </ul>
 
