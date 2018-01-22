@@ -298,7 +298,7 @@ $(document).on("click","#btnChngPwd",function(){
 					<td><input type="button" id="btnSave" value="Save" /><input type="button" id="btnUser" value="Back" /></td>
 				</tr>
 			</table>"; 
-	$('#menu5').append(usertable);
+	$('#menu5').append(changePwdTable);
 	/*$("#changepwd").append(
         "<table><tr><td>My column 1, row 1</td>" +
         "<td>My column 2, row 2</td></tr>" +
