@@ -279,7 +279,7 @@ $(document).on("click","#btnBack",function(){
 })
 //Button to change password
 $(document).on("click","#btnChngPwd",function(){
-	<script>alert('change password is clicked');</script>
+	
 	
 	$('#divcontent').hide();
 	$('#userdiv').hide();
