@@ -7,7 +7,7 @@ $(document).ready(function (){
 	
 	setTimeout(function() {
     $('#changepwd').stop(true, true).hide(); 
-}, 50);
+}, 10);
 
 	
 	
