@@ -3,7 +3,7 @@
 
 $(document).ready(function (){
 	
-	// $('#changepwd').hide();
+	 $('#changepwd').hide();
 	
 	<style type="text/css">
         #changepwd {
