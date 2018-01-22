@@ -297,7 +297,8 @@ $(document).on("click","#btnChngPwd",function(){
 	alert('vv');
 	$('#divcontent').hide();
 	$('#userdiv').hide();
-	$('#changepwd').show();
+	$('#menu5').append(changePwdTable);
+	//$('#changepwd').show();
 	$('#mycartdata').hide();
 })
 
