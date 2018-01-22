@@ -279,20 +279,21 @@ $(document).on("click","#btnBack",function(){
 })
 //Button to change password
 $(document).on("click","#btnChngPwd",function(){
-	<table class="login-screen">
-				<tr class='tbl_header'>
-					<td colspan='2'> <h2>Change Password</h2> </td>
-				</tr>
-				<tr>
+	var changePwdTable = "<table class="login-screen"><tr class='tbl_header'><td colspan='2'> <h2>Change Password</h2> </td>
+				</tr>";
+				
+				changePwdTable = changePwdTable + "<tr>
 					<td>Password</td><td><input type="text" name="txtPwd" id="txtPwd" /></td>
-				</tr>
-				<tr>
+				</tr>";
+				
+				changePwdTable= changePwdTable+ "<tr>
 					<td>Confirm Password</td><td><input type="password" name="txtCfrmPwd" id="txtCfrmPwd" /></td>
-				</tr>
-				<tr>
+				</tr>";
+				
+				changePwdTable = changePwdTable+ "<tr>
 					<td><input type="button" id="btnSave" value="Save" /><input type="button" id="btnUser" value="Back" /></td>
 				</tr>
-			</table>
+			</table>";
 	alert('vv');
 	$('#divcontent').hide();
 	$('#userdiv').hide();
