@@ -5,11 +5,7 @@ $(document).ready(function (){
 	
 	 $('#changepwd').hide();
 	
-	<style type="text/css">
-        #changepwd {
-            display:none
-        }
-    </style>
+	
 
 	
 	
