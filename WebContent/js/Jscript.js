@@ -280,7 +280,7 @@ $(document).on("click","#btnBack",function(){
 //Button to change password
 $(document).on("click","#btnChngPwd",function(){
 	
-	
+	alert('vv');
 	$('#divcontent').hide();
 	$('#userdiv').hide();
 	$('#changepwd').show();
