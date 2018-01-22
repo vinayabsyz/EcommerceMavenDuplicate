@@ -151,7 +151,7 @@
 </body>-->
 <!--       <h3>Display user info table here</h3> -->
 <!--       <p>user info table</p> -->
-	
+	<input type="button" onclick="msg()" value="change">
     </div>
 	
 	<div  id="changepwd" style="display:none">
@@ -171,7 +171,18 @@
 			</table>
 			</div> 
 	
-	
+	<script >
+		function msg(){
+			alert('msg');
+		var x= document.getElementById("changepwd");
+			if (x.style.display === "none") {
+        x.style.display = "block";
+    }else
+	    {
+        x.style.display = "none";
+    }
+		} 
+	</script>
 	<div id="imgid" class="tab-pane fade">
 	
 
