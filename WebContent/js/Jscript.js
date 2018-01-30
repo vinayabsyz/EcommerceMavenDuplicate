@@ -580,7 +580,7 @@ function showuserinfo()
 			
 				usertable = usertable + "<tr class='tile'><td class='tbl_header'><strong>Firstname</strong></td><td>"+obj[0].data[0].firstname+"</td><td class='tbl_header'><strong>Lastname</strong></td><td>"+obj[0].data[0].lastname+"</td></tr>";
 				usertable = usertable + "<tr class='tile'><td class='tbl_header'><strong>Email</strong></td><td>"+obj[0].data[0].email+"</td><td class='tbl_header'><strong>Mobile</strong></td><td>"+obj[0].data[0].mobile+"</td></tr>";		
-				usertable = usertable + "<tr class='tile'><td class='tbl_header'><strong>Address1</strong></td><td>"+obj[0].data[0].address1+"</td><td class='tbl_header'></strong>Address2</strong></td><td>"+obj[0].data[0].address2+"</td></tr>";
+				usertable = usertable + "<tr class='tile'><td class='tbl_header'><strong>Address1</strong></td><td>"+obj[0].data[0].address1+"</td><td class='tbl_header'><strong>Address2</strong></td><td>"+obj[0].data[0].address2+"</td></tr>";
 				usertable = usertable + "<tr class='tile'><td class='tbl_header'><strong>City</strong></td><td>"+obj[0].data[0].city+"</td><td class='tbl_header'><strong>State</strong></td><td>"+obj[0].data[0].state+"</td></tr>";
 				usertable = usertable + "<tr class='tile'><td class='tbl_header'><strong>Country</strong></td><td>"+obj[0].data[0].country+"</td><td class='tbl_header'><strong>Zipcode</strong></td><td>"+obj[0].data[0].zipcode+"</td></tr></table>";
 								
