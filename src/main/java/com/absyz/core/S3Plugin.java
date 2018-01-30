@@ -4,11 +4,11 @@ import com.amazonaws.auth.AWSCredentials;
 import com.amazonaws.auth.BasicAWSCredentials;
 import com.amazonaws.services.s3.AmazonS3;
 import com.amazonaws.services.s3.AmazonS3Client;
-import absyzecommerceportal.Application;
-import absyzecommerceportal.Logger;
-import absyzecommerceportal.Plugin;
+import main.java.com.absyz.core.Application;
+import main.java.com.absyz.core.Logger;
+import main.java.com.absyz.core.Plugin;
 
-public class S3Plugin extends Plugin {
+public class S3Plugin extends HttpServlet {
 
     public static final String AWS_S3_BUCKET = "aws.s3.bucket";
     public static final String AWS_ACCESS_KEY = "aws.access.key";
