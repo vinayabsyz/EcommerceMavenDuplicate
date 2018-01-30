@@ -5,7 +5,7 @@ import com.amazonaws.auth.BasicAWSCredentials;
 import com.amazonaws.services.s3.AmazonS3;
 import com.amazonaws.services.s3.AmazonS3Client;
 import main.java.com.absyz.core.Application;
-import main.java.com.absyz.core.Logger;
+import absyzecommerceportal.Logger;
 import main.java.com.absyz.core.Plugin;
 
 public class S3Plugin extends HttpServlet {
