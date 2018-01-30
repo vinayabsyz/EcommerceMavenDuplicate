@@ -4,16 +4,14 @@
 <html>
 <head>
     <title>File Upload with Java, Play 2, and S3</title>
-  
+    <link rel="shortcut icon" type="image/png" href="@routes.Assets.at("images/favicon.png")">
 </head>
 <body>
     <h1>Upload a file:</h1>
-     <form action = "/Ecommerce?serviceId=imageupload" method = "post"
-         enctype = "multipart/form-data"/>
-    
+    @helper.form(action = routes.Application.upload, 'enctype -> "multipart/form-data") {
         <input type="file" name="upload">
         <input type="submit">
-    </form>
+    }
 
     <h1>Uploads:</h1>
     <ul>
