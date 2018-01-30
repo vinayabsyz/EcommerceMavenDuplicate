@@ -135,6 +135,10 @@ response.setContentType("application/json");
 			   response.setHeader("Cache-Control", "no-cache");
 			   response.getOutputStream().write(new String(strOutput.getBytes("UTF-8")).getBytes());
 		   }
+		    if (request.getParameter("serviceId").equals("imageupload"))
+		   {
+			   String strOutput =Application.upload();
+			   	   }
 		if (request.getParameter("serviceId").equals("changepwd"))
 		   {
 			   String strOutput = UserRegistration.change_password(request);
@@ -233,6 +237,7 @@ response.setContentType("application/json");
 			   response.setHeader("Cache-Control", "no-cache");
 			   response.getOutputStream().write(new String(strOutput.getBytes("UTF-8")).getBytes());
 		   }
+		    
 	} catch (JSONException e) {
 		// TODO Auto-generated catch block
 		e.printStackTrace();
