@@ -29,7 +29,7 @@ public class Application extends Controller {
             return redirect(routes.Application.index());
         }
         else {
-            return badRequest("File upload error");
+            return 'error';
         }
     }
 
