@@ -683,7 +683,7 @@ function delete_cartitem(cartid)
 	//var userid=$('#hidid').val();
 	var searchParams = new URLSearchParams(window.location.search); //?anything=123
 	var userid = searchParams.get("userid");
-	location.reload();
+	
 	$.ajax({
 		url : '/Ecommerce?serviceId=deletecart',
 		type: 'POST',
