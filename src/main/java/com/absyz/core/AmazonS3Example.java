@@ -67,12 +67,5 @@ public class AmazonS3Example {
 	 * This method first deletes all the files in given folder and than the
 	 * folder itself
 	 */
-	public static void deleteFolder(String bucketName, String folderName, AmazonS3 client) {
-		List fileList = 
-				client.listObjects(bucketName, folderName).getObjectSummaries();
-		for (S3ObjectSummary file : fileList) {
-			client.deleteObject(bucketName, file.getKey());
-		}
-		client.deleteObject(bucketName, folderName);
-	}
+	
 }
