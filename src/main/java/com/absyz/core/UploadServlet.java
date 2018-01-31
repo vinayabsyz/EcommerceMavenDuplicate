@@ -49,13 +49,13 @@ private static final String SUFFIX = "/";
 		AmazonS3 s3client = new AmazonS3Client(credentials);
 		
 		// create bucket - name must be unique for all S3 users
-		String bucketName = "javatutorial-net-example-bucket";
-		s3client.createBucket(bucketName);
+		String bucketName = "java-demo-dev";
+		//s3client.createBucket(bucketName);
 		
 		// list buckets
-		for (Bucket bucket : s3client.listBuckets()) {
-			System.out.println(" - " + bucket.getName());
-		}
+		//for (Bucket bucket : s3client.listBuckets()) {
+			//System.out.println(" - " + bucket.getName());
+		//}
 		
 		// create folder into bucket
 		String folderName = "testfolder";
