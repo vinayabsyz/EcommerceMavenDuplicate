@@ -35,7 +35,7 @@ public class UploadServlet extends HttpServlet {
    private int maxFileSize = 500 * 1024;
    private int maxMemSize = 4 * 1024;
    private File file ;
-
+private static final String SUFFIX = "/";
    public void init( ){
       // Get the file location where it would be stored.
       //filePath = getServletContext().getInitParameter("file-upload"); 
