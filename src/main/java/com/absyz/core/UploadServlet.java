@@ -42,8 +42,8 @@ private static final String SUFFIX = "/";
 	  // filePath = "C:\\Files\\";
 	  filePath = "WebContent/images/";
 	   AWSCredentials credentials = new BasicAWSCredentials(
-				"AKIAIQT7Y5EDYZQFWTBA", 
-				"kd7Qb/ML/NVubxjVd+EGZJlHincFI5AGnLTjVW+P");
+				System.getenv("AWS_ACCESS_KEY"), 
+				System.getenv("AWS_SECRET_KEY"));
 		
 		// create a client connection based on credentials
 		AmazonS3 s3client = new AmazonS3Client(credentials);
