@@ -45,10 +45,7 @@ public class AmazonS3Example {
 				new File("C:\\Users\\vishwasamudralogo.PNG"))
 				.withCannedAcl(CannedAccessControlList.PublicRead));
 		
-		deleteFolder(bucketName, folderName, s3client);
 		
-		// deletes bucket
-		s3client.deleteBucket(bucketName);
 	}
 	
 	public static void createFolder(String bucketName, String folderName, AmazonS3 client) {
