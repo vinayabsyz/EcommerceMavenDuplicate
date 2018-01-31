@@ -38,13 +38,13 @@
    <url-pattern>/Application</url-pattern>
 </servlet-mapping>
 	    <servlet>
-	     <servlet-name>uploadservlet1</servlet-name>
-   <servlet-class>main.java.com.absyz.core.uploadservlet1</servlet-class>
+	     <servlet-name>AmazonS3Example</servlet-name>
+   <servlet-class>main.java.com.absyz.core.AmazonS3Example</servlet-class>
 </servlet>
 
 <servlet-mapping>
-   <servlet-name>uploadservlet1</servlet-name>
-   <url-pattern>/uploadservlet1</url-pattern>
+   <servlet-name>AmazonS3Example</servlet-name>
+   <url-pattern>/AmazonS3Example</url-pattern>
 </servlet-mapping>
 	    <context-param> 
     <description>Location to store uploaded file</description> 
