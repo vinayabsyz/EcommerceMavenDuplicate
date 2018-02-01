@@ -614,7 +614,7 @@ function showuserinfo()
 			//alert(obj.length);
 			//alert(obj[0].data.length);
 			//alert(obj[0].data[0].productname);
-			var orderTable="<b>Order History</b><br/><br/><table width='100%'><tr class='tile'><td><strong>Order No</strong></td><td><strong>Product Name</strong></td><td><strong>Price</strong></td><td><strong>Date</strong></td><td><strong>Quantity</strong></td><td><strong>Amount</strong></td><td><strong>status</strong></td>";
+			var orderTable="<br/><br/><b>Order History</b><br/><br/><table width='100%'><br/><tr class='tile'><td><strong>Order No</strong></td><td><strong>Product Name</strong></td><td><strong>Price</strong></td><td><strong>Date</strong></td><td><strong>Quantity</strong></td><td><strong>Amount</strong></td><td><strong>status</strong></td>";
 			
 			for(var i=0;i<obj[0].data.length;i++)
 			{
@@ -753,35 +753,40 @@ function delete_cartitem(cartid)
 			alert("obj[0].success[0].success"+obj[0].success[0].success);
 			if(obj[0].success[0].success == "success")
 			{
-			var obj = jQuery.parseJSON(responseText);
-			//alert(obj.length);
-			//alert(obj[0].data.length);
-			//alert(obj[0].data[0].productname);
-		var cartTable="<table width='100%' border='1' class='tile' id='tbl_cart'><tr class='tbl_header'><td colspan='5'><strong>My Carts Info</strong></td></tr><tr class='tbl_header'><td>Select</td><td><strong>Product Name</strong></td><td><strong>Quantity</strong></td><td><strong>Amount</storng></td><td><strong>Remove Item</strong></td></tr>";
+			var cartTable="<table width='100%' border='1' class='tile' id='tbl_cart'><tr class='tbl_header'><td colspan='5'>My Carts Info</td></tr><tr class='tbl_header'><td>Select</td><td>Product Name</td><td>Quantity</td><td>Amount</td><td>Remove Item</td></tr>";
+				var chkVal = 2;
+				var chk_idarray=[];
 				for(var i=0;i<obj[0].data.length;i++)
-			{
-				var qty_id = "qty_"+ obj[0].data[i].productid;
-				var amt_id = "amt_"+ obj[0].data[i].productid;
-				var rm_id = "rm_"+ obj[0].data[i].cartid;
-				var chk_id = obj[0].data[i].productid + "_" + obj[0].data[i].cartid;
-				if(i%2 == 0)
 				{
-					cartTable = cartTable + "<tr class='tile'><td><input name='cart' type ='checkbox' id="+chk_id+" onclick='add_totalamount(this.id)' /></td><td>"+obj[0].data[i].productname+"</td>" +
-						"<td ><input id="+qty_id+" type='number' name='inputcell'/></td><td id="+amt_id+">"+obj[0].data[i].price+"</td><td><button type='button' id="+rm_id+" onclick='delete_cartitem(this.id)'>remove</button></td>" +
+					var qty_id = "qty_"+ obj[0].data[i].cartid;
+					var amt_id = "amt_"+ chkVal;
+					var rm_id = "rm_"+ obj[0].data[i].cartid;
+					 chk_id = obj[0].data[i].productid + "_" + obj[0].data[i].cartid;
+					proarray.push(obj[0].data[i].productid);
+					cartarray.push(obj[0].data[i].cartid);
+					var obj1=obj;
+					//var chk_id = "chk_"+chkVal;
+					chkVal = parseInt(chkVal)+1;
+					if(i%2 == 0)
+					{
+						cartTable = cartTable + "<tr class='tile'><td><input name='cart' type ='checkbox' id="+chk_id+" onclick='add_totalamount(this.id)' /></td><td>"+obj[0].data[i].productname+"</td>" +
+						"<td ><input id="+qty_id+" type='number' name='inputcell' value='0' onchange='add_totalamount(chk_id)'/></td><td id="+amt_id+">"+obj[0].data[i].price+"</td><td><button type='button' id="+rm_id+" onclick='delete_cartitem(this.id)'>remove</button></td>" +
 						"</tr>";
-					}
-				else
-				{
-					cartTable = cartTable + "<tr class='tile'><td><input name='cart' type ='checkbox' id="+chk_id+" onclick='add_totalamount(this.id)' /></td><td>"+obj[0].data[i].productname+"</td>" +
-						"<td ><input type='number' id="+qty_id+" name='inputcell'/></td><td id="+amt_id+">"+obj[0].data[i].price+"</td><td><button type='button' id="+rm_id+" onclick='delete_cartitem(this.id)'>remove</button></td>" +
+						}
+					else
+					{
+						cartTable = cartTable + "<tr class='tile'><td><input name='cart' type ='checkbox' id="+chk_id+" onclick='add_totalamount(this.id)' /></td><td>"+obj[0].data[i].productname+"</td>" +
+						"<td ><input type='number' id="+qty_id+" name='inputcell' value='0' onchange='add_totalamount(chk_id)'/></td><td id="+amt_id+">"+obj[0].data[i].price+"</td><td><button type='button' id="+rm_id+" onclick='delete_cartitem(this.id)'>remove</button></td>" +
 						"</tr>";
+						}
+					
 					}
+				cartTable = cartTable + "<tr class='tile'><td colspan='2'>Additional Charges</td><td colspan='3'><input type='number' id='addcharges' value ='0'/></td></tr>";
 				
-				}
-			cartTable = cartTable + "<tr class='tbl_even_row'><td colspan='2'>Total Amount</td><td colspan='3'><input type='text' id='txtTotal' value ='0' disabled height='40'/></td><tr><td colspan='5' align='center'><input type='button' id='placeorder' value='Place Order' ><input type='button' id='btn_backcart' value='Back' ></td></tr></table>";
-			$('#menu3').empty();
-			$('#menu3').append(cartTable);
-			
+				cartTable = cartTable + "<tr class='tile'><td colspan='2'>Total Amount</td><td colspan='3'><input type='text' id='txtTotal' value ='0' disabled height='40'/></td><tr/><br/><br/><tr><td colspan='5' align='center'><input type='button' id='placeorder' value='Place Order' ></td></tr></table>";
+				$('#menu3').empty();
+				$('#menu3').append(cartTable);
+				
 		}
 		else
 		{
