@@ -124,31 +124,31 @@ $(document).on("click", "#placeorder", function() {
 	var data="";
 	jsonObj=[];
 	var selected = [];
-	alert("hi");
+	
 	$('#tbl_cart input:checked').each(function() {
 		selected.push($(this).attr('id'));
 	});
 	$.each(selected, function (index, value) {
-		alert(index);
+		
 
 		  console.log(value);
 		var product_cart_id = value;
 		//alert(product_cart_id);
-		alert(product_cart_id);
+		
 		var split_ids = product_cart_id.split("_");
-		alert(split_ids);
+		
 		var product_id = split_ids[0];
-		alert(product_id);
+		
 		var cart_id = split_ids[1];
-		alert(cart_id);
+		
 		var qty_id = "#qty_"+cart_id;
-		alert(qty_id);
+		
 		var amt_id = "#amt_"+product_id;
-		alert(amt_id);
+		
 		var price =$(amt_id).text();
-		alert(price);
+		
 		var quantity = $(qty_id).val();
-		alert(quantity);	
+			
 		var totalamount =  $('#txtTotal').val();
 		var label= ["Order Received", "Order Processing", "Order dispatched", "Order Shipped", "Order Delivered"];
 		var counter = 0;
@@ -495,10 +495,9 @@ function loadProducts()
 }
 function Addtocart(productid,price)
 {
-	alert(productid);
+	
     var quantity = 1;
-	//alert(i);
-	alert(price);
+	
 var amount = 1 * price;
 	var searchParams = new URLSearchParams(window.location.search); //?anything=123
 	var userid = searchParams.get("userid");
@@ -510,8 +509,7 @@ var amount = 1 * price;
 		},
 		success : function(responseText) {
 			var obj = jQuery.parseJSON(responseText);
-			alert("added to cart");
-			alert(obj[0].success[0].message);
+			
 			$('#divcontent').show();
 			$('#userdiv').hide();
 			$('#changepwd').hide();
@@ -537,9 +535,7 @@ function showproduct(prdid)
 		success : function(responseText) {
 			console.log(responseText);
 			var obj = jQuery.parseJSON(responseText);
-			alert(responseText);
-			alert(obj[0].data.length);
-			alert(obj[0].data[0].productname);
+			
 			//	$('#menu1').show();
 				$('#product_list').show();
 					
@@ -555,7 +551,6 @@ function showproduct(prdid)
 function showuserinfo()
 {
 	var Cl=localStorage.getItem("loggedin")
-	alert("Cl, " + Cl);
 	
 	if(Cl==null){
 	window.location.href = "/userlogin.html";}
@@ -811,7 +806,7 @@ function add_totalamount(id)
 	var rowCount = $('#tbl_cart tr').length;
 	var MyRows = $('table#tbl_cart').find('tbody').find('tr');
 		for(var id=2;id<rowCount-2;id++){
-			alert("Hi");
+			
 		  if($("#"+proarray [id-2]+"_"+cartarray[id-2]).is(':checked')){
 			prod_amount = 0;
 			var amt =  $(MyRows[id]).find('td:eq(3)').html();
