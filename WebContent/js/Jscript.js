@@ -635,14 +635,15 @@ function showuserinfo()
 			orderTable = orderTable + "</table>";
 			//$('#my_orders').empty();
 			//$('#my_orders').append(orderTable);
-								
+			$('#menu5').empty();
+			$('#menu5').append(orderTable);					
 		}
 	});
 				//end of orders table
-				$('#menu5').empty();
+				
 				
 				$('#menu5').append(usertable);
-				$('#menu5').append(orderTable);
+				
 				$('#hidid').val(userid);
 			}
 			else{
