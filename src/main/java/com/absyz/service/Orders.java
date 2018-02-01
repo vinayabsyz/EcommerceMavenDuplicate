@@ -87,7 +87,7 @@ public class Orders {
 		JSONObject obj=null;
 		try {
 			//String strQuery = "Select * from orders where userid = "+intUserId;
-			String strQuery = "Select o.orderid,o.userid,o.productid,o.orderdate,o.productquantity,o.totalamount,p.productname,p.price from orders o "
+			String strQuery = "Select o.orderid,o.userid,o.productid,o.orderdate,o.status,o.productquantity,o.totalamount,p.productname,p.price from orders o "
 					+ "join products p on o.productid = p.productid where o.userid = "+intUserId+" order by o.orderid asc";
 			conn = DbConnection.getConnection();
 			stSelectOrders = conn.createStatement();
