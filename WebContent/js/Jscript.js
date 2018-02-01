@@ -168,7 +168,7 @@ $(document).on("click", "#placeorder", function() {
 		data["totalamount"]= totalamount;
 		data["shippingid"]= shippingid;
 		data["userid"]= userid;
-		data["status"]=label; 
+		data["status"]="Order Placed"; 
 		 jsonObj.push(data);
 	});
 		var jsonString = JSON.stringify(jsonObj);
@@ -218,12 +218,13 @@ $(document).on("click", "#td_myorders", function() {
 			//alert(obj[0].data.length);
 			//alert(obj[0].data[0].productname);
 			var orderTable="<table width='100%'><tr class='tile'><td><strong>Order No</strong></td><td><strong>Product Name</strong></td><td><strong>Price</strong></td><td><strong>Date</strong></td><td><strong>Quantity</strong></td><td><strong>Amount</strong></td><td><strong>Status</strong></td>";
+			var orderTable="<br/><br/><b>Order History</b><br/><br/><table width='100%'><tr class='tile'><td><strong>Order No</strong></td><td><strong>Product Name</strong></td><td><strong>Price</strong></td><td><strong>Date</strong></td><td><strong>Quantity</strong></td><td><strong>Amount</strong></td>";
 			for(var i=0;i<obj[0].data.length;i++)
 			{
 				if(i%2 == 0)
 				{
 					orderTable = orderTable + "<tr class='tile'><td>"+obj[0].data[i].orderid+"</td><td>"+obj[0].data[i].productname+"</td>" +
-					"<td>"+obj[0].data[i].price+"</td><td>"+obj[0].data[i].orderdate+"</td><td>"+obj[0].data[i].productquantity+"</td><td>"+obj[0].data[i].totalamount+"</td><td>"+obj[0].data[i].label+"</td";
+					"<td>"+obj[0].data[i].price+"</td><td>"+obj[0].data[i].orderdate+"</td><td>"+obj[0].data[i].productquantity+"</td><td>"+obj[0].data[i].totalamount+"</td></tr>";
 					}
 				else
 				{
