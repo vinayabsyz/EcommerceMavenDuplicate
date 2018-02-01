@@ -93,6 +93,7 @@ $(document).on("click", "#addproduct",function userReg(){
 //Add to cart tab
 $(document).on("click", "#btn_addtocart", function() {
 	//var productid = $('input[name=product]:checked').attr('id'); 
+	alert("Added");
 	var productid = $('#hidPrdId').val();
 	var quantity = $('#txtgetQty').val();
 	var price = $('#showPrdPrice').text();
@@ -702,7 +703,7 @@ $(document).on("click", "#td_mycarts", function() {
 						}
 					
 					}
-				cartTable = cartTable + "<tr class='tile'><td colspan='2'>Additional Charges</td><td colspan='3'><input type='number' id='addcharges' value ='0'/></td></tr>";
+				cartTable = cartTable + "<tr class='tile'><td colspan='2'>Additional Charges</td><td colspan='3'><output type='number' id='addcharges' value ='0'/></td></tr>";
 				
 				cartTable = cartTable + "<tr class='tile'><td colspan='2'>Total Amount</td><td colspan='3'><input type='text' id='txtTotal' value ='0' disabled height='40'/></td><tr/><br/><br/><tr><td colspan='5' align='center'><input type='button' id='placeorder' value='Place Order' ></td></tr></table>";
 				$('#menu3').empty();
@@ -777,7 +778,7 @@ function delete_cartitem(cartid)
 						}
 					
 					}
-				cartTable = cartTable + "<tr class='tile'><td colspan='2'>Additional Charges</td><td colspan='3'><input type='number' id='addcharges' value ='0'/></td></tr>";
+				cartTable = cartTable + "<tr class='tile'><td colspan='2'>Additional Charges</td><td colspan='3'><output type='number' id='addcharges' value ='0'/></td></tr>";
 				
 				cartTable = cartTable + "<tr class='tile'><td colspan='2'>Total Amount</td><td colspan='3'><input type='text' id='txtTotal' value ='0' disabled height='40'/></td><tr/><br/><br/><tr><td colspan='5' align='center'><input type='button' id='placeorder' value='Place Order' ></td></tr></table>";
 				$('#menu3').empty();
@@ -815,7 +816,7 @@ function add_totalamount(id)
 			  if(qty==""){
 			  qty=0;
 			  }
-			  $('#addcharges').val(100);
+			 
 			//prod_amount = $(MyRows[id]).find('td:eq(3)').html()*parseInt(qty);
 			  prod_amount = amt*parseInt(qty);
 			total_amount = total_amount + prod_amount;
@@ -826,7 +827,11 @@ function add_totalamount(id)
 				
 			}		
 	}	
+	if(total_amount>0){
+	 $('#addcharges').val(100);
 	total_amount=total_amount+100;
+	}
+	
 	$('#txtTotal').val("");
 	//qty = isNaN(qty) ? '0.00' : qty;
 	$('#txtTotal').val(total_amount);
