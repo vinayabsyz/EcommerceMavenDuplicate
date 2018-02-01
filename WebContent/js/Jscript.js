@@ -764,9 +764,7 @@ function add_totalamount(id)
 				
 			}		
 	}	
-	 if(total_amount="NaN"){
-				total_amount=0; 
-			  }
+	
 	$('#txtTotal').val("");
 	$('#txtTotal').val(total_amount);
 }
