@@ -618,7 +618,7 @@ function showuserinfo()
 			//alert(obj.length);
 			//alert(obj[0].data.length);
 			//alert(obj[0].data[0].productname);
-			var orderTable="<br/><b>Order History</b><br/><br/><table width='100%'><tr class='tile'><td><strong>Order No</strong></td><td><strong>Product Name</strong></td><td><strong>Price</strong></td><td><strong>Date</strong></td><td><strong>Quantity</strong></td><td><strong>Amount</strong></td>";
+			var orderTable="<br/><br/><b>Order History</b><br/><br/><table width='100%'><tr class='tile'><td><strong>Order No</strong></td><td><strong>Product Name</strong></td><td><strong>Price</strong></td><td><strong>Date</strong></td><td><strong>Quantity</strong></td><td><strong>Amount</strong></td>";
 			for(var i=0;i<obj[0].data.length;i++)
 			{
 				if(i%2 == 0)
@@ -708,7 +708,9 @@ $(document).on("click", "#td_mycarts", function() {
 						}
 					
 					}
-				cartTable = cartTable + "<tr class='tile'><td colspan='2'>Total Amount</td><td colspan='3'><input type='text' id='txtTotal' value ='0' disabled height='40'/></td><tr><td colspan='5' align='center'><input type='button' id='placeorder' value='Place Order' ></td></tr></table>";
+				cartTable = cartTable + "<tr class='tile'><td colspan='2'>Additional Charges</td><td colspan='3'><input type='number' id='addcharges' value ='0'/></td></tr>";
+				
+				cartTable = cartTable + "<tr class='tile'><td colspan='2'>Total Amount</td><td colspan='3'><input type='text' id='txtTotal' value ='0' disabled height='40'/></td><br/><br/><tr><td colspan='5' align='center'><input type='button' id='placeorder' value='Place Order' ></td></tr></table>";
 				$('#menu3').empty();
 				$('#menu3').append(cartTable);
 				
@@ -813,10 +815,10 @@ function add_totalamount(id)
 			  if(qty==""){
 			  qty=0;
 			  }
-			  
+			  $('#addcharges').val(100);
 			//prod_amount = $(MyRows[id]).find('td:eq(3)').html()*parseInt(qty);
 			  prod_amount = amt*parseInt(qty);
-			total_amount = total_amount + prod_amount;
+			total_amount = total_amount + prod_amount+100;
 			  
 			 
 		}	
