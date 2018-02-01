@@ -494,6 +494,7 @@ function loadProducts()
 		}
 	});*/
 }
+//Add to cart function
 function Addtocart(productid,price)
 {
 	
@@ -510,7 +511,7 @@ var amount = 1 * price;
 		},
 		success : function(responseText) {
 			var obj = jQuery.parseJSON(responseText);
-			
+			alert("Added");
 			$('#divcontent').show();
 			$('#userdiv').hide();
 			$('#changepwd').hide();
@@ -519,6 +520,7 @@ var amount = 1 * price;
 		}
 	});
 }
+//Add ot cart function ends
 function showproduct(prdid)
 {
 	
@@ -801,7 +803,7 @@ function showrow()
 }
 function add_totalamount(id)
 {
-	alert("TotalAmountcalled");
+	
 	var total_amount=0;
 	var prod_amount = 0;
 	
