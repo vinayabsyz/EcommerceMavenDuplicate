@@ -730,7 +730,8 @@ function delete_cartitem(cartid)
 		}
 		else
 		{
-			//alert(obj[0].success[0].message);
+			alert(obj[0].success[0].message);
+			$('#menu3').empty();
 			loadProducts();
 		}
 								
