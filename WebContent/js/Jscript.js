@@ -186,7 +186,7 @@ $(document).on("click", "#placeorder", function() {
 		success : function(responseText) {
 			if(responseText == "success"){
 				alert("order placed");
-				
+				$( "#td_mycarts" ).click();
 				}
 				
 				else{alert("try again");}
