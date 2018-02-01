@@ -52,8 +52,8 @@ public class Orders {
 			int intQuantity = Integer.parseInt(jsonobject.getString("quantity"));
 			double dblAmount = Double.parseDouble(jsonobject.getString("totalamount"));
 			int intShippingId = Integer.parseInt(jsonobject.getString("shippingid"));
-			
-			psInsert = conn.prepareStatement("Insert into orders(orderid,userid,productid,shippingid,productquantity,totalamount,orderdate)values(?,?,?,?,?,?,?)");
+			string status=jsonobject.getString("status");
+			psInsert = conn.prepareStatement("Insert into orders(orderid,userid,productid,shippingid,productquantity,totalamount,orderdate,status)values(?,?,?,?,?,?,?,?)");
 			psInsert.setInt(1, intOrderId);
 			psInsert.setInt(2, intUserId);
 			psInsert.setInt(3, intProductId);
@@ -61,6 +61,7 @@ public class Orders {
 			psInsert.setInt(5, intQuantity);
 			psInsert.setDouble(6, dblAmount);
 			psInsert.setTimestamp(7, timestamp);
+			psInsert.setString(8, status);
 			psInsert.executeUpdate();
 			String strDeleteCart = Carts.remove_cart_data(intCartId);
 			Products.update_product(intProductId, intQuantity);
