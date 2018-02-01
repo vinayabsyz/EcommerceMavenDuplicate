@@ -173,7 +173,7 @@ $(document).on("click", "#placeorder", function() {
 	});
 		var jsonString = JSON.stringify(jsonObj);
 		console.log(jsonString);
-	alert(jsonString);
+	//alert(jsonString);
 		console.log(selected);
 		
 	
@@ -308,7 +308,7 @@ $(document).on("click","#btnChngPwd",function(){
 			</table>"; 
 	$('#menu5').append(changePwdTable);*/
 	
-	alert('vv');
+	//alert('vv');
 	$('#divcontent').hide();
 	$('#userdiv').hide();
 	$('#changepwd').show();
@@ -338,7 +338,7 @@ $(document).on("click","#btnUser",function(){
 //new2
 $(document).on("click","#td_home",function(){
 	if ($("#divhome").length > 0){
-alert('panel id existing');
+//alert('panel id existing');
 	$('#divhome').show();
 	$('#product_list').hide();
 	$('#my_orders').hide();
@@ -370,13 +370,13 @@ $(document).on("click","#btn_backcart",function(){
 
 
 function hidechangepwdH(){
-	alert('home clicked');
+	//alert('home clicked');
 $('#changepwd').hide();
 
 }
 
 function hidechangepwdCr(){
-alert('carts clicked');
+//alert('carts clicked');
 	$('#changepwd').hide();
 }
 function loadProducts()
