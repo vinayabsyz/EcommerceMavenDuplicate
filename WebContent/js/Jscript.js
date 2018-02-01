@@ -755,7 +755,7 @@ function add_totalamount(id)
 			prod_amount = 0;
 			var amt =  $(MyRows[id]).find('td:eq(3)').html();
 			var qty =  $('#qty_'+cartarray[id-2]).val();
-			  if(qty!=''){
+			  if(qty!=""){
 			  alert("Hi");
 			alert(qty);
 			  
