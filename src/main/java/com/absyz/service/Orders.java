@@ -52,7 +52,7 @@ public class Orders {
 			int intQuantity = Integer.parseInt(jsonobject.getString("quantity"));
 			double dblAmount = Double.parseDouble(jsonobject.getString("totalamount"));
 			int intShippingId = Integer.parseInt(jsonobject.getString("shippingid"));
-			string status=jsonobject.getString("status");
+			String status=jsonobject.getString("status");
 			psInsert = conn.prepareStatement("Insert into orders(orderid,userid,productid,shippingid,productquantity,totalamount,orderdate,status)values(?,?,?,?,?,?,?,?)");
 			psInsert.setInt(1, intOrderId);
 			psInsert.setInt(2, intUserId);
