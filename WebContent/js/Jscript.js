@@ -692,6 +692,7 @@ function delete_cartitem(cartid)
 		},
 		success : function(responseText) {
 			alert("Removed");
+			alert("obj[0].success[0].success"+obj[0].success[0].success);
 			console.log(responseText);
 			var obj = jQuery.parseJSON(responseText);
 			if(obj[0].success[0].success == "success")
@@ -754,7 +755,7 @@ function add_totalamount(id)
 			//prod_amount = $(this).find("td").eq(3).html()parseInt($('#amt_'+rowCount).html())*parseInt($('#qty_'+rowCount).val());	
 			var amt =  $(MyRows[id]).find('td:eq(3)').html();
 			var qty =  $('#qty_'+cartarray[id-2]).val();
-			amt = isNaN(amt) ? '0.00' : amt;
+			qty = isNaN(qty) ? '0.00' : qty;
 			prod_amount = $(MyRows[id]).find('td:eq(3)').html()*parseInt(qty);	
 			total_amount = total_amount + prod_amount;
 			 
