@@ -754,7 +754,7 @@ function add_totalamount(id)
 			//prod_amount = $(this).find("td").eq(3).html()parseInt($('#amt_'+rowCount).html())*parseInt($('#qty_'+rowCount).val());	
 			var amt =  $(MyRows[id]).find('td:eq(3)').html();
 			var qty =  $('#qty_'+cartarray[id-2]).val();
-			
+			amt = isNaN(amt) ? '0.00' : amt;
 			prod_amount = $(MyRows[id]).find('td:eq(3)').html()*parseInt(qty);	
 			total_amount = total_amount + prod_amount;
 			 
@@ -764,7 +764,7 @@ function add_totalamount(id)
 				
 			}		
 	}	
-	total_amount = isNaN(total_amount) ? '0.00' : total_amount;
+	
 	$('#txtTotal').val("");
 	$('#txtTotal').val(total_amount);
 }
