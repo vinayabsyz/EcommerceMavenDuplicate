@@ -151,6 +151,7 @@ $(document).on("click", "#placeorder", function() {
 		var quantity = $(qty_id).val();
 			
 		var totalamount =  $('#txtTotal').val();
+		
 		/*var label= ["Order Received", "Order Processing", "Order dispatched", "Order Shipped", "Order Delivered"];
 		var counter = 0;
 		var elem = document.getElementById("label"); 
@@ -677,7 +678,7 @@ $(document).on("click", "#td_mycarts", function() {
 				//alert(obj.length);
 				//alert(obj[0].data.length);
 				//alert(obj[0].data[0].productname);
-				var cartTable="<table width='100%' border='1' class='tile' id='tbl_cart'><tr class='tbl_header'><td colspan='5'>My Carts Info</td></tr><tr class='tbl_header'><td>Select</td><td>Product Name</td><td>Quantity</td><td>Amount</td><td>Remove Item</td></tr>";
+				var cartTable="<table width='100%' border='1' class='tile' id='tbl_cart'><tr class='tbl_header'><td colspan='5'><b>My Carts Info</b></td></tr><tr class='tbl_header'><td><b>Select</b></td><td><b>Product Name</b></td><td><b>Quantity</b></td><td><b>Amount</b></td><td><b>Remove Item</b></td></tr>";
 				var chkVal = 2;
 				var chk_idarray=[];
 				for(var i=0;i<obj[0].data.length;i++)
