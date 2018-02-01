@@ -600,7 +600,8 @@ function showuserinfo()
 			 $("#btnChngPwd").click(function(){
         alert("button");
     }); 
-				
+				$('#menu5').empty();
+				$('#menu5').append(usertable);
 				//orders table start
 				var searchParams = new URLSearchParams(window.location.search); //?anything=123
 	var userid = searchParams.get("userid");
@@ -635,14 +636,14 @@ function showuserinfo()
 			orderTable = orderTable + "</table>";
 			//$('#my_orders').empty();
 			//$('#my_orders').append(orderTable);
-			$('#menu5').empty();
+			
 			$('#menu5').append(orderTable);					
 		}
 	});
 				//end of orders table
 				
 				
-				$('#menu5').append(usertable);
+				
 				
 				$('#hidid').val(userid);
 			}
