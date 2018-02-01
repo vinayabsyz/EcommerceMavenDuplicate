@@ -752,7 +752,7 @@ function delete_cartitem(cartid)
 			
 			console.log(responseText);
 			var obj = jQuery.parseJSON(responseText);
-			alert("obj[0].success[0].success"+obj[0].success[0].success);
+			//alert("obj[0].success[0].success"+obj[0].success[0].success);
 			if(obj[0].success[0].success == "success")
 			{
 			var cartTable="<table width='100%' border='1' class='tile' id='tbl_cart'><tr class='tbl_header'><td colspan='5'>My Carts Info</td></tr><tr class='tbl_header'><td>Select</td><td>Product Name</td><td>Quantity</td><td>Amount</td><td>Remove Item</td></tr>";
