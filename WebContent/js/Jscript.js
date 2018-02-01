@@ -757,8 +757,9 @@ function add_totalamount(id)
 			
 			prod_amount = $(MyRows[id]).find('td:eq(3)').html()*parseInt(qty);	
 			total_amount = total_amount + prod_amount;
-			  if(total_amount="NaN")
-				total_amount=0;  
+			  if(total_amount="NaN"){
+				total_amount=0; 
+			  }
 		}	
 		else
 			{
