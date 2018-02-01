@@ -709,7 +709,8 @@ $(document).on("click", "#td_mycarts", function() {
 					}
 				cartTable = cartTable + "<tr class='tile'><td colspan='2'>Additional Charges</td><td colspan='3'><output type='number' id='addcharges' value ='0'/></td></tr>";
 				
-				cartTable = cartTable + "<tr class='tile'><td colspan='2'>Total Amount</td><td colspan='3'><input type='text' id='txtTotal' value ='0' disabled height='40'/></td><tr/><br/><br/><tr><td colspan='5' align='center'><input type='button' id='placeorder' value='Place Order' ></td></tr></table>";
+				cartTable = cartTable + "<tr class='tile'><td colspan='2'>Total Amount</td><td colspan='3'><input type='text' id='txtTotal' value ='0' disabled height='40'/></td></tr></table>";
+				cartTable = cartTable + "<input type='button' id='placeorder' value='Place Order' >"
 				$('#menu3').empty();
 				$('#menu3').append(cartTable);
 				
