@@ -753,12 +753,11 @@ function add_totalamount(id)
 			alert("#"+proarray [id-2]+"_"+cartarray[id-2]);
 		  if($("#"+proarray [id-2]+"_"+cartarray[id-2]).is(':checked')){
 			prod_amount = 0;
-			//var customerId = $(this).find("td").eq(3).html(); 
-			//prod_amount = $(this).find("td").eq(3).html()parseInt($('#amt_'+rowCount).html())*parseInt($('#qty_'+rowCount).val());	
 			var amt =  $(MyRows[id]).find('td:eq(3)').html();
 			var qty =  $('#qty_'+cartarray[id-2]).val();
-			
-			prod_amount = $(MyRows[id]).find('td:eq(3)').html()*parseInt(qty);	
+			alert(qty);
+			//prod_amount = $(MyRows[id]).find('td:eq(3)').html()*parseInt(qty);
+			  prod_amount = amt*parseInt(qty);
 			total_amount = total_amount + prod_amount;
 			 
 		}	
