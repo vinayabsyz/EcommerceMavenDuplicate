@@ -581,7 +581,7 @@ function showuserinfo()
 			//alert(obj[0].data[0].zipcode);
 			if(obj[0].success[0].success == "success"){
 				$('#username').text('Welcome '+obj[0].data[0].firstname);
-				var usertable="<table border='1' width='100%'><tr class='tbl_header'><td colspan='4' class='Bold1'><strong>User Info</strong></td></tr>";
+				var usertable="<table border='1' width='100%'><tr class='tbl_header'><td colspan='4' class='Bold1'><strong>User Info</strong></td><td colspan='4' class='Bold1'><strong><input type='button' id='btnChngPwd' value='Change Password' /></strong></td></tr>";
 				//usertable = usertable + "<tr><td class='tbl_header'>profilepic</td><td><img src="WebContent/images/dell_laptop.jpg" alt="Girl in a jacket" width="500" height="600"></td>";
 			
 				usertable = usertable + "<tr class='tile'><td class='tbl_header'><strong>Firstname</strong></td><td>"+obj[0].data[0].firstname+"</td><td class='tbl_header'><strong>Lastname</strong></td><td>"+obj[0].data[0].lastname+"</td></tr>";
@@ -590,7 +590,7 @@ function showuserinfo()
 				usertable = usertable + "<tr class='tile'><td class='tbl_header'><strong>City</strong></td><td>"+obj[0].data[0].city+"</td><td class='tbl_header'><strong>State</strong></td><td>"+obj[0].data[0].state+"</td></tr>";
 				usertable = usertable + "<tr class='tile'><td class='tbl_header'><strong>Country</strong></td><td>"+obj[0].data[0].country+"</td><td class='tbl_header'><strong>Zipcode</strong></td><td>"+obj[0].data[0].zipcode+"</td></tr></table>";
 								
-				usertable = usertable + "<tr><td colspan='4' align='center'><input type='button' id='btnChngPwd' value='Change Password' /></td></tr></table>";
+				//usertable = usertable + "<tr><td colspan='4' align='center'><input type='button' id='btnChngPwd' value='Change Password' /></td></tr></table>";
 				//usertable = usertable + "<tr><td colspan='4' align='center'><img  alt='product' src='images/download.jpg' width='250px' height='250px'/></td></tr>
 			 $("#btnChngPwd").click(function(){
        
@@ -632,6 +632,7 @@ function showuserinfo()
 				
 				}
 			orderTable = orderTable + "</table>";
+			//orderTable = orderTable + "<br/><br/><input type='button' id='btnChngPwd' value='Change Password' />"
 			//$('#my_orders').empty();
 			//$('#my_orders').append(orderTable);
 			
