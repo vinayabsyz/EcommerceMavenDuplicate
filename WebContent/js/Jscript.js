@@ -818,7 +818,7 @@ function add_totalamount(id)
 			  $('#addcharges').val(100);
 			//prod_amount = $(MyRows[id]).find('td:eq(3)').html()*parseInt(qty);
 			  prod_amount = amt*parseInt(qty);
-			total_amount = total_amount + prod_amount+100;
+			total_amount = total_amount + prod_amount;
 			  
 			 
 		}	
@@ -827,7 +827,7 @@ function add_totalamount(id)
 				
 			}		
 	}	
-	
+	total_amount=total_amount+100;
 	$('#txtTotal').val("");
 	//qty = isNaN(qty) ? '0.00' : qty;
 	$('#txtTotal').val(total_amount);
