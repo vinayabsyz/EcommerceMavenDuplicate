@@ -150,7 +150,7 @@ $(document).on("click", "#placeorder", function() {
 		var quantity = $(qty_id).val();
 			
 		var totalamount =  $('#txtTotal').val();
-		var label= ["Order Received", "Order Processing", "Order dispatched", "Order Shipped", "Order Delivered"];
+		/*var label= ["Order Received", "Order Processing", "Order dispatched", "Order Shipped", "Order Delivered"];
 		var counter = 0;
 		var elem = document.getElementById("label"); 
 		setInterval(change, 1000); 
@@ -159,7 +159,7 @@ $(document).on("click", "#placeorder", function() {
 			counter++; 
 			if (counter >= text.length) {
 				counter = 0; }
-		}
+		}*/
 		data={};
 		data["productid"]= product_id;
 		data["cartid"]= cart_id;
