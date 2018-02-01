@@ -755,14 +755,14 @@ function add_totalamount(id)
 			prod_amount = 0;
 			var amt =  $(MyRows[id]).find('td:eq(3)').html();
 			var qty =  $('#qty_'+cartarray[id-2]).val();
-			  if(qty!=""){
-			  alert("Hi");
-			alert(qty);
+			  if(qty==""){
+			  qty=0;
+			  }
 			  
 			//prod_amount = $(MyRows[id]).find('td:eq(3)').html()*parseInt(qty);
 			  prod_amount = amt*parseInt(qty);
 			total_amount = total_amount + prod_amount;
-			  }
+			  
 			 
 		}	
 		else
