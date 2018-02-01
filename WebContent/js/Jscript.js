@@ -798,6 +798,7 @@ function showrow()
 }
 function add_totalamount(id)
 {
+	alert("TotalAmountcalled");
 	var total_amount=0;
 	var prod_amount = 0;
 	
