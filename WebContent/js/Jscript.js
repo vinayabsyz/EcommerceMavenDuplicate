@@ -150,9 +150,9 @@ $(document).on("click", "#placeorder", function() {
 		var quantity = $(qty_id).val();
 		alert(quantity);	
 		var totalamount =  $('#txtTotal').val();
-		var label= ["Order Received", "Order Processing", "Order dispatched", "Order Shipped", "Order Delivered"];
+		var Status= ["Order Received", "Order Processing", "Order dispatched", "Order Shipped", "Order Delivered"];
 		var counter = 0;
-		var elem = document.getElementById("label"); 
+		var elem = document.getElementById("Status"); 
 		setInterval(change, 1000); 
 		function change() { 
 			elem.innerHTML = text[counter]; 
@@ -168,7 +168,7 @@ $(document).on("click", "#placeorder", function() {
 		data["totalamount"]= totalamount;
 		data["shippingid"]= shippingid;
 		data["userid"]= userid;
-		data["status"]=label; 
+		data["status"]=Status; 
 		 jsonObj.push(data);
 	});
 		var jsonString = JSON.stringify(jsonObj);
@@ -223,7 +223,7 @@ $(document).on("click", "#td_myorders", function() {
 				if(i%2 == 0)
 				{
 					orderTable = orderTable + "<tr class='tile'><td>"+obj[0].data[i].orderid+"</td><td>"+obj[0].data[i].productname+"</td>" +
-					"<td>"+obj[0].data[i].price+"</td><td>"+obj[0].data[i].orderdate+"</td><td>"+obj[0].data[i].productquantity+"</td><td>"+obj[0].data[i].totalamount+"</td><td>"+obj[0].data[i].label+"</td";
+					"<td>"+obj[0].data[i].price+"</td><td>"+obj[0].data[i].orderdate+"</td><td>"+obj[0].data[i].productquantity+"</td><td>"+obj[0].data[i].totalamount+"</td><td>"+obj[0].data[i].Status+"</td></tr>";
 					}
 				else
 				{
