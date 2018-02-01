@@ -206,7 +206,7 @@ $(document).on("click", "#td_myorders", function() {
 			//alert(obj.length);
 			//alert(obj[0].data.length);
 			//alert(obj[0].data[0].productname);
-			var orderTable="<table width='100%'><tr class='tile'><td><strong>Order No</strong></td><td><strong>Product Name</strong></td><td><strong>Price</strong></td><td><strong>Date</strong></td><td><strong>Quantity</strong></td><td><strong>Amount</strong></td>";
+			var orderTable="<table width='100%'><tr class='tile'><td><strong>Order No</strong></td><td><strong>Product Name</strong></td><td><strong>Price</strong></td><td><strong>Date</strong></td><td><strong>Quantity</strong></td><td><strong>Amount</strong></td><td><strong>Status</strong></td>";
 			for(var i=0;i<obj[0].data.length;i++)
 			{
 				if(i%2 == 0)
