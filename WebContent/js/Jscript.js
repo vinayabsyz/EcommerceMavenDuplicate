@@ -600,9 +600,49 @@ function showuserinfo()
 			 $("#btnChngPwd").click(function(){
         alert("button");
     }); 
+				
+				//orders table start
+				var searchParams = new URLSearchParams(window.location.search); //?anything=123
+	var userid = searchParams.get("userid");
+	//var userid = $('#hidid').val(); 
+	$.ajax({
+		url : '/Ecommerce?serviceId=myorders',
+		type: 'POST',
+		data : {
+			userid:userid
+		},
+		success : function(responseText) {
+			console.log(responseText);
+			var obj = jQuery.parseJSON(responseText);
+			//alert(obj.length);
+			//alert(obj[0].data.length);
+			//alert(obj[0].data[0].productname);
+			var orderTable="<table width='100%'><tr class='tile'><td><strong>Order No</strong></td><td><strong>Product Name</strong></td><td><strong>Price</strong></td><td><strong>Date</strong></td><td><strong>Quantity</strong></td><td><strong>Amount</strong></td><td><strong>Status</strong></td>";
+			for(var i=0;i<obj[0].data.length;i++)
+			{
+				if(i%2 == 0)
+				{
+					orderTable = orderTable + "<tr class='tile'><td>"+obj[0].data[i].orderid+"</td><td>"+obj[0].data[i].productname+"</td>" +
+					"<td>"+obj[0].data[i].price+"</td><td>"+obj[0].data[i].orderdate+"</td><td>"+obj[0].data[i].productquantity+"</td><td>"+obj[0].data[i].totalamount+"</td><td>"+obj[0].data[i].label+"</td";
+					}
+				else
+				{
+					orderTable = orderTable + "<tr class='tile'><td>"+obj[0].data[i].orderid+"</td><td>"+obj[0].data[i].productname+"</td>" +
+					"<td>"+obj[0].data[i].price+"</td><td>"+obj[0].data[i].orderdate+"</td><td>"+obj[0].data[i].productquantity+"</td><td>"+obj[0].data[i].totalamount+"</td></tr>";
+					}
+				
+				}
+			orderTable = orderTable + "</table>";
+			//$('#my_orders').empty();
+			//$('#my_orders').append(orderTable);
+								
+		}
+	});
+				//end of orders table
 				$('#menu5').empty();
 				
 				$('#menu5').append(usertable);
+				$('#menu5').append(orderTable);
 				$('#hidid').val(userid);
 			}
 			else{
@@ -762,7 +802,7 @@ function add_totalamount(id)
 	var rowCount = $('#tbl_cart tr').length;
 	var MyRows = $('table#tbl_cart').find('tbody').find('tr');
 		for(var id=2;id<rowCount-2;id++){
-			alert("#"+proarray [id-2]+"_"+cartarray[id-2]);
+			
 		  if($("#"+proarray [id-2]+"_"+cartarray[id-2]).is(':checked')){
 			prod_amount = 0;
 			var amt =  $(MyRows[id]).find('td:eq(3)').html();
