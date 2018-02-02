@@ -118,7 +118,7 @@ public class Orders {
 	public static String changestatus(HttpServletRequest request)
 	{
 		String strOutput="";
-		int intUserId = Integer.parseInt(request.getParameter("userid"));
+		int orderid = Integer.parseInt(request.getParameter("orderid"));
 		Connection conn = null;
 		Statement stSelectOrders = null;
 		ResultSet rsSelectOrders = null;
@@ -128,7 +128,7 @@ public class Orders {
 			//String strQuery = "Select * from orders where userid = "+intUserId;
 			int intOrderId = Integer.parseInt(jsonobject.getString("orderid"));
 			String strQuery = "Select o.orderid,o.userid,o.productid,o.orderdate,o.status,o.productquantity,o.totalamount,p.productname,p.price from orders o "
-					+ "join products p on o.productid = p.productid where o.orderid = "+intOrderId;
+					+ "join products p on o.productid = p.productid where o.orderid = "+orderid;
 			conn = DbConnection.getConnection();
 			stSelectOrders = conn.createStatement();
 			rsSelectOrders = stSelectOrders.executeQuery(strQuery);
