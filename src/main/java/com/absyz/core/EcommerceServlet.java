@@ -34,7 +34,7 @@ public class EcommerceServlet extends HttpServlet {
 	   try {
 		if (request.getParameter("serviceId").equals("userreg"))
 		   {
-			   JOptionPane.showMessageDialog(null, "Java is fun!");  
+			  
 			String strOutput = UserRegistration.user_reg(request);
 			
 response.setContentType("application/json");
