@@ -877,8 +877,7 @@ function showrow()
 function add_totalamount(id)
 {
 	
-	var prdname =  $(MyRows[id]).find('td:eq(1)').html();
-			alert("you selected"+""+prdname);
+	
 	var total_amount=0;
 	var prod_amount = 0;
 	
@@ -898,6 +897,7 @@ function add_totalamount(id)
 			  prod_amount = amt*parseInt(qty);
 			total_amount = total_amount + prod_amount;
 			  console.log(total_amount);
+			  alert("total amount is"+ total_amount);
 			  			 
 		}	
 		else
