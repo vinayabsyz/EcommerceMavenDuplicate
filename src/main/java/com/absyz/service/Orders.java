@@ -86,14 +86,14 @@ public class Orders {
 		JSONArray json = new JSONArray();
 		JSONObject obj=null;
 		try {
-			
+			String strQuery;
 			//String strQuery = "Select * from orders where userid = "+intUserId;
 			if(intUserId!=1){
-			String strQuery = "Select o.orderid,o.userid,o.productid,o.orderdate,o.status,o.productquantity,o.totalamount,p.productname,p.price from orders o "
+			 strQuery = "Select o.orderid,o.userid,o.productid,o.orderdate,o.status,o.productquantity,o.totalamount,p.productname,p.price from orders o "
 					+ "join products p on o.productid = p.productid where o.userid = "+intUserId+" order by o.orderid asc";
 			}
 			else{
-			String strQuery = "Select o.orderid,o.userid,o.productid,o.orderdate,o.status,o.productquantity,o.totalamount,p.productname,p.price from orders o "
+		 strQuery = "Select o.orderid,o.userid,o.productid,o.orderdate,o.status,o.productquantity,o.totalamount,p.productname,p.price from orders o "
 					+ "join products p on o.productid = p.productid order by o.orderid asc";
 		
 			}
@@ -119,6 +119,7 @@ public class Orders {
 	{
 		String strOutput="";
 		int orderid = Integer.parseInt(request.getParameter("orderid"));
+		//int intOrderId = Integer.parseInt(request.getParameter("orderid"));
 		Connection conn = null;
 		Statement stSelectOrders = null;
 		ResultSet rsSelectOrders = null;
@@ -126,7 +127,7 @@ public class Orders {
 		JSONObject obj=null;
 		try {
 			//String strQuery = "Select * from orders where userid = "+intUserId;
-			int intOrderId = Integer.parseInt(jsonobject.getString("orderid"));
+			
 			String strQuery = "Select o.orderid,o.userid,o.productid,o.orderdate,o.status,o.productquantity,o.totalamount,p.productname,p.price from orders o "
 					+ "join products p on o.productid = p.productid where o.orderid = "+orderid;
 			conn = DbConnection.getConnection();
