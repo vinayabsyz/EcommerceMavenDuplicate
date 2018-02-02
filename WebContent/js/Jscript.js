@@ -885,7 +885,7 @@ function add_totalamount(id)
 	var MyRows = $('table#tbl_cart').find('tbody').find('tr');
 		for(var id=2;id<rowCount-2;id++){
 			var prdname =  $(MyRows[id]).find('td:eq(1)').html();
-			alert(prdname);
+			alert("you selected"+""+prdname);
 		  if($("#"+proarray [id-2]+"_"+cartarray[id-2]).is(':checked')){
 			prod_amount = 0;
 			var amt =  $(MyRows[id]).find('td:eq(3)').html();
