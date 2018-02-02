@@ -196,6 +196,13 @@ response.setContentType("application/json");
 				response.setHeader("Cache-Control", "no-cache");
 				response.getOutputStream().write(new String(strOutput.getBytes("UTF-8")).getBytes());
 		   }
+		     if (request.getParameter("serviceId").equals("changestatus"))
+		   {
+			   String strOutput =Orders.changestatus(request);
+			   response.setContentType("text/html");
+				response.setHeader("Cache-Control", "no-cache");
+				response.getOutputStream().write(new String(strOutput.getBytes("UTF-8")).getBytes());
+		   }
 		   if (request.getParameter("serviceId").equals("shipping"))
 		   {
 			   String strOutput =UserRegistration.add_shipping_address(request);
