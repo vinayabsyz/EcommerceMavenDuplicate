@@ -247,7 +247,7 @@ $(document).on("click", "#td_myorders", function() {
 	}
 	if(userid==1){
 	$.ajax({
-		url : '/Ecommerce?serviceId=changestatus',
+		url : '/Ecommerce?serviceId=myorders',
 		type: 'POST',
 		data : {
 			userid:userid
