@@ -1,10 +1,10 @@
 $(document).on("click", "#userlogin", function() {
 	var email = $('#txtEmail').val();
 	var pwd = $('#txtPwd').val();
-	alert(email+","+pwd);
+	
 	if(localStorage){
 	localStorage.setItem("loggedin", "loginval");
-	alert('localstorage exists');	  
+	
 	 }
 	$.ajax({
 		url : '/Ecommerce?serviceId=login',
