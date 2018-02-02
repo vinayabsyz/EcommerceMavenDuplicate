@@ -209,8 +209,7 @@ $(document).on("click", "#td_myorders", function() {
 	var userid = searchParams.get("userid");
 	alert(userid);
 	//var userid = $('#hidid').val(); 
-	if(userid!=1){
-		alert("nonadmin");
+	
 	$.ajax({
 		url : '/Ecommerce?serviceId=myorders',
 		type: 'POST',
@@ -245,45 +244,10 @@ $(document).on("click", "#td_myorders", function() {
 								
 		}
 	});
-	}
-	else{
-		alert("Admin");
-	$.ajax({
-		url : '/Ecommerce?serviceId=orders',
-		type: 'POST',
-		data : {
-			userid:userid
-		},
-		success : function(responseText) {
-			console.log(responseText);
-			var obj = jQuery.parseJSON(responseText);
-			//alert(obj.length);
-			//alert(obj[0].data.length);
-			//alert(obj[0].data[0].productname);
-			var orderTable="<b>Orders</b><br/><br/><table width='100%'><tr class='tile'><td><strong>Order No</strong></td><td><strong>Product Name</strong></td><td><strong>Price</strong></td><td><strong>Date</strong></td><td><strong>Quantity</strong></td><td><strong>Amount</strong></td><td><strong>status</strong></td>";
-			for(var i=0;i<obj[0].data.length;i++)
-			{
-				admorderid.push(obj[0].data[i].productid);
-				if(obj[0].data[i].status!="Order Delivered"){
-				if(i%2 == 0)
-				{
-					orderTable = orderTable + "<tr class='tile'><td>"+obj[0].data[i].orderid+"</td><td>"+obj[0].data[i].productname+"</td>" +
-					"<td>"+obj[0].data[i].price+"</td><td>"+obj[0].data[i].orderdate+"</td><td>"+obj[0].data[i].productquantity+"</td><td>"+obj[0].data[i].totalamount+"</td><td>"+obj[0].data[i].status+"</td><td><button type='button' onclick='changestatus(obj[0].data[i].orderid)'>Changestatus</button></td></tr>";
-					}
-				else
-				{
-					orderTable = orderTable + "<tr class='tile'><td>"+obj[0].data[i].orderid+"</td><td>"+obj[0].data[i].productname+"</td>" +
-					"<td>"+obj[0].data[i].price+"</td><td>"+obj[0].data[i].orderdate+"</td><td>"+obj[0].data[i].productquantity+"</td><td>"+obj[0].data[i].totalamount+"</td><td>"+obj[0].data[i].status+"</td><td><button type='button' onclick='changestatus(obj[0].data[i].orderid)'>Changestatus</button></td></tr>";
-					}
-				}
-				}
-			orderTable = orderTable + "</table>";
-			$('#my_orders').empty();
-			$('#my_orders').append(orderTable);
-								
-		}
-	});
-	}
+	
+	
+		
+	
 });
 
 //Save the changed password
