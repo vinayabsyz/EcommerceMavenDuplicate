@@ -893,8 +893,8 @@ function add_totalamount(id)
 			  qty=0;
 			  }
 			 
-			//prod_amount = $(MyRows[id]).find('td:eq(3)').html()*parseInt(qty);
-			  prod_amount = amt*parseInt(qty);
+			prod_amount = $(MyRows[id]).find('td:eq(3)').html()*parseInt(qty);
+			  //prod_amount = amt*parseInt(qty);
 			total_amount = total_amount + prod_amount;
 			  console.log(total_amount);
 			
