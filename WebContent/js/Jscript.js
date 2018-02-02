@@ -206,6 +206,7 @@ $(document).on("click", "#td_myorders", function() {
 	$('#changepwd').hide();
 	var searchParams = new URLSearchParams(window.location.search); //?anything=123
 	var userid = searchParams.get("userid");
+	alert(userid);
 	//var userid = $('#hidid').val(); 
 	$.ajax({
 		url : '/Ecommerce?serviceId=myorders',
