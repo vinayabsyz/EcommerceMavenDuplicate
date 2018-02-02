@@ -209,7 +209,7 @@ $(document).on("click", "#td_myorders", function() {
 	var userid = searchParams.get("userid");
 	alert(userid);
 	//var userid = $('#hidid').val(); 
-	
+	if(userid!=1){
 	$.ajax({
 		url : '/Ecommerce?serviceId=myorders',
 		type: 'POST',
@@ -244,6 +244,7 @@ $(document).on("click", "#td_myorders", function() {
 								
 		}
 	});
+	}
 	
 	
 		
