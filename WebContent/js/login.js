@@ -18,11 +18,12 @@ $(document).on("click", "#userlogin", function() {
 			var obj = jQuery.parseJSON(responseText);
 			console.log(obj);
 			//alert(obj[0].data[0].success);
-			var userid = obj[0].data[0].userid;
+			
 			//alert(obj[0].success[0].success);
 			//alert(userid);
 			if(obj[0].success[0].success == "success")
 			{
+				var userid = obj[0].data[0].userid;
 				//$('#hidid').val(userid);
 				window.location.href = "/home.html?userid="+userid;
 				}
