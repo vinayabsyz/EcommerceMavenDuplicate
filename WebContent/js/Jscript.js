@@ -897,14 +897,15 @@ function add_totalamount(id)
 			  prod_amount = amt*parseInt(qty);
 			total_amount = total_amount + prod_amount;
 			  console.log(total_amount);
-			  alert("total amount is"+ total_amount);
+			
 			  			 
 		}	
 		else
 			{
 				
 			}		
-	}	
+	}
+	  alert("total amount is"+ total_amount);
 	if(total_amount>0){
 	 $('#addcharges').val(100);
 	total_amount=total_amount+100;
