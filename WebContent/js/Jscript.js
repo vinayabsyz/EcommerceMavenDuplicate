@@ -910,6 +910,9 @@ function add_totalamount(id)
 	 $('#addcharges').val(100);
 	total_amount=total_amount+100;
 	}
+	else{
+	 $('#addcharges').val("");
+	}
 	
 	$('#txtTotal').val("");
 	//qty = isNaN(qty) ? '0.00' : qty;
