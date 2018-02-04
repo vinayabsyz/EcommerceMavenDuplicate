@@ -749,7 +749,7 @@ $(document).on("click", "#td_mycarts", function() {
 				//alert(obj.length);
 				//alert(obj[0].data.length);
 				//alert(obj[0].data[0].productname);
-				var cartTable="<table width='100%' border='1' class='tile' id='tbl_cart'><tr class='tbl_header'><td colspan='5'><b>My Carts Info</b></td></tr><tr class='tbl_header'><td><b>Select</b></td><td><b>Product Name</b></td><td><b>Quantity</b></td><td><b>Amount</b></td><td><b>Remove Item</b></td></tr>";
+				var cartTable="<table width='100%' border='1' class='tile' id='tbl_cart'><tr class='tbl_header'><td colspan='5'><b>My Carts Info</b></td></tr><tr class='tbl_header'><td><b>Product Name</b></td><td><b>Quantity</b></td><td><b>Amount</b></td><td><b>Remove Item</b></td></tr>";
 				var chkVal = 2;
 				var chk_idarray=[];
 				for(var i=0;i<obj[0].data.length;i++)
@@ -765,13 +765,13 @@ $(document).on("click", "#td_mycarts", function() {
 					chkVal = parseInt(chkVal)+1;
 					if(i%2 == 0)
 					{
-						cartTable = cartTable + "<tr class='tile'><td><input name='cart' type ='checkbox' id="+chk_id+" onclick='add_totalamount(this.id)' /></td><td>"+obj[0].data[i].productname+"</td>" +
+						cartTable = cartTable + "<tr class='tile'><td>"+obj[0].data[i].productname+"</td>" +
 						"<td ><input id="+qty_id+" type='number' name='inputcell' value='0' onchange='add_totalamount(chk_id)'/></td><td id="+amt_id+">"+obj[0].data[i].price+"</td><td><button type='button' id="+rm_id+" onclick='delete_cartitem(this.id)'>remove</button></td>" +
 						"</tr>";
 						}
 					else
 					{
-						cartTable = cartTable + "<tr class='tile'><td><input name='cart' type ='checkbox' id="+chk_id+" onclick='add_totalamount(this.id)' /></td><td>"+obj[0].data[i].productname+"</td>" +
+						cartTable = cartTable + "<tr class='tile'><td>"+obj[0].data[i].productname+"</td>" +
 						"<td ><input type='number' id="+qty_id+" name='inputcell' value='0' onchange='add_totalamount(chk_id)'/></td><td id="+amt_id+">"+obj[0].data[i].price+"</td><td><button type='button' id="+rm_id+" onclick='delete_cartitem(this.id)'>remove</button></td>" +
 						"</tr>";
 						}
@@ -825,7 +825,7 @@ function delete_cartitem(cartid)
 			//alert("obj[0].success[0].success"+obj[0].success[0].success);
 			if(obj[0].success[0].success == "success")
 			{
-			var cartTable="<table width='100%' border='1' class='tile' id='tbl_cart'><tr class='tbl_header'><td colspan='5'>My Carts Info</td></tr><tr class='tbl_header'><td>Select</td><td>Product Name</td><td>Quantity</td><td>Amount</td><td>Remove Item</td></tr>";
+			var cartTable="<table width='100%' border='1' class='tile' id='tbl_cart'><tr class='tbl_header'><td colspan='5'><b>My Carts Info</b></td></tr><tr class='tbl_header'><td><b>Product Name</b></td><td><b>Quantity</b></td><td><b>Amount</b></td><td><b>Remove Item</b></td></tr>";
 				var chkVal = 2;
 				var chk_idarray=[];
 				for(var i=0;i<obj[0].data.length;i++)
@@ -841,13 +841,13 @@ function delete_cartitem(cartid)
 					chkVal = parseInt(chkVal)+1;
 					if(i%2 == 0)
 					{
-						cartTable = cartTable + "<tr class='tile'><td><input name='cart' type ='checkbox' id="+chk_id+" onclick='add_totalamount(this.id)' /></td><td>"+obj[0].data[i].productname+"</td>" +
+						cartTable = cartTable + "<tr class='tile'><td>"+obj[0].data[i].productname+"</td>" +
 						"<td ><input id="+qty_id+" type='number' name='inputcell' value='0' onchange='add_totalamount(chk_id)'/></td><td id="+amt_id+">"+obj[0].data[i].price+"</td><td><button type='button' id="+rm_id+" onclick='delete_cartitem(this.id)'>remove</button></td>" +
 						"</tr>";
 						}
 					else
 					{
-						cartTable = cartTable + "<tr class='tile'><td><input name='cart' type ='checkbox' id="+chk_id+" onclick='add_totalamount(this.id)' /></td><td>"+obj[0].data[i].productname+"</td>" +
+						cartTable = cartTable + "<tr class='tile'><td>"+obj[0].data[i].productname+"</td>" +
 						"<td ><input type='number' id="+qty_id+" name='inputcell' value='0' onchange='add_totalamount(chk_id)'/></td><td id="+amt_id+">"+obj[0].data[i].price+"</td><td><button type='button' id="+rm_id+" onclick='delete_cartitem(this.id)'>remove</button></td>" +
 						"</tr>";
 						}
@@ -855,8 +855,9 @@ function delete_cartitem(cartid)
 					}
 				cartTable = cartTable + "<tr class='tile'><td colspan='2'>Additional Charges</td><td colspan='3'><output type='number' id='addcharges' value ='0'/></td></tr>";
 				
-				cartTable = cartTable + "<tr class='tile'><td colspan='2'>Total Amount</td><td colspan='3'><input type='text' id='txtTotal' value ='0' disabled height='40'/></td><tr/><br/><br/><tr><td colspan='5' align='center'><input type='button' id='placeorder' value='Place Order' ></td></tr></table>";
-				$('#menu3').empty();
+				cartTable = cartTable + "<tr class='tile'><td colspan='2'>Total Amount</td><td colspan='3'><input type='text' id='txtTotal' value ='0' disabled height='40'/></td></tr></table>";
+				cartTable = cartTable + "<br/><input type='button' id='placeorder' value='Place Order' >"
+					$('#menu3').empty();
 				$('#menu3').append(cartTable);
 				
 		}
@@ -874,7 +875,7 @@ function showrow()
 {
 	$('.products').hide();
 }
-function add_totalamount(id)
+function add_totalamount()
 {
 	
 	
@@ -885,25 +886,24 @@ function add_totalamount(id)
 	var MyRows = $('table#tbl_cart').find('tbody').find('tr');
 		for(var id=2;id<rowCount-2;id++){
 			
-		  if($("#"+proarray [id-2]+"_"+cartarray[id-2]).is(':checked')){
+		 // if($("#"+proarray [id-2]+"_"+cartarray[id-2]).is(':checked')){
 			prod_amount = 0;
 			var amt =  $(MyRows[id]).find('td:eq(3)').html();
 			var qty =  $('#qty_'+cartarray[id-2]).val();
 			  if(qty==""){
 			  qty=0;
 			  }
-			 
+			 alert($(MyRows[id]).find('td:eq(3)').html());
+			alert(parseInt(qty));
 			prod_amount = $(MyRows[id]).find('td:eq(3)').html()*parseInt(qty);
+			
 			  //prod_amount = amt*parseInt(qty);
 			total_amount = total_amount + prod_amount;
 			  console.log(total_amount);
 			
 			  			 
-		}	
-		else
-			{
+		//}	
 				
-			}		
 	}
 	  alert("total amount is"+ total_amount);
 	if(total_amount>0){
