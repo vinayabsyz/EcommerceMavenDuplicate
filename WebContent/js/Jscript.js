@@ -875,7 +875,7 @@ function showrow()
 {
 	$('.products').hide();
 }
-function add_totalamount()
+function add_totalamount(id)
 {
 	
 	
@@ -888,14 +888,14 @@ function add_totalamount()
 			
 		 // if($("#"+proarray [id-2]+"_"+cartarray[id-2]).is(':checked')){
 			prod_amount = 0;
-			var amt =  $(MyRows[id]).find('td:eq(3)').html();
+			var amt =  $(MyRows[id]).find('td:eq(2)').html();
 			var qty =  $('#qty_'+cartarray[id-2]).val();
 			  if(qty==""){
 			  qty=0;
 			  }
-			 alert($(MyRows[id]).find('td:eq(3)').html());
+			 alert($(MyRows[id]).find('td:eq(2)').html());
 			alert(parseInt(qty));
-			prod_amount = $(MyRows[id]).find('td:eq(3)').html()*parseInt(qty);
+			prod_amount = $(MyRows[id]).find('td:eq(2)').html()*parseInt(qty);
 			
 			  //prod_amount = amt*parseInt(qty);
 			total_amount = total_amount + prod_amount;
