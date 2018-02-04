@@ -893,8 +893,7 @@ function add_totalamount(id)
 			  if(qty==""){
 			  qty=0;
 			  }
-			 alert($(MyRows[id]).find('td:eq(2)').html());
-			alert(parseInt(qty));
+			
 			prod_amount = $(MyRows[id]).find('td:eq(2)').html()*parseInt(qty);
 			
 			  //prod_amount = amt*parseInt(qty);
@@ -905,7 +904,7 @@ function add_totalamount(id)
 		//}	
 				
 	}
-	  alert("total amount is"+ total_amount);
+	
 	if(total_amount>0){
 	 $('#addcharges').val(100);
 	total_amount=total_amount+100;
