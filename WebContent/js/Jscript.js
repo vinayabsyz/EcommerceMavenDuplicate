@@ -126,7 +126,7 @@ $(document).on("click", "#placeorder", function() {
 	jsonObj=[];
 	var selected = [];
 	
-	$('#tbl_cart input:checked').each(function() {
+	$('#tbl_cart').each(function() {
 		selected.push($(this).attr('id'));
 	});
 	$.each(selected, function (index, value) {
