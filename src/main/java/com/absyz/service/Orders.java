@@ -141,7 +141,7 @@ public class Orders {
 			//strOutput = convertResultSetToJson(rsSelectOrders);
 			  while (rsSelectOrders.next()) {
             //String f = rsSelectOrders.etString("o.status");
-            rsSelectOrders.updateString( "o.status", "Delivered");
+            rsSelectOrders.updateString( "o.status", "Order Delivered");
             rsSelectOrders.updateRow();
         }
 		} catch (SQLException e) {
