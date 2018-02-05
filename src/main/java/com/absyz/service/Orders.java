@@ -135,7 +135,9 @@ public class Orders {
 			
 			String strQuery = "select * from orders where orderid = "+orderid;
 			conn = DbConnection.getConnection();
-			stSelectOrders = conn.createStatement();
+			
+			stSelectOrders = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,
+                                  ResultSet.CONCUR_UPDATABLE);
 			rsSelectOrders = stSelectOrders.executeQuery(strQuery);
 			//strOutput = convertResultSetToJson(rsSelectOrders);
 			  while (rsSelectOrders.next()) {
