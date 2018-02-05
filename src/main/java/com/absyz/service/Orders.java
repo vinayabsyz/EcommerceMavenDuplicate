@@ -133,15 +133,14 @@ public class Orders {
 		try {
 			//String strQuery = "Select * from orders where userid = "+intUserId;
 			
-			String strQuery = "Select o.orderid,o.userid,o.productid,o.orderdate,o.status,o.productquantity,o.totalamount,p.productname,p.price from orders o "
-					+ "join products p on o.productid = p.productid where o.orderid = "+orderid;
+			String strQuery = "select * from orders where orderid = "+orderid;
 			conn = DbConnection.getConnection();
 			stSelectOrders = conn.createStatement();
 			rsSelectOrders = stSelectOrders.executeQuery(strQuery);
 			//strOutput = convertResultSetToJson(rsSelectOrders);
 			  while (rsSelectOrders.next()) {
             //String f = rsSelectOrders.etString("o.status");
-            rsSelectOrders.updateString( "o.status", "Order Delivered");
+            rsSelectOrders.updateString( "status", "Order Delivered");
             rsSelectOrders.updateRow();
         }
 		} catch (SQLException e) {
