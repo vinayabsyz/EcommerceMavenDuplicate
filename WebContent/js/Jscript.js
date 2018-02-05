@@ -642,7 +642,7 @@ var shippingid="1";
 //changestatus
 function changestatus(orderid)
 {
-	alert ("Changestatus");
+	alert (orderid);
   
 	var searchParams = new URLSearchParams(window.location.search); //?anything=123
 	var userid = searchParams.get("userid");
