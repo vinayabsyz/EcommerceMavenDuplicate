@@ -36,7 +36,7 @@ public class Orders {
 		rsOrderMaxId = stSelectMaxId.executeQuery(strQuery);
 		if(rsOrderMaxId.next())
 		{
-			intOrderId = rsOrderMaxId.getInt("orderid")+1;
+			intOrderId = rsOrderMaxId.getInt("orderid");
 		}
 		else
 		{
@@ -46,7 +46,7 @@ public class Orders {
 		    JSONObject jsonobject = jsonarray.getJSONObject(i);
 		    int intCartId = Integer.parseInt(jsonobject.getString("cartid"));
 		    Timestamp timestamp = new Timestamp(System.currentTimeMillis());
-			
+			intOrderId=intOrderId+1;
 			int intUserId = Integer.parseInt(jsonobject.getString("userid"));
 			int intProductId = Integer.parseInt(jsonobject.getString("productid"));
 			int intQuantity = Integer.parseInt(jsonobject.getString("quantity"));
