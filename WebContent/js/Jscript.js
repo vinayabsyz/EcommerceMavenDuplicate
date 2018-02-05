@@ -117,7 +117,7 @@ $(document).on("click", "#btn_addtocart", function() {
 	});
 });
 //Place Order Button
-$(document).on("click", "#placeorder", function() {
+/*$(document).on("click", "#placeorder", function() {
 	//alert("mani");
 	var shippingid="1";
 	var searchParams = new URLSearchParams(window.location.search); //?anything=123
@@ -163,7 +163,7 @@ alert(value);
 			if (counter >= text.length) {
 				counter = 0; }
 		}*/
-		data={};
+		/*data={};
 		data["productid"]= product_id;
 		data["cartid"]= cart_id;
 		data["quantity"]= quantity;
@@ -196,7 +196,7 @@ alert(value);
 					
 		}
 	});
-});
+});*/
 
 //order tab
 var admorderid=[];
@@ -567,6 +567,77 @@ var amount = 1 * price;
 		}
 	});
 }
+function placeorder(chkid){
+var shippingid="1";
+	var searchParams = new URLSearchParams(window.location.search); //?anything=123
+	var userid = searchParams.get("userid");
+	var data="";
+	jsonObj=[];
+	var selected = [];
+	for(var id=0;id<chkid.length;id++){ {
+		var value=chkid[id];
+		alert(value);
+		  console.log(value);
+		var product_cart_id = value;
+		//alert(product_cart_id);
+		var split_ids = product_cart_id.split("_");
+		var product_id = split_ids[0];
+		var cart_id = split_ids[1];
+		alert(cart_id);
+		var qty_id = "#qty_"+cart_id;
+		
+		var amt_id = "#amt_"+product_id;
+		
+		var price =$(amt_id).text();
+		
+		var quantity = $(qty_id).val();
+			
+		var totalamount =  $('#txtTotal').val();
+		
+		/*var label= ["Order Received", "Order Processing", "Order dispatched", "Order Shipped", "Order Delivered"];
+		var counter = 0;
+		var elem = document.getElementById("label"); 
+		setInterval(change, 1000); 
+		function change() { 
+			elem.innerHTML = text[counter]; 
+			counter++; 
+			if (counter >= text.length) {
+				counter = 0; }
+		}*/
+		data={};
+		data["productid"]= product_id;
+		data["cartid"]= cart_id;
+		data["quantity"]= quantity;
+		data["price"]= price;
+		data["totalamount"]= totalamount;
+		data["shippingid"]= shippingid;
+		data["userid"]= userid;
+		data["status"]="Order Placed"; 
+		 jsonObj.push(data);
+	});
+		var jsonString = JSON.stringify(jsonObj);
+		console.log(jsonString);
+	//alert(jsonString);
+		console.log(selected);
+		
+	
+	$.ajax({
+		url : '/Ecommerce?serviceId=orders',
+		type: 'POST',
+		data : {
+			data:jsonString
+		},
+		success : function(responseText) {
+			if(responseText == "success"){
+				alert("order placed");
+				$( "#td_mycarts" ).click();
+				}
+				
+				else{alert("try again");}
+					
+		}
+	});
+}
 //changestatus
 function changestatus(orderid)
 {
@@ -731,6 +802,7 @@ function showuserinfo()
 var proarray = [];
 var cartarray = [];
 var chk_id;
+var chk_idarray=[];
 $(document).on("click", "#td_mycarts", function() {
 	var searchParams = new URLSearchParams(window.location.search); //?anything=123
 	var userid = searchParams.get("userid");
@@ -759,8 +831,10 @@ $(document).on("click", "#td_mycarts", function() {
 					var amt_id = "amt_"+ chkVal;
 					var rm_id = "rm_"+ obj[0].data[i].cartid;
 					 chk_id = obj[0].data[i].productid + "_" + obj[0].data[i].cartid;
+					chk_idarray.push(chk_id);
 					proarray.push(obj[0].data[i].productid);
 					cartarray.push(obj[0].data[i].cartid);
+					
 					var obj1=obj;
 					//var chk_id = "chk_"+chkVal;
 					chkVal = parseInt(chkVal)+1;
@@ -781,7 +855,7 @@ $(document).on("click", "#td_mycarts", function() {
 				cartTable = cartTable + "<tr class='tile'><td colspan='2'>Additional Charges</td><td colspan='3'><output type='number' id='addcharges' value ='0'/></td></tr>";
 				
 				cartTable = cartTable + "<tr class='tile'><td colspan='2'>Total Amount</td><td colspan='3'><input type='text' id='txtTotal' value ='0' disabled height='40'/></td></tr></table>";
-				cartTable = cartTable + "<br/><input type='button' id='placeorder' value='Place Order' >"
+				cartTable = cartTable + "<br/><input type='button'  value='Place Order' onclick='placeorder(chk_idarray) >"
 				$('#menu3').empty();
 				$('#menu3').append(cartTable);
 				
@@ -828,7 +902,7 @@ function delete_cartitem(cartid)
 			{
 			var cartTable="<table width='100%' border='1' class='tile' id='tbl_cart'><tr class='tbl_header'><td colspan='5'><b>My Carts Info</b></td></tr><tr class='tbl_header'><td><b>Product Name</b></td><td><b>Quantity</b></td><td><b>Amount</b></td><td><b>Remove Item</b></td></tr>";
 				var chkVal = 2;
-				var chk_idarray=[];
+				
 				for(var i=0;i<obj[0].data.length;i++)
 				{
 					var qty_id = "qty_"+ obj[0].data[i].cartid;
