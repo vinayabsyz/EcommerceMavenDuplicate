@@ -825,7 +825,7 @@ $(document).on("click", "#td_mycarts", function() {
 				//alert(obj[0].data[0].productname);
 				var cartTable="<table width='100%' border='1' class='tile' id='tbl_cart'><tr class='tbl_header'><td colspan='5'><b>My Carts Info</b></td></tr><tr class='tbl_header'><td><b>Product Name</b></td><td><b>Quantity</b></td><td><b>Amount</b></td><td><b>Remove Item</b></td></tr>";
 				var chkVal = 2;
-				var chk_idarray=[];
+				chk_idarray.length=0;
 				for(var i=0;i<obj[0].data.length;i++)
 				{
 					var qty_id = "qty_"+ obj[0].data[i].cartid;
@@ -872,6 +872,7 @@ $(document).on("click", "#td_mycarts", function() {
 		}
 	});
 });
+var chk_idarray1=[];
 function delete_cartitem(cartid)
 {
 	$('#divcontent').hide();
@@ -886,7 +887,7 @@ function delete_cartitem(cartid)
 	//var userid=$('#hidid').val();
 	var searchParams = new URLSearchParams(window.location.search); //?anything=123
 	var userid = searchParams.get("userid");
-	
+	chk_idarray1.length=0;
 	$.ajax({
 		url : '/Ecommerce?serviceId=deletecart',
 		type: 'POST',
@@ -912,6 +913,7 @@ function delete_cartitem(cartid)
 					 chk_id = obj[0].data[i].productid + "_" + obj[0].data[i].cartid;
 					proarray.push(obj[0].data[i].productid);
 					cartarray.push(obj[0].data[i].cartid);
+					chk_idarray1.push(chk_id);
 					var obj1=obj;
 					//var chk_id = "chk_"+chkVal;
 					chkVal = parseInt(chkVal)+1;
@@ -932,7 +934,7 @@ function delete_cartitem(cartid)
 				cartTable = cartTable + "<tr class='tile'><td colspan='2'>Additional Charges</td><td colspan='3'><output type='number' id='addcharges' value ='0'/></td></tr>";
 				
 				cartTable = cartTable + "<tr class='tile'><td colspan='2'>Total Amount</td><td colspan='3'><input type='text' id='txtTotal' value ='0' disabled height='40'/></td></tr></table>";
-				cartTable = cartTable + "<br/><input type='button' id='placeorder' value='Place Order' >"
+				cartTable = cartTable + "<br/><input type='button'  value='Place Order' nclick='placeorder(chk_idarray1)'>"
 					$('#menu3').empty();
 				$('#menu3').append(cartTable);
 				
