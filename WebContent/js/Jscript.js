@@ -127,7 +127,7 @@ $(document).on("click", "#placeorder", function() {
 	var selected = [];
 	
 	$('#tbl_cart').each(function() {
-		selected.push($(this).attr('id'));
+		selected.push($(this).attr('chk_id '));
 	});
 	$.each(selected, function (index, value) {
 		
