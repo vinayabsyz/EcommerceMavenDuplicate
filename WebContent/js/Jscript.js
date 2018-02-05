@@ -654,6 +654,7 @@ function changestatus(orderid)
 		},
 		success : function(responseText) {
 			var obj = jQuery.parseJSON(responseText);
+			alert(obj);
 			alert("changed");
 			$('#divcontent').show();
 			$('#userdiv').hide();
