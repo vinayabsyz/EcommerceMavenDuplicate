@@ -568,6 +568,7 @@ var amount = 1 * price;
 	});
 }
 function placeorder(chkid){
+	alert(chkid.length);
 var shippingid="1";
 	var searchParams = new URLSearchParams(window.location.search); //?anything=123
 	var userid = searchParams.get("userid");
@@ -855,7 +856,7 @@ $(document).on("click", "#td_mycarts", function() {
 				cartTable = cartTable + "<tr class='tile'><td colspan='2'>Additional Charges</td><td colspan='3'><output type='number' id='addcharges' value ='0'/></td></tr>";
 				
 				cartTable = cartTable + "<tr class='tile'><td colspan='2'>Total Amount</td><td colspan='3'><input type='text' id='txtTotal' value ='0' disabled height='40'/></td></tr></table>";
-				cartTable = cartTable + "<br/><input type='button'  value='Place Order' onclick='placeorder(chk_idarray) >"
+				cartTable = cartTable + "<br/><input type='button'  value='Place Order' onclick='placeorder(chk_idarray)' >"
 				$('#menu3').empty();
 				$('#menu3').append(cartTable);
 				
