@@ -131,7 +131,7 @@ $(document).on("click", "#placeorder", function() {
 	});
 	$.each(selected, function (index, value) {
 		
-
+alert(value);
 		  console.log(value);
 		var product_cart_id = value;
 		//alert(product_cart_id);
@@ -141,6 +141,7 @@ $(document).on("click", "#placeorder", function() {
 		var product_id = split_ids[0];
 		
 		var cart_id = split_ids[1];
+		alert(cart_id);
 		
 		var qty_id = "#qty_"+cart_id;
 		
