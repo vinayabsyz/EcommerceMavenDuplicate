@@ -574,7 +574,7 @@ var shippingid="1";
 	var data="";
 	jsonObj=[];
 	var selected = [];
-	for(var id=0;id<chkid.length;id++){ {
+	for(var id=0;id<chkid.length;id++){ 
 		var value=chkid[id];
 		alert(value);
 		  console.log(value);
@@ -614,7 +614,7 @@ var shippingid="1";
 		data["userid"]= userid;
 		data["status"]="Order Placed"; 
 		 jsonObj.push(data);
-	});
+	}
 		var jsonString = JSON.stringify(jsonObj);
 		console.log(jsonString);
 	//alert(jsonString);
