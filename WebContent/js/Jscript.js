@@ -53,7 +53,7 @@ $(document).on("click", "#userreg",function userReg(){
 				console.log(responseText);
 				var obj = jQuery.parseJSON(responseText);
 				console.log(obj);
-				if(obj[0].success == "success"){window.location.href = "/userlogin.html";}
+				if(obj[0].success == "success"){window.location.href = "/index.html";}
 				
 					else{alert(obj.message);}
 						
@@ -397,7 +397,7 @@ $(document).on("click","#td_home",function(){
 $(document).on("click","#divlogout",function(){
 	
 	$('#hidid').val("");
-	window.location.href = "/userlogin.html";
+	window.location.href = "/index.html";
 }) 
 //
 $(document).on("click","#btn_backpd",function(){
@@ -699,7 +699,7 @@ function showuserinfo()
 	var Cl=localStorage.getItem("loggedin")
 	
 	if(Cl==null){
-	window.location.href = "/userlogin.html";}
+	window.location.href = "/index.html";}
 	var searchParams = new URLSearchParams(window.location.search); //?anything=123
 	var userid = searchParams.get("userid");
 	console.log(userid);
@@ -801,196 +801,4 @@ function showuserinfo()
 	}
 var proarray = [];
 var cartarray = [];
-var chk_id;
-var chk_idarray=[];
-$(document).on("click", "#td_mycarts", function() {
-	var searchParams = new URLSearchParams(window.location.search); //?anything=123
-	var userid = searchParams.get("userid");
-	//var userid=$('#hidid').val();
-	$.ajax({
-		url : '/Ecommerce?serviceId=mycarts',
-		type: 'POST',
-		data : {
-			userid:userid,
-		},
-		success : function(responseText) {
-			//console.log(responseText);
-			var obj = jQuery.parseJSON(responseText);
-			if(obj[0].success[0].success == "success")
-			{
-				//alert(obj[0].success[0].success);
-				//alert(obj.length);
-				//alert(obj[0].data.length);
-				//alert(obj[0].data[0].productname);
-				var cartTable="<table width='100%' border='1' class='tile' id='tbl_cart'><tr class='tbl_header'><td colspan='5'><b>My Carts Info</b></td></tr><tr class='tbl_header'><td><b>Product Name</b></td><td><b>Quantity</b></td><td><b>Amount</b></td><td><b>Remove Item</b></td></tr>";
-				var chkVal = 2;
-				chk_idarray.length=0;
-				for(var i=0;i<obj[0].data.length;i++)
-				{
-					var qty_id = "qty_"+ obj[0].data[i].cartid;
-					var amt_id = "amt_"+ chkVal;
-					var rm_id = "rm_"+ obj[0].data[i].cartid;
-					 chk_id = obj[0].data[i].productid + "_" + obj[0].data[i].cartid;
-					chk_idarray.push(chk_id);
-					proarray.push(obj[0].data[i].productid);
-					cartarray.push(obj[0].data[i].cartid);
-					
-					var obj1=obj;
-					//var chk_id = "chk_"+chkVal;
-					chkVal = parseInt(chkVal)+1;
-					if(i%2 == 0)
-					{
-						cartTable = cartTable + "<tr class='tile'><td>"+obj[0].data[i].productname+"</td>" +
-						"<td ><input id="+qty_id+" type='number' name='inputcell' value='0' onchange='add_totalamount(chk_id)'/></td><td id="+amt_id+">"+obj[0].data[i].price+"</td><td><button type='button' id="+rm_id+" onclick='delete_cartitem(this.id)'>remove</button></td>" +
-						"</tr>";
-						}
-					else
-					{
-						cartTable = cartTable + "<tr class='tile'><td>"+obj[0].data[i].productname+"</td>" +
-						"<td ><input type='number' id="+qty_id+" name='inputcell' value='0' onchange='add_totalamount(chk_id)'/></td><td id="+amt_id+">"+obj[0].data[i].price+"</td><td><button type='button' id="+rm_id+" onclick='delete_cartitem(this.id)'>remove</button></td>" +
-						"</tr>";
-						}
-					
-					}
-				cartTable = cartTable + "<tr class='tile'><td colspan='2'>Additional Charges</td><td colspan='3'><output type='number' id='addcharges' value ='0'/></td></tr>";
-				
-				cartTable = cartTable + "<tr class='tile'><td colspan='2'>Total Amount</td><td colspan='3'><input type='text' id='txtTotal' value ='0' disabled height='40'/></td></tr></table>";
-				cartTable = cartTable + "<br/><input type='button'  value='Place Order' onclick='placeorder(chk_idarray)' >"
-				$('#menu3').empty();
-				$('#menu3').append(cartTable);
-				
-			}
-			else
-			{
-				$('#menu3').empty();
-				alert(obj[0].success[0].message);
-				loadProducts();
-			}
-			
-								
-		}
-	});
-});
-var chk_idarray1=[];
-function delete_cartitem(cartid)
-{
-	$('#divcontent').hide();
-	$('#divhome').hide();
-	$('#product_list').hide();
-	$('#my_orders').hide();
-	$('#prdndesc').hide();
-	$('#userdiv').hide();
-	$('#mycartdata').show();
-	var cart_id = cartid.split("_");
-	//alert(cartid);alert(cart_id[1]);
-	//var userid=$('#hidid').val();
-	var searchParams = new URLSearchParams(window.location.search); //?anything=123
-	var userid = searchParams.get("userid");
-	chk_idarray1.length=0;
-	$.ajax({
-		url : '/Ecommerce?serviceId=deletecart',
-		type: 'POST',
-		data : {
-			userid:userid,cartid:cart_id[1]
-		},
-		success : function(responseText) {
-			alert("Removed");
-			
-			console.log(responseText);
-			var obj = jQuery.parseJSON(responseText);
-			//alert("obj[0].success[0].success"+obj[0].success[0].success);
-			if(obj[0].success[0].success == "success")
-			{
-			var cartTable="<table width='100%' border='1' class='tile' id='tbl_cart'><tr class='tbl_header'><td colspan='5'><b>My Carts Info</b></td></tr><tr class='tbl_header'><td><b>Product Name</b></td><td><b>Quantity</b></td><td><b>Amount</b></td><td><b>Remove Item</b></td></tr>";
-				var chkVal = 2;
-				
-				for(var i=0;i<obj[0].data.length;i++)
-				{
-					var qty_id = "qty_"+ obj[0].data[i].cartid;
-					var amt_id = "amt_"+ chkVal;
-					var rm_id = "rm_"+ obj[0].data[i].cartid;
-					 chk_id = obj[0].data[i].productid + "_" + obj[0].data[i].cartid;
-					proarray.push(obj[0].data[i].productid);
-					cartarray.push(obj[0].data[i].cartid);
-					chk_idarray1.push(chk_id);
-					var obj1=obj;
-					//var chk_id = "chk_"+chkVal;
-					chkVal = parseInt(chkVal)+1;
-					if(i%2 == 0)
-					{
-						cartTable = cartTable + "<tr class='tile'><td>"+obj[0].data[i].productname+"</td>" +
-						"<td ><input id="+qty_id+" type='number' name='inputcell' value='0' onchange='add_totalamount(chk_id)'/></td><td id="+amt_id+">"+obj[0].data[i].price+"</td><td><button type='button' id="+rm_id+" onclick='delete_cartitem(this.id)'>remove</button></td>" +
-						"</tr>";
-						}
-					else
-					{
-						cartTable = cartTable + "<tr class='tile'><td>"+obj[0].data[i].productname+"</td>" +
-						"<td ><input type='number' id="+qty_id+" name='inputcell' value='0' onchange='add_totalamount(chk_id)'/></td><td id="+amt_id+">"+obj[0].data[i].price+"</td><td><button type='button' id="+rm_id+" onclick='delete_cartitem(this.id)'>remove</button></td>" +
-						"</tr>";
-						}
-					
-					}
-				cartTable = cartTable + "<tr class='tile'><td colspan='2'>Additional Charges</td><td colspan='3'><output type='number' id='addcharges' value ='0'/></td></tr>";
-				
-				cartTable = cartTable + "<tr class='tile'><td colspan='2'>Total Amount</td><td colspan='3'><input type='text' id='txtTotal' value ='0' disabled height='40'/></td></tr></table>";
-				cartTable = cartTable + "<br/><input type='button'  value='Place Order' nclick='placeorder(chk_idarray1)'>"
-					$('#menu3').empty();
-				$('#menu3').append(cartTable);
-				
-		}
-		else
-		{
-			alert(obj[0].success[0].message);
-			$('#menu3').empty();
-			loadProducts();
-		}
-								
-		}
-	});
-}
-function showrow()
-{
-	$('.products').hide();
-}
-function add_totalamount(id)
-{
-	
-	
-	var total_amount=0;
-	var prod_amount = 0;
-	
-	var rowCount = $('#tbl_cart tr').length;
-	var MyRows = $('table#tbl_cart').find('tbody').find('tr');
-		for(var id=2;id<rowCount-2;id++){
-			
-		 // if($("#"+proarray [id-2]+"_"+cartarray[id-2]).is(':checked')){
-			prod_amount = 0;
-			var amt =  $(MyRows[id]).find('td:eq(2)').html();
-			var qty =  $('#qty_'+cartarray[id-2]).val();
-			  if(qty==""){
-			  qty=0;
-			  }
-			
-			prod_amount = $(MyRows[id]).find('td:eq(2)').html()*parseInt(qty);
-			
-			  //prod_amount = amt*parseInt(qty);
-			total_amount = total_amount + prod_amount;
-			  console.log(total_amount);
-			
-			  			 
-		//}	
-				
-	}
-	
-	if(total_amount>0){
-	 $('#addcharges').val(100);
-	total_amount=total_amount+100;
-	}
-	else{
-	 $('#addcharges').val("");
-	}
-	
-	$('#txtTotal').val("");
-	//qty = isNaN(qty) ? '0.00' : qty;
-	$('#txtTotal').val(total_amount);
-}
+var chk_id
