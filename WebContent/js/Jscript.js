@@ -568,7 +568,7 @@ var amount = 1 * price;
 	});
 }
 function placeorder(chkid){
-	alert(chkid.length);
+	
 var shippingid="1";
 	var searchParams = new URLSearchParams(window.location.search); //?anything=123
 	var userid = searchParams.get("userid");
@@ -577,14 +577,13 @@ var shippingid="1";
 	var selected = [];
 	for(var id=0;id<chkid.length;id++){ 
 		var value=chkid[id];
-		alert(value);
-		  console.log(value);
+		
 		var product_cart_id = value;
 		//alert(product_cart_id);
 		var split_ids = product_cart_id.split("_");
 		var product_id = split_ids[0];
 		var cart_id = split_ids[1];
-		alert(cart_id);
+		
 		var qty_id = "#qty_"+cart_id;
 		
 		var amt_id = "#amt_"+product_id;
