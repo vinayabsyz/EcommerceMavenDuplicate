@@ -659,7 +659,7 @@ function changestatus(orderid)
 			$('#userdiv').hide();
 			$('#changepwd').hide();
 			$('#prdndesc').hide();
-					
+			$( "#td_myorders" ).click();		
 		}
 	});
 }
