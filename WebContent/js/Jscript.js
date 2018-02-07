@@ -974,7 +974,7 @@ function add_totalamount(id)
 			  }		
 					
 			prod_amount = amt*parseInt(qty);		
-				alert(prod_amount);	
+					
 			  //prod_amount = amt*parseInt(qty);		
 			total_amount = total_amount + prod_amount;		
 			  console.log(total_amount);		
