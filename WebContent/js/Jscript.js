@@ -965,7 +965,8 @@ function add_totalamount(id)
 					
 		 // if($("#"+proarray [id2]+"_"+cartarray[id2]).is(':checked')){		
 			prod_amount = 0;		
-			var amt =  $(MyRows[id]).find('td:eq(2)').html();		
+			var amt =  $(MyRows[id]).find('td:eq(2)').html();
+			alert(cartarray[id-2]);
 			var qty =  $('#qty_'+cartarray[id-2]).val();	
 			alert(amt);
 			alert(qty);
