@@ -894,7 +894,7 @@ function delete_cartitem(cartid)
 			userid:userid,cartid:cart_id[1]		
 		},		
 		success : function(responseText) {		
-			alert("Removed");		
+			alert("Deleted");		
 					
 			console.log(responseText);		
 			var obj = jQuery.parseJSON(responseText);		
