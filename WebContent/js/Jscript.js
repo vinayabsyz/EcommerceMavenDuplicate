@@ -961,12 +961,12 @@ function add_totalamount(id)
 			
 	var rowCount = $('#tbl_cart tr').length;		
 	var MyRows = $('table#tbl_cart').find('tbody').find('tr');		
-		for(var id=2;id<rowCount2;id++){		
+		for(var id=2;id<rowCount;id++){		
 					
 		 // if($("#"+proarray [id2]+"_"+cartarray[id2]).is(':checked')){		
 			prod_amount = 0;		
 			var amt =  $(MyRows[id]).find('td:eq(2)').html();		
-			var qty =  $('#qty_'+cartarray[id2]).val();		
+			var qty =  $('#qty_'+cartarray[id]).val();		
 			  if(qty==""){		
 			  qty=0;		
 			  }		
