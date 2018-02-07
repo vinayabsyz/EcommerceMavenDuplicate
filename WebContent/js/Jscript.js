@@ -966,13 +966,15 @@ function add_totalamount(id)
 		 // if($("#"+proarray [id2]+"_"+cartarray[id2]).is(':checked')){		
 			prod_amount = 0;		
 			var amt =  $(MyRows[id]).find('td:eq(2)').html();		
-			var qty =  $('#qty_'+cartarray[id]).val();		
+			var qty =  $('#qty_'+cartarray[id]).val();	
+			alert(amt);
+			alert(qty);
 			  if(qty==""){		
 			  qty=0;		
 			  }		
 					
 			prod_amount = $(MyRows[id]).find('td:eq(2)').html()*parseInt(qty);		
-					
+				alert(prod_amount);	
 			  //prod_amount = amt*parseInt(qty);		
 			total_amount = total_amount + prod_amount;		
 			  console.log(total_amount);		
