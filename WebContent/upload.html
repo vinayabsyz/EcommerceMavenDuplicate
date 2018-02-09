@@ -88,14 +88,14 @@ input[type=submit]{
       {
         accessKeyId: "AKIAI4BBVKXLHDWXRYTA",
         secretAccessKey: "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",
-        region_config: "us-east-1" 
+        region_config: "ap-south-1" 
       }
      );
     function fileSelected(){
 
 $("#btn_submit").click(function(event) {
     event.preventDefault();
-    var bucket = new AWS.S3({params: {Bucket: '1bucket2'}}); 
+    var bucket = new AWS.S3({params: {Bucket: 'java-demo-dev'}}); 
   
     var fileChooser = document.getElementById('file');
     var file = fileChooser.files[0];
@@ -124,7 +124,7 @@ $("#btn_submit").click(function(event) {
             if(!err) {
           
                alert("File uploaded Successfully");
-          Visualforce.remoting.Manager.invokeAction('{!$RemoteAction.mainfinal5.save1}',filename1,filetype,gsize, function(result, event){
+          //Visualforce.remoting.Manager.invokeAction('{!$RemoteAction.mainfinal5.save1}',filename1,filetype,gsize, function(result, event){
        // alert(result);
        });
         
