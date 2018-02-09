@@ -86,16 +86,16 @@ input[type=submit]{
   <script type="text/javascript">
     AWS.config.update(
       {
-        accessKeyId: "AKIAI4BBVKXLHDWXRYTA",
-        secretAccessKey: "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",
-        region_config: "ap-south-1" 
+        accessKeyId: "AKIAJNDFDWDHPJXCZUPQ",
+        secretAccessKey: "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",
+        region_config: "us-east-1" 
       }
      );
     function fileSelected(){
 
 $("#btn_submit").click(function(event) {
     event.preventDefault();
-    var bucket = new AWS.S3({params: {Bucket: 'java-demo-dev'}}); 
+    var bucket = new AWS.S3({params: {Bucket: '1bucket3'}}); 
   
     var fileChooser = document.getElementById('file');
     var file = fileChooser.files[0];
