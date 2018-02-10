@@ -15,7 +15,7 @@ import org.apache.commons.fileupload.disk.DiskFileItemFactory;
 import org.apache.commons.fileupload.servlet.ServletFileUpload;
 import org.apache.commons.io.output.*;
 
-import com.absyz.service.Products;
+import main.java.com.absyz.service.Products;
 
 public class UploadServlet extends HttpServlet {
    
