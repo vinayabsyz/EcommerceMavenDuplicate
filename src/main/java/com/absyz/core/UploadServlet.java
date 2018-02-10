@@ -1,4 +1,4 @@
-package com.absyz.core;
+package main.java.com.absyz.core;
 
 import java.io.*;
 import java.util.*;
