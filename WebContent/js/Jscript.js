@@ -960,21 +960,22 @@ function add_totalamount(id)
 	var prod_amount = 0;		
 			
 	var rowCount = $('#tbl_cart tr').length;		
+	console.log(rowCount);
 	var MyRows = $('table#tbl_cart').find('tbody').find('tr');		
 		for(var id=2;id<rowCount-2;id++){		
 					
 		 // if($("#"+proarray [id2]+"_"+cartarray[id2]).is(':checked')){		
 			prod_amount = 0;		
 			var amt =  $(MyRows[id]).find('td:eq(2)').html();
-			
+			console.log(amt);
 			var qty =  $('#qty_'+cartarray[id-2]).val();	
-			
+			console.log(qty);
 			  if(qty==""){		
 			  qty=0;		
 			  }		
 					
 			prod_amount = amt*parseInt(qty);		
-					
+					console.log(prod_amount);
 			  //prod_amount = amt*parseInt(qty);		
 			total_amount = total_amount + prod_amount;		
 			  console.log(total_amount);		
