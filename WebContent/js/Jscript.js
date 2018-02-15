@@ -943,10 +943,10 @@ function delete_cartitem(cartid)
 			alert(obj[0].success[0].message);		
 			$('#menu3').empty();		
 			loadProducts();		
-		}		
+		}	*/	
 										
 		}		
-	});	*/	
+	});	
 }		
 function showrow()		
 {		
