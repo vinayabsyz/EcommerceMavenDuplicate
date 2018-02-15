@@ -895,8 +895,8 @@ function delete_cartitem(cartid)
 		},		
 		success : function(responseText) {		
 			alert("Deleted");		
-					
-			console.log(responseText);		
+				$( "#td_mycarts" ).click();	
+			/*console.log(responseText);		
 			var obj = jQuery.parseJSON(responseText);		
 			//alert("obj[0].success[0].success"+obj[0].success[0].success);		
 			if(obj[0].success[0].success == "success")		
@@ -946,7 +946,7 @@ function delete_cartitem(cartid)
 		}		
 										
 		}		
-	});		
+	});	*/	
 }		
 function showrow()		
 {		
