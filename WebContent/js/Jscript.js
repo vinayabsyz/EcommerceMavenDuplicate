@@ -966,7 +966,7 @@ function add_totalamount(id)
 	var prod_amount = 0;		
 			
 	var rowCount = $('#tbl_cart tr').length;		
-	console.log("rowCount"+rowCount);
+	
 	var MyRows = $('table#tbl_cart').find('tbody').find('tr');		
 		for(var id=2;id<rowCount-2;id++){		
 					
