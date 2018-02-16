@@ -958,7 +958,7 @@ function showrow()
 }		
 function add_totalamount(id)		
 {		
-			
+	console.log(cartarray[]);		
 			
 	var total_amount=0;		
 	var prod_amount = 0;		
