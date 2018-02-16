@@ -890,7 +890,7 @@ function delete_cartitem(cartid)
 	//var userid=$('#hidid').val();		
 	var searchParams = new URLSearchParams(window.location.search); //?anything=123		
 	var userid = searchParams.get("userid");		
-	chk_idarray1.length=0;		
+		
 	$.ajax({		
 		url : '/Ecommerce?serviceId=deletecart',		
 		type: 'POST',		
@@ -898,7 +898,9 @@ function delete_cartitem(cartid)
 			userid:userid,cartid:cart_id[1]		
 		},		
 		success : function(responseText) {		
-			alert("Deleted");		
+			alert("Deleted");
+			chk_idarray1.length=0;	
+			cartarray.length=0;
 				$( "#td_mycarts" ).click();	
 			/*console.log(responseText);		
 			var obj = jQuery.parseJSON(responseText);		
