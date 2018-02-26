@@ -55,7 +55,7 @@ public class UploadServlet extends HttpServlet {
 		// upload file to folder and set it to public
 		String fileName = folderName + SUFFIX + "testvideo.mp4";
 		s3client.putObject(new PutObjectRequest(bucketName, fileName, 
-				new File("WebContent\\images\\dell_laptop.jpg"))
+				new File("WebContent//images//dell_laptop.jpg"))
 				.withCannedAcl(CannedAccessControlList.PublicRead));
 		
 		deleteFolder(bucketName, folderName, s3client);
