@@ -35,9 +35,11 @@ public class UploadServlet extends HttpServlet {
 				System.getenv("AWS_ACCESS_KEY"), 
 				System.getenv("AWS_SECRET_KEY"));
 		
+		
 		// create a client connection based on credentials
 		AmazonS3 s3client = new AmazonS3Client(credentials);
-		
+		s3client.setS3ClientOptions(S3ClientOptions.builder().setPathStyleAccess(true).disableChunkedEncoding().build());
+
 		// create bucket - name must be unique for all S3 users
 		String bucketName = "javatial-net-examm22ple-bucket";
 		s3client.createBucket(bucketName);
