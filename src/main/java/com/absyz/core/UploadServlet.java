@@ -27,7 +27,7 @@ public class UploadServlet extends HttpServlet {
 	
 	private static final String SUFFIX = "/";
 	
-	public static void main(String[] args) {
+	public  void doPost(HttpServletRequest request, HttpServletResponse response) {
 		// credentials object identifying user for authentication
 		// user must have AWSConnector and AmazonS3FullAccess for 
 		// this example to work
