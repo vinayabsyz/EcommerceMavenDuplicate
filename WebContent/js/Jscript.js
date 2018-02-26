@@ -269,12 +269,12 @@ $(document).on("click", "#td_myorders", function() {
 				if(i%2 == 0)
 				{
 					orderTable = orderTable + "<tr class='tile'><td>"+obj[0].data[i].orderid+"</td><td>"+obj[0].data[i].productname+"</td>" +
-					"<td>"+obj[0].data[i].orderdate+"</td><td>"+obj[0].data[i].price+"</td><td>"+obj[0].data[i].productquantity+"</td><td>"+totamt+"</td><td>"+obj[0].data[i].status+"</td></tr>";
+					"<td>"+obj[0].data[i].orderdate+"</td><td>"+obj[0].data[i].price+"</td><td>"+obj[0].data[i].productquantity+"</td><td>"+totamt+"</td><td><button type='button' id="+obj[0].data[i].orderid+" onclick='changestatus(this.id)'>changestatus</button></td></tr>";
 					}
 				else
 				{
 					orderTable = orderTable + "<tr class='tile'><td>"+obj[0].data[i].orderid+"</td><td>"+obj[0].data[i].productname+"</td>" +
-					"<td>"+obj[0].data[i].orderdate+"</td><td>"+obj[0].data[i].price+"</td><td>"+obj[0].data[i].productquantity+"</td><td>"+totamt+"</td><td>"+obj[0].data[i].status+"</td></tr>";
+					"<td>"+obj[0].data[i].orderdate+"</td><td>"+obj[0].data[i].price+"</td><td>"+obj[0].data[i].productquantity+"</td><td>"+totamt+"</td><td><button type='button' id="+obj[0].data[i].orderid+" onclick='changestatus(this.id)'>changestatus</button></td></tr>";
 					}
 				}
 				}
@@ -847,13 +847,13 @@ $(document).on("click", "#td_mycarts", function() {
 					if(i%2 == 0)		
 					{		
 						cartTable = cartTable + "<tr class='tile'><td>"+obj[0].data[i].productname+"</td>" +		
-						"<td ><input id="+qty_id+" type='number' name='inputcell' value='0' onchange='add_totalamount(chk_id)'/></td><td id="+amt_id+">"+obj[0].data[i].price+"</td><td><button type='button' id="+rm_id+" onclick='delete_cartitem(this.id)'>remove</button></td>" +		
+						"<td ><input id="+qty_id+" type='number' name='inputcell' value='1' onchange='add_totalamount(chk_id)'/></td><td id="+amt_id+">"+obj[0].data[i].price+"</td><td><button type='button' id="+rm_id+" onclick='delete_cartitem(this.id)'>remove</button></td>" +		
 						"</tr>";		
 						}		
 					else		
 					{		
 						cartTable = cartTable + "<tr class='tile'><td>"+obj[0].data[i].productname+"</td>" +		
-						"<td ><input type='number' id="+qty_id+" name='inputcell' value='0' onchange='add_totalamount(chk_id)'/></td><td id="+amt_id+">"+obj[0].data[i].price+"</td><td><button type='button' id="+rm_id+" onclick='delete_cartitem(this.id)'>remove</button></td>" +		
+						"<td ><input type='number' id="+qty_id+" name='inputcell' value='1' onchange='add_totalamount(chk_id)'/></td><td id="+amt_id+">"+obj[0].data[i].price+"</td><td><button type='button' id="+rm_id+" onclick='delete_cartitem(this.id)'>remove</button></td>" +		
 						"</tr>";		
 						}		
 							
