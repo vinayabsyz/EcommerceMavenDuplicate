@@ -30,7 +30,8 @@ $(document).on("click", "#userlogin", function() {
 				
 				
 				else{
-					 $("#dialog").html("Wrongg");
+					 $("#dialog").html("");
+					  $("#dialog").append("<div><b>Wrong</b></div>");
 				}
 					
 		}
