@@ -38,8 +38,7 @@ public class UploadServlet extends HttpServlet {
 		
 		// create a client connection based on credentials
 		AmazonS3 s3client = new AmazonS3Client(credentials);
-		s3client.setS3ClientOptions(S3ClientOptions.builder().setPathStyleAccess(true).disableChunkedEncoding().build());
-
+		
 		// create bucket - name must be unique for all S3 users
 		String bucketName = "javatial-net-examm22ple-bucket";
 		s3client.createBucket(bucketName);
@@ -56,7 +55,7 @@ public class UploadServlet extends HttpServlet {
 		// upload file to folder and set it to public
 		String fileName = folderName + SUFFIX + "testvideo.mp4";
 		s3client.putObject(new PutObjectRequest(bucketName, fileName, 
-				new File("C:\\Users\\vishwasamudralogo.PNG"))
+				new File("WebContent\\images\\dell_laptop.jpg"))
 				.withCannedAcl(CannedAccessControlList.PublicRead));
 		
 		deleteFolder(bucketName, folderName, s3client);
