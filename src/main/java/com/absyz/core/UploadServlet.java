@@ -1,3 +1,4 @@
+package main.java.com.absyz.core;
 import java.io.ByteArrayInputStream;
 import java.io.File;
 import java.io.InputStream;
