@@ -66,7 +66,7 @@ response.setContentType("application/json");
 		   }
 		   if (request.getParameter("serviceId").equals("addproduct"))
 		   {
-			   String strOutput =Products.add_products(request);
+			   String strOutput =Products;
 			      // Set response content type
 			      response.setContentType("text/html");
 
