@@ -74,11 +74,6 @@ public class UploadServlet {
 	 * folder itself
 	 */
 	public static void deleteFolder(String bucketName, String folderName, AmazonS3 client) {
-		List fileList = 
-				client.listObjects(bucketName, folderName).getObjectSummaries();
-		for (S3ObjectSummary file : fileList) {
-			client.deleteObject(bucketName, file.getKey());
-		}
-		client.deleteObject(bucketName, folderName);
+		
 	}
 }
