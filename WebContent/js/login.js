@@ -30,8 +30,7 @@ $(document).on("click", "#userlogin", function() {
 				
 				
 				else{
-					$("#wrongpwd").formError(
-	"Name cannot be greater than 15 characters long");
+					 $("#dialog").html("Wrongg");
 				}
 					
 		}
