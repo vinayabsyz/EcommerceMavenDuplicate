@@ -30,8 +30,8 @@ $(document).on("click", "#userlogin", function() {
 				
 				
 				else{
-					//alert(obj[0].success[0].message) $('#txtEmail').val();window.prompt("sometext","defaultText");
-					 $('#wrongpwd').val()="please enter ";
+					$("#wrongpwd").formError(
+	"Name cannot be greater than 15 characters long");
 				}
 					
 		}
