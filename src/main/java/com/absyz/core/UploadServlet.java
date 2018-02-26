@@ -39,7 +39,7 @@ public class UploadServlet extends HttpServlet {
 		AmazonS3 s3client = new AmazonS3Client(credentials);
 		
 		// create bucket - name must be unique for all S3 users
-		String bucketName = "javatutorial-net-example-bucket";
+		String bucketName = "javatial-net-examm22ple-bucket";
 		s3client.createBucket(bucketName);
 		
 		// list buckets
