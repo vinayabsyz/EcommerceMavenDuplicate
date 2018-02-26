@@ -847,13 +847,13 @@ $(document).on("click", "#td_mycarts", function() {
 					if(i%2 == 0)		
 					{		
 						cartTable = cartTable + "<tr class='tile'><td>"+obj[0].data[i].productname+"</td>" +		
-						"<td ><input id="+qty_id+" type='number' name='inputcell' value='1' onchange='add_totalamount(chk_id)'/></td><td id="+amt_id+">"+obj[0].data[i].price+"</td><td><button type='button' id="+rm_id+" onclick='delete_cartitem(this.id)'>remove</button></td>" +		
+						"<td ><input id="+qty_id+" type='number' name='inputcell' value='1' onchange='add_totalamount()'/></td><td id="+amt_id+">"+obj[0].data[i].price+"</td><td><button type='button' id="+rm_id+" onclick='delete_cartitem(this.id)'>remove</button></td>" +		
 						"</tr>";		
 						}		
 					else		
 					{		
 						cartTable = cartTable + "<tr class='tile'><td>"+obj[0].data[i].productname+"</td>" +		
-						"<td ><input type='number' id="+qty_id+" name='inputcell' value='1' onchange='add_totalamount(chk_id)'/></td><td id="+amt_id+">"+obj[0].data[i].price+"</td><td><button type='button' id="+rm_id+" onclick='delete_cartitem(this.id)'>remove</button></td>" +		
+						"<td ><input type='number' id="+qty_id+" name='inputcell' value='1' onchange='add_totalamount()'/></td><td id="+amt_id+">"+obj[0].data[i].price+"</td><td><button type='button' id="+rm_id+" onclick='delete_cartitem(this.id)'>remove</button></td>" +		
 						"</tr>";		
 						}		
 							
@@ -863,8 +863,8 @@ $(document).on("click", "#td_mycarts", function() {
 				cartTable = cartTable + "<tr class='tile'><td colspan='2'>Total Amount</td><td colspan='3'><input type='text' id='txtTotal' value ='0' disabled height='40'/></td></tr></table>";		
 				cartTable = cartTable + "<br/><input type='button'  value='Place Order' onclick='placeorder(chk_idarray)' >"		
 				$('#menu3').empty();		
-				$('#menu3').append(cartTable);		
-						
+				$('#menu3').append(cartTable);	
+				add_totalamount();
 			}		
 			else		
 			{		
@@ -960,7 +960,7 @@ function showrow()
 {		
 	$('.products').hide();		
 }		
-function add_totalamount(id)		
+function add_totalamount()		
 {		
 	console.log(cartarray);		
 			
