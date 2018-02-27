@@ -1,0 +1,99 @@
+
+
+
+<html>
+<head></head>
+<body>
+ 
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous"/><style>
+form {
+  padding: 20px;
+  border: 1px solid #cccccc;
+  border-radius: 10px;
+  -moz-border-radius: 10px;
+  -webkit-box-shadow: 0 0 10px #ccc;
+  -moz-box-shadow: 0 0 10px #ccc;
+  box-shadow: 0 0 10px #ccc;
+  background-image: -moz-linear-gradient(top, #ffffff, #f2f2f2);
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#ffffff), to(#f2f2f2));
+}
+
+#mainContent {
+  width: 640px;
+  float: left;
+  margin-left: 330px;
+  overflow: hidden;
+  padding-top: 155px;
+}
+
+h4.fileToUpload {
+  margin-top: 0.0em;
+  font-size: 16pt;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #7F3300;
+  margin-top: 1.5em;
+  margin-bottom: 0.3em;
+  font-family: DaxCompact-RegularRegular, Georgia, Helvetica, Times, 'Times New Roman' , serif;
+}
+.row {
+  padding-bottom: 5px;
+}
+input {
+  border: 1px solid #ccc;
+  font-size: 16px;
+  padding: 5px 10px 5px 10px;
+  border-radius: 10px;
+  -moz-border-radius: 10px;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+input[type=submit]{
+  opacity: 1.0;
+  background-image: -moz-linear-gradient(top, #ffffff, #dfdfdf);
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#ffffff), to(#dfdfdf));
+  cursor: pointer;
+} 
+
+</style>
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+     <script src="https://sdk.amazonaws.com/js/aws-sdk-2.1.12.min.js"></script>
+	 <script type="text/javascript" src="http://yourjavascript.com/17085227115/uploadtoaws.js"></script>
+
+
+     <div id ="mainContent">
+     
+     
+     <form action="#"  method="post" enctype="multipart/form-data" id="uploadForm">
+        <h4 class="fileToUpload">Select a File to Upload in AWS</h4><br />
+        <div class="row">
+              <input type="file" size="50" name="file" id="file" onchange="fileSelected();" />
+        </div>
+        <div class="row">
+         <input type="submit" value="Upload"   id="btn_submit"  /> 
+        
+         
+  </div>
+      
+       <div class="progress">
+            <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"  id="Upload1" style="width:0%">
+                <span class="sr-only">20% Complete</span>
+            </div>
+       </div>
+   
+  </form>
+   
+    </div>
+  
+
+<!-- Aws S3 Upload code -->
+
+
+</body>
+
+</html>
