@@ -30,8 +30,9 @@ $(document).on("click", "#userlogin", function() {
 				
 				
 				else{
-					 $("#dialog").html("");
-					  $("#dialog").append("<div><b>Wrong</b></div>");
+					var targeted_popup_class = jQuery(this).attr('data-popup-open');
+$('[data-popup="' + targeted_popup_class + '"]').fadeIn(350);
+e.preventDefault();
 				}
 					
 		}
