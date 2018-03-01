@@ -30,7 +30,7 @@ $(document).on("click", "#userlogin", function() {
 				
 				
 				else{
-					
+				$('#myModal').modal('toggle');	
 				}
 					
 		}
