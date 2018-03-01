@@ -30,9 +30,7 @@ $(document).on("click", "#userlogin", function() {
 				
 				
 				else{
-					var targeted_popup_class = jQuery(this).attr('data-popup-open');
-$('[data-popup="' + targeted_popup_class + '"]').fadeIn(350);
-e.preventDefault();
+					
 				}
 					
 		}
