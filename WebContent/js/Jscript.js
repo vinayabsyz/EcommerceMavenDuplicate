@@ -281,7 +281,29 @@ $(document).on("click", "#td_myorders", function() {
 			orderTable = orderTable + "</table>";
 			$('#my_orders').empty();
 			$('#my_orders').append(orderTable);
-								
+			var orderTable1="<br/><br/><b>Delivered Orders</b><table width='100%'><br/><tr class='tile'><td><strong>Order No</strong></td><td><strong>Product Name</strong></td><td><strong>Date</strong></td><td><strong>Price</strong></td><td><strong>Quantity</strong></td><td><strong>Amount</strong></td><td><strong>status</strong></td>";
+			
+			for(var i=0;i<obj[0].data.length;i++)
+			{
+				var totamt=obj[0].data[i].price * obj[0].data[i].productquantity;
+				
+				if(obj[0].data[i].status=="Order Delivered"){
+				if(i%2 == 0)
+				{
+					orderTable1 = orderTable1 + "<tr class='tile'><td>"+obj[0].data[i].orderid+"</td><td>"+obj[0].data[i].productname+"</td>" +
+					"<td>"+obj[0].data[i].orderdate+"</td><td>"+obj[0].data[i].price+"</td><td>"+obj[0].data[i].productquantity+"</td><td>"+totamt+"</td><td>"+obj[0].data[i].status+"</td></tr>";
+					}
+				else
+				{
+					orderTable1 = orderTable1 + "<tr class='tile'><td>"+obj[0].data[i].orderid+"</td><td>"+obj[0].data[i].productname+"</td>" +
+					"<td>"+obj[0].data[i].orderdate+"</td><td>"+obj[0].data[i].price+"</td><td>"+obj[0].data[i].productquantity+"</td><td>"+totamt+"</td><td>"+obj[0].data[i].status+"</td></tr>";
+					}
+				}
+				
+				}
+			orderTable1 = orderTable1 + "</table>";
+	
+			$('#my_orders').append(orderTable1);					
 		}
 	});
 	}
