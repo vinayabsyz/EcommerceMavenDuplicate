@@ -303,7 +303,7 @@ $(document).on("click", "#td_myorders", function() {
 				}
 			orderTable = orderTable + "</table>";
 			$('#my_orders').empty();
-			
+			//start of deiverd orders rendering
 			var orderTable1="<br/><br/><b>Delivered Orders</b><table width='100%'><br/><tr class='tile'><td><strong>Order No</strong></td><td><strong>Product Name</strong></td><td><strong>Date</strong></td><td><strong>Price</strong></td><td><strong>Quantity</strong></td><td><strong>Amount</strong></td><td><strong>status</strong></td>";
 			
 			for(var i=0;i<obj[0].data.length;i++)
@@ -326,7 +326,8 @@ $(document).on("click", "#td_myorders", function() {
 				}
 			orderTable1 = orderTable1 + "</table>";
 	$('#my_orders').append(orderTable);
-			$('#my_orders').append(orderTable1);					
+			$('#my_orders').append(orderTable1);	
+			//end of deiverd orders rendering
 		}
 	});
 	}
@@ -788,7 +789,7 @@ function showuserinfo()
 				$('#menu5').empty();
 				$('#menu5').append(usertable);
 				//orders table start
-				var searchParams = new URLSearchParams(window.location.search); //?anything=123
+				/*var searchParams = new URLSearchParams(window.location.search); //?anything=123
 	var userid = searchParams.get("userid");
 	//var userid = $('#hidid').val(); 
 	$.ajax({
@@ -830,7 +831,7 @@ function showuserinfo()
 			
 			$('#menu5').append(orderTable);					
 		}
-	});
+	});*/
 				//end of orders table
 				
 				
