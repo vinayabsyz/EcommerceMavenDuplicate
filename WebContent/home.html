@@ -1,276 +1,1055 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-"http://www.w3.org/TR/html4/loose.dtd">
-<html >
-<head>
+
+
+$(document).ready(function (){
 	
-  <meta charset="UTF-8">
-  <title>Cart with tabs</title>
-  
-  
-  
-      <link rel="stylesheet" href="css/style.css">
-
-  
-</head>
-
-<body>
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	// $('#changepwd').hide();
 	
-	<!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
-  <div id="particle"></div>
-<div id="overlay">
-  <div class="container">
-  
-  <ul class="nav nav-tabs">
-    <li class="active"><a href="#home" id="homeid1" onclick="logout1(), hidechangepwdH(), hidechangepwdH1"><b><u>Home</u></b></a></li>
-	  <li><a href="#menu5"><b><u onclick="logout1(),showuserinfo()">User Info</u></b></a></li>
-    <li><a href="#menu1"><b><u onclick="logout1(),loadProducts() ">Products</u></b></a></li>
+	setTimeout(function() {
+    $('#changepwd').stop(true, true).hide(); 
+}, 1);
 
-    <li><a href="#menu2"><b><u id="td_myorders" onclick="logout1()">My Orders</u></b></a></li>
-    
-  
-<!--     <li><a href="#menu4"><b><u>All Products</u></b></a></li> -->
-    
-   
-	  <li class="pull-right"><a href="#menu6"><b><u id="divlogout" onclick="logout() ">Logout</u></b></a></li><input type="hidden" id="hidid" value="" /><input type="hidden" id="hidPrdId" value="" />
- <li class="pull-right"><a href="#menu3" onclick="hidechangepwdCr()"><b><u id="td_mycarts">My Cart</u></b></a></li>
-	  </ul>
-  
-<br/>
-    <br/>
-    <br/>
-    
-  <div class="tab-content">
-  
-    <div id="home" class="tab-pane fade in active">
-      <div class="container" id="homeid">
-	<!--      <style>
-		      .topleft {
-    position: absolute;
-    top: 45px;
-    left: 26px;
-    font-size: 18px;
-	      </style> -->
-	    <!--  <div style="text-align:center; " >
-		      <img src="http://res.cloudinary.com/dnfwnmomw/image/upload/v1518499820/imageedit_2_6900993995_j7ozbx.png" height="100" width="130">
-	      </div> -->
-       <div class="panel-group"><br/><br/><br/><br/><br/><br/><br/>
-         <div class="panel panel-info">
-      <div class="panel-heading">ABSYZ</div>
-      <div id="panelbodyid" class="panel-body">ABSYZ Inc. is a dynamically growing firm in the salesforce ecosystem. Our strength lies in the fact that we are amongst the few partners that cater solely to salesforce services. The broad gamut of services that we offer include consulting, implementation, audit, support, staff augmentation and training services. For those of you wondering about the origination of our name ABSYZ, it is simply derived from the Sanskrit word AB that stands for the state of being in the Now or Present, and fused with the word SYZ to overlay it with futuristic tones.</div>
-	  
-         </div></div></div></div>
-    
-     <div id="menu1" class="tab-pane fade">
-	           <div class="p-3 mb-2 bg-info text-white" style="text-align:center;background-color:#337ab7;font-size: 25px; color: #ffffff;"><p><strong>Product List</strong></p></div>
-      <div class="container" id="product_list">
-<!--   <h2>Implement Table here and click for description on each item</h2> -->
-  
-  <div class="panel-group">
-  <!--  <div class="panel panel-primary"> -->
-	  <div class="spin" style="text-align:center;">
-		  
-      <i class="fa fa-circle-o-notch fa-spin" style="font-size:24px"></i>
-		  
-      <div class="panel-heading">
-        <h4 class="panel-title">
-        <!--  <a data-toggle="collapse" href="#collapse1">Click for description</a>-->
-		
-        </h4>
-        </div><!-- div of panel heading -->
-        <div id="collapse1" class="panel-collapse collapse">
-        <div class="panel-body"><div class="panel panel-primary">
-      <div class="panel-body">
-      <div id="showPrdName"> <label>Product Name: </label><br/></div> <!-- div of shoPrdName -->
-	      <div id="showBrand">    <label>Brand: </label><br/></div>
-	      <div id="showPrdPrice">  <label>Description:</label></br/></div>
-        <form>
-          <div class="form-group">
-  <label for="usr">Count:</label>
-  <input type="text" class="form-control" id="usr">
-		  <input type="button" id="btn_backpd" value="Back"/> <input type="button" id="btn_addtocart" value="Add to Cart"/><input type="hidden" id="hidPrdId" value=""/></td>						
-		
-</div>
-  </form>
-</div>
-</div></div>
-        
-        </div></div></div></div></div>
-   
-   
-      
-      
-      
-      
- 
-    
-    
-    <div id="menu2" class="tab-pane fade">
-	    <div class="p-3 mb-2 bg-info text-white" style="text-align:center;"><p><strong>Orders</strong></p></div>
-      <div class="container" id="my_orders">
-<!--   <h2>Implement  order Table here and click for description on each item</h2> -->
-	     <!-- <i class="fa fa-spinner fa-spin" style="font-size:24px"></i> -->
-  <div class="panel-group">
-    
-     
-      <div class="panel-heading">
-        <h4 class="panel-title">
-         <i class="fa fa-spinner fa-spin" style="font-size:24px"></i> 
-        </h4>
-        </div>
-        <div id="collapse1" class="panel-collapse collapse">
-        <div class="panel-body"><div class="panel panel-primary">
-      <div class="panel-body">
-        <label>Product Name: </label><br/>
-        <label>Brand: </label><br/>
-        <label>Description:</label></br/>
-        <form>
-          <div class="form-group">
-  <label for="usr">Count:</label>
-  <input type="text" class="form-control" id="usr">
-</div>
-  </form>
-</div>
-</div></div>
-        
-        </div></div></div></div>
-   
-   
-    
-    
-    
-    <div id="menu3" class="tab-pane fade">
-	    <div class="p-3 mb-2 bg-info text-white" style="text-align:center;"><p><strong>Cart Items</strong></p></div>
-<!--       <h3>Display cart table here</h3> -->
-<!--       <p>cart table</p> -->
-    </div>
-    
-<!-- <div id="menu4" class="tab-pane fade"> -->
-<!--       <h3>Display Products table here</h3> -->
-<!--       <p>product table</p> -->
-<!--     </div> -->
-    
-<div id="menu5" class="tab-pane fade">
-	<p>test paragraph</p>
-	<div class="p-3 mb-2 bg-info text-white" style="text-align:center;"><p><strong>User Info</strong></p></div>
-	<!-- <head>
-  <title>File Upload with Java, Play 2, and S3</title>
-    <link rel="shortcut icon" type="image/png" href="@routes.Assets.at("images/favicon.png")">
-</head>
-<body>
-    <h1>Upload a file:</h1>
-    @helper.form(action = controllers.Application.upload, 'enctype -> "multipart/form-data") {
-        <input type="file" name="upload">
-        <input type="submit">
-    }
-
-    <h1>Uploads:</h1>
-    <ul>
-    @for(upload <- uploads) {
-        <li><a href="@upload.getUrl()">@upload.name</a></li>
-    }
-    </ul>
-
-</body>-->
-<!--       <h3>Display user info table here</h3> -->
-<!--       <p>user info table</p> -->
-	<!--<input type="button" onclick="msg()"> -->
-    </div>
 	
-	<div  id="changepwd" style="display:none">
- <table class="login-screen">
-				<tr class='tbl_header'>
-					<td colspan='2'> <b>Change Password </b><br/></td>
-				</tr>
-				<tr>
-					<td><b>Password</b></td><td><input type="text" name="txtPwd" id="txtPwd" /></td>
-				</tr>
-	 <br/>
-				<tr>
-					<td><b>Confirm Password</b></td><td><input type="password" name="txtCfrmPwd" id="txtCfrmPwd" /></td>
-				</tr>
-				<tr>
-					<td><b><input type="button" id="btnSave" value="Save" /></b>&nbsp&nbsp<b><input type="button" id="btnUser" value="cancel" /></b></td>
-				</tr>
-			</table>
-			</div> 
-	
-	<script >
-		function msg(){
-			alert('msg');
-		var x= document.getElementById("changepwd");
-			if (x.style.display === "none") {
-        x.style.display = "block";
-    }else
-	    {
-        x.style.display = "none";
-    }
-		} 
-	</script>
-	<div id="imgid" class="tab-pane fade">
 	
 
-
-<!--       <h3>Display user info table here</h3> -->
-<!--       <p>user info table</p> -->
-    </div>
-    
-<div id="menu6" class="tab-pane fade">
-<!--       <h3>Logout button to logout</h3> -->
-     
-    </div>
-    
-    
-  </div>
-</div>
-  
-  
+}); 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-</div>
-<script>
-	function logout1(){
-	var cl1= localStorage.getItem("loggedin");
-		if(cl1==null){
-		window.location.href="/index.html";
+//for user reg
+$(document).on("click", "#userreg",function userReg(){
+	var fname=$('#txtFname').val();
+	var lname=$('#txtlname').val();
+	var email=$('#txtEmail').val();
+	var mobile=$('#txtPwd').val();
+	var password=$('#txtMobile').val();
+	var address1=$('#txtAdd1').val();
+	var address2=$('#txtAdd2').val();
+	var city=$('#txtCity').val();
+	var state=$('#txtState').val();
+	var country=$('#txtCountry').val();
+	var zipcode=$('#txtZipcode').val();
+	var landmark=$('#txtLadmark').val();
+	var pwd = $('#txtPwd').val();
+	var cfrmpwd = $('#txtCfrmPwd').val();
+	var image = $('#photo').val();
+	if($('#rdMale').is(':checked'))
+	 {
+	 	var gender = "Male";
+	 }
+	 else
+	 {
+	 	var gender = "Female";
+	 }
+	if(pwd == cfrmpwd)
+	{
+		$.ajax({
+			url : '/Ecommerce?serviceId=userreg',
+			type: 'POST',
+			data : {
+				fname:fname,lname:lname,email:email,password:pwd,mobile:mobile,address1:address1,
+				address2:address2,city:city,state:state,country:country,zipcode:zipcode,landmark:landmark,
+				gender:gender,image:image
+			},
+			success : function(responseText) {
+				console.log(responseText);
+				var obj = jQuery.parseJSON(responseText);
+				console.log(obj);
+				if(obj[0].success == "success"){window.location.href = "/index.html";}
+				
+					else{alert(obj.message);}
+						
+			}
+		});
+	}
+	else
+	 {
+		 alert("Password Not Matching");
+	 }
+	
+});
+//product for admin
+$(document).on("click", "#addproduct",function userReg(){
+	var pname=$('#txtPname').val();
+	var pcount=$('#txtPcount').val();
+	var bname=$('#txtBname').val();
+	var price=$('#txtPrice').val();
+		$.ajax({
+		url : '/Ecommerce?serviceId=addproduct',
+		type: 'POST',
+		data : {
+			productname:pname,stock:pcount,brand:bname,price:price
+		},
+		success : function(responseText) {
+			var obj = jQuery.parseJSON(responseText);
+			console.log(obj);
+			if(obj == "success"){alert("Product Added");}
+			
+				else{alert("Try Again");}
+					
 		}
+	});
+});
+
+
+//Add to cart tab
+$(document).on("click", "#btn_addtocart", function() {
+	//var productid = $('input[name=product]:checked').attr('id'); 
+	alert("Added");
+	var productid = $('#hidPrdId').val();
+	var quantity = $('#txtgetQty').val();
+	var price = $('#showPrdPrice').text();
+	var amount = quantity * price;
+	var userid = $('#hidid').val();//alert(productid);
+	$.ajax({
+		url : '/Ecommerce?serviceId=addtocart',
+		type: 'POST',
+		data : {
+			userid :userid,productid:productid,quantity:quantity,amount:amount,
+		},
+		success : function(responseText) {
+			var obj = jQuery.parseJSON(responseText);
+			alert(obj[0].success[0].message);
+			$('#divcontent').show();
+			$('#userdiv').hide();
+			$('#changepwd').hide();
+			$('#prdndesc').hide();
+					
+		}
+	});
+});
+//Place Order Button
+/*$(document).on("click", "#placeorder", function() {
+	//alert("mani");
+	var shippingid="1";
+	var searchParams = new URLSearchParams(window.location.search); //?anything=123
+	var userid = searchParams.get("userid");
+	var data="";
+	jsonObj=[];
+	var selected = [];
+	
+	$('#tbl_cart').each(function() {
+		selected.push($(this).attr('chk_id '));
+	});
+	$.each(selected, function (index, value) {
+		
+alert(value);
+		  console.log(value);
+		var product_cart_id = value;
+		//alert(product_cart_id);
+		
+		var split_ids = product_cart_id.split("_");
+		
+		var product_id = split_ids[0];
+		
+		var cart_id = split_ids[1];
+		alert(cart_id);
+		
+		var qty_id = "#qty_"+cart_id;
+		
+		var amt_id = "#amt_"+product_id;
+		
+		var price =$(amt_id).text();
+		
+		var quantity = $(qty_id).val();
+			
+		var totalamount =  $('#txtTotal').val();
+		
+		/*var label= ["Order Received", "Order Processing", "Order dispatched", "Order Shipped", "Order Delivered"];
+		var counter = 0;
+		var elem = document.getElementById("label"); 
+		setInterval(change, 1000); 
+		function change() { 
+			elem.innerHTML = text[counter]; 
+			counter++; 
+			if (counter >= text.length) {
+				counter = 0; }
+		}*/
+		/*data={};
+		data["productid"]= product_id;
+		data["cartid"]= cart_id;
+		data["quantity"]= quantity;
+		data["price"]= price;
+		data["totalamount"]= totalamount;
+		data["shippingid"]= shippingid;
+		data["userid"]= userid;
+		data["status"]="Order Placed"; 
+		 jsonObj.push(data);
+	});
+		var jsonString = JSON.stringify(jsonObj);
+		console.log(jsonString);
+	//alert(jsonString);
+		console.log(selected);
+		
+	
+	$.ajax({
+		url : '/Ecommerce?serviceId=orders',
+		type: 'POST',
+		data : {
+			data:jsonString
+		},
+		success : function(responseText) {
+			if(responseText == "success"){
+				alert("order placed");
+				$( "#td_mycarts" ).click();
+				}
+				
+				else{alert("try again");}
+					
+		}
+	});
+});*/
+
+//order tab
+var admorderid=[];
+$(document).on("click", "#td_myorders", function() {
+	$('#divhome').hide();
+	$('#product_list').hide();
+	$('#my_carts').hide();
+	$('#my_orders').show();
+	$('#changepwd').hide();
+	var searchParams = new URLSearchParams(window.location.search); //?anything=123
+	var userid = searchParams.get("userid");
+	
+	//var userid = $('#hidid').val(); 
+	if(userid!=1){
+	$.ajax({
+		url : '/Ecommerce?serviceId=myorders',
+		type: 'POST',
+		data : {
+			userid:userid
+		},
+		success : function(responseText) {
+			console.log(responseText);
+			var obj = jQuery.parseJSON(responseText);
+			//alert(obj.length);
+			//alert(obj[0].data.length);
+			//alert(obj[0].data[0].productname);
+			var orderTable="<br/><br/><b>Pending Orders</b><table width='100%'><br/><table width='100%'><tr class='tile'><td><strong>Order No</strong></td><td><strong>Product Name</strong></td><td><strong>Date</strong></td><td><strong>Price</strong></td><td><strong>Quantity</strong></td><td><strong>Amount</strong></td><td><strong>status</strong></td>";
+			for(var i=0;i<obj[0].data.length;i++)
+			{
+				var totamt=obj[0].data[i].price * obj[0].data[i].productquantity;
+				if(obj[0].data[i].status!="Order Delivered"){
+				if(i%2 == 0)
+				{
+					orderTable = orderTable + "<tr class='tile'><td>"+obj[0].data[i].orderid+"</td><td>"+obj[0].data[i].productname+"</td>" +
+					"<td>"+obj[0].data[i].orderdate+"</td><td>"+obj[0].data[i].price+"</td><td>"+obj[0].data[i].productquantity+"</td><td>"+totamt+"</td><td>"+obj[0].data[i].status+"</td></tr>";
+					}
+				else
+				{
+					orderTable = orderTable + "<tr class='tile'><td>"+obj[0].data[i].orderid+"</td><td>"+obj[0].data[i].productname+"</td>" +
+					"<td>"+obj[0].data[i].orderdate+"</td><td>"+obj[0].data[i].price+"</td><td>"+obj[0].data[i].productquantity+"</td><td>"+totamt+"</td><td>"+obj[0].data[i].status+"</td></tr>";
+					}
+				}
+				}
+			orderTable = orderTable + "</table>";
+			$('#my_orders').empty();
+			
+			var orderTable1="<br/><br/><b>Delivered Orders</b><table width='100%'><br/><tr class='tile'><td><strong>Order No</strong></td><td><strong>Product Name</strong></td><td><strong>Date</strong></td><td><strong>Price</strong></td><td><strong>Quantity</strong></td><td><strong>Amount</strong></td><td><strong>status</strong></td>";
+			
+			for(var i=0;i<obj[0].data.length;i++)
+			{
+				var totamt=obj[0].data[i].price * obj[0].data[i].productquantity;
+				
+				if(obj[0].data[i].status=="Order Delivered"){
+				if(i%2 == 0)
+				{
+					orderTable1 = orderTable1 + "<tr class='tile'><td>"+obj[0].data[i].orderid+"</td><td>"+obj[0].data[i].productname+"</td>" +
+					"<td>"+obj[0].data[i].orderdate+"</td><td>"+obj[0].data[i].price+"</td><td>"+obj[0].data[i].productquantity+"</td><td>"+totamt+"</td><td>"+obj[0].data[i].status+"</td></tr>";
+					}
+				else
+				{
+					orderTable1 = orderTable1 + "<tr class='tile'><td>"+obj[0].data[i].orderid+"</td><td>"+obj[0].data[i].productname+"</td>" +
+					"<td>"+obj[0].data[i].orderdate+"</td><td>"+obj[0].data[i].price+"</td><td>"+obj[0].data[i].productquantity+"</td><td>"+totamt+"</td><td>"+obj[0].data[i].status+"</td></tr>";
+					}
+				}
+				
+				}
+			orderTable1 = orderTable1 + "</table>";
+			$('#my_orders').append(orderTable);
+			$('#my_orders').append(orderTable1);
+								
+		}
+	});
+	}
+	if(userid==1){
+	$.ajax({
+		url : '/Ecommerce?serviceId=myorders',
+		type: 'POST',
+		data : {
+			userid:userid
+		},
+		success : function(responseText) {
+			console.log(responseText);
+			var obj = jQuery.parseJSON(responseText);
+			//alert(obj.length);
+			//alert(obj[0].data.length);
+			//alert(obj[0].data[0].productname);
+			var orderTable="<br/><br/><b>Pending Orders</b><table width='100%'><br/><table width='100%'><tr class='tile'><td><strong>Order No</strong></td><td><strong>Product Name</strong></td><td><strong>Date</strong></td><td><strong>Price</strong></td><td><strong>Quantity</strong></td><td><strong>Amount</strong></td><td><strong>status</strong></td><td></td>";
+			for(var i=0;i<obj[0].data.length;i++)
+			{
+				var totamt=obj[0].data[i].price * obj[0].data[i].productquantity;
+			        admorderid.push(obj[0].data[i].orderid);
+				if(obj[0].data[i].status!="Order Delivered"){
+				if(i%2 == 0)
+				{
+					orderTable = orderTable + "<tr class='tile'><td>"+obj[0].data[i].orderid+"</td><td>"+obj[0].data[i].productname+"</td>" +
+					"<td>"+obj[0].data[i].orderdate+"</td><td>"+obj[0].data[i].price+"</td><td>"+obj[0].data[i].productquantity+"</td><td>"+totamt+"</td><td><button type='button' id="+obj[0].data[i].orderid+" onclick='changestatus(this.id)'>changestatus</button></td></tr>";
+					}
+				else
+				{
+					orderTable = orderTable + "<tr class='tile'><td>"+obj[0].data[i].orderid+"</td><td>"+obj[0].data[i].productname+"</td>" +
+					"<td>"+obj[0].data[i].orderdate+"</td><td>"+obj[0].data[i].price+"</td><td>"+obj[0].data[i].productquantity+"</td><td>"+totamt+"</td><td><button type='button' id="+obj[0].data[i].orderid+" onclick='changestatus(this.id)'>changestatus</button></td></tr>";
+					}
+				}
+				}
+			orderTable = orderTable + "</table>";
+			$('#my_orders').empty();
+			//start of deiverd orders rendering
+			var orderTable1="<br/><br/><b>Delivered Orders</b><table width='100%'><br/><tr class='tile'><td><strong>Order No</strong></td><td><strong>Product Name</strong></td><td><strong>Date</strong></td><td><strong>Price</strong></td><td><strong>Quantity</strong></td><td><strong>Amount</strong></td><td><strong>status</strong></td>";
+			
+			for(var i=0;i<obj[0].data.length;i++)
+			{
+				var totamt=obj[0].data[i].price * obj[0].data[i].productquantity;
+				
+				if(obj[0].data[i].status=="Order Delivered"){
+				if(i%2 == 0)
+				{
+					orderTable1 = orderTable1 + "<tr class='tile'><td>"+obj[0].data[i].orderid+"</td><td>"+obj[0].data[i].productname+"</td>" +
+					"<td>"+obj[0].data[i].orderdate+"</td><td>"+obj[0].data[i].price+"</td><td>"+obj[0].data[i].productquantity+"</td><td>"+totamt+"</td><td>"+obj[0].data[i].status+"</td></tr>";
+					}
+				else
+				{
+					orderTable1 = orderTable1 + "<tr class='tile'><td>"+obj[0].data[i].orderid+"</td><td>"+obj[0].data[i].productname+"</td>" +
+					"<td>"+obj[0].data[i].orderdate+"</td><td>"+obj[0].data[i].price+"</td><td>"+obj[0].data[i].productquantity+"</td><td>"+totamt+"</td><td>"+obj[0].data[i].status+"</td></tr>";
+					}
+				}
+				
+				}
+			orderTable1 = orderTable1 + "</table>";
+	$('#my_orders').append(orderTable);
+			$('#my_orders').append(orderTable1);	
+			//end of deiverd orders rendering
+		}
+	});
 	}
 	
 	
+		
 	
-function logout(){
- alert("Hi, " + localStorage.getItem("loggedin"));
-	localStorage.removeItem("loggedin");
-	//localStorage.clear();
-	var Cl=localStorage.getItem("loggedin")
-	alert("Cl, " + Cl);
+});
+
+//Save the changed password
+$(document).on("click", "#btnSave", function() {
+	var pwd = $('#txtPwd').val();
+	var cfrmpwd = $('#txtCfrmPwd').val();
+	var searchParams = new URLSearchParams(window.location.search); //?anything=123
+	var userid = searchParams.get("userid");
+	$.ajax({
+		url : '/Ecommerce?serviceId=changepwd',
+		type: 'POST',
+		data : {
+			userid : userid,pwd:pwd
+		},
+		success : function(responseText) {
+			var obj = jQuery.parseJSON(responseText);
+			
+			if(obj[0].success == "success"){
+				alert("Password Changed Successfully");
+				$('#txtPwd').val("");
+				$('#txtCfrmPwd').val("");
+				$('#divcontent').hide();
+				$('#userdiv').show();
+				$('#changepwd').hide();
+				}
+				else{alert("try again");}
+					
+		}
+	});
+});
+//product tab div
+$(document).on("click", "#product_list", function() {
+	$('#changepwd').hide();
+	loadProducts();
+});
+// user info tab
+$(document).on("click","#username",function(){
+	$('#divcontent').hide();
+	$('#userdiv').show();
+	$('#changepwd').hide();
+	$('#mycartdata').hide();
+})
+//Back button on change password
+$(document).on("click","#btnBack",function(){
+	$('#divcontent').show();
+	$('#userdiv').hide();
+	$('#changepwd').hide();
+	$('#mycartdata').hide();
+})
+//Button to change password
+$(document).on("click","#btnChngPwd",function(){
 	
-	if(Cl==null){
-	window.location.href = "/index.html";}
+	/*var changePwdTable = "<table class="login-screen"><tr class='tbl_header'><td colspan='2'> <h2>Change Password</h2> </td>
+				</tr>";
+				
+				changePwdTable = changePwdTable + "<tr>
+					<td>Password</td><td><input type="text" name="txtPwd" id="txtPwd" /></td>
+				</tr>";
+				
+				changePwdTable= changePwdTable+ "<tr>
+					<td>Confirm Password</td><td><input type="password" name="txtCfrmPwd" id="txtCfrmPwd" /></td>
+				</tr>";
+				
+				changePwdTable = changePwdTable+ "<tr>
+					<td><input type="button" id="btnSave" value="Save" /><input type="button" id="btnUser" value="Back" /></td>
+				</tr>
+			</table>"; 
+	$('#menu5').append(changePwdTable);*/
 	
+	//alert('vv');
+	$('#divcontent').hide();
+	$('#userdiv').hide();
+	$('#changepwd').show();
+	$('#mycartdata').hide();
+})
+
+
+$(document).on("click","#btnUser",function(){
+	$('#divcontent').hide();
+	$('#userdiv').show();
+	$('#changepwd').hide();
+	$('#mycartdata').hide();
+})
+
+	
+
+//new codee
+/*$(document).on("click","#td_home",function(){
+	
+	$('#divhome').show();
+	$('#product_list').hide();
+	$('#my_orders').hide();
+	$('#changepwd').hide();
+	
+}) */
+
+//new2
+$(document).on("click","#td_home",function(){
+	if ($("#divhome").length > 0){
+//alert('panel id existing');
+	$('#divhome').show();
+	$('#product_list').hide();
+	$('#my_orders').hide();
+	$('#changepwd').hide(); }
+	
+})
+//logout
+$(document).on("click","#divlogout",function(){
+	
+	$('#hidid').val("");
+	window.location.href = "/index.html";
+}) 
+//
+$(document).on("click","#btn_backpd",function(){
+	$('#divcontent').show();
+	$('#userdiv').hide();
+	$('#changepwd').hide();
+	$('#prdndesc').hide();
+})
+$(document).on("click","#btn_backcart",function(){
+	$('#divcontent').show();
+	$('#userdiv').hide();
+	$('#changepwd').hide();
+	$('#prdndesc').hide();
+	$('#mycartdata').hide();
+	$('#product_list').show();
+})
+
+
+
+function hidechangepwdH(){
+	//alert('home clicked');
+$('#changepwd').hide();
 
 }
 
-</script>
-<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+function hidechangepwdCr(){
+//alert('carts clicked');
+	$('#changepwd').hide();
+}
+function loadProducts()
+{
+	
+	$('#divcontent').show();
+	$('#divhome').hide();
+	$('#product_list').show();
+	$('#my_carts').hide();
+	$('#my_orders').hide();
+	$('#prdndesc').hide();
+	$('#mycartdata').hide();
+	$('#changepwd').hide();
+	$.ajax({
+		url : '/Ecommerce?serviceId=show_products',
+		type: 'POST',
+		data : {
+			
+		},
+		success : function(responseText) {
+			console.log(responseText);
+			var obj = jQuery.parseJSON(responseText);
+			//alert(responseText);
+			//alert(obj);
+			
   
-    <script  src="js/index.js"></script>
-<script type="text/javascript" src="js/Jscript.js"></script>
-</body>
-</html>
+			//alert(obj[0].data.length);
+			//alert(obj[0].data[0].productname);
+			var productTable="<table><tr class='tile' style='height:30px;'><td></td><td><strong>Brand</strong></td><td><b>Product Name</b></td></td><td><b> Price</b></td></td><td><b>select</b></td></tr>";
+			for(var i=0;i<obj[0].data.length;i++)
+			{
+				var pr_id = "pr_"+obj[0].data[i].productid;
+				var filename = "images/"+obj[0].data[i].filename;
+				var pid=obj[0].data[i].productid;
+				var pquantity="2";
+				//var quant;
+				var pprice=obj[0].data[i].price;
+				//alert(amt_id);
+				//productTable = productTable + "<tr style='height:100px;'><td><input name='product' type ='radio' id="+obj[0].data[i].productid+" onclick='showproduct(this.id);'/></td><td>"+obj[0].data[i].brandname+"</td><td>"+obj[0].data[i].productname+"</td><td id="+pr_id+">"+obj[0].data[i].price+"</td>" +
+				if(i%2 == 0)
+				{
+					productTable = productTable + "<tr class='tile' style='height:100px;'><td><img id="+obj[0].data[i].productid+" src="+filename+" height='100' width='100'/></td><td>"+obj[0].data[i].brandname+"</td><td>"+obj[0].data[i].productname+"</td><td id="+pr_id+">"+obj[0].data[i].price+"</td><td><button  type='button' onclick='Addtocart("+pid+","+pquantity+","+pprice+")'>Add to Cart</button></td>" +
+					"</tr>";
+					}
+				else
+				{
+					productTable = productTable + "<tr class='tile' style='height:100px;'><td><img id="+obj[0].data[i].productid+" src="+filename+" height='100' width='100'/></td><td>"+obj[0].data[i].brandname+"</td><td>"+obj[0].data[i].productname+"</td><td id="+pr_id+">"+obj[0].data[i].price+"</td><td><button  type='button' onclick='Addtocart("+pid+","+pquantity+","+pprice+")'>Add to Cart</button></td>" +
+					"</tr>";
+					}
+				//alert(document.getElementById("quantity").value);
+				}
+				
+			productTable = productTable + "</table>";
+			$('#product_list').empty();
+			$('#product_list').append(productTable);
+		}
+	});
+	/*$('#divcontent').show();
+	$('#divhome').hide();
+	$('#product_list').show();
+	$('#my_carts').hide();
+	$('#my_orders').hide();
+	$('#prdndesc').hide();
+	$('#mycartdata').hide();
+	$.ajax({
+		url : '/Ecommerce?serviceId=show_products',
+		type: 'POST',
+		data : {
+			
+		},
+		success : function(responseText) {
+			console.log(responseText);
+			var obj = jQuery.parseJSON(responseText);
+			//alert(responseText);
+			//alert(obj);
+			
+  
+			//alert(obj[0].data.length);
+			//alert(obj[0].data[0].productname);
+			var productTable="<table class='table table-bordered' width='100%'><tr class='tbl_header' style='height:30px;'><td>Select</td><td>Brand</td><td>Product Name</td><td> Price</td><td>Cart</td></tr>";
+			//var productTable=" <div class="tile tile-grid-item tile-column-3">
+   // <div class="tile-inner-padded tile-grid-item-inner">";
+			for(var i=0;i<obj[0].data.length;i++)
+			{
+				var pr_id = "pr_"+obj[0].data[i].productid;
+				var filename = "images/"+obj[0].data[i].filename;
+				var pid=obj[0].data[i].productid;
+				//var pquantity="2";
+				//var quant;
+				var pprice=obj[0].data[i].price;
+				//alert(amt_id);
+				productTable = productTable + "<tr style='height:100px;'><td><input name='product' type ='radio' id="+obj[0].data[i].productid+" onclick='showproduct(this.id);'/></td><td>"+obj[0].data[i].brandname+"</td><td>"+obj[0].data[i].productname+"</td><td id="+pr_id+">"+obj[0].data[i].price+"</td>" +
+				if(i%2 == 0)
+				{
+					productTable = productTable + "<tr class='tbl_even_row' style='height:100px;'><td><img id="+obj[0].data[i].productid+" src="+filename+" height='100' width='100'/></td><td>"+obj[0].data[i].brandname+"</td><td>"+obj[0].data[i].productname+"</td><td id="+pr_id+">"+obj[0].data[i].price+"</td><td><button type='button' onclick='Addtocart("+pid+","+pprice+")'>Add to Cart</button></td>" +
+					"</tr>";
+					//productTable = productTable + "<img id="+obj[0].data[i].productid+" src="+filename+" height='100' width='100'/>"+obj[0].data[i].brandname+obj[0].data[i].productname+obj[0].data[i].price+"<button type='button' onclick='Addtocart("+pid+","+pprice+")'>Add to Cart</button>" +
+				
+					}
+				else
+				{
+					productTable = productTable + "<tr class='tbl_odd_row' style='height:100px;'><td><img id="+obj[0].data[i].productid+" src="+filename+" height='100' width='100'/></td><td>"+obj[0].data[i].brandname+"</td><td>"+obj[0].data[i].productname+"</td><td id="+pr_id+">"+obj[0].data[i].price+"</td><td><button type='button' onclick='Addtocart("+pid+","+pprice+")'>Add to Cart</button></td>" +
+					"</tr>";
+					//productTable = productTable + "<img id="+obj[0].data[i].productid+" src="+filename+" height='100' width='100'/>"+obj[0].data[i].brandname+obj[0].data[i].productname+obj[0].data[i].price+"<button type='button' onclick='Addtocart("+pid+","+pprice+")'>Add to Cart</button>" +
+				
+				
+					}
+				//alert(document.getElementById("quantity").value);
+				}
+				
+			productTable = productTable + "</table>";
+			//productTable = productTable + "</div>"+"</div>";
+			$('#product_list').empty();
+			$('#product_list').append(productTable);
+		}
+	});*/
+}
+//Add to cart function
+function Addtocart(productid,price)
+{
+	
+    var quantity = 1;
+	
+var amount = 1 * price;
+	var searchParams = new URLSearchParams(window.location.search); //?anything=123
+	var userid = searchParams.get("userid");
+	$.ajax({
+		url : '/Ecommerce?serviceId=addtocart',
+		type: 'POST',
+		data : {
+			userid :userid,productid:productid,quantity:quantity,amount:amount,
+		},
+		success : function(responseText) {
+			var obj = jQuery.parseJSON(responseText);
+			alert("Added");
+			$('#divcontent').show();
+			$('#userdiv').hide();
+			$('#changepwd').hide();
+			$('#prdndesc').hide();
+					
+		}
+	});
+}
+function placeorder(chkid){
+	
+var shippingid="1";
+	var searchParams = new URLSearchParams(window.location.search); //?anything=123
+	var userid = searchParams.get("userid");
+	var data="";
+	jsonObj=[];
+	var selected = [];
+	for(var id=0;id<chkid.length;id++){ 
+		var value=chkid[id];
+		
+		var product_cart_id = value;
+		//alert(product_cart_id);
+		var split_ids = product_cart_id.split("_");
+		var product_id = split_ids[0];
+		var cart_id = split_ids[1];
+		
+		var qty_id = "#qty_"+cart_id;
+		
+		var amt_id = "#amt_"+product_id;
+		
+		var price =$(amt_id).text();
+		
+		var quantity = $(qty_id).val();
+			
+		var totalamount =  $('#txtTotal').val();
+		
+		/*var label= ["Order Received", "Order Processing", "Order dispatched", "Order Shipped", "Order Delivered"];
+		var counter = 0;
+		var elem = document.getElementById("label"); 
+		setInterval(change, 1000); 
+		function change() { 
+			elem.innerHTML = text[counter]; 
+			counter++; 
+			if (counter >= text.length) {
+				counter = 0; }
+		}*/
+		data={};
+		data["productid"]= product_id;
+		data["cartid"]= cart_id;
+		data["quantity"]= quantity;
+		data["price"]= price;
+		data["totalamount"]= totalamount;
+		data["shippingid"]= shippingid;
+		data["userid"]= userid;
+		data["status"]="Order Placed"; 
+		 jsonObj.push(data);
+	}
+		var jsonString = JSON.stringify(jsonObj);
+		console.log(jsonString);
+	//alert(jsonString);
+		console.log(selected);
+		
+	
+	$.ajax({
+		url : '/Ecommerce?serviceId=orders',
+		type: 'POST',
+		data : {
+			data:jsonString
+		},
+		success : function(responseText) {
+			if(responseText == "success"){
+				alert("order placed");
+				$( "#td_mycarts" ).click();
+				}
+				
+				else{alert("try again");}
+					
+		}
+	});
+}
+//changestatus
+function changestatus(orderid)
+{
+	alert (orderid);
+  
+	var searchParams = new URLSearchParams(window.location.search); //?anything=123
+	var userid = searchParams.get("userid");
+	$.ajax({
+		url : '/Ecommerce?serviceId=changestatus',
+		type: 'POST',
+		data : {
+			userid :userid,orderid:orderid
+		},
+		success : function(responseText) {
+			var obj = jQuery.parseJSON(responseText);
+			
+			$('#divcontent').show();
+			$('#userdiv').hide();
+			$('#changepwd').hide();
+			$('#prdndesc').hide();
+			$( "#td_myorders" ).click();		
+		}
+	});
+}
+//changesattus
+//Add ot cart function ends
+function showproduct(prdid)
+{
+	
+	$('#divcontent').hide();
+	$('#userdiv').hide();
+	$('#changepwd').hide();
+	$('#prdndesc').show();
+	
+	$.ajax({
+		url : '/Ecommerce?serviceId=show_productinfo',
+		type: 'POST',
+		data : {
+			prodid:prdid,
+		},
+		success : function(responseText) {
+			console.log(responseText);
+			var obj = jQuery.parseJSON(responseText);
+			
+			//	$('#menu1').show();
+				$('#product_list').show();
+					
+			$('#showPrdName').text(obj[0].data[0].productname);
+			$('#showBrand').text(obj[0].data[0].brandname);
+			$('#showPrdPrice').text(obj[0].data[0].price);
+			$('#hidPrdId').val("");
+			$('#hidPrdId').val(obj[0].data[0].productid);
+			//$('#imgid').html("<img  alt='product' src='2017-10-06.jpg' width='250px' height='250px'>");
+		}
+	});
+}
+function showuserinfo()
+{
+	var Cl=localStorage.getItem("loggedin")
+	
+	if(Cl==null){
+	window.location.href = "/index.html";}
+	var searchParams = new URLSearchParams(window.location.search); //?anything=123
+	var userid = searchParams.get("userid");
+	console.log(userid);
+	$('#divcontent').show();
+	$('#userdiv').hide();
+	$('#changepwd').hide();
+	$('#prdndesc').hide();
+	$.ajax({
+		url : '/Ecommerce?serviceId=showuser',
+		type: 'POST',
+		data : {
+			userid:userid,
+		},
+		success : function(responseText) {
+			
+			console.log(responseText);
+			console.log('Showuserinfo'+responseText);
+			var obj = jQuery.parseJSON(responseText);
+			//alert(obj.length);
+			//console.log(obj);
+			//alert(obj[0].data[0].zipcode);
+			if(obj[0].success[0].success == "success"){
+				$('#username').text('Welcome '+obj[0].data[0].firstname);
+				var usertable="<table border='1' width='100%'><tr class='tbl_header'><td colspan='3' class='Bold1'><strong>User Info</strong></td><td colspan='1' class='Bold1'><strong><button type='button' id='btnChngPwd' value='Change Password' /></strong></td></tr><br/>";
+				//usertable = usertable + "<tr><td class='tbl_header'>profilepic</td><td><img src="WebContent/images/dell_laptop.jpg" alt="Girl in a jacket" width="500" height="600"></td>";
+			
+				usertable = usertable + "<tr class='tile'><td class='tbl_header'><strong>Firstname</strong></td><td>"+obj[0].data[0].firstname+"</td><td class='tbl_header'><strong>Lastname</strong></td><td>"+obj[0].data[0].lastname+"</td></tr>";
+				usertable = usertable + "<tr class='tile'><td class='tbl_header'><strong>Email</strong></td><td>"+obj[0].data[0].email+"</td><td class='tbl_header'><strong>Mobile</strong></td><td>"+obj[0].data[0].mobile+"</td></tr>";		
+				usertable = usertable + "<tr class='tile'><td class='tbl_header'><strong>Address1</strong></td><td>"+obj[0].data[0].address1+"</td><td class='tbl_header'><strong>Address2</strong></td><td>"+obj[0].data[0].address2+"</td></tr>";
+				usertable = usertable + "<tr class='tile'><td class='tbl_header'><strong>City</strong></td><td>"+obj[0].data[0].city+"</td><td class='tbl_header'><strong>State</strong></td><td>"+obj[0].data[0].state+"</td></tr>";
+				usertable = usertable + "<tr class='tile'><td class='tbl_header'><strong>Country</strong></td><td>"+obj[0].data[0].country+"</td><td class='tbl_header'><strong>Zipcode</strong></td><td>"+obj[0].data[0].zipcode+"</td></tr></table>";
+								
+				//usertable = usertable + "<tr><td colspan='4' align='center'><input type='button' id='btnChngPwd' value='Change Password' /></td></tr></table>";
+				//usertable = usertable + "<tr><td colspan='4' align='center'><img  alt='product' src='images/download.jpg' width='250px' height='250px'/></td></tr>
+			 $("#btnChngPwd").click(function(){
+       
+    }); 
+				$('#menu5').empty();
+				$('#menu5').append(usertable);
+				//orders table start
+				/*var searchParams = new URLSearchParams(window.location.search); //?anything=123
+	var userid = searchParams.get("userid");
+	//var userid = $('#hidid').val(); 
+	$.ajax({
+		url : '/Ecommerce?serviceId=myorders',
+		type: 'POST',
+		data : {
+			userid:userid
+		},
+		success : function(responseText) {
+			console.log(responseText);
+			var obj = jQuery.parseJSON(responseText);
+			//alert(obj.length);
+			//alert(obj[0].data.length);
+			//alert(obj[0].data[0].productname);
+			var orderTable="<br/><br/><b>Order History</b><table width='100%'><br/><tr class='tile'><td><strong>Order No</strong></td><td><strong>Product Name</strong></td><td><strong>Date</strong></td><td><strong>Price</strong></td><td><strong>Quantity</strong></td><td><strong>Amount</strong></td><td><strong>status</strong></td>";
+			
+			for(var i=0;i<obj[0].data.length;i++)
+			{
+				var totamt=obj[0].data[i].price * obj[0].data[i].productquantity;
+				
+				if(obj[0].data[i].status=="Order Delivered"){
+				if(i%2 == 0)
+				{
+					orderTable = orderTable + "<tr class='tile'><td>"+obj[0].data[i].orderid+"</td><td>"+obj[0].data[i].productname+"</td>" +
+					"<td>"+obj[0].data[i].orderdate+"</td><td>"+obj[0].data[i].price+"</td><td>"+obj[0].data[i].productquantity+"</td><td>"+totamt+"</td><td>"+obj[0].data[i].status+"</td></tr>";
+					}
+				else
+				{
+					orderTable = orderTable + "<tr class='tile'><td>"+obj[0].data[i].orderid+"</td><td>"+obj[0].data[i].productname+"</td>" +
+					"<td>"+obj[0].data[i].orderdate+"</td><td>"+obj[0].data[i].price+"</td><td>"+obj[0].data[i].productquantity+"</td><td>"+totamt+"</td><td>"+obj[0].data[i].status+"</td></tr>";
+					}
+				}
+				
+				}
+			orderTable = orderTable + "</table>";
+			//orderTable = orderTable + "<br/><br/><input type='button' id='btnChngPwd' value='Change Password' />"
+			//$('#my_orders').empty();
+			//$('#my_orders').append(orderTable);
+			
+			$('#menu5').append(orderTable);					
+		}
+	});*/
+				//end of orders table
+				
+				
+				
+				
+				$('#hidid').val(userid);
+			}
+			else{
+				alert("Wrong Login Credientials");$('#txtEmail').val("");$('#txtPwd').val("");
+			}
+			
+		}
+	});
+	
+	
+
+	
+	}
+var proarray = [];
+var cartarray = [];
+var chk_id
+var chk_idarray=[];		
+$(document).on("click", "#td_mycarts", function() {		
+	var searchParams = new URLSearchParams(window.location.search); //?anything=123		
+	var userid = searchParams.get("userid");		
+	//var userid=$('#hidid').val();		
+	$.ajax({		
+		url : '/Ecommerce?serviceId=mycarts',		
+		type: 'POST',		
+		data : {		
+			userid:userid,		
+		},		
+		success : function(responseText) {		
+			//console.log(responseText);		
+			var obj = jQuery.parseJSON(responseText);		
+			if(obj[0].success[0].success == "success")		
+			{		
+				//alert(obj[0].success[0].success);		
+				//alert(obj.length);		
+				//alert(obj[0].data.length);		
+				//alert(obj[0].data[0].productname);		
+				var cartTable="<table width='100%' border='1' class='tile' id='tbl_cart'><tr class='tbl_header'><td colspan='5'><b>My Carts Info</b></td></tr><tr class='tbl_header'><td><b>Product Name</b></td><td><b>Quantity</b></td><td><b>Price</b></td><td><b>Remove Item</b></td></tr>";		
+				var chkVal = 2;		
+				chk_idarray.length=0;
+				cartarray.length=0;
+				for(var i=0;i<obj[0].data.length;i++)		
+				{		
+					var qty_id = "qty_"+ obj[0].data[i].cartid;		
+					var amt_id = "amt_"+ chkVal;		
+					var rm_id = "rm_"+ obj[0].data[i].cartid;		
+					 chk_id = obj[0].data[i].productid + "_" + obj[0].data[i].cartid;		
+					chk_idarray.push(chk_id);		
+					proarray.push(obj[0].data[i].productid);		
+					cartarray.push(obj[0].data[i].cartid);		
+							
+					var obj1=obj;		
+					//var chk_id = "chk_"+chkVal;		
+					chkVal = parseInt(chkVal)+1;		
+					if(i%2 == 0)		
+					{		
+						cartTable = cartTable + "<tr class='tile'><td>"+obj[0].data[i].productname+"</td>" +		
+						"<td ><input id="+qty_id+" type='number' name='inputcell' value='1' onchange='add_totalamount()'/></td><td id="+amt_id+">"+obj[0].data[i].price+"</td><td><button type='button' id="+rm_id+" onclick='delete_cartitem(this.id)'>remove</button></td>" +		
+						"</tr>";		
+						}		
+					else		
+					{		
+						cartTable = cartTable + "<tr class='tile'><td>"+obj[0].data[i].productname+"</td>" +		
+						"<td ><input type='number' id="+qty_id+" name='inputcell' value='1' onchange='add_totalamount()'/></td><td id="+amt_id+">"+obj[0].data[i].price+"</td><td><button type='button' id="+rm_id+" onclick='delete_cartitem(this.id)'>remove</button></td>" +		
+						"</tr>";		
+						}		
+							
+					}		
+				cartTable = cartTable + "<tr class='tile'><td colspan='2'>Additional Charges</td><td colspan='3'><output type='number' id='addcharges' value ='0'/></td></tr>";		
+						
+				cartTable = cartTable + "<tr class='tile'><td colspan='2'>Total Amount</td><td colspan='3'><input type='text' id='txtTotal' value ='0' disabled height='40'/></td></tr></table>";		
+				cartTable = cartTable + "<br/><input type='button'  value='Place Order' onclick='placeorder(chk_idarray)' >"		
+				$('#my_carts').empty();		
+				$('#my_carts').append(cartTable);	
+				add_totalamount();
+			}		
+			else		
+			{		
+				$('#my_carts').empty();		
+				alert(obj[0].success[0].message);		
+				loadProducts();		
+			}		
+					
+										
+		}		
+	});		
+});		
+var chk_idarray1=[];		
+function delete_cartitem(cartid)		
+{		
+	$('#divcontent').hide();		
+	$('#divhome').hide();		
+	$('#product_list').hide();		
+	$('#my_orders').hide();		
+	$('#prdndesc').hide();		
+	$('#userdiv').hide();		
+	$('#mycartdata').show();		
+	var cart_id = cartid.split("_");		
+	//alert(cartid);alert(cart_id[1]);		
+	//var userid=$('#hidid').val();		
+	var searchParams = new URLSearchParams(window.location.search); //?anything=123		
+	var userid = searchParams.get("userid");		
+		
+	$.ajax({		
+		url : '/Ecommerce?serviceId=deletecart',		
+		type: 'POST',		
+		data : {		
+			userid:userid,cartid:cart_id[1]		
+		},		
+		success : function(responseText) {		
+			alert("Deleted");
+			chk_idarray1.length=0;	
+			cartarray.length=0;
+				$( "#td_mycarts" ).click();	
+			/*console.log(responseText);		
+			var obj = jQuery.parseJSON(responseText);		
+			//alert("obj[0].success[0].success"+obj[0].success[0].success);		
+			if(obj[0].success[0].success == "success")		
+			{		
+			var cartTable="<table width='100%' border='1' class='tile' id='tbl_cart'><tr class='tbl_header'><td colspan='5'><b>My Carts Info</b></td></tr><tr class='tbl_header'><td><b>Product Name</b></td><td><b>Quantity</b></td><td><b>Amount</b></td><td><b>Remove Item</b></td></tr>";		
+				var chkVal = 2;		
+						
+				for(var i=0;i<obj[0].data.length;i++)		
+				{		
+					var qty_id = "qty_"+ obj[0].data[i].cartid;		
+					var amt_id = "amt_"+ chkVal;		
+					var rm_id = "rm_"+ obj[0].data[i].cartid;		
+					 chk_id = obj[0].data[i].productid + "_" + obj[0].data[i].cartid;		
+					proarray.push(obj[0].data[i].productid);		
+					cartarray.push(obj[0].data[i].cartid);		
+					chk_idarray1.push(chk_id);		
+					var obj1=obj;		
+					//var chk_id = "chk_"+chkVal;		
+					chkVal = parseInt(chkVal)+1;		
+					if(i%2 == 0)		
+					{		
+						cartTable = cartTable + "<tr class='tile'><td>"+obj[0].data[i].productname+"</td>" +		
+						"<td ><input id="+qty_id+" type='number' name='inputcell' value='0' onchange='add_totalamount(chk_id)'/></td><td id="+amt_id+">"+obj[0].data[i].price+"</td><td><button type='button' id="+rm_id+" onclick='delete_cartitem(this.id)'>remove</button></td>" +		
+						"</tr>";		
+						}		
+					else		
+					{		
+						cartTable = cartTable + "<tr class='tile'><td>"+obj[0].data[i].productname+"</td>" +		
+						"<td ><input type='number' id="+qty_id+" name='inputcell' value='0' onchange='add_totalamount(chk_id)'/></td><td id="+amt_id+">"+obj[0].data[i].price+"</td><td><button type='button' id="+rm_id+" onclick='delete_cartitem(this.id)'>remove</button></td>" +		
+						"</tr>";		
+						}		
+							
+					}		
+				cartTable = cartTable + "<tr class='tile'><td colspan='2'>Additional Charges</td><td colspan='3'><output type='number' id='addcharges' value ='0'/></td></tr>";		
+						
+				cartTable = cartTable + "<tr class='tile'><td colspan='2'>Total Amount</td><td colspan='3'><input type='text' id='txtTotal' value ='0' disabled height='40'/></td></tr></table>";		
+				cartTable = cartTable + "<br/><input type='button'  value='Place Order' nclick='placeorder(chk_idarray1)'>"		
+					$('#my_carts').empty();		
+				$('#my_carts').append(cartTable);		
+						
+		}		
+		else		
+		{		
+			alert(obj[0].success[0].message);		
+			$('#my_carts').empty();		
+			loadProducts();		
+		}	*/	
+										
+		}		
+	});	
+}		
+function showrow()		
+{		
+	$('.products').hide();		
+}		
+function add_totalamount()		
+{		
+	console.log(cartarray);		
+			
+	var total_amount=0;		
+	var prod_amount = 0;		
+			
+	var rowCount = $('#tbl_cart tr').length;		
+	
+	var MyRows = $('table#tbl_cart').find('tbody').find('tr');		
+		for(var id=2;id<rowCount-2;id++){		
+					
+		 // if($("#"+proarray [id2]+"_"+cartarray[id2]).is(':checked')){		
+			prod_amount = 0;		
+			var amt =  $(MyRows[id]).find('td:eq(2)').html();
+			console.log("amt"+amt);
+			var qty =  $('#qty_'+cartarray[id-2]).val();	
+			console.log("qtyid"+cartarray[id-2]);
+			console.log("qty"+qty);
+			  if(qty==""){		
+			  qty=0;		
+			  }		
+					
+			prod_amount = amt*parseInt(qty);		
+					console.log("prod_amount"+prod_amount);
+			  //prod_amount = amt*parseInt(qty);	
+			 console.log("total_amount"+total_amount);	
+			total_amount = total_amount + prod_amount;		
+			 console.log("total_amount"+total_amount);		
+					
+			  			 		
+		//}			
+						
+	}		
+			
+	if(total_amount>0){		
+	 $('#addcharges').val(100);		
+	total_amount=total_amount+100;		
+	}		
+	else{		
+	 $('#addcharges').val("");		
+	}		
+			
+	$('#txtTotal').val("");		
+	//qty = isNaN(qty) ? '0.00' : qty;		
+	$('#txtTotal').val(total_amount);		
+}		
