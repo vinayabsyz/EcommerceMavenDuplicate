@@ -899,7 +899,7 @@ $(document).on("click", "#td_mycarts", function() {
 					else		
 					{		
 						cartTable = cartTable + "<tr class='tile'><td>"+obj[0].data[i].productname+"</td>" +		
-						"<td ><input type='number' id="+qty_id+" name='inputcell' value='1' onchange='add_totalamount()'/></td><td id="+amt_id+">"+obj[0].data[i].price+"</td><td><button type='button' class="btn btn-primary btn-md"  id="+rm_id+" onclick='delete_cartitem(this.id)'>remove</button></td>" +		
+						"<td ><input type='number' id="+qty_id+" name='inputcell' value='1' onchange='add_totalamount()'/></td><td id="+amt_id+">"+obj[0].data[i].price+"</td><td><button type='button' id="+rm_id+" onclick='delete_cartitem(this.id)'>remove</button></td>" +		
 						"</tr>";		
 						}		
 							
