@@ -679,7 +679,7 @@ var shippingid="1";
 		success : function(responseText) {
 			if(responseText == "success"){
 				alert("order placed");
-				$( "#td_mycarts" ).click();
+				$( "#td_myorders" ).click();
 				}
 				
 				else{alert("try again");}
@@ -873,7 +873,7 @@ $(document).on("click", "#td_mycarts", function() {
 				//alert(obj.length);		
 				//alert(obj[0].data.length);		
 				//alert(obj[0].data[0].productname);		
-				var cartTable="<table width='100%' border='1' class='tile' id='tbl_cart'><tr class='tbl_header'><td colspan='5'><b>My Carts Info</b></td></tr><tr class='tbl_header'><td><b>Product Name</b></td><td><b>Quantity</b></td><td><b>Price</b></td><td><b>Remove Item</b></td></tr>";		
+				var cartTable="<table width='100%' border='1' class='tile' id='tbl_cart'><tr class='tbl_header'></tr><tr class='tbl_header'><td><b>Product Name</b></td><td><b>Quantity</b></td><td><b>Price</b></td><td><b>Remove Item</b></td></tr>";		
 				var chkVal = 2;		
 				chk_idarray.length=0;
 				cartarray.length=0;
@@ -899,7 +899,7 @@ $(document).on("click", "#td_mycarts", function() {
 					else		
 					{		
 						cartTable = cartTable + "<tr class='tile'><td>"+obj[0].data[i].productname+"</td>" +		
-						"<td ><input type='number' id="+qty_id+" name='inputcell' value='1' onchange='add_totalamount()'/></td><td id="+amt_id+">"+obj[0].data[i].price+"</td><td><button type='button' id="+rm_id+" onclick='delete_cartitem(this.id)'>remove</button></td>" +		
+						"<td ><input type='number' id="+qty_id+" name='inputcell' value='1' onchange='add_totalamount()'/></td><td id="+amt_id+">"+obj[0].data[i].price+"</td><td><button type='button' class="btn btn-primary btn-md"  id="+rm_id+" onclick='delete_cartitem(this.id)'>remove</button></td>" +		
 						"</tr>";		
 						}		
 							
