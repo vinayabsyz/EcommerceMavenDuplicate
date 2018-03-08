@@ -908,13 +908,13 @@ $(document).on("click", "#td_mycarts", function() {
 						
 				cartTable = cartTable + "<tr class='tile'><td colspan='2'>Total Amount</td><td colspan='3'><input type='text' id='txtTotal' value ='0' disabled height='40'/></td></tr></table>";		
 				cartTable = cartTable + "<br/><input type='button'  value='Place Order' onclick='placeorder(chk_idarray)' >"		
-				$('#menu3').empty();		
-				$('#menu3').append(cartTable);	
+				$('#my_carts').empty();		
+				$('#my_carts').append(cartTable);	
 				add_totalamount();
 			}		
 			else		
 			{		
-				$('#menu3').empty();		
+				$('#my_carts').empty();		
 				alert(obj[0].success[0].message);		
 				loadProducts();		
 			}		
@@ -988,14 +988,14 @@ function delete_cartitem(cartid)
 						
 				cartTable = cartTable + "<tr class='tile'><td colspan='2'>Total Amount</td><td colspan='3'><input type='text' id='txtTotal' value ='0' disabled height='40'/></td></tr></table>";		
 				cartTable = cartTable + "<br/><input type='button'  value='Place Order' nclick='placeorder(chk_idarray1)'>"		
-					$('#menu3').empty();		
-				$('#menu3').append(cartTable);		
+					$('#my_carts').empty();		
+				$('#my_carts').append(cartTable);		
 						
 		}		
 		else		
 		{		
 			alert(obj[0].success[0].message);		
-			$('#menu3').empty();		
+			$('#my_carts').empty();		
 			loadProducts();		
 		}	*/	
 										
