@@ -921,7 +921,7 @@ $(document).on("click", "#td_mycarts", function() {
 			else		
 			{		
 				$('#my_carts').empty();	
-				$('#my_carts').append("<img src='https://cdn.vectorstock.com/i/1000x1000/38/71/no-shopping-cart-sign-vector-9583871.jpg'>");
+				$('#my_carts').append("<img  src='https://cdn.vectorstock.com/i/1000x1000/38/71/no-shopping-cart-sign-vector-9583871.jpg' height='100' width='100'/>");
 				//alert(obj[0].success[0].message);		
 				loadProducts();		
 			}		
