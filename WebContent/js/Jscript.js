@@ -609,7 +609,7 @@ var amount = 1 * price;
 		success : function(responseText) {
 			var obj = jQuery.parseJSON(responseText);
 			//alert("Added");
-			$('#modalbody').append("Added to Cart");
+			$('#modalbody').append("<p>Added to Cart</P>");
 			$('#pwdModal').modal('toggle');
 			$('#divcontent').show();
 			$('#userdiv').hide();
