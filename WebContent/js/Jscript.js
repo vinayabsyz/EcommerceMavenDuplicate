@@ -353,7 +353,8 @@ $(document).on("click", "#btnSave", function() {
 			var obj = jQuery.parseJSON(responseText);
 			
 			if(obj[0].success == "success"){
-				alert("Password Changed Successfully");
+				//alert("Password Changed Successfully");
+				$('#pwdModal').modal('toggle');
 				$('#txtPwd').val("");
 				$('#txtCfrmPwd').val("");
 				$('#divcontent').hide();
