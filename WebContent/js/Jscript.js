@@ -608,7 +608,8 @@ var amount = 1 * price;
 		},
 		success : function(responseText) {
 			var obj = jQuery.parseJSON(responseText);
-			alert("Added");
+			//alert("Added");
+			$('#pwdModal').modal('toggle');
 			$('#divcontent').show();
 			$('#userdiv').hide();
 			$('#changepwd').hide();
@@ -679,7 +680,8 @@ var shippingid="1";
 		},
 		success : function(responseText) {
 			if(responseText == "success"){
-				alert("order placed");
+				//alert("order placed");
+				$('#pwdModal').modal('toggle');
 				$( "#td_myorders" ).click();
 				}
 				
