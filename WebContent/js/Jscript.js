@@ -90,7 +90,7 @@ $(document).on("click", "#addproduct",function userReg(){
 });
 
 
-//Add to cart tab
+//Add to cart tab not using currently
 $(document).on("click", "#btn_addtocart", function() {
 	//var productid = $('input[name=product]:checked').attr('id'); 
 	alert("Added");
@@ -354,6 +354,7 @@ $(document).on("click", "#btnSave", function() {
 			
 			if(obj[0].success == "success"){
 				//alert("Password Changed Successfully");
+				$('#modalbody').append("<p>Password Changed Successfully</P>");
 				$('#pwdModal').modal('toggle');
 				$('#txtPwd').val("");
 				$('#txtCfrmPwd').val("");
@@ -682,6 +683,7 @@ var shippingid="1";
 		success : function(responseText) {
 			if(responseText == "success"){
 				//alert("order placed");
+				$('#modalbody').append("<p>order placed</P>");
 				$('#pwdModal').modal('toggle');
 				$( "#td_myorders" ).click();
 				}
@@ -950,7 +952,8 @@ function delete_cartitem(cartid)
 			userid:userid,cartid:cart_id[1]		
 		},		
 		success : function(responseText) {		
-			alert("Deleted");
+			$('#modalbody').append("<p>Deleted</P>");
+				$('#pwdModal').modal('toggle');
 			chk_idarray1.length=0;	
 			cartarray.length=0;
 				$( "#td_mycarts" ).click();	
