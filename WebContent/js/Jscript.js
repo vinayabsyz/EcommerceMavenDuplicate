@@ -445,7 +445,7 @@ $(document).on("click","#td_home",function(){
 })
 //logout
 $(document).on("click","#divlogout",function(){
-	alert("logging out");
+	//alert("logging out");
 	$('#hidid').val("");
 	window.location.href = "/index.html";
 }) 
