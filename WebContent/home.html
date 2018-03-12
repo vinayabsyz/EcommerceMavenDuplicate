@@ -275,11 +275,11 @@ ABSYZ is one of the most successful pure play Salesforce consulting partner in t
 	
 	
 function logout(){
- alert("Hi, " + localStorage.getItem("loggedin"));
+ //alert("Hi, " + localStorage.getItem("loggedin"));
 	localStorage.removeItem("loggedin");
 	//localStorage.clear();
 	var Cl=localStorage.getItem("loggedin")
-	alert("Cl, " + Cl);
+	//alert("Cl, " + Cl);
 	
 	if(Cl==null){
 	window.location.href = "/index.html";}
