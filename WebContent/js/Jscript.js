@@ -292,12 +292,12 @@ $(document).on("click", "#td_myorders", function() {
 				if(i%2 == 0)
 				{
 					orderTable = orderTable + "<tr class='tile'><td>"+obj[0].data[i].orderid+"</td><td>"+obj[0].data[i].productname+"</td>" +
-					"<td>"+obj[0].data[i].orderdate+"</td><td>"+obj[0].data[i].price+"</td><td>"+obj[0].data[i].productquantity+"</td><td>"+totamt+"</td><td><button type='button' id="+obj[0].data[i].orderid+" onclick='changestatus(this.id)'>changestatus</button></td></tr>";
+					"<td>"+obj[0].data[i].orderdate+"</td><td>"+obj[0].data[i].price+"</td><td>"+obj[0].data[i].productquantity+"</td><td>"+totamt+"</td><td><button type='button' class='btn btn-primary btn-md' id="+obj[0].data[i].orderid+" onclick='changestatus(this.id)'>changestatus</button></td></tr>";
 					}
 				else
 				{
 					orderTable = orderTable + "<tr class='tile'><td>"+obj[0].data[i].orderid+"</td><td>"+obj[0].data[i].productname+"</td>" +
-					"<td>"+obj[0].data[i].orderdate+"</td><td>"+obj[0].data[i].price+"</td><td>"+obj[0].data[i].productquantity+"</td><td>"+totamt+"</td><td><button type='button' id="+obj[0].data[i].orderid+" onclick='changestatus(this.id)'>changestatus</button></td></tr>";
+					"<td>"+obj[0].data[i].orderdate+"</td><td>"+obj[0].data[i].price+"</td><td>"+obj[0].data[i].productquantity+"</td><td>"+totamt+"</td><td><button type='button' class='btn btn-primary btn-md' id="+obj[0].data[i].orderid+" onclick='changestatus(this.id)'>changestatus</button></td></tr>";
 					}
 				}
 				}
