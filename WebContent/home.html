@@ -1,10 +1,8 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-"http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html>
 <html >
 <head>
-	
   <meta charset="UTF-8">
-  <title>Cart with tab</title>
+  <title>Cart with tabs</title>
   
   
   
@@ -14,28 +12,21 @@
 </head>
 
 <body>
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-	
-	<!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
   <div id="particle"></div>
 <div id="overlay">
   <div class="container">
   
   <ul class="nav nav-tabs">
-    <li class="active"><a href="#home" id="homeid1" onclick="logout1(), hidechangepwdH(), hidechangepwdH1"><b><u>Home</u></b></a></li>
-	  <li><a href="#menu5"><b><u onclick="logout1(),showuserinfo()">User Info</u></b></a></li>
-    <li><a href="#menu1"><b><u onclick="logout1(),loadProducts() ">Products</u></b></a></li>
-
-    <li><a href="#menu2"><b><u id="td_myorders" onclick="logout1()">My Orders</u></b></a></li>
+    <li class="active"><a href="#home"><b><u>Home</u></b></a></li>
+	<li><a href="#menu5"><b><u onclick="showuserinfo()">User Info</u></b></a></li>
+    <li><a href="#menu1"><b><u onclick="loadProducts()">Products</u></b></a></li>
+    <li><a href="#menu2"><b><u id="td_myorders">My Orders</u></b></a></li>
     
-  
+    <li  class="pull-right"><a href="#menu3"><b><u id="td_mycarts">My Cart</u></b></a></li>
 <!--     <li><a href="#menu4"><b><u>All Products</u></b></a></li> -->
     
-   
-	  <li class="pull-right"><a href="#menu6"><b><u id="divlogout" onclick="logout() ">Logout</u></b></a></li><input type="hidden" id="hidid" value="" /><input type="hidden" id="hidPrdId" value="" />
- <li class="pull-right"><a href="#menu3" onclick="hidechangepwdCr()"><b><u id="td_mycarts">My Cart</u></b></a></li>
-	  </ul>
+    <li><a href="#menu6"><b><u id="divlogout">Logout</u></b></a></li><input type="hidden" id="hidid" value="" /><input type="hidden" id="hidPrdId" value="" />
+  </ul>
   
 <br/>
     <br/>
@@ -44,85 +35,87 @@
   <div class="tab-content">
   
     <div id="home" class="tab-pane fade in active">
-      <div class="container" id="homeid">
-	<!--      <style>
-		      .topleft {
-    position: absolute;
-    top: 45px;
-    left: 26px;
-    font-size: 18px;
-	      </style> -->
-	    <!--  <div style="text-align:center; " >
-		      <img src="http://res.cloudinary.com/dnfwnmomw/image/upload/v1518499820/imageedit_2_6900993995_j7ozbx.png" height="100" width="130">
-	      </div> -->
-       <div class="panel-group"><br/><br/><br/><br/><br/><br/><br/>
+      <div class="container">
+       <div class="panel-group">
          <div class="panel panel-info">
       <div class="panel-heading">ABSYZ</div>
-		 <div id="panelbodyid" class="panel-body">ABSYZ is one of the most successful pure play Salesforce consulting partner in the ecosystem. We provide a full range of professional service enabling customers to leverage Salesforce and grow their business. Our specialty lies in providing end-to-end value creation in Salesforce.com related services like Salesforce.com consulting, Implementation, Design, Appexchange development, Mobility, Integration, Testing and Staff Augmentation. We help companies elevate their business.</div></div></div></div></div>
+      <div class="panel-body">ABSYZ Inc. is a dynamically growing firm in the salesforce ecosystem. Our strength lies in the fact that we are amongst the few partners that cater solely to salesforce services. The broad gamut of services that we offer include consulting, implementation, audit, support, staff augmentation and training services. For those of you wondering about the origination of our name ABSYZ, it is simply derived from the Sanskrit word AB that stands for the state of being in the Now or Present, and fused with the word SYZ to overlay it with futuristic tones.</div>
+	  
+         </div></div></div></div>
     
      <div id="menu1" class="tab-pane fade">
-	        <div class="p-3 mb-2 bg-info text-white" style="text-align:center;background: #337ab7;color: #ffffff;font-size: 25px;"><p><strong>Product List</strong></p></div>
       <div class="container" id="product_list">
 <!--   <h2>Implement Table here and click for description on each item</h2> -->
   
   <div class="panel-group">
-  <!--  <div class="panel panel-primary"> -->
-	  <div class="spin" style="text-align:center;">
-		  
-      <i class="fa fa-circle-o-notch fa-spin" style="font-size:24px"></i>
-		  
+    <div class="panel panel-primary">
+      
       <div class="panel-heading">
         <h4 class="panel-title">
-        <!--  <a data-toggle="collapse" href="#collapse1">Click for description</a>-->
-		
+          <a data-toggle="collapse" href="#collapse1">Click for description</a>
         </h4>
-        </div><!-- div of panel heading -->
+        </div>
         <div id="collapse1" class="panel-collapse collapse">
         <div class="panel-body"><div class="panel panel-primary">
       <div class="panel-body">
-      <div id="showPrdName"> <label>Product Name: </label><br/></div> <!-- div of shoPrdName -->
-	      <div id="showBrand">    <label>Brand: </label><br/></div>
-	      <div id="showPrdPrice">  <label>Description:</label></br/></div>
+      <div id="showPrdName"> <label>Product Name: </label><br/></div>
+        <label>Brand: </label><br/>
+        <label>Description:</label></br/>
         <form>
           <div class="form-group">
   <label for="usr">Count:</label>
   <input type="text" class="form-control" id="usr">
-		  <input type="button" id="btn_backpd" value="Back"/> <input type="button" id="btn_addtocart" value="Add to Cart"/><input type="hidden" id="hidPrdId" value=""/></td>						
-		
 </div>
   </form>
 </div>
 </div></div>
         
         </div></div></div></div></div>
-     
+   
+   
+      
+      
+      
+      
+ 
+    
+    
     <div id="menu2" class="tab-pane fade">
-	    <div class="p-3 mb-2 bg-info text-white" style="text-align:center;background: #337ab7;color: #ffffff;font-size: 25px;"><p><strong>Orders</strong></p></div>
       <div class="container" id="my_orders">
 <!--   <h2>Implement  order Table here and click for description on each item</h2> -->
-	     <!-- <i class="fa fa-spinner fa-spin" style="font-size:24px"></i> -->
+  
   <div class="panel-group">
-       <div class="panel-heading">
+    <div class="panel panel-primary">
+      
+      <div class="panel-heading">
         <h4 class="panel-title">
-         <i class="fa fa-spinner fa-spin" style="font-size:24px"></i> 
+          <a data-toggle="collapse" href="#collapse1">Click for description</a>
         </h4>
         </div>
-     
+        <div id="collapse1" class="panel-collapse collapse">
+        <div class="panel-body"><div class="panel panel-primary">
+      <div class="panel-body">
+        <label>Product Name: </label><br/>
+        <label>Brand: </label><br/>
+        <label>Description:</label></br/>
+        <form>
+          <div class="form-group">
+  <label for="usr">Count:</label>
+  <input type="text" class="form-control" id="usr">
+</div>
+  </form>
+</div>
+</div></div>
         
-	    </div></div>
+        </div></div></div></div></div>
    
    
     
     
     
     <div id="menu3" class="tab-pane fade">
-	    <div class="p-3 mb-2 bg-info text-white" style="text-align:center; background: #337ab7;color: #ffffff;font-size: 25px;"><p><strong>Cart Items</strong></p></div>
 <!--       <h3>Display cart table here</h3> -->
 <!--       <p>cart table</p> -->
-	  
-	     <div class="container" id="my_carts">
-		     
-		       </div>
     </div>
     
 <!-- <div id="menu4" class="tab-pane fade"> -->
@@ -131,66 +124,6 @@
 <!--     </div> -->
     
 <div id="menu5" class="tab-pane fade">
-	<p>test paragraph</p>
-	<div class="p-3 mb-2 bg-info text-white" style="text-align:center;"><p><strong>User Info</strong></p></div>
-	<!-- <head>
-  <title>File Upload with Java, Play 2, and S3</title>
-    <link rel="shortcut icon" type="image/png" href="@routes.Assets.at("images/favicon.png")">
-</head>
-<body>
-    <h1>Upload a file:</h1>
-    @helper.form(action = controllers.Application.upload, 'enctype -> "multipart/form-data") {
-        <input type="file" name="upload">
-        <input type="submit">
-    }
-
-    <h1>Uploads:</h1>
-    <ul>
-    @for(upload <- uploads) {
-        <li><a href="@upload.getUrl()">@upload.name</a></li>
-    }
-    </ul>
-
-</body>-->
-<!--       <h3>Display user info table here</h3> -->
-<!--       <p>user info table</p> -->
-	<!--<input type="button" onclick="msg()"> -->
-    </div>
-	
-	<div  id="changepwd" style="display:none">
- <table class="login-screen">
-				<tr class='tbl_header'>
-					<td colspan='2'> <b>Change Password </b><br/></td>
-				</tr>
-				<tr>
-					<td><b>Password</b></td><td><input type="text" name="txtPwd" id="txtPwd" /></td>
-				</tr>
-	 <br/>
-				<tr>
-					<td><b>Confirm Password</b></td><td><input type="password" name="txtCfrmPwd" id="txtCfrmPwd" /></td>
-				</tr>
-				<tr>
-					<td><b><input type="button" id="btnSave" value="Save" /></b>&nbsp&nbsp<b><input type="button" id="btnUser" value="cancel" /></b></td>
-				</tr>
-			</table>
-			</div> 
-	
-	<script >
-		function msg(){
-			alert('msg');
-		var x= document.getElementById("changepwd");
-			if (x.style.display === "none") {
-        x.style.display = "block";
-    }else
-	    {
-        x.style.display = "none";
-    }
-		} 
-	</script>
-	<div id="imgid" class="tab-pane fade">
-	
-
-
 <!--       <h3>Display user info table here</h3> -->
 <!--       <p>user info table</p> -->
     </div>
@@ -199,27 +132,7 @@
 <!--       <h3>Logout button to logout</h3> -->
      
     </div>
-  
-<!-- Modal -->
-<div id="pwdModal" class="modal fade" role="dialog">
-  <div class="modal-dialog">
-
-    <!-- Modal content-->
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title"></h4>
-      </div>
-      <div class="modal-body" id="modalbody">
-        
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Ok</button>
-      </div>
-    </div>
-
-  </div>
-</div>  
+    
     
   </div>
 </div>
@@ -240,30 +153,6 @@
 
 
 </div>
-<script>
-	function logout1(){
-	var cl1= localStorage.getItem("loggedin");
-		if(cl1==null){
-		window.location.href="/index.html";
-		}
-	}
-	
-	
-	
-function logout(){
- //alert("Hi, " + localStorage.getItem("loggedin"));
-	localStorage.removeItem("loggedin");
-	//localStorage.clear();
-	var Cl=localStorage.getItem("loggedin")
-	//alert("Cl, " + Cl);
-	
-	if(Cl==null){
-	window.location.href = "/index.html";}
-	
-
-}
-
-</script>
 <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
