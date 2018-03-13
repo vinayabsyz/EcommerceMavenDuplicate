@@ -925,7 +925,7 @@ $(document).on("click", "#td_mycarts", function() {
 				add_totalamount();
 			}		
 			else		
-			{		
+			{	$('#my_carts').show();	
 				
 				//alert(obj[0].success[0].message);		
 				loadProducts();		
