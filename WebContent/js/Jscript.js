@@ -928,7 +928,7 @@ $(document).on("click", "#td_mycarts", function() {
 			{	$('#my_carts').show();	
 				
 				//alert(obj[0].success[0].message);		
-				loadProducts();		
+				//loadProducts();		
 			}		
 					
 										
