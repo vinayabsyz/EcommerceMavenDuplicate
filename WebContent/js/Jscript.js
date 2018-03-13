@@ -918,10 +918,11 @@ $(document).on("click", "#td_mycarts", function() {
 						
 				cartTable = cartTable + "<tr class='tile'><td colspan='2'>Total Amount</td><td colspan='3'><input type='text' id='txtTotal' value ='0' disabled height='40'/></td></tr></table>";		
 				cartTable = cartTable + "<br/><input type='button' class='btn btn-primary btn-md'  value='Place Order' onclick='placeorder(chk_idarray)' >"		
-				$('#my_carts').empty();	
-			alert("Added");
+				//$('#my_carts').empty();	
+			
+				console.log("cartTable"+cartTable);
 				$('#my_carts').append(cartTable);	
-				add_totalamount();
+				//add_totalamount();
 			}		
 			else		
 			{		
