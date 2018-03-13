@@ -877,7 +877,7 @@ $(document).on("click", "#td_mycarts", function() {
 			var obj = jQuery.parseJSON(responseText);		
 			if(obj[0].success[0].success == "success")		
 			{		
-				
+				$('#my_carts').show();
 				//$('#nocart_image').hide();
 				//alert(obj[0].success[0].success);		
 				//alert(obj.length);		
