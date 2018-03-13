@@ -247,7 +247,7 @@ $(document).on("click", "#td_myorders", function() {
 			
 			for(var i=0;i<obj[0].data.length;i++)
 			{
-				var totamt=(obj[0].data[i].price * obj[0].data[i].productquantity0+100;
+				var totamt=(obj[0].data[i].price * obj[0].data[i].productquantity)+100;
 				
 				if(obj[0].data[i].status=="Order Delivered"){
 				if(i%2 == 0)
