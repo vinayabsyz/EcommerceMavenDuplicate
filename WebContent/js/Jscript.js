@@ -204,6 +204,7 @@ $(document).on("click", "#td_myorders", function() {
 	$('#divhome').hide();
 	$('#product_list').hide();
 	$('#my_carts').hide();
+		$('#my_cart').hide();
 	$('#my_orders').show();
 	$('#changepwd').hide();
 	var searchParams = new URLSearchParams(window.location.search); //?anything=123
@@ -485,6 +486,7 @@ function loadProducts()
 	$('#divhome').hide();
 	$('#product_list').show();
 	$('#my_carts').hide();
+	$('#my_cart').hide();
 	$('#my_orders').hide();
 	$('#prdndesc').hide();
 	$('#mycartdata').hide();
@@ -878,6 +880,7 @@ $(document).on("click", "#td_mycarts", function() {
 			if(obj[0].success[0].success == "success")		
 			{		
 				$('#my_carts').show();
+				$('#my_cart').show();
 				//$('#nocart_image').hide();
 				//alert(obj[0].success[0].success);		
 				//alert(obj.length);		
@@ -919,13 +922,14 @@ $(document).on("click", "#td_mycarts", function() {
 				cartTable = cartTable + "<tr class='tile'><td colspan='2'>Total Amount</td><td colspan='3'><input type='text' id='txtTotal' value ='0' disabled height='40'/></td></tr></table>";		
 				cartTable = cartTable + "<br/><input type='button' class='btn btn-primary btn-md'  value='Place Order' onclick='placeorder(chk_idarray)' >"		
 				$('#my_carts').empty();	
-			
+			$('#my_cart').empty();	
 				console.log("cartTable"+cartTable);
 				$('#my_carts').append(cartTable);	
 				add_totalamount();
 			}		
 			else		
-			{	$('#my_carts').show();	
+			{	$('#my_carts').empty();	
+				$('#my_carts').show();	
 				
 				//alert(obj[0].success[0].message);		
 				//loadProducts();		
