@@ -354,6 +354,7 @@ $(document).on("click", "#btnSave", function() {
 			
 			if(obj[0].success == "success"){
 				//alert("Password Changed Successfully");
+				$('#modalbody').empty();	
 				$('#modalbody').append("<p>Password Changed Successfully</P>");
 				$('#pwdModal').modal('toggle');
 				$('#txtPwd').val("");
@@ -610,6 +611,7 @@ var amount = 1 * price;
 		success : function(responseText) {
 			var obj = jQuery.parseJSON(responseText);
 			//alert("Added");
+			$('#modalbody').empty();	
 			$('#modalbody').append("<p>Added to Cart</P>");
 			$('#pwdModal').modal('toggle');
 			$('#divcontent').show();
@@ -954,7 +956,8 @@ function delete_cartitem(cartid)
 		data : {		
 			userid:userid,cartid:cart_id[1]		
 		},		
-		success : function(responseText) {		
+		success : function(responseText) {
+$('#modalbody').empty();		
 			$('#modalbody').append("<p>Deleted</P>");
 				$('#pwdModal').modal('toggle');
 			chk_idarray1.length=0;	
