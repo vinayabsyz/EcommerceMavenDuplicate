@@ -929,7 +929,7 @@ $(document).on("click", "#td_mycarts", function() {
 			}		
 			else		
 			{	$('#my_carts').empty();	
-				$('#my_carts').show();	
+				$('#my_cart').show();	
 				
 				//alert(obj[0].success[0].message);		
 				//loadProducts();		
