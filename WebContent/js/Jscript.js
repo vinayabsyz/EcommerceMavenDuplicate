@@ -922,7 +922,7 @@ $(document).on("click", "#td_mycarts", function() {
 			
 				console.log("cartTable"+cartTable);
 				$('#my_carts').append(cartTable);	
-				//add_totalamount();
+				add_totalamount();
 			}		
 			else		
 			{		
