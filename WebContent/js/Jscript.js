@@ -887,7 +887,7 @@ $(document).on("click", "#td_mycarts", function() {
 				//alert(obj.length);		
 				//alert(obj[0].data.length);		
 				//alert(obj[0].data[0].productname);		
-				var cartTable="<table width='100%' border='1' class='tile' id='tbl_cart'><tr class='tbl_header'></tr><tr class='tbl_header'><td><b>Product Name</b></td><td><b>Quantity</b></td><td><b>Price</b></td><td><b>Remove Item</b></td></tr>";		
+				var cartTable="<table width='100%' border='1' class='tile' id='tbl_cart'><tr class='tbl_header'></tr><tr class='tbl_header'><td><b>Product Name</b></td><td><b>Quantity</b></td><td><b>Price</b></td><td></td></tr>";		
 				var chkVal = 2;		
 				chk_idarray.length=0;
 				cartarray.length=0;
