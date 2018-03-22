@@ -687,6 +687,7 @@ var shippingid="1";
 		success : function(responseText) {
 			if(responseText == "success"){
 				//alert("order placed");
+				$('#modalbody').empty();
 				$('#modalbody').append("<p>order placed</P>");
 				$('#pwdModal').modal('toggle');
 				$( "#td_myorders" ).click();
