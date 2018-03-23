@@ -23,7 +23,7 @@ import com.amazonaws.services.s3.model.ObjectMetadata;
 import com.amazonaws.services.s3.model.PutObjectRequest;
 import com.amazonaws.services.s3.model.S3ObjectSummary;
 
-public class UploadServlet extends HttpServlet {
+public class UploadServlet2 extends HttpServlet {
 	
 	private static final String SUFFIX = "/";
 	
