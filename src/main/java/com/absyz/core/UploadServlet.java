@@ -17,7 +17,7 @@ import org.apache.commons.io.output.*;
 
 import main.java.com.absyz.service.Products;
 
-public class UploadServlet1 extends HttpServlet {
+public class UploadServlet extends HttpServlet {
    
    private boolean isMultipart;
    private String filePath;
