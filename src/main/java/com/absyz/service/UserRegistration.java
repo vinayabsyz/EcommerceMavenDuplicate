@@ -86,7 +86,7 @@ public class UserRegistration {
 				
 
 				psInsert = conn.prepareStatement("Insert into contact(user_name__c,firstname,lastname,email,Password__c,	MobilePhone,mailingcity,mailingstate,mailingcountry,"
-						+ "mailingpostalcode,gender__c,state__c,id,image) values(?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
+						+ "mailingpostalcode,gender__c,state__c,id) values(?,?,?,?,?,?,?,?,?,?,?,?,?)");
 				psInsert.setString(1, strEmail);
 				psInsert.setString(2, strFname);
 				psInsert.setString(3, strlname);
@@ -102,7 +102,7 @@ public class UserRegistration {
 				psInsert.setInt(13, intUserId);
 				
 				//psInsert.setString(1, file.getName());
-                                psInsert.setBinaryStream(14,  (InputStream) fis, (int)(file.length()));
+                                //psInsert.setBinaryStream(14,  (InputStream) fis, (int)(file.length()));
 
                                   
                                // fis.close();
