@@ -62,7 +62,7 @@ public class UserRegistration {
 				rsUserMax = stSelectMax.executeQuery(strUserQuery);
 				if(rsUserMax.next())
 				{
-					intUserId = rsUserMax.getInt("userid")+1;
+					intUserId = rsUserMax.getInt("id")+1;
 				}
 				System.out.println("Inside");
 				String strFname = request.getParameter("fname");
