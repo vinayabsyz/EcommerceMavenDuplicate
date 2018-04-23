@@ -85,26 +85,24 @@ public class UserRegistration {
 				
 				
 
-				psInsert = conn.prepareStatement("Insert into contact(user_name__c,firstname,lastname,email,Password__c,	MobilePhone,address1,address2,mailingcity,mailingstate,mailingcountry,"
-						+ "mailingpostalcode,gender__c,state__c,id,image) values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
+				psInsert = conn.prepareStatement("Insert into contact(user_name__c,firstname,lastname,email,Password__c,	MobilePhone,mailingcity,mailingstate,mailingcountry,"
+						+ "mailingpostalcode,gender__c,state__c,id,image) values(?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
 				psInsert.setString(1, strEmail);
 				psInsert.setString(2, strFname);
 				psInsert.setString(3, strlname);
 				psInsert.setString(4, strEmail);
 				psInsert.setString(5, strPassword);
 				psInsert.setString(6, strMobile);
-				psInsert.setString(7, strAddress1);
-				psInsert.setString(8, strAddress2);
-				psInsert.setString(9, strCity);
-				psInsert.setString(10, strState);
-				psInsert.setString(11, strCountry);
-				psInsert.setString(12, strZipcode);
-				psInsert.setString(13, strGender);
-				psInsert.setString(14, "active");
-				psInsert.setInt(15, intUserId);
+				psInsert.setString(7, strCity);
+				psInsert.setString(8, strState);
+				psInsert.setString(9, strCountry);
+				psInsert.setString(10, strZipcode);
+				psInsert.setString(11, strGender);
+				psInsert.setString(12, "active");
+				psInsert.setInt(13, intUserId);
 				
 				//psInsert.setString(1, file.getName());
-                                psInsert.setBinaryStream(16,  (InputStream) fis, (int)(file.length()));
+                                psInsert.setBinaryStream(14,  (InputStream) fis, (int)(file.length()));
 
                                   
                                // fis.close();
