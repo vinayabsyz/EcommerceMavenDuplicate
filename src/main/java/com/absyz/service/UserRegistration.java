@@ -40,7 +40,7 @@ public class UserRegistration {
 		Statement stSelectMax = null;
 		String strEmail = request.getParameter("email");
 		String strQuery = "Select * from salesforce.contact where email = '"+strEmail+"'";
-		String strUserQuery = "Select max(id) id from salesforce.salesforce.contact";
+		String strUserQuery = "Select max(id) id from salesforce.contact";
 		System.out.println(strQuery);
 		String strOutput="";
 		int intUserId=0;
