@@ -39,8 +39,8 @@ public class UserRegistration {
 		Statement stSelectQuery = null;
 		Statement stSelectMax = null;
 		String strEmail = request.getParameter("email");
-		String strQuery = "Select * from contact where email = '"+strEmail+"'";
-		String strUserQuery = "Select max(id) id from contact";
+		String strQuery = "Select * from salesforce.contact where email = '"+strEmail+"'";
+		String strUserQuery = "Select max(id) id from salesforce.salesforce.contact";
 		System.out.println(strQuery);
 		String strOutput="";
 		int intUserId=0;
@@ -85,7 +85,7 @@ public class UserRegistration {
 				
 				
 
-				psInsert = conn.prepareStatement("Insert into contact(user_name__c,firstname,lastname,email,Password__c,	MobilePhone,mailingcity,mailingstate,mailingcountry,"
+				psInsert = conn.prepareStatement("Insert into salesforce.contact(user_name__c,firstname,lastname,email,Password__c,	MobilePhone,mailingcity,mailingstate,mailingcountry,"
 						+ "mailingpostalcode,gender__c,state__c,id) values(?,?,?,?,?,?,?,?,?,?,?,?,?)");
 				psInsert.setString(1, strEmail);
 				psInsert.setString(2, strFname);
@@ -147,7 +147,7 @@ public class UserRegistration {
 		JSONArray json = new JSONArray();
 		JSONObject obj = new JSONObject();
 		conn = DbConnection.getConnection();
-		strUpdate = "Update contact set password = '"+strPwd+"' where userid = "+intUserid;
+		strUpdate = "Update salesforce.contact set password = '"+strPwd+"' where userid = "+intUserid;
 		try {
 			psUpdate = conn.prepareStatement(strUpdate);
 			psUpdate.executeUpdate();
