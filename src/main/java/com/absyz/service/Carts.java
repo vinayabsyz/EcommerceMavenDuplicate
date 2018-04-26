@@ -33,12 +33,12 @@ public class Carts {
 		try {
 			
 			conn = DbConnection.getConnection();
-			strQuery = "Select max(cartid) cartid from carts";
+			strQuery = "Select max(id) id from carts__c";
 			int intUserId = Integer.parseInt(request.getParameter("userid"));
 			int intProductId = Integer.parseInt(request.getParameter("productid"));
 			int intQuantity = Integer.parseInt(request.getParameter("quantity"));
 			double dblAmount = Double.parseDouble(request.getParameter("amount"));
-			strGetCartQuery = "Select * from carts where productid = "+intProductId+" and userid = "+intUserId;
+			strGetCartQuery = "Select * from carts__C where product__c = "+intProductId+" and contact__c = "+intUserId;
 			System.out.println(strGetCartQuery);
 			stGetCartList = conn.createStatement();
 			rsGetCartList = stGetCartList.executeQuery(strGetCartQuery);
@@ -56,13 +56,13 @@ public class Carts {
 				rsCartsMaxId = stSelectMaxId.executeQuery(strQuery);
 				if(rsCartsMaxId.next())
 				{
-					intCartId = rsCartsMaxId.getInt("cartid")+1;
+					intCartId = rsCartsMaxId.getInt("id")+1;
 				}
 				else
 				{
 					intCartId = 100;
 				}
-				psInsert = conn.prepareStatement("Insert into carts(cartid,userid,productid,quantity,amount)values(?,?,?,?,?)");
+				psInsert = conn.prepareStatement("Insert into carts(id,contact__c,product__c,quantity__c,amount__c)values(?,?,?,?,?)");
 				psInsert.setInt(1, intCartId);
 				psInsert.setInt(2, intUserId);
 				psInsert.setInt(3, intProductId);
@@ -107,8 +107,8 @@ public class Carts {
 		try {
 			//String strQuery = "Select * from carts where userid = "+intUserId; 
 				
-			String strQuery = "Select c.cartid,c.userid,c.productid,c.quantity,c.amount,p.productname,p.price from carts c "
-					+ "join products p on c.productid = p.productid where c.userid = "+intUserId;// where c.userid = 
+			String strQuery = "Select c.id,c.contact__c,c.product__c,c.quantity__c,c.amount__c,p.productname__c,p.price__c from carts__c c "
+					+ "join product2 p on c.product__c = p.id where c.contact__c = "+intUserId;// where c.userid = 
 				//+intUserId;
 				
 			//console.log(intUserId);
@@ -145,7 +145,7 @@ public class Carts {
 	{
 		System.out.println("inside remove cart function");
 		String strOutput="";
-		int intCartId = Integer.parseInt(request.getParameter("cartid"));
+		int intCartId = Integer.parseInt(request.getParameter("id"));
 		strOutput = remove_cart_data(intCartId);
 		strOutput = my_cart_list(request);
 		System.out.println(strOutput);
@@ -161,13 +161,13 @@ public class Carts {
 		JSONObject obj=null;
 		String strOutput="";
 		try {
-			String strQuery = "Select * from carts where cartid = "+intCartId;
+			String strQuery = "Select * from carts__c where id = "+intCartId;
 			conn = DbConnection.getConnection();
 			stSelectCarts = conn.createStatement();
 			rsSelectCarts = stSelectCarts.executeQuery(strQuery);
 			if(rsSelectCarts.next())
 			{
-				String strDeleteQuery = "Delete from carts where cartid = ?";
+				String strDeleteQuery = "Delete from carts__c where id = ?";
 				psDelete = conn.prepareStatement(strDeleteQuery);
 				psDelete.setInt(1, intCartId);
 				psDelete.executeUpdate();
