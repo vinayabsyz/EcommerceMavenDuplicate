@@ -24,7 +24,7 @@ public class Products {
 		ResultSet rsProductsMaxId = null;
 		Statement stSelectQuery = null;
 		Statement stSelectMaxId = null;
-		String strQuery = "Select * from products where productname = '"+strPname+"'";
+		String strQuery = "Select * from salesforce.product2 where productname = '"+strPname+"'";
 		System.out.println(strQuery);
 		String strOutput="";
 		int intProductId = 0;
@@ -34,18 +34,18 @@ public class Products {
 			rsProducts = stSelectQuery.executeQuery(strQuery);
 //			if(rsProducts.next())
 //			{
-				strQuery = "Select max(productid) productid from products";
+				strQuery = "Select max(id) id from products";
 				stSelectMaxId = conn.createStatement();
 				rsProductsMaxId = stSelectMaxId.executeQuery(strQuery);
 				if(rsProductsMaxId.next())
 				{
-					intProductId = rsProductsMaxId.getInt("productid")+1;
+					intProductId = rsProductsMaxId.getInt("id")+1;
 				}
 				else
 				{
 					intProductId = 100;
 				}
-				psInsert = conn.prepareStatement("Insert into products(productid,productname,stock,brandname,price,filename)values(?,?,?,?,?,?)");
+				psInsert = conn.prepareStatement("Insert into salesforce.product2(id,productname,stock__c,brand_name__c,price__c,filename__c)values(?,?,?,?,?,?)");
 				psInsert.setInt(1, intProductId);
 				psInsert.setString(2, strPname);
 				psInsert.setInt(3, intCount);
@@ -78,7 +78,7 @@ public class Products {
 		Statement stSelectQuery = null;
 		Statement stSelectMaxId = null;
 		String strProduct = request.getParameter("productname");
-		String strQuery = "Select * from products where productname = '"+strProduct+"'";
+		String strQuery = "Select * from salesforce.product2 where productname = '"+strProduct+"'";
 		System.out.println(strQuery);
 		String strOutput="";
 		int intProductId = 0;
@@ -88,12 +88,12 @@ public class Products {
 			rsProducts = stSelectQuery.executeQuery(strQuery);
 //			if(rsProducts.next())
 //			{
-				strQuery = "Select max(productid) productid from products";
+				strQuery = "Select max(id) id from salesforce.product2";
 				stSelectMaxId = conn.createStatement();
 				rsProductsMaxId = stSelectMaxId.executeQuery(strQuery);
 				if(rsProductsMaxId.next())
 				{
-					intProductId = rsProductsMaxId.getInt("productid")+1;
+					intProductId = rsProductsMaxId.getInt("id")+1;
 				}
 				else
 				{
@@ -102,7 +102,7 @@ public class Products {
 				String strBrand = request.getParameter("brand");
 				int intStock = Integer.parseInt(request.getParameter("stock"));
 				double dblPrice = Double.parseDouble(request.getParameter("price"));
-				psInsert = conn.prepareStatement("Insert into products(productid,productname,stock,brandname,price)values(?,?,?,?,?)");
+				psInsert = conn.prepareStatement("Insert into salesforce.product2(id,productname__c,stock__c,brand_name__c,price__c)values(?,?,?,?,?)");
 				psInsert.setInt(1, intProductId);
 				psInsert.setString(2, strProduct);
 				psInsert.setInt(3, intStock);
@@ -132,7 +132,7 @@ public class Products {
 		Connection conn=null;
 		Statement stGetProducts;
 		ResultSet rsGetProducts;
-		String strQuery = "Select * from products where stock >= 1";
+		String strQuery = "Select * from salesforce.product2 where stock >= 1";
 		JSONArray json = new JSONArray();
 		JSONObject obj=null;
 		try {
@@ -162,7 +162,7 @@ public class Products {
 		Statement stGetProducts;
 		ResultSet rsGetProducts;
 		int intProductid = Integer.parseInt(request.getParameter("prodid"));
-		String strQuery = "Select * from products where productid = "+intProductid;
+		String strQuery = "Select * from salesforce.product2 where id = "+intProductid;
 		JSONArray json = new JSONArray();
 		JSONObject obj=null;
 		try {
@@ -193,7 +193,7 @@ public class Products {
 		String strGetQuery = "";
 		int intProdQuantity = 0;
 		int intUpdatePrdQty = 0;
-		strGetQuery = "Select stock from products where productid = "+intProductId;
+		strGetQuery = "Select stock from salesforce.product2 where id = "+intProductId;
 		try {
 			conn = DbConnection.getConnection();
 			stGetPrdQty = conn.createStatement();
@@ -203,7 +203,7 @@ public class Products {
 				intProdQuantity = rsGetPrdQty.getInt("stock");
 				intUpdatePrdQty = intProdQuantity - intQuantity;
 			}
-			psUpdatePrdQty = conn.prepareStatement("Update products set stock = ? where productid = ?");
+			psUpdatePrdQty = conn.prepareStatement("Update salesforce.product2 set stock__c = ? where id = ?");
 			psUpdatePrdQty.setInt(1, intUpdatePrdQty);
 			psUpdatePrdQty.setInt(2, intProductId);
 			psUpdatePrdQty.executeUpdate();
