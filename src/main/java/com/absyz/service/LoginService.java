@@ -78,7 +78,7 @@ public class LoginService {
 		Statement stSelectQuery = null;
 		String strEmail = request.getParameter("email");
 		String strPassword = request.getParameter("password");
-		String strQuery = "Select userid from users where email = '"+strEmail+"' and password = '"+strPassword+"'";
+		String strQuery = "Select userid from salesforce.contact where email = '"+strEmail+"' and password = '"+strPassword+"'";
 		System.out.println(strQuery);
 		JSONArray json = new JSONArray();
 		JSONObject obj=null;
