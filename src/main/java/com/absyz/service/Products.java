@@ -132,7 +132,7 @@ public class Products {
 		Connection conn=null;
 		Statement stGetProducts;
 		ResultSet rsGetProducts;
-		String strQuery = "Select * from salesforce.product2 where stock >= 1";
+		String strQuery = "Select * from salesforce.product2 where stock__c >= 1";
 		JSONArray json = new JSONArray();
 		JSONObject obj=null;
 		try {
