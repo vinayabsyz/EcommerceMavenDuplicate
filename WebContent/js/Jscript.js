@@ -510,7 +510,9 @@ function loadProducts()
 			for(var i=0;i<obj[0].data.length;i++)
 			{
 				var pr_id = "pr_"+obj[0].data[i].id;
-				var filename = "images/"+obj[0].data[i].FileName__c;
+				var filename = "images/"+obj[0].data[i].fileName__c;
+				alert(filename);
+				alert(obj[0].data[i].name);
 				var pid=obj[0].data[i].id;
 				var pquantity="2";
 				//var quant;
@@ -519,12 +521,12 @@ function loadProducts()
 				//productTable = productTable + "<tr style='height:100px;'><td><input name='product' type ='radio' id="+obj[0].data[i].productid+" onclick='showproduct(this.id);'/></td><td>"+obj[0].data[i].brandname+"</td><td>"+obj[0].data[i].productname+"</td><td id="+pr_id+">"+obj[0].data[i].price+"</td>" +
 				if(i%2 == 0)
 				{
-					productTable = productTable + "<tr class='tile' style='height:100px;'><td><img id="+obj[0].data[i].id+" src="+filename+" height='100' width='100'/></td><td>"+obj[0].data[i].Brand_Name__c+"</td><td>"+obj[0].data[i].Name+"</td><td id="+pr_id+">"+obj[0].data[i].price__c+"</td><td><button  type='button' class='btn btn-primary btn-md' onclick='Addtocart("+pid+","+pquantity+","+pprice+")'>Add to Cart</button></td>" +
+					productTable = productTable + "<tr class='tile' style='height:100px;'><td><img id="+obj[0].data[i].id+" src="+filename+" height='100' width='100'/></td><td>"+obj[0].data[i].brand_name__c+"</td><td>"+obj[0].data[i].name+"</td><td id="+pr_id+">"+obj[0].data[i].price__c+"</td><td><button  type='button' class='btn btn-primary btn-md' onclick='Addtocart("+pid+","+pquantity+","+pprice+")'>Add to Cart</button></td>" +
 					"</tr>";
 					}
 				else
 				{
-					productTable = productTable + "<tr class='tile' style='height:100px;'><td><img id="+obj[0].data[i].id+" src="+filename+" height='100' width='100'/></td><td>"+obj[0].data[i].brandname+"</td><td>"+obj[0].data[i].Name+"</td><td id="+pr_id+">"+obj[0].data[i].price__c+"</td><td><button  type='button' class='btn btn-primary btn-md' onclick='Addtocart("+pid+","+pquantity+","+pprice+")'>Add to Cart</button></td>" +
+					productTable = productTable + "<tr class='tile' style='height:100px;'><td><img id="+obj[0].data[i].id+" src="+filename+" height='100' width='100'/></td><td>"+obj[0].data[i].brand_name__c+"</td><td>"+obj[0].data[i].name+"</td><td id="+pr_id+">"+obj[0].data[i].price__c+"</td><td><button  type='button' class='btn btn-primary btn-md' onclick='Addtocart("+pid+","+pquantity+","+pprice+")'>Add to Cart</button></td>" +
 					"</tr>";
 					}
 				//alert(document.getElementById("quantity").value);
