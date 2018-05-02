@@ -31,12 +31,12 @@ public class Orders {
 		String strJson = request.getParameter("data");
 		JSONArray jsonarray = new JSONArray(strJson);
 		conn = DbConnection.getConnection();
-		strQuery = "Select max(orderid) orderid from orders";
+		strQuery = "Select max(id) id from orders";
 		stSelectMaxId = conn.createStatement();
 		rsOrderMaxId = stSelectMaxId.executeQuery(strQuery);
 		if(rsOrderMaxId.next())
 		{
-			intOrderId = rsOrderMaxId.getInt("orderid");
+			intOrderId = rsOrderMaxId.getInt("id");
 		}
 		else
 		{
@@ -54,7 +54,7 @@ public class Orders {
 			double dblAmount = Double.parseDouble(jsonobject.getString("totalamount"));
 			int intShippingId = Integer.parseInt(jsonobject.getString("shippingid"));
 			String status=jsonobject.getString("status");
-			psInsert = conn.prepareStatement("Insert into orders(orderid,userid,productid,shippingid,productquantity,totalamount,orderdate,status)values(?,?,?,?,?,?,?,?)");
+			psInsert = conn.prepareStatement("Insert into orders(id,contactid__c,productid__c,Shipping_Id,productquantity__c,TotalAmount,EffectiveDate,Status)values(?,?,?,?,?,?,?,?)");
 			psInsert.setInt(1, intOrderId);
 			psInsert.setInt(2, intUserId);
 			psInsert.setInt(3, intProductId);
@@ -91,13 +91,13 @@ public class Orders {
 			//String strQuery = "Select * from orders where userid = "+intUserId;
 			String strQuery="";
 			if(intUserId!=1){
-			 strQuery = "Select o.orderid,o.userid,o.productid,o.orderdate,o.status,o.productquantity,o.totalamount,p.productname,p.price from orders o "
-					+ "join products p on o.productid = p.productid where o.userid = "+intUserId+" order by o.orderid asc";
+			 strQuery = "Select o.id,o.contactid__c,o.productid__c,o.EffectiveDate,o.Status,o.productquantity__c,o.TotalAmount,p.Product_Name__c,p.Product_Price__c from orders o "
+					+ "join products p on o.id = p.id where o.contactid__c = "+intUserId+" order by o.id asc";
 			
 			}
 			else{
-			 strQuery = "Select o.orderid,o.userid,o.productid,o.orderdate,o.status,o.productquantity,o.totalamount,p.productname,p.price from orders o "
-					+ "join products p on o.productid = p.productid order by o.orderid asc";
+			 strQuery = "Select o.id,o.contactid__c,o.productid__c,o.EffectiveDate,o.Status,o.productquantity__c,o.TotalAmount,p.Product_Name__c,p.Product_Price__c from orders o "
+					+ "join products p on o.id = p.id order by o.id asc";
 			
 		
 			}
@@ -133,7 +133,7 @@ public class Orders {
 		try {
 			//String strQuery = "Select * from orders where userid = "+intUserId;
 			
-			String strQuery = "select * from orders where orderid = "+orderid;
+			String strQuery = "select * from orders where id = "+orderid;
 			conn = DbConnection.getConnection();
 			
 			stSelectOrders = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,
