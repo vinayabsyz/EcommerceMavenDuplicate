@@ -24,6 +24,7 @@ $(document).on("click", "#userlogin", function() {
 			if(obj[0].success[0].success == "success")
 			{
 				var userid = obj[0].data[0].id;
+				alert("userid"+userid);
 				//$('#hidid').val(userid);
 				window.location.href = "/home.html?userid="+id;
 				}
