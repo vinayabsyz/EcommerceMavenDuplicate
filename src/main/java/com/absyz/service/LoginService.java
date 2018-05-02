@@ -128,7 +128,7 @@ public class LoginService {
 		ResultSet rsLogin = null;
 		Statement stSelectQuery = null;
 		int intUserid  = Integer.parseInt(request.getParameter("userid"));
-		String strQuery = "Select userid,firstname,lastname,email,mobile,address1,address2,city,state,zipcode,country from users where userid = "+intUserid;
+		String strQuery = "Select id,firstname,lastname,email,mobilephone,Address1__c,Address_2__c,mailingcity,mailingstate,mailingpostalcode,mailingcountry from salesforce.contact where id = "+intUserid;
 		System.out.println(strQuery);
 		JSONArray json = new JSONArray();
 		JSONObject obj=null;
