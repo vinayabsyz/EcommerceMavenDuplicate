@@ -839,3 +839,4 @@ function add_totalamount()
 	//qty = isNaN(qty) ? '0.00' : qty;		
 	$('#txtTotal').val(total_amount);		
 }		
+}
