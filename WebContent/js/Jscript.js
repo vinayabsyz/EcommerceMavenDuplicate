@@ -596,7 +596,7 @@ function loadProducts()
 	});*/
 }
 //Add to cart function
-function Addtocart(productid,price)
+function Addtocart(productid,quantity,price)
 {
 	
     var quantity = 1;
