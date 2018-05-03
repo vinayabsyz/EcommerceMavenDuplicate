@@ -555,6 +555,7 @@ function showproduct(prdid)
 		},
 		success : function(responseText) {
 			console.log(responseText);
+			alert("Hi");
 			var obj = jQuery.parseJSON(responseText);
 			
 			//	$('#menu1').show();
