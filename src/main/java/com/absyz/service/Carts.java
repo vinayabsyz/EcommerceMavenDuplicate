@@ -65,8 +65,8 @@ public class Carts {
 				}
 				psInsert = conn.prepareStatement("Insert into carts(id,contact__c,product__c,quantity__c,amount__c)values(?,?,?,?,?)");
 				psInsert.setInt(1, intCartId);
-				psInsert.setInt(2, intUserId);
-				psInsert.setInt(3, intsalesforceProductId);
+				psInsert.setString(2, intUserId);
+				psInsert.setString(3, intsalesforceProductId);
 				psInsert.setInt(4, intQuantity);
 				psInsert.setDouble(5, dblAmount);
 				psInsert.executeUpdate();
