@@ -36,6 +36,7 @@ public class Carts {
 			strQuery = "Select max(id) id from carts__c";
 			int intUserId = Integer.parseInt(request.getParameter("userid"));
 			int intProductId = Integer.parseInt(request.getParameter("productid"));
+			int intsalesforceProductId = Integer.parseInt(request.getParameter("productid"));
 			int intQuantity = Integer.parseInt(request.getParameter("quantity"));
 			double dblAmount = Double.parseDouble(request.getParameter("amount"));
 			strGetCartQuery = "Select * from carts__C where product__c = "+intProductId+" and contact__c = "+intUserId;
@@ -65,7 +66,7 @@ public class Carts {
 				psInsert = conn.prepareStatement("Insert into carts(id,contact__c,product__c,quantity__c,amount__c)values(?,?,?,?,?)");
 				psInsert.setInt(1, intCartId);
 				psInsert.setInt(2, intUserId);
-				psInsert.setInt(3, intProductId);
+				psInsert.setInt(3, intsalesforceProductId);
 				psInsert.setInt(4, intQuantity);
 				psInsert.setDouble(5, dblAmount);
 				psInsert.executeUpdate();
@@ -108,7 +109,7 @@ public class Carts {
 			//String strQuery = "Select * from carts where userid = "+intUserId; 
 				
 			String strQuery = "Select c.id,c.contact__c,c.product__c,c.quantity__c,c.amount__c,p.productname__c,p.price__c from carts__c c "
-					+ "join product2 p on c.product__c = p.id where c.contact__c = "+intUserId;// where c.userid = 
+					+ "join product2 p on c.product__c = p.sfid where c.contact__c = "+intUserId;// where c.userid = 
 				//+intUserId;
 				
 			//console.log(intUserId);
