@@ -394,8 +394,8 @@ function loadProducts()
 				var filename = "images/"+obj[0].data[i].filename__c;
 				alert(filename);
 				alert(obj[0].data[i].name);
-				var pid=obj[0].data[i].id;
-				var spid=obj[0].data[i].sfid;
+				var pid=obj[0].data[i].sfid;
+				//var spid=obj[0].data[i].sfid;
 				var pquantity="2";
 				//var quant;
 				var pprice=obj[0].data[i].price__c;
@@ -404,12 +404,12 @@ function loadProducts()
 				//productTable = productTable + "<tr style='height:100px;'><td><input name='product' type ='radio' id="+obj[0].data[i].productid+" onclick='showproduct(this.id);'/></td><td>"+obj[0].data[i].brandname+"</td><td>"+obj[0].data[i].productname+"</td><td id="+pr_id+">"+obj[0].data[i].price+"</td>" +
 				if(i%2 == 0)
 				{
-					productTable = productTable + "<tr class='tile' style='height:100px;'><td><img id="+obj[0].data[i].id+" src="+filename+" height='100' width='100'/></td><td>"+obj[0].data[i].brand_name__c+"</td><td>"+obj[0].data[i].name+"</td><td id="+pr_id+">"+obj[0].data[i].price__c+"</td><td><button  type='button' class='btn btn-primary btn-md' onclick='Addtocart("+pid+","+spid+","+pprice+")'>Add to Cart</button></td>" +
+					productTable = productTable + "<tr class='tile' style='height:100px;'><td><img id="+obj[0].data[i].id+" src="+filename+" height='100' width='100'/></td><td>"+obj[0].data[i].brand_name__c+"</td><td>"+obj[0].data[i].name+"</td><td id="+pr_id+">"+obj[0].data[i].price__c+"</td><td><button  type='button' class='btn btn-primary btn-md' onclick='Addtocart("+pid+","+pquantity+","+pprice+")'>Add to Cart</button></td>" +
 					"</tr>";
 					}
 				else
 				{
-					productTable = productTable + "<tr class='tile' style='height:100px;'><td><img id="+obj[0].data[i].id+" src="+filename+" height='100' width='100'/></td><td>"+obj[0].data[i].brand_name__c+"</td><td>"+obj[0].data[i].name+"</td><td id="+pr_id+">"+obj[0].data[i].price__c+"</td><td><button  type='button' class='btn btn-primary btn-md' onclick='Addtocart("+pid+","+spid+","+pprice+")'>Add to Cart</button></td>" +
+					productTable = productTable + "<tr class='tile' style='height:100px;'><td><img id="+obj[0].data[i].id+" src="+filename+" height='100' width='100'/></td><td>"+obj[0].data[i].brand_name__c+"</td><td>"+obj[0].data[i].name+"</td><td id="+pr_id+">"+obj[0].data[i].price__c+"</td><td><button  type='button' class='btn btn-primary btn-md' onclick='Addtocart("+pid+","+pquantity+","+pprice+")'>Add to Cart</button></td>" +
 					"</tr>";
 					}
 				//alert(document.getElementById("quantity").value);
@@ -422,7 +422,7 @@ function loadProducts()
 	});
 	
 //Add to cart function
-function Addtocart(productid,salesforceProductId,price)
+function Addtocart(salesforceProductId,price)
 {
 	
     var quantity = 1;
@@ -434,7 +434,7 @@ var amount = 1 * price;
 		url : '/Ecommerce?serviceId=addtocart',
 		type: 'POST',
 		data : {
-			userid :userid,productid:productid,salesforceProductId:salesforceProductId,quantity:quantity,amount:amount,
+			userid :userid,salesforceProductId:salesforceProductId,quantity:quantity,amount:amount,
 		},
 		success : function(responseText) {
 			var obj = jQuery.parseJSON(responseText);
