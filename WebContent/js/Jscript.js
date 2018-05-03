@@ -598,7 +598,7 @@ function loadProducts()
 //Add to cart function
 function Addtocart(productid,quantity,price)
 {
-	
+	alert("Hi");
     var quantity = 1;
 	
 var amount = 1 * price;
