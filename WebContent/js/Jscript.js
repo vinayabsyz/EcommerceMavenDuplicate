@@ -784,6 +784,7 @@ $('#modalbody').empty();
 			chk_idarray1.length=0;	
 			cartarray.length=0;
 				$( "#td_mycarts" ).click();	
+		}
 				
 	});	
 }		
