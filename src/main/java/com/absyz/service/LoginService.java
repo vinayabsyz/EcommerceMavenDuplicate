@@ -78,7 +78,7 @@ public class LoginService {
 		Statement stSelectQuery = null;
 		String strEmail = request.getParameter("email");
 		String strPassword = request.getParameter("password");
-		String strQuery = "Select id from salesforce.contact where email = '"+strEmail+"' and password__c = '"+strPassword+"'";
+		String strQuery = "Select id,sfid from salesforce.contact where email = '"+strEmail+"' and password__c = '"+strPassword+"'";
 		System.out.println(strQuery);
 		JSONArray json = new JSONArray();
 		JSONObject obj=null;
@@ -128,7 +128,7 @@ public class LoginService {
 		ResultSet rsLogin = null;
 		Statement stSelectQuery = null;
 		int intUserid  = Integer.parseInt(request.getParameter("userid"));
-		String strQuery = "Select id,firstname,lastname,email,mobilephone,Address1__c,Address_2__c,mailingcity,mailingstate,mailingpostalcode,mailingcountry from salesforce.contact where id = "+intUserid;
+		String strQuery = "Select id,sfid,firstname,lastname,email,mobilephone,Address1__c,Address_2__c,mailingcity,mailingstate,mailingpostalcode,mailingcountry from salesforce.contact where id = "+intUserid;
 		System.out.println(strQuery);
 		JSONArray json = new JSONArray();
 		JSONObject obj=null;
