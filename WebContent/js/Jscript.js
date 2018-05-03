@@ -399,7 +399,7 @@ function loadProducts()
 				var pquantity="2";
 				//var quant;
 				var pprice=obj[0].data[i].price__c;
-				alert("Price"+obj[0].data[i].price__c);
+				//alert("Price"+obj[0].data[i].price__c);
 				//alert(amt_id);
 				//productTable = productTable + "<tr style='height:100px;'><td><input name='product' type ='radio' id="+obj[0].data[i].productid+" onclick='showproduct(this.id);'/></td><td>"+obj[0].data[i].brandname+"</td><td>"+obj[0].data[i].productname+"</td><td id="+pr_id+">"+obj[0].data[i].price+"</td>" +
 				if(i%2 == 0)
