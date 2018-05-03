@@ -424,7 +424,7 @@ function loadProducts()
 //Add to cart function
 function Addtocart(salesforceProductId,price)
 {
-	
+	alert("FuckOFf");
     var quantity = 1;
 	alert(price);
 var amount = 1 * price;
