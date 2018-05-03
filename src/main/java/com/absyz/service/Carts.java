@@ -34,7 +34,7 @@ public class Carts {
 			
 			conn = DbConnection.getConnection();
 			strQuery = "Select max(id) id from carts__c";
-			int intUserId = Integer.parseInt(request.getParameter("userid"));
+			String intUserId = request.getParameter("userid");
 			int intProductId = Integer.parseInt(request.getParameter("productid"));
 			String intsalesforceProductId = request.getParameter("productid");
 			int intQuantity = Integer.parseInt(request.getParameter("quantity"));
@@ -96,7 +96,7 @@ public class Carts {
 	public static String my_cart_list(HttpServletRequest request)
 	{
 		String strOutput="";
-		int intUserId = Integer.parseInt(request.getParameter("userid"));
+		String intUserId = request.getParameter("userid");
 		
 		System.out.println("userid"+intUserId);
 		Connection conn = null;
