@@ -897,7 +897,7 @@ $(document).on("click", "#td_mycarts", function() {
 				{		
 					var qty_id = "qty_"+ obj[0].data[i].sfid;		
 					var amt_id = "amt_"+ chkVal;		
-					var rm_id = "rm_"+ obj[0].data[i].id;		
+					var rm_id = "rm_"+ obj[0].data[i].sfid;		
 					 chk_id = obj[0].data[i].product__c + "_" + obj[0].data[i].sfid;		
 					chk_idarray.push(chk_id);		
 					proarray.push(obj[0].data[i].product__c);		
@@ -945,6 +945,7 @@ $(document).on("click", "#td_mycarts", function() {
 var chk_idarray1=[];		
 function delete_cartitem(cartid)		
 {		
+	alert("cartid"+cartid);
 	$('#divcontent').hide();		
 	$('#divhome').hide();		
 	$('#product_list').hide();		
@@ -952,7 +953,7 @@ function delete_cartitem(cartid)
 	$('#prdndesc').hide();		
 	$('#userdiv').hide();		
 	$('#mycartdata').show();		
-	var cart_id = cartid.split("_");		
+	//var cart_id = cartid.split("_");		
 	//alert(cartid);alert(cart_id[1]);		
 	//var userid=$('#hidid').val();		
 	var searchParams = new URLSearchParams(window.location.search); //?anything=123		
@@ -962,7 +963,7 @@ function delete_cartitem(cartid)
 		url : '/Ecommerce?serviceId=deletecart',		
 		type: 'POST',		
 		data : {		
-			userid:userid,cartid:cart_id[1]		
+			userid:userid,cartid:cartid		
 		},		
 		success : function(responseText) {
 $('#modalbody').empty();		
