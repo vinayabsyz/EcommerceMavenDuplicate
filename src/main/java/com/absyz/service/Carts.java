@@ -39,7 +39,7 @@ public class Carts {
 			String intsalesforceProductId = request.getParameter("productid");
 			int intQuantity = Integer.parseInt(request.getParameter("quantity"));
 			double dblAmount = Double.parseDouble(request.getParameter("amount"));
-			strGetCartQuery = "Select * from salesforce.carts__C where product__c = "+intsalesforceProductId+" and contact__c = "+intUserId;
+			strGetCartQuery = "Select * from salesforce.carts__C where product__c ='"+intsalesforceProductId+"' and contact__c = '"+intUserId+"'";
 			System.out.println(strGetCartQuery);
 			stGetCartList = conn.createStatement();
 			rsGetCartList = stGetCartList.executeQuery(strGetCartQuery);
