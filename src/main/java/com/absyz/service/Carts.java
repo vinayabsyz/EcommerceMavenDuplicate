@@ -109,7 +109,7 @@ public class Carts {
 			//String strQuery = "Select * from carts where userid = "+intUserId; 
 				
 			String strQuery = "Select c.id,c.contact__c,c.product__c,c.quantity__c,c.amount__c,p.productname__c,p.price__c from carts__c c "
-					+ "join product2 p on c.product__c = p.sfid where c.contact__c = "+intUserId;// where c.userid = 
+					+ "join product2 p on c.product__c = p.sfid;// where c.userid = 
 				//+intUserId;
 				
 			//console.log(intUserId);
