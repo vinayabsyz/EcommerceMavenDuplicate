@@ -109,7 +109,7 @@ public class Carts {
 			//String strQuery = "Select * from carts where userid = "+intUserId; 
 				
 			String strQuery = "Select c.id,c.contact__c,c.product__c,c.quantity__c,c.amount__c,p.productname__c,p.price__c from salesforce.carts__c c "
-					+ "join salesforce.product2 p on c.product__c = p.sfid";// where c.userid = 
+					+ "join salesforce.product2 p on c.product__c = p.sfid where c.userid = "+intUserId;// where c.userid = 
 				//+intUserId;
 				
 			//console.log(intUserId);
