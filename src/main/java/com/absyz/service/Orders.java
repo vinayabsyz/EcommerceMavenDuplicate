@@ -48,16 +48,16 @@ public class Orders {
 		    Timestamp timestamp = new Timestamp(System.currentTimeMillis()+(330*60*1000));
 			
 			intOrderId=intOrderId+1;
-			int intUserId = Integer.parseInt(jsonobject.getString("userid"));
-			int intProductId = Integer.parseInt(jsonobject.getString("productid"));
+			String intUserId = jsonobject.getString("userid");
+			string intProductId = jsonobject.getString("productid");
 			int intQuantity = Integer.parseInt(jsonobject.getString("quantity"));
 			double dblAmount = Double.parseDouble(jsonobject.getString("totalamount"));
 			int intShippingId = Integer.parseInt(jsonobject.getString("shippingid"));
 			String status=jsonobject.getString("status");
 			psInsert = conn.prepareStatement("Insert into salesforce.order(id,contactid__c,productid__c,Shipping_Id,productquantity__c,TotalAmount,EffectiveDate,Status)values(?,?,?,?,?,?,?,?)");
 			psInsert.setInt(1, intOrderId);
-			psInsert.setInt(2, intUserId);
-			psInsert.setInt(3, intProductId);
+			psInsert.setString(2, intUserId);
+			psInsert.setString(3, intProductId);
 			psInsert.setInt(4, intShippingId);
 			psInsert.setInt(5, intQuantity);
 			psInsert.setDouble(6, dblAmount);
