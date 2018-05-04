@@ -164,7 +164,8 @@ public class Carts {
 		JSONObject obj=null;
 		String strOutput="";
 		try {
-			String strQuery = "Select * from salesforce.carts__c where sfid = "+intCartId;
+			System.out.println("intCartId"+intCartId);
+			String strQuery = "Select * from salesforce.carts__c where sfid = '"+intCartId+"'";
 			conn = DbConnection.getConnection();
 			stSelectCarts = conn.createStatement();
 			rsSelectCarts = stSelectCarts.executeQuery(strQuery);
