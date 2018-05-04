@@ -37,6 +37,7 @@ public class Carts {
 			String intUserId = request.getParameter("userid");
 			//int intProductId = Integer.parseInt(request.getParameter("productid"));
 			String intsalesforceProductId = request.getParameter("productid");
+			string productname= request.getParameter("productname");
 			int intQuantity = Integer.parseInt(request.getParameter("quantity"));
 			double dblAmount = Double.parseDouble(request.getParameter("amount"));
 			strGetCartQuery = "Select * from salesforce.carts__C where product__c ='"+intsalesforceProductId+"' and contact__c = '"+intUserId+"'";
@@ -63,12 +64,13 @@ public class Carts {
 				{
 					intCartId = 100;
 				}
-				psInsert = conn.prepareStatement("Insert into salesforce.carts__c(id,contact__c,product__c,quantity__c,amount__c)values(?,?,?,?,?)");
+				psInsert = conn.prepareStatement("Insert into salesforce.carts__c(id,name,contact__c,product__c,quantity__c,amount__c)values(?,?,?,?,?,?)");
 				psInsert.setInt(1, intCartId);
-				psInsert.setString(2, intUserId);
-				psInsert.setString(3, intsalesforceProductId);
-				psInsert.setInt(4, intQuantity);
-				psInsert.setDouble(5, dblAmount);
+				psInsert.setInt(2, productname);
+				psInsert.setString(3, intUserId);
+				psInsert.setString(4, intsalesforceProductId);
+				psInsert.setInt(5, intQuantity);
+				psInsert.setDouble(6, dblAmount);
 				psInsert.executeUpdate();
 				obj = new JSONObject();      //extends HashMap
 			    obj.put("success",JsonObjects.json_objects("success","Added Successfully"));
