@@ -955,8 +955,9 @@ function delete_cartitem(cartid)
 	$('#prdndesc').hide();		
 	$('#userdiv').hide();		
 	$('#mycartdata').show();		
-	//var cart_id = cartid.split("_");		
-	//alert(cartid);alert(cart_id[1]);		
+	var cart_id = cartid.split("_");		
+	//alert(cartid);
+	alert(cart_id[1]);		
 	//var userid=$('#hidid').val();		
 	var searchParams = new URLSearchParams(window.location.search); //?anything=123		
 	var userid = searchParams.get("userid");		
@@ -965,7 +966,7 @@ function delete_cartitem(cartid)
 		url : '/Ecommerce?serviceId=deletecart',		
 		type: 'POST',		
 		data : {		
-			userid:userid,cartid:cartid		
+			userid:userid,cartid:cart_id[1]		
 		},		
 		success : function(responseText) {
 $('#modalbody').empty();		
