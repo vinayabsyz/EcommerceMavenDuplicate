@@ -164,13 +164,13 @@ public class Carts {
 		JSONObject obj=null;
 		String strOutput="";
 		try {
-			String strQuery = "Select * from carts__c where sfid = "+intCartId;
+			String strQuery = "Select * from salesforce.carts__c where sfid = "+intCartId;
 			conn = DbConnection.getConnection();
 			stSelectCarts = conn.createStatement();
 			rsSelectCarts = stSelectCarts.executeQuery(strQuery);
 			if(rsSelectCarts.next())
 			{
-				String strDeleteQuery = "Delete from carts__c where sfid = ?";
+				String strDeleteQuery = "Delete from salesforce.carts__c where sfid = ?";
 				psDelete = conn.prepareStatement(strDeleteQuery);
 				psDelete.setString(1, intCartId);
 				psDelete.executeUpdate();
