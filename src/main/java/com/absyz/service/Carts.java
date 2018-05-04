@@ -33,13 +33,13 @@ public class Carts {
 		try {
 			
 			conn = DbConnection.getConnection();
-			strQuery = "Select max(id) id from carts__c";
+			strQuery = "Select max(id) id from salesforce.carts__c";
 			String intUserId = request.getParameter("userid");
 			//int intProductId = Integer.parseInt(request.getParameter("productid"));
 			String intsalesforceProductId = request.getParameter("productid");
 			int intQuantity = Integer.parseInt(request.getParameter("quantity"));
 			double dblAmount = Double.parseDouble(request.getParameter("amount"));
-			strGetCartQuery = "Select * from carts__C where product__c = "+intsalesforceProductId+" and contact__c = "+intUserId;
+			strGetCartQuery = "Select * from salesforce.carts__C where product__c = "+intsalesforceProductId+" and contact__c = "+intUserId;
 			System.out.println(strGetCartQuery);
 			stGetCartList = conn.createStatement();
 			rsGetCartList = stGetCartList.executeQuery(strGetCartQuery);
@@ -63,7 +63,7 @@ public class Carts {
 				{
 					intCartId = 100;
 				}
-				psInsert = conn.prepareStatement("Insert into carts(id,contact__c,product__c,quantity__c,amount__c)values(?,?,?,?,?)");
+				psInsert = conn.prepareStatement("Insert into salesforce.carts__c(id,contact__c,product__c,quantity__c,amount__c)values(?,?,?,?,?)");
 				psInsert.setInt(1, intCartId);
 				psInsert.setString(2, intUserId);
 				psInsert.setString(3, intsalesforceProductId);
