@@ -172,7 +172,7 @@ public class Carts {
 			{
 				String strDeleteQuery = "Delete from carts__c where sfid = ?";
 				psDelete = conn.prepareStatement(strDeleteQuery);
-				psDelete.setInt(1, intCartId);
+				psDelete.setString(1, intCartId);
 				psDelete.executeUpdate();
 				System.out.println("Record Deleted");
 				strOutput="success";
