@@ -37,7 +37,7 @@ public class Carts {
 			String intUserId = request.getParameter("userid");
 			//int intProductId = Integer.parseInt(request.getParameter("productid"));
 			String intsalesforceProductId = request.getParameter("productid");
-			string productname= request.getParameter("productname");
+			String productname= request.getParameter("productname");
 			int intQuantity = Integer.parseInt(request.getParameter("quantity"));
 			double dblAmount = Double.parseDouble(request.getParameter("amount"));
 			strGetCartQuery = "Select * from salesforce.carts__C where product__c ='"+intsalesforceProductId+"' and contact__c = '"+intUserId+"'";
