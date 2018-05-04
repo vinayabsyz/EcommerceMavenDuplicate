@@ -66,7 +66,7 @@ public class Carts {
 				}
 				psInsert = conn.prepareStatement("Insert into salesforce.carts__c(id,name,contact__c,product__c,quantity__c,amount__c)values(?,?,?,?,?,?)");
 				psInsert.setInt(1, intCartId);
-				psInsert.setInt(2, productname);
+				psInsert.setString(2, productname);
 				psInsert.setString(3, intUserId);
 				psInsert.setString(4, intsalesforceProductId);
 				psInsert.setInt(5, intQuantity);
