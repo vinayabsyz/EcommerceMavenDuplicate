@@ -148,13 +148,13 @@ public class Carts {
 	{
 		System.out.println("inside remove cart function");
 		String strOutput="";
-		int intCartId = Integer.parseInt(request.getParameter("id"));
+		String intCartId = request.getParameter("cartid");
 		strOutput = remove_cart_data(intCartId);
 		strOutput = my_cart_list(request);
 		System.out.println(strOutput);
 		return strOutput;
 	}
-	public static String remove_cart_data(int intCartId)
+	public static String remove_cart_data(String intCartId)
 	{
 		Connection conn = null;
 		Statement stSelectCarts = null;
@@ -164,13 +164,13 @@ public class Carts {
 		JSONObject obj=null;
 		String strOutput="";
 		try {
-			String strQuery = "Select * from carts__c where id = "+intCartId;
+			String strQuery = "Select * from carts__c where sfid = "+intCartId;
 			conn = DbConnection.getConnection();
 			stSelectCarts = conn.createStatement();
 			rsSelectCarts = stSelectCarts.executeQuery(strQuery);
 			if(rsSelectCarts.next())
 			{
-				String strDeleteQuery = "Delete from carts__c where id = ?";
+				String strDeleteQuery = "Delete from carts__c where sfid = ?";
 				psDelete = conn.prepareStatement(strDeleteQuery);
 				psDelete.setInt(1, intCartId);
 				psDelete.executeUpdate();
