@@ -896,8 +896,10 @@ $(document).on("click", "#td_mycarts", function() {
 				for(var i=0;i<obj[0].data.length;i++)		
 				{		
 					var qty_id = "qty_"+ obj[0].data[i].sfid;		
-					var amt_id = "amt_"+ chkVal;		
-					var rm_id = "rm_"+ obj[0].data[i].sfid;		
+					var amt_id = "amt_"+ chkVal;
+					alert(obj[0].data[i].sfid);
+					var rm_id = "rm_"+ obj[0].data[i].sfid;
+					alert("rm_id"+rm_id );
 					 chk_id = obj[0].data[i].product__c + "_" + obj[0].data[i].sfid;		
 					chk_idarray.push(chk_id);		
 					proarray.push(obj[0].data[i].product__c);		
