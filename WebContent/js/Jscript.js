@@ -514,17 +514,18 @@ function loadProducts()
 				var pid=obj[0].data[i].sfid;
 				var pquantity=2;
 				//var quant;
+				var pname=obj[0].data[i].name;
 				var pprice=obj[0].data[i].price__c;
 				//alert(amt_id);
 				//productTable = productTable + "<tr style='height:100px;'><td><input name='product' type ='radio' id="+obj[0].data[i].productid+" onclick='showproduct(this.id);'/></td><td>"+obj[0].data[i].brandname+"</td><td>"+obj[0].data[i].productname+"</td><td id="+pr_id+">"+obj[0].data[i].price+"</td>" +
 				if(i%2 == 0)
 				{
-					productTable = productTable + "<tr class='tile' style='height:100px;'><td><img id="+obj[0].data[i].sfid+" src="+filename+" height='100' width='100'/></td><td>"+obj[0].data[i].brand_name__c+"</td><td>"+obj[0].data[i].productname__c+"</td><td id="+pr_id+">"+obj[0].data[i].price__c+"</td><td><button  type='button' class='btn btn-primary btn-md' onclick='Addtocart(\""+pid+"\","+pquantity+","+pprice+")'>Add to Cart</button></td>" +
+					productTable = productTable + "<tr class='tile' style='height:100px;'><td><img id="+obj[0].data[i].sfid+" src="+filename+" height='100' width='100'/></td><td>"+obj[0].data[i].brand_name__c+"</td><td>"+obj[0].data[i].productname__c+"</td><td id="+pr_id+">"+obj[0].data[i].price__c+"</td><td><button  type='button' class='btn btn-primary btn-md' onclick='Addtocart(\""+pid+"\","+pquantity+","+pprice+",\""+pname+"\")'>Add to Cart</button></td>" +
 					"</tr>";
 					}
 				else
 				{
-					productTable = productTable + "<tr class='tile' style='height:100px;'><td><img id="+obj[0].data[i].sfid+" src="+filename+" height='100' width='100'/></td><td>"+obj[0].data[i].brand_name__c+"</td><td>"+obj[0].data[i].productname__c+"</td><td id="+pr_id+">"+obj[0].data[i].price__c+"</td><td><button  type='button' class='btn btn-primary btn-md' onclick='Addtocart(\""+pid+"\","+pquantity+","+pprice+")'>Add to Cart</button></td>" +
+					productTable = productTable + "<tr class='tile' style='height:100px;'><td><img id="+obj[0].data[i].sfid+" src="+filename+" height='100' width='100'/></td><td>"+obj[0].data[i].brand_name__c+"</td><td>"+obj[0].data[i].productname__c+"</td><td id="+pr_id+">"+obj[0].data[i].price__c+"</td><td><button  type='button' class='btn btn-primary btn-md' onclick='Addtocart(\""+pid+"\","+pquantity+","+pprice+",\""+pname+"\")'>Add to Cart</button></td>" +
 					"</tr>";
 					}
 				//alert(document.getElementById("quantity").value);
@@ -596,7 +597,7 @@ function loadProducts()
 	});*/
 }
 //Add to cart function
-function Addtocart(productid,quantity,price)
+function Addtocart(productid,quantity,price,productname)
 {
 	alert("Hi");
     var quantity = 1;
@@ -608,7 +609,7 @@ var amount = 1 * price;
 		url : '/Ecommerce?serviceId=addtocart',
 		type: 'POST',
 		data : {
-			userid :userid,productid:productid,quantity:quantity,amount:amount,
+			userid :userid,productid:productid,quantity:quantity,amount:amount,productname:productname,
 		},
 		success : function(responseText) {
 			var obj = jQuery.parseJSON(responseText);
@@ -893,27 +894,27 @@ $(document).on("click", "#td_mycarts", function() {
 				cartarray.length=0;
 				for(var i=0;i<obj[0].data.length;i++)		
 				{		
-					var qty_id = "qty_"+ obj[0].data[i].cartid;		
+					var qty_id = "qty_"+ obj[0].data[i].id;		
 					var amt_id = "amt_"+ chkVal;		
-					var rm_id = "rm_"+ obj[0].data[i].cartid;		
-					 chk_id = obj[0].data[i].productid + "_" + obj[0].data[i].cartid;		
+					var rm_id = "rm_"+ obj[0].data[i].id;		
+					 chk_id = obj[0].data[i].product__c + "_" + obj[0].data[i].sfid;		
 					chk_idarray.push(chk_id);		
-					proarray.push(obj[0].data[i].productid);		
-					cartarray.push(obj[0].data[i].cartid);		
+					proarray.push(obj[0].data[i].product__c);		
+					cartarray.push(obj[0].data[i].sfid);		
 							
 					var obj1=obj;		
 					//var chk_id = "chk_"+chkVal;		
 					chkVal = parseInt(chkVal)+1;		
 					if(i%2 == 0)		
 					{		
-						cartTable = cartTable + "<tr class='tile'><td>"+obj[0].data[i].productname+"</td>" +		
-						"<td ><input id="+qty_id+" type='number' name='inputcell' value='1' onchange='add_totalamount()'/></td><td id="+amt_id+">"+obj[0].data[i].price+"</td><td><button type='button' class='button' id="+rm_id+" onclick='delete_cartitem(this.id)'>remove</button></td>" +		
+						cartTable = cartTable + "<tr class='tile'><td>"+obj[0].data[i].name+"</td>" +		
+						"<td ><input id="+qty_id+" type='number' name='inputcell' value='1' onchange='add_totalamount()'/></td><td id="+amt_id+">"+obj[0].data[i].amount__c+"</td><td><button type='button' class='button' id="+rm_id+" onclick='delete_cartitem(this.id)'>remove</button></td>" +		
 						"</tr>";		
 						}		
 					else		
 					{		
-						cartTable = cartTable + "<tr class='tile'><td>"+obj[0].data[i].productname+"</td>" +		
-						"<td ><input type='number' id="+qty_id+" name='inputcell' value='1' onchange='add_totalamount()'/></td><td id="+amt_id+">"+obj[0].data[i].price+"</td><td><button type='button' class='button' id="+rm_id+" onclick='delete_cartitem(this.id)'>remove</button></td>" +		
+						cartTable = cartTable + "<tr class='tile'><td>"+obj[0].data[i].name+"</td>" +		
+						"<td ><input type='number' id="+qty_id+" name='inputcell' value='1' onchange='add_totalamount()'/></td><td id="+amt_id+">"+obj[0].data[i].amount__c+"</td><td><button type='button' class='button' id="+rm_id+" onclick='delete_cartitem(this.id)'>remove</button></td>" +		
 						"</tr>";		
 						}		
 							
