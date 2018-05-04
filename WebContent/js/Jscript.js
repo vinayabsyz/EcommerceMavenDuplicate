@@ -895,7 +895,7 @@ $(document).on("click", "#td_mycarts", function() {
 				cartarray.length=0;
 				for(var i=0;i<obj[0].data.length;i++)		
 				{		
-					var qty_id = "qty_"+ obj[0].data[i].id;		
+					var qty_id = "qty_"+ obj[0].data[i].sfid;		
 					var amt_id = "amt_"+ chkVal;		
 					var rm_id = "rm_"+ obj[0].data[i].id;		
 					 chk_id = obj[0].data[i].product__c + "_" + obj[0].data[i].sfid;		
@@ -1035,7 +1035,7 @@ function add_totalamount()
 	var prod_amount = 0;		
 			
 	var rowCount = $('#tbl_cart tr').length;		
-	
+	alert("rowCount"+rowCount);
 	var MyRows = $('table#tbl_cart').find('tbody').find('tr');		
 		for(var id=2;id<rowCount-2;id++){		
 					
