@@ -44,7 +44,7 @@ public class Orders {
 		}
 		for (int i = 0; i < jsonarray.length(); i++) {
 		    JSONObject jsonobject = jsonarray.getJSONObject(i);
-		    int intCartId = Integer.parseInt(jsonobject.getString("cartid"));
+		    String intCartId = jsonobject.getString("cartid");
 		    Timestamp timestamp = new Timestamp(System.currentTimeMillis()+(330*60*1000));
 			
 			intOrderId=intOrderId+1;
