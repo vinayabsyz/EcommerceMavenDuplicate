@@ -221,10 +221,11 @@ $(document).on("click", "#td_myorders", function() {
 		success : function(responseText) {
 			console.log(responseText);
 			var obj = jQuery.parseJSON(responseText);
+			console.log(obj);
 			alert(obj.length);
 			alert(obj[0].data.length);
 			alert(obj[0].data[0].ProductName__c);
-			console.log(obj);
+			
 			var orderTable="<br/><br/><b>Pending Orders</b><table width='100%'><br/><table width='100%'><tr class='tile'><td><strong>Product Name</strong></td><td><strong>Date</strong></td><td><strong>Amount</strong></td><td><strong>Quantity</strong></td><td><strong>Additional Charges</strong></td><td><strong>Amount</strong></td><td><strong>status</strong></td>";
 			for(var i=0;i<obj[0].data.length;i++)
 			{
