@@ -221,9 +221,10 @@ $(document).on("click", "#td_myorders", function() {
 		success : function(responseText) {
 			console.log(responseText);
 			var obj = jQuery.parseJSON(responseText);
-			//alert(obj.length);
-			//alert(obj[0].data.length);
-			//alert(obj[0].data[0].productname);
+			alert(obj.length);
+			alert(obj[0].data.length);
+			alert(obj[0].data[0].productname);
+			console.log(obj);
 			var orderTable="<br/><br/><b>Pending Orders</b><table width='100%'><br/><table width='100%'><tr class='tile'><td><strong>Product Name</strong></td><td><strong>Date</strong></td><td><strong>Amount</strong></td><td><strong>Quantity</strong></td><td><strong>Additional Charges</strong></td><td><strong>Amount</strong></td><td><strong>status</strong></td>";
 			for(var i=0;i<obj[0].data.length;i++)
 			{
@@ -231,13 +232,13 @@ $(document).on("click", "#td_myorders", function() {
 				if(obj[0].data[i].status__c!="Order Delivered"){
 				if(i%2 == 0)
 				{
-					orderTable = orderTable + "<tr class='tile'><td>"+obj[0].data[i].Product_Name__c+"</td>" +
-					"<td>"+obj[0].data[i].Order_Date__c+"</td><td>"+obj[0].data[i].Product_Price__c+"</td><td>"+obj[0].data[i].productquantity__c+"</td><td>100</td><td>"+totamt+"</td><td>"+obj[0].data[i].status__c+"</td></tr>";
+					orderTable = orderTable + "<tr class='tile'><td>"+obj[0].data[i].ProductName__c+"</td>" +
+					"<td>"+obj[0].data[i].Order_Date__c+"</td><td>"+obj[0].data[i].price__c	+"</td><td>"+obj[0].data[i].productquantity__c+"</td><td>100</td><td>"+totamt+"</td><td>"+obj[0].data[i].status__c+"</td></tr>";
 					}
 				else
 				{
-					orderTable = orderTable + "<tr class='tile'><td>"+obj[0].data[i].Product_Name__c+"</td>" +
-					"<td>"+obj[0].data[i].Order_Date__c+"</td><td>"+obj[0].data[i].Product_Price__c+"</td><td>"+obj[0].data[i].productquantity__c+"</td><td>100</td><td>"+totamt+"</td><td>"+obj[0].data[i].status__c+"</td></tr>";
+					orderTable = orderTable + "<tr class='tile'><td>"+obj[0].data[i].ProductName__c+"</td>" +
+					"<td>"+obj[0].data[i].Order_Date__c+"</td><td>"+obj[0].data[i].price__c	+"</td><td>"+obj[0].data[i].productquantity__c+"</td><td>100</td><td>"+totamt+"</td><td>"+obj[0].data[i].status__c+"</td></tr>";
 					}
 				}
 				}
@@ -253,13 +254,13 @@ $(document).on("click", "#td_myorders", function() {
 				if(obj[0].data[i].status=="Order Delivered"){
 				if(i%2 == 0)
 				{
-					orderTable = orderTable + "<tr class='tile'><td>"+obj[0].data[i].Product_Name__c+"</td>" +
-					"<td>"+obj[0].data[i].Order_Date__c+"</td><td>"+obj[0].data[i].Product_Price__c+"</td><td>"+obj[0].data[i].productquantity__c+"</td><td>100</td><td>"+totamt+"</td><td>"+obj[0].data[i].status__c+"</td></tr>";
+					orderTable = orderTable + "<tr class='tile'><td>"+obj[0].data[i].ProductName__c+"</td>" +
+					"<td>"+obj[0].data[i].Order_Date__c+"</td><td>"+obj[0].data[i].price__c	+"</td><td>"+obj[0].data[i].productquantity__c+"</td><td>100</td><td>"+totamt+"</td><td>"+obj[0].data[i].status__c+"</td></tr>";
 					}
 				else
 				{
-					orderTable = orderTable + "<tr class='tile'><td>"+obj[0].data[i].Product_Name__c+"</td>" +
-					"<td>"+obj[0].data[i].Order_Date__c+"</td><td>"+obj[0].data[i].Product_Price__c+"</td><td>"+obj[0].data[i].productquantity__c+"</td><td>100</td><td>"+totamt+"</td><td>"+obj[0].data[i].status__c+"</td></tr>";
+					orderTable = orderTable + "<tr class='tile'><td>"+obj[0].data[i].ProductName__c+"</td>" +
+					"<td>"+obj[0].data[i].Order_Date__c+"</td><td>"+obj[0].data[i].price__c	+"</td><td>"+obj[0].data[i].productquantity__c+"</td><td>100</td><td>"+totamt+"</td><td>"+obj[0].data[i].status__c+"</td></tr>";
 					}
 				}
 				
