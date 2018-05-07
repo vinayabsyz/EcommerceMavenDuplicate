@@ -102,7 +102,7 @@ public class Orders {
 			
 			
 			
-			 strQuery = "Select o.id,o.contactid__c,o.productid__c,o.Order_Date__c,o.totalamount__c,o.status__c,o.productquantity__c,o.totalamount__c,p.Product_Name__c,p.Product_Price__c from salesforce.order o "
+			 strQuery = "Select o.id,o.contactid__c,o.productid__c,o.Order_Date__c,o.totalamount__c,o.status__c,o.productquantity__c,o.totalamount__c,p.Product_Name__c,p.Product_Price__c from salesforce.Order__c o "
 					+ "join salesforce.product2 p on o.id = p.id order by o.id asc";
 			
 		
