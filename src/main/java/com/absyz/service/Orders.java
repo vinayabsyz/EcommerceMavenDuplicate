@@ -93,7 +93,7 @@ public class Orders {
 		
 		try {
 			conn = DbConnection.getConnection();
-			String strQuery1 = "Select  Administrator__c from salesforce.Contact where sfid="+intUserId;
+			String strQuery1 = "Select  Administrator__c from salesforce.Contact where sfid = '"+intUserId+"'";
 		stSelectMaxId = conn.createStatement();
 		rsOrderMaxId = stSelectMaxId.executeQuery(strQuery1);
 			
