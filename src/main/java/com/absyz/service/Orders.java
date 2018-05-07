@@ -89,10 +89,13 @@ public class Orders {
 		JSONArray json = new JSONArray();
 		JSONObject obj=null;
 		try {
+			String strQuery1 = "Select  Administrator__c from salesforce.Contact where id="+intUserId;
+		stSelectMaxId = conn.createStatement();
+		rsOrderMaxId = stSelectMaxId.executeQuery(strQuery1);
 			
 			//String strQuery = "Select * from orders where userid = "+intUserId;
 			String strQuery="";
-			if(intUserId!=1){
+			if(rsOrderMaxId.getString("Administrator__c")){
 			 strQuery = "Select o.id,o.contactid__c,o.productid__c,o.totalamount__c,o.Order_Date__c,o.status__c,o.productquantity__c,o.totalamount__c,p.Product_Name__c,p.Product_Price__c from salesforce.Order__c o "
 					+ "join salesforce.product2 p on o.id = p.id where o.contactid__c = "+intUserId+" order by o.id asc";
 			
