@@ -90,7 +90,9 @@ public class Orders {
 		ResultSet rsOrderMaxId = null;
 		JSONArray json = new JSONArray();
 		JSONObject obj=null;
+		
 		try {
+			conn = DbConnection.getConnection();
 			String strQuery1 = "Select  Administrator__c from salesforce.Contact where id="+intUserId;
 		stSelectMaxId = conn.createStatement();
 		rsOrderMaxId = stSelectMaxId.executeQuery(strQuery1);
