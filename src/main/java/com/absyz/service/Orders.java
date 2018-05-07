@@ -49,7 +49,7 @@ public class Orders {
 			
 			intOrderId=intOrderId+1;
 			String intUserId = jsonobject.getString("userid");
-			string intProductId = jsonobject.getString("productid");
+			String intProductId = jsonobject.getString("productid");
 			int intQuantity = Integer.parseInt(jsonobject.getString("quantity"));
 			double dblAmount = Double.parseDouble(jsonobject.getString("totalamount"));
 			int intShippingId = Integer.parseInt(jsonobject.getString("shippingid"));
