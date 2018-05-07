@@ -82,7 +82,7 @@ public class Orders {
 	public static String my_order_list(HttpServletRequest request)
 	{
 		String strOutput="";
-		int intUserId = Integer.parseInt(request.getParameter("userid"));
+		String intUserId = request.getParameter("userid");
 		Connection conn = null;
 		Statement stSelectOrders = null;
 		ResultSet rsSelectOrders = null;
