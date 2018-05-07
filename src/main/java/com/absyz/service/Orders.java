@@ -86,6 +86,8 @@ public class Orders {
 		Connection conn = null;
 		Statement stSelectOrders = null;
 		ResultSet rsSelectOrders = null;
+			Statement stSelectMaxId = null;
+		ResultSet rsOrderMaxId = null;
 		JSONArray json = new JSONArray();
 		JSONObject obj=null;
 		try {
