@@ -224,20 +224,20 @@ $(document).on("click", "#td_myorders", function() {
 			//alert(obj.length);
 			//alert(obj[0].data.length);
 			//alert(obj[0].data[0].productname);
-			var orderTable="<br/><br/><b>Pending Orders</b><table width='100%'><br/><table width='100%'><tr class='tile'><td><strong>Order No</strong></td><td><strong>Product Name</strong></td><td><strong>Date</strong></td><td><strong>Price</strong></td><td><strong>Quantity</strong></td><td><strong>Additional Charges</strong></td><td><strong>Amount</strong></td><td><strong>status</strong></td>";
+			var orderTable="<br/><br/><b>Pending Orders</b><table width='100%'><br/><table width='100%'><tr class='tile'><td><strong>Product Name</strong></td><td><strong>Date</strong></td><td><strong>Amount</strong></td><td><strong>Quantity</strong></td><td><strong>Additional Charges</strong></td><td><strong>Amount</strong></td><td><strong>status</strong></td>";
 			for(var i=0;i<obj[0].data.length;i++)
 			{
 				var totamt=obj[0].data[i].totalamount__c;
 				if(obj[0].data[i].status__c!="Order Delivered"){
 				if(i%2 == 0)
 				{
-					orderTable = orderTable + "<tr class='tile'><td>"+obj[0].data[i].orderid+"</td><td>"+obj[0].data[i].productname+"</td>" +
-					"<td>"+obj[0].data[i].orderdate+"</td><td>"+obj[0].data[i].price+"</td><td>"+obj[0].data[i].productquantity__c+"</td><td>100</td><td>"+totamt+"</td><td>"+obj[0].data[i].status__c+"</td></tr>";
+					orderTable = orderTable + "<tr class='tile'><td>"+obj[0].data[i].Product_Name__c+"</td>" +
+					"<td>"+obj[0].data[i].Order_Date__c+"</td><td>"+obj[0].data[i].Product_Price__c+"</td><td>"+obj[0].data[i].productquantity__c+"</td><td>100</td><td>"+totamt+"</td><td>"+obj[0].data[i].status__c+"</td></tr>";
 					}
 				else
 				{
-					orderTable = orderTable + "<tr class='tile'><td>"+obj[0].data[i].orderid+"</td><td>"+obj[0].data[i].productname+"</td>" +
-					"<td>"+obj[0].data[i].orderdate+"</td><td>"+obj[0].data[i].price+"</td><td>"+obj[0].data[i].productquantity__c+"</td><td>100</td><td>"+totamt+"</td><td>"+obj[0].data[i].status__c+"</td></tr>";
+					orderTable = orderTable + "<tr class='tile'><td>"+obj[0].data[i].Product_Name__c+"</td>" +
+					"<td>"+obj[0].data[i].Order_Date__c+"</td><td>"+obj[0].data[i].Product_Price__c+"</td><td>"+obj[0].data[i].productquantity__c+"</td><td>100</td><td>"+totamt+"</td><td>"+obj[0].data[i].status__c+"</td></tr>";
 					}
 				}
 				}
@@ -253,13 +253,13 @@ $(document).on("click", "#td_myorders", function() {
 				if(obj[0].data[i].status=="Order Delivered"){
 				if(i%2 == 0)
 				{
-					orderTable1 = orderTable1 + "<tr class='tile'><td>"+obj[0].data[i].orderid+"</td><td>"+obj[0].data[i].productname+"</td>" +
-					"<td>"+obj[0].data[i].orderdate+"</td><td>"+obj[0].data[i].price+"</td><td>"+obj[0].data[i].productquantity+"</td><td>100</td><td>"+totamt+"</td><td>"+obj[0].data[i].status+"</td></tr>";
+					orderTable = orderTable + "<tr class='tile'><td>"+obj[0].data[i].Product_Name__c+"</td>" +
+					"<td>"+obj[0].data[i].Order_Date__c+"</td><td>"+obj[0].data[i].Product_Price__c+"</td><td>"+obj[0].data[i].productquantity__c+"</td><td>100</td><td>"+totamt+"</td><td>"+obj[0].data[i].status__c+"</td></tr>";
 					}
 				else
 				{
-					orderTable1 = orderTable1 + "<tr class='tile'><td>"+obj[0].data[i].orderid+"</td><td>"+obj[0].data[i].productname+"</td>" +
-					"<td>"+obj[0].data[i].orderdate+"</td><td>"+obj[0].data[i].price+"</td><td>"+obj[0].data[i].productquantity+"</td><td>100</td><td>"+totamt+"</td><td>"+obj[0].data[i].status+"</td></tr>";
+					orderTable = orderTable + "<tr class='tile'><td>"+obj[0].data[i].Product_Name__c+"</td>" +
+					"<td>"+obj[0].data[i].Order_Date__c+"</td><td>"+obj[0].data[i].Product_Price__c+"</td><td>"+obj[0].data[i].productquantity__c+"</td><td>100</td><td>"+totamt+"</td><td>"+obj[0].data[i].status__c+"</td></tr>";
 					}
 				}
 				
@@ -292,13 +292,13 @@ $(document).on("click", "#td_myorders", function() {
 				if(obj[0].data[i].status!="Order Delivered"){
 				if(i%2 == 0)
 				{
-					orderTable = orderTable + "<tr class='tile'><td>"+obj[0].data[i].orderid+"</td><td>"+obj[0].data[i].productname+"</td>" +
-					"<td>"+obj[0].data[i].orderdate+"</td><td>"+obj[0].data[i].price+"</td><td>"+obj[0].data[i].productquantity+"</td><td>100</td><td>"+totamt+"</td><td><button type='button' class='button' id="+obj[0].data[i].orderid+" onclick='changestatus(this.id)'>changestatus</button></td></tr>";
+					orderTable = orderTable + "<tr class='tile'><td>"+obj[0].data[i].Product_Name__c+"</td>" +
+					"<td>"+obj[0].data[i].Order_Date__c+"</td><td>"+obj[0].data[i].Product_Price__c+"</td><td>"+obj[0].data[i].productquantity__c+"</td><td>100</td><td>"+totamt+"</td><td><button type='button' class='button' id="+obj[0].data[i].orderid+" onclick='changestatus(this.id)'>changestatus</button></td></tr>";
 					}
 				else
 				{
-					orderTable = orderTable + "<tr class='tile'><td>"+obj[0].data[i].orderid+"</td><td>"+obj[0].data[i].productname+"</td>" +
-					"<td>"+obj[0].data[i].orderdate+"</td><td>"+obj[0].data[i].price+"</td><td>"+obj[0].data[i].productquantity+"</td><td>100</td><td>"+totamt+"</td><td><button type='button' class='button' id="+obj[0].data[i].orderid+" onclick='changestatus(this.id)'>changestatus</button></td></tr>";
+					orderTable = orderTable + "<tr class='tile'><td>"+obj[0].data[i].Product_Name__c+"</td>" +
+					"<td>"+obj[0].data[i].Order_Date__c+"</td><td>"+obj[0].data[i].Product_Price__c+"</td><td>"+obj[0].data[i].productquantity__c+"</td><td>100</td><td>"+totamt+"</td><td><button type='button' class='button' id="+obj[0].data[i].orderid+" onclick='changestatus(this.id)'>changestatus</button></td></tr>";
 					}
 				}
 				}
@@ -314,13 +314,13 @@ $(document).on("click", "#td_myorders", function() {
 				if(obj[0].data[i].status=="Order Delivered"){
 				if(i%2 == 0)
 				{
-					orderTable1 = orderTable1 + "<tr class='tile'><td>"+obj[0].data[i].orderid+"</td><td>"+obj[0].data[i].productname+"</td>" +
-					"<td>"+obj[0].data[i].orderdate+"</td><td>"+obj[0].data[i].price+"</td><td>"+obj[0].data[i].productquantity+"</td><td>100</td><td>"+totamt+"</td><td>"+obj[0].data[i].status+"</td></tr>";
+					orderTable1 = orderTable1 + "<tr class='tile'><td>"+obj[0].data[i].Product_Name__c+"</td>" +
+					"<td>"+obj[0].data[i].Order_Date__c+"</td><td>"+obj[0].data[i].Product_Price__c+"</td><td>"+obj[0].data[i].productquantity__c+"</td><td>100</td><td>"+totamt+"</td><td>"+obj[0].data[i].status__c+"</td></tr>";
 					}
 				else
 				{
-					orderTable1 = orderTable1 + "<tr class='tile'><td>"+obj[0].data[i].orderid+"</td><td>"+obj[0].data[i].productname+"</td>" +
-					"<td>"+obj[0].data[i].orderdate+"</td><td>"+obj[0].data[i].price+"</td><td>"+obj[0].data[i].productquantity+"</td><td>100</td><td>"+totamt+"</td><td>"+obj[0].data[i].status+"</td></tr>";
+					orderTable1 = orderTable1 + "<tr class='tile'><td>"+obj[0].data[i].Product_Name__c+"</td>" +
+					"<td>"+obj[0].data[i].Order_Date__c+"</td><td>"+obj[0].data[i].Product_Price__c+"</td><td>"+obj[0].data[i].productquantity__c+"</td><td>100</td><td>"+totamt+"</td><td>"+obj[0].data[i].status__c+"</td></tr>";
 					}
 				}
 				
@@ -947,7 +947,7 @@ $(document).on("click", "#td_mycarts", function() {
 var chk_idarray1=[];		
 function delete_cartitem(cartid)		
 {		
-	alert("cartid"+cartid);
+	//alert("cartid"+cartid);
 	$('#divcontent').hide();		
 	$('#divhome').hide();		
 	$('#product_list').hide();		
@@ -957,7 +957,7 @@ function delete_cartitem(cartid)
 	$('#mycartdata').show();		
 	var cart_id = cartid.split("_");		
 	//alert(cartid);
-	alert(cart_id[1]);		
+			
 	//var userid=$('#hidid').val();		
 	var searchParams = new URLSearchParams(window.location.search); //?anything=123		
 	var userid = searchParams.get("userid");		
@@ -1033,14 +1033,13 @@ function showrow()
 }		
 function add_totalamount()		
 {		
-	console.log(cartarray);		
+	
 			
 	var total_amount=0;		
 	var prod_amount = 0;		
 			
 	var rowCount = $('#tbl_cart tr').length;		
-	alert("rowCount"+rowCount);
-	var MyRows = $('table#tbl_cart').find('tbody').find('tr');		
+		var MyRows = $('table#tbl_cart').find('tbody').find('tr');		
 		for(var id=2;id<rowCount-2;id++){		
 					
 		 // if($("#"+proarray [id2]+"_"+cartarray[id2]).is(':checked')){		
