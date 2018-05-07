@@ -97,7 +97,7 @@ public class Orders {
 			
 			//String strQuery = "Select * from orders where userid = "+intUserId;
 			String strQuery="";
-			if(rsOrderMaxId.getString("Administrator__c")){
+			if(rsOrderMaxId.getBoolean("Administrator__c")){
 			 strQuery = "Select o.id,o.contactid__c,o.productid__c,o.totalamount__c,o.Order_Date__c,o.status__c,o.productquantity__c,o.totalamount__c,p.Product_Name__c,p.Product_Price__c from salesforce.Order__c o "
 					+ "join salesforce.product2 p on o.id = p.id where o.contactid__c = "+intUserId+" order by o.id asc";
 			
