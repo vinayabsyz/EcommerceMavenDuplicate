@@ -31,7 +31,7 @@ public class Orders {
 		String strJson = request.getParameter("data");
 		JSONArray jsonarray = new JSONArray(strJson);
 		conn = DbConnection.getConnection();
-		strQuery = "Select max(id) id from salesforce.order";
+		strQuery = "Select max(id) id from salesforce.Order__c	";
 		stSelectMaxId = conn.createStatement();
 		rsOrderMaxId = stSelectMaxId.executeQuery(strQuery);
 		if(rsOrderMaxId.next())
@@ -54,15 +54,14 @@ public class Orders {
 			double dblAmount = Double.parseDouble(jsonobject.getString("totalamount"));
 			int intShippingId = Integer.parseInt(jsonobject.getString("shippingid"));
 			String status=jsonobject.getString("status");
-			psInsert = conn.prepareStatement("Insert into salesforce.order(id,contactid__c,productid__c,productquantity__c,TotalAmount,EffectiveDate,Status)values(?,?,?,?,?,?,?)");
+			psInsert = conn.prepareStatement("Insert into salesforce.Order__c(id,contactid__c,productid__c,productquantity__c,totalamount__c,status__c)values(?,?,?,?,?,?)");
 			psInsert.setInt(1, intOrderId);
 			psInsert.setString(2, intUserId);
 			psInsert.setString(3, intProductId);
 		
 			psInsert.setInt(4, intQuantity);
 			psInsert.setDouble(5, dblAmount);
-			psInsert.setTimestamp(6, timestamp);
-			psInsert.setString(7, status);
+			psInsert.setString(6, status);
 			psInsert.executeUpdate();
 			String strDeleteCart = Carts.remove_cart_data(intCartId);
 			Products.update_product(intProductId, intQuantity);
@@ -91,13 +90,13 @@ public class Orders {
 			//String strQuery = "Select * from orders where userid = "+intUserId;
 			String strQuery="";
 			if(intUserId!=1){
-			 strQuery = "Select o.id,o.contactid__c,o.productid__c,o.EffectiveDate,o.Status,o.productquantity__c,o.TotalAmount,p.Product_Name__c,p.Product_Price__c from salesforce.order o "
-					+ "join salesforce.products p on o.id = p.id where o.contactid__c = "+intUserId+" order by o.id asc";
+			 strQuery = "Select o.id,o.contactid__c,o.productid__c,o.Order_Date__c,o.status__c,o.productquantity__c,o.totalamount__c,p.Product_Name__c,p.Product_Price__c from salesforce.Order__c o "
+					+ "join salesforce.product2 p on o.id = p.id where o.contactid__c = "+intUserId+" order by o.id asc";
 			
 			}
 			else{
-			 strQuery = "Select o.id,o.contactid__c,o.productid__c,o.EffectiveDate,o.Status,o.productquantity__c,o.TotalAmount,p.Product_Name__c,p.Product_Price__c from salesforce.order o "
-					+ "join salesforce.products p on o.id = p.id order by o.id asc";
+			 strQuery = "Select o.id,o.contactid__c,o.productid__c,o.Order_Date__c,o.status__c,o.productquantity__c,o.totalamount__c,p.Product_Name__c,p.Product_Price__c from salesforce.order o "
+					+ "join salesforce.product2 p on o.id = p.id order by o.id asc";
 			
 		
 			}
