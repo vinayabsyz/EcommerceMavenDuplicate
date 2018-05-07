@@ -229,7 +229,7 @@ $(document).on("click", "#td_myorders", function() {
 			var orderTable="<br/><br/><b>Pending Orders</b><table width='100%'><br/><table width='100%'><tr class='tile'><td><strong>Product Name</strong></td><td><strong>Date</strong></td><td><strong>Amount</strong></td><td><strong>Quantity</strong></td><td><strong>Additional Charges</strong></td><td><strong>Amount</strong></td><td><strong>status</strong></td>";
 			for(var i=0;i<obj[0].data.length;i++)
 			{
-				alert(obj[0].data[i].ProductName__c);
+				alert("ProductName"+obj[0].data[i].ProductName__c);
 				var totamt=obj[0].data[i].totalamount__c;
 				if(obj[0].data[i].status__c!="Order Delivered"){
 				if(i%2 == 0)
