@@ -63,7 +63,7 @@ public class Orders {
 			psInsert.setInt(4, intQuantity);
 			psInsert.setDouble(5, dblAmount);
 			psInsert.setString(6, status);
-			psInsert.setString(7, intPrice);
+			psInsert.setInt(7, intPrice);
 			psInsert.setTimestamp(8, timestamp);
 			psInsert.executeUpdate();
 			String strDeleteCart = Carts.remove_cart_data(intCartId);
