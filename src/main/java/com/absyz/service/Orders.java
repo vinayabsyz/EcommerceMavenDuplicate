@@ -114,7 +114,7 @@ public class Orders {
 			strOutput = convertResultSetToJson(rsSelectOrders);
 			System.out.println("strOutput"+strOutput);
 			obj = new JSONObject();      //extends HashMap
-		    obj.put("success",JsonObjects.json_objects("success","products data available"));
+		    obj.put("success",JsonObjects.json_objects("success","Orders data available"));
 		    obj.put("data",JsonObjects.convertResultSetToJson(rsSelectOrders));
 		    json.put(obj);
 		} catch (SQLException e) {
