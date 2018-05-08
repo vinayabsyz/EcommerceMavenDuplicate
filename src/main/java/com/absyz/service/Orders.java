@@ -110,9 +110,7 @@ public class Orders {
 				conn = DbConnection.getConnection();
 			stSelectOrders = conn.createStatement();
 			rsSelectOrders = stSelectOrders.executeQuery(strQuery);
-			strOutput = convertResultSetToJson(rsSelectOrders);
-			System.out.println("strOutput"+strOutput);
-			obj = new JSONObject();      //extends HashMap
+				obj = new JSONObject();      //extends HashMap
 		    obj.put("success",JsonObjects.json_objects("success","Orders data available"));
 		    obj.put("data",JsonObjects.convertResultSetToJson(rsSelectOrders));
 		    json.put(obj);
