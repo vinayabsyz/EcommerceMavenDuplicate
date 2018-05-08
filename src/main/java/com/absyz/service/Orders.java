@@ -102,7 +102,7 @@ public class Orders {
 			
 			
 			
-			 strQuery = "Select o.id,o.contactid__c,o.productid__c,o.Order_Date__c,o.totalamount__c,o.status__c,o.productquantity__c,o.totalamount__c,p.ProductName__c,p.price__c	 from salesforce.Order__c o "
+			 strQuery = "Select o.id,o.contactid__c,o.productid__c,o.Order_Date__c,o.totalamount__c,o.status__c,o.productquantity__c,o.totalamount__c,p.ProductName__c,p.price__c from salesforce.Order__c o "
 					+ "join salesforce.product2 p on o.id = p.id order by o.id asc";
 			
 		
@@ -111,7 +111,8 @@ public class Orders {
 				conn = DbConnection.getConnection();
 			stSelectOrders = conn.createStatement();
 			rsSelectOrders = stSelectOrders.executeQuery(strQuery);
-			//strOutput = convertResultSetToJson(rsSelectOrders);
+			strOutput = convertResultSetToJson(rsSelectOrders);
+			System.out.println("strOutput"+strOutput);
 			obj = new JSONObject();      //extends HashMap
 		    obj.put("success",JsonObjects.json_objects("success","products data available"));
 		    obj.put("data",JsonObjects.convertResultSetToJson(rsSelectOrders));
