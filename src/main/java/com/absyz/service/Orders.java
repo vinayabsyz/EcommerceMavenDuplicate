@@ -100,7 +100,7 @@ public class Orders {
 			
 			
 			
-					 strQuery = "Select o.id,o.sfid,o.contactid__c,o.productid__c,o.order_date__c,o.totalamount__c,o.status__c,o.productquantity__c,o.totalamount__c,p.productname__c,p.price__c from Salesforce.Order__c o "
+					 strQuery = "Select o.id,o.sfid,o.contactid__c,o.productid__c,o.order_date__c,o.totalamount__c,o.status__c,o.productquantity__c,o.totalamount__c,p.name,p.price__c from Salesforce.Order__c o "
 					+ "join salesforce.product2 p on o.productid__c  = p.sfid";
 		
 			
