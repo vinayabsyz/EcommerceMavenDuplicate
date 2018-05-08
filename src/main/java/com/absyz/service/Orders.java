@@ -99,11 +99,9 @@ public class Orders {
 			
 			
 			
-			 strQuery = "Select o.id,o.contactid__c,o.productid__c,o.Order_Date__c,o.totalamount__c,o.status__c,o.productquantity__c,o.totalamount__c,p.ProductName__c,p.price__c from salesforce.Order__c o "
-					+ "join salesforce.product2 p on o.id = p.id order by o.id asc";
 			
-					 strQuery = "Select o.id,o.contactid__c,o.productid__c,o.Order_Date__c,o.totalamount__c,o.status__c,o.productquantity__c,o.totalamount__c,p.ProductName__c,p.price__c from Salesforce.Order__c o "
-					+ "join salesforce.product2 p on o.productid__c = p.sfid";
+					 strQuery = "Select o.id,o.sfid,o.contactid__c,o.productid__c,o.Order_Date__c,o.totalamount__c,o.status__c,o.productquantity__c,o.totalamount__c,p.ProductName__c,p.price__c from Salesforce.Order__c o "
+					+ "join salesforce.product2 p on o.sfid = p.sfid";
 		
 			
 			
