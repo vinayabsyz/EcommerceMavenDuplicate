@@ -630,7 +630,6 @@ var amount = 1 * price;
 	});
 }
 function placeorder(chkid){
-	
 var shippingid="1";
 	var searchParams = new URLSearchParams(window.location.search); //?anything=123
 	var userid = searchParams.get("userid");
@@ -651,7 +650,7 @@ var shippingid="1";
 		var amt_id = "#amt_"+product_id;
 		
 		var price =$(amt_id).text();
-		
+		alert("price"+price);
 		var quantity = $(qty_id).val();
 			
 		var totalamount =  $('#txtTotal').val();
