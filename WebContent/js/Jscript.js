@@ -649,8 +649,8 @@ var shippingid="1";
 		
 		var amt_id = "#amt_"+product_id;
 		
-		var price =$(amt_id).text();
-		alert("price"+price);
+		//var price =$(amt_id).text();
+		//alert("price"+price);
 		var quantity = $(qty_id).val();
 			
 		var totalamount =  $('#txtTotal').val();
@@ -669,7 +669,7 @@ var shippingid="1";
 		data["productid"]= product_id;
 		data["cartid"]= cart_id;
 		data["quantity"]= quantity;
-		data["price"]= price;
+		//data["price"]= price;
 		data["totalamount"]= totalamount;
 		data["shippingid"]= shippingid;
 		data["userid"]= userid;
