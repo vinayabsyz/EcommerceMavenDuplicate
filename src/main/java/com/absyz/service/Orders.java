@@ -51,11 +51,11 @@ public class Orders {
 			String intUserId = jsonobject.getString("userid");
 			String intProductId = jsonobject.getString("productid");
 			int intQuantity = Integer.parseInt(jsonobject.getString("quantity"));
-			int intPrice = Integer.parseInt(jsonobject.getString("price"));
+			//int intPrice = Integer.parseInt(jsonobject.getString("price"));
 			double dblAmount = Double.parseDouble(jsonobject.getString("totalamount"));
 			int intShippingId = Integer.parseInt(jsonobject.getString("shippingid"));
 			String status=jsonobject.getString("status");
-			psInsert = conn.prepareStatement("Insert into salesforce.Order__c(id,contactid__c,productid__c,productquantity__c,totalamount__c,status__c,Price__c,Order_Date__c)values(?,?,?,?,?,?,?,?)");
+			psInsert = conn.prepareStatement("Insert into salesforce.Order__c(id,contactid__c,productid__c,productquantity__c,totalamount__c,status__c,Order_Date__c)values(?,?,?,?,?,?,?)");
 			psInsert.setInt(1, intOrderId);
 			psInsert.setString(2, intUserId);
 			psInsert.setString(3, intProductId);
@@ -63,8 +63,8 @@ public class Orders {
 			psInsert.setInt(4, intQuantity);
 			psInsert.setDouble(5, dblAmount);
 			psInsert.setString(6, status);
-			psInsert.setInt(7, intPrice);
-			psInsert.setTimestamp(8, timestamp);
+			//psInsert.setInt(7, intPrice);
+			psInsert.setTimestamp(7, timestamp);
 			psInsert.executeUpdate();
 			String strDeleteCart = Carts.remove_cart_data(intCartId);
 			Products.update_product(intProductId, intQuantity);
