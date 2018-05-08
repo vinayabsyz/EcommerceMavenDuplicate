@@ -234,12 +234,12 @@ $(document).on("click", "#td_myorders", function() {
 				if(obj[0].data[i].status__c!="Order Delivered"){
 				if(i%2 == 0)
 				{
-					orderTable = orderTable + "<tr class='tile'><td>"+obj[0].data[i].ProductName__c+"</td>" +
+					orderTable = orderTable + "<tr class='tile'><td>"+obj[0].data[i].productname__c+"</td>" +
 					"<td>"+obj[0].data[i].order_date__c+"</td><td>"+obj[0].data[i].price__c	+"</td><td>"+obj[0].data[i].productquantity__c+"</td><td>100</td><td>"+totamt+"</td><td>"+obj[0].data[i].status__c+"</td></tr>";
 					}
 				else
 				{
-					orderTable = orderTable + "<tr class='tile'><td>"+obj[0].data[i].ProductName__c+"</td>" +
+					orderTable = orderTable + "<tr class='tile'><td>"+obj[0].data[i].productname__c+"</td>" +
 					"<td>"+obj[0].data[i].order_date__c+"</td><td>"+obj[0].data[i].price__c	+"</td><td>"+obj[0].data[i].productquantity__c+"</td><td>100</td><td>"+totamt+"</td><td>"+obj[0].data[i].status__c+"</td></tr>";
 					}
 				}
@@ -256,13 +256,13 @@ $(document).on("click", "#td_myorders", function() {
 				if(obj[0].data[i].status=="Order Delivered"){
 				if(i%2 == 0)
 				{
-					orderTable = orderTable + "<tr class='tile'><td>"+obj[0].data[i].ProductName__c+"</td>" +
-					"<td>"+obj[0].data[i].Order_Date__c+"</td><td>"+obj[0].data[i].price__c	+"</td><td>"+obj[0].data[i].productquantity__c+"</td><td>100</td><td>"+totamt+"</td><td>"+obj[0].data[i].status__c+"</td></tr>";
+					orderTable = orderTable + "<tr class='tile'><td>"+obj[0].data[i].productname__c+"</td>" +
+					"<td>"+obj[0].data[i].order_date__c+"</td><td>"+obj[0].data[i].price__c	+"</td><td>"+obj[0].data[i].productquantity__c+"</td><td>100</td><td>"+totamt+"</td><td>"+obj[0].data[i].status__c+"</td></tr>";
 					}
 				else
 				{
-					orderTable = orderTable + "<tr class='tile'><td>"+obj[0].data[i].ProductName__c+"</td>" +
-					"<td>"+obj[0].data[i].Order_Date__c+"</td><td>"+obj[0].data[i].price__c	+"</td><td>"+obj[0].data[i].productquantity__c+"</td><td>100</td><td>"+totamt+"</td><td>"+obj[0].data[i].status__c+"</td></tr>";
+					orderTable = orderTable + "<tr class='tile'><td>"+obj[0].data[i].productname__c+"</td>" +
+					"<td>"+obj[0].data[i].order_date__c+"</td><td>"+obj[0].data[i].price__c	+"</td><td>"+obj[0].data[i].productquantity__c+"</td><td>100</td><td>"+totamt+"</td><td>"+obj[0].data[i].status__c+"</td></tr>";
 					}
 				}
 				
