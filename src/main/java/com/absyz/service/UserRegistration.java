@@ -86,7 +86,7 @@ public class UserRegistration {
 				
 
 				psInsert = conn.prepareStatement("Insert into salesforce.contact(user_name__c,firstname,lastname,email,Password__c,	MobilePhone,mailingcity,mailingstate,mailingcountry,"
-						+ "mailingpostalcode,gender__c,state__c,id) values(?,?,?,?,?,?,?,?,?,?,?,?,?)");
+						+ "mailingpostalcode,gender__c,state__c,id,address1__c,address_2__c) values(?,?,?,?,?,?,?,?,?,?,?,?,?)");
 				psInsert.setString(1, strEmail);
 				psInsert.setString(2, strFname);
 				psInsert.setString(3, strlname);
@@ -100,6 +100,8 @@ public class UserRegistration {
 				psInsert.setString(11, strGender);
 				psInsert.setString(12, "active");
 				psInsert.setInt(13, intUserId);
+				psInsert.setString(14, strAddress1);
+				psInsert.setString(15, strAddress2);
 				
 				//psInsert.setString(1, file.getName());
                                 //psInsert.setBinaryStream(14,  (InputStream) fis, (int)(file.length()));
@@ -143,11 +145,11 @@ public class UserRegistration {
 		PreparedStatement psUpdate = null;
 		String strUpdate="";
 		String strPwd = request.getParameter("pwd");
-		int intUserid = Integer.parseInt(request.getParameter("userid"));
+		String intUserid = request.getParameter("userid");
 		JSONArray json = new JSONArray();
 		JSONObject obj = new JSONObject();
 		conn = DbConnection.getConnection();
-		strUpdate = "Update salesforce.contact set password = '"+strPwd+"' where userid = "+intUserid;
+		strUpdate = "Update salesforce.contact set Password__c = '"+strPwd+"' where sfid ='"+strPwd+"'";
 		try {
 			psUpdate = conn.prepareStatement(strUpdate);
 			psUpdate.executeUpdate();
