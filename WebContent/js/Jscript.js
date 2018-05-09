@@ -958,7 +958,7 @@ function delete_cartitem(cartid)
 	$('#userdiv').hide();		
 	$('#mycartdata').show();		
 	var cart_id = cartid.split("_");		
-	//alert(cartid);
+	alert(cart_id[1]);
 			
 	//var userid=$('#hidid').val();		
 	var searchParams = new URLSearchParams(window.location.search); //?anything=123		
