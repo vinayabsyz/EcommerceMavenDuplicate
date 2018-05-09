@@ -129,7 +129,8 @@ public class LoginService {
 		Statement stSelectQuery = null;
 		String intUserid  = request.getParameter("userid");
 		String strQuery = "Select id,sfid,firstname,lastname,email,mobilephone,Address1__c,Address_2__c,mailingcity,mailingstate,mailingpostalcode,mailingcountry from salesforce.contact where sfid ='"+intUserid+"'";
-		JSONObject obj=null;
+		System.out.println(strQuery);
+		JSONArray json = new JSONArray();
 		try {
 			conn = DbConnection.getConnection();
 			stSelectQuery = conn.createStatement();
