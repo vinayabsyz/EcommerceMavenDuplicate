@@ -230,7 +230,7 @@ $(document).on("click", "#td_myorders", function() {
 			for(var i=0;i<obj[0].data.length;i++)
 			{
 				alert("ProductName"+obj[0].data[i].name);
-				var totamt=obj[0].data[i].totalamount__c;
+				var totamt=(obj[0].data[i].price__c * obj[0].data[i].productquantity__c)+100;
 				if(obj[0].data[i].status__c!="Order Delivered"){
 				if(i%2 == 0)
 				{
