@@ -19,7 +19,7 @@ import main.java.com.absyz.service.Products;
 import main.java.com.absyz.service.UserRegistration;
 
 
-// Extend HttpServlet class
+// Extend HttpServlet cla
 public class EcommerceServlet extends HttpServlet {
  
    private String message;
