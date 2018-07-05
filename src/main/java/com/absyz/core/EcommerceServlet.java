@@ -26,7 +26,7 @@ public class EcommerceServlet extends HttpServlet {
 
    public void init() throws ServletException {
       // Do required initialization
-      message = "Hello World";
+      message = "Hello Wold";
    }
 
    public void doGet(HttpServletRequest request, HttpServletResponse response)
