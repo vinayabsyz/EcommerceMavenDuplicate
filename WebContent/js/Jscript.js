@@ -19,7 +19,7 @@ $(document).on("click", "#userreg",function userReg(){
 	var fname=$('#txtFname').val();
 	var lname=$('#txtlname').val();
 	var email=$('#txtEmail').val();
-	var mobile=$('#txtPwd').val();
+	var mobile=$('#txtMobile').val();
 	var password=$('#txtMobile').val();
 	var address1=$('#txtAdd1').val();
 	var address2=$('#txtAdd2').val();
